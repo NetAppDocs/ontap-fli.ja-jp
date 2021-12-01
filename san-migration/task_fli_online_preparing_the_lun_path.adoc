@@ -1,0 +1,276 @@
+---
+permalink: san-migration/task_fli_online_preparing_the_lun_path.html 
+sidebar: sidebar 
+keywords: fli online, prepare, lun path 
+summary: FLI オンライン移行の準備として、ホストとソース LUN のパスおよびその他の詳細を確認します。 
+---
+= FLI オンライン： LUN パスの準備をしています
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI オンライン移行の準備として、ホストとソース LUN のパスおよびその他の詳細を確認します。
+
+.手順
+. ONTAP で、権限レベルを「 advanced 」に変更します。
++
+[listing]
+----
+cluster::> set adv
+
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
+Do you want to continue? {y|n}: y
+----
+. ソースアレイがデスティネーションコントローラで認識されることを確認します。
++
+[listing]
+----
+
+        cluster::*> storage array show
+Prefix                         Name   Vendor            Model Options
+-------- ---------------------------- -------- ---------------- ----------
+DGC-1                      DGC_LUNZ_1      DGC             LUNZ
+1 entries were displayed.
+----
+. ソース LUN の詳細を表示します。
++
+[listing]
+----
+cluster::*> storage array config show -array-name DGC_LUNZ_1 -instance
+
+           Controller Name: ontaptme-fc-cluster-01
+                 LUN Group: 0
+        Array Target Ports: 500601643ea067da
+                 Initiator: 0c
+                Array Name: DGC_LUNZ_1
+   Target Side Switch Port: stme-5010-3:2-1
+Initiator Side Switch Port: stme-5010-3:2-3
+      Number of array LUNs: 1
+
+           Controller Name: ontaptme-fc-cluster-01
+                 LUN Group: 0
+        Array Target Ports: 500601653ea067da
+                 Initiator: 0d
+                Array Name: DGC_LUNZ_1
+   Target Side Switch Port: stme-5010-4:2-1
+Initiator Side Switch Port: stme-5010-4:2-3
+      Number of array LUNs: 1
+~~~~~~~~~~~ output truncated for readability ~~~~~~~~~~~~~~~~~
+8 entries were displayed.
+----
+. ソースアレイがすべてのイニシエータポートで検出されていることを確認します。
++
+[listing]
+----
+cluster::*> storage array config show -array-name DGC_LUNZ_1
+             LUN   LUN
+Node         Group Count                   Array Name       Array Target Port Initiator
+------------ ----- ----- ---------------------------- ----------------------- ---------
+ontaptme-fc-cluster-01
+                 0     1                   DGC_LUNZ_1        500601643ea067da        0c
+                                                             500601653ea067da        0d
+                                                             5006016c3ea067da        0c
+                                                             5006016d3ea067da        0d
+ontaptme-fc-cluster-02
+                 0     1                   DGC_LUNZ_1        500601643ea067da        0c
+                                                             500601653ea067da        0d
+                                                             5006016c3ea067da        0c
+                                                             5006016d3ea067da        0d
+8 entries were displayed.
+----
++
+[NOTE]
+====
+次の出力のワードラップには意味はありません。
+
+====
+. ソースストレージからマッピングされている LUN を表示します。ディスクのプロパティとパスを確認します。
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1 -instance
+                  Disk: DGC-1.9
+        Container Type: unassigned
+            Owner/Home: -  / -
+               DR Home: -
+    Stack ID/Shelf/Bay: -  / -  / -
+                   LUN: 0
+                 Array: DGC_LUNZ_1
+                Vendor: DGC
+                 Model: VRAID
+         Serial Number: 600601603F103100662E70861000E511
+                   UID: 60060160:3F103100:662E7086:1000E511:00000000:00000000:00000000:00000000:00000000:00000000
+                   BPS: 512
+         Physical Size: -
+              Position: present
+Checksum Compatibility: block
+             Aggregate: -
+                  Plex: -
+Paths:
+                               LUN  Initiator Side        Target Side                                                        Link
+Controller         Initiator     ID  Switch Port           Switch Port           Acc Use  Target Port                TPGN    Speed      I/O KB/s          IOPS
+------------------ ---------  -----  --------------------  --------------------  --- ---  -----------------------  ------  -------  ------------  ------------
+ontaptme-fc-cluster-02
+                   0c             0  stme-5010-3:2-4       stme-5010-3:2-2       AO  INU  5006016c3ea067da              2   4 Gb/S             0             0
+ontaptme-fc-cluster-02
+                   0d             0  stme-5010-4:2-4       stme-5010-4:2-2       AO  INU  5006016d3ea067da              2   4 Gb/S             0             0
+ontaptme-fc-cluster-02
+                   0d             0  stme-5010-4:2-4       stme-5010-4:2-1       ANO RDY  500601653ea067da              1   4 Gb/S             0             0
+
+Errors:
+-
+----
+. ソース LUN を表示します。
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+DGC-1.9                   -     -   - LUN     unassigned  -         -
+----
+. ソース LUN を外部としてマークします。
++
+[listing]
+----
+cluster::*> storage disk set-foreign-lun -is-foreign true -disk DGC-1.9
+----
+. ソース LUN が外部としてマークされていることを確認します。
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+DGC-1.9
+----
+. FLI の lun import コマンドではシリアル番号を使用します。すべての外部 LUN とそのシリアル番号を表示します。
++
+[listing]
+----
+cluster::*> storage disk show -container-type foreign -fields serial-number
+disk    serial-number
+------- --------------------------------
+DGC-1.9 600601603F103100662E70861000E511
+----
+. デスティネーションボリュームを作成
++
+[listing]
+----
+cluster::*> vol create -vserver fli -volume fli_vol -aggregate aggr1 -size 2t
+[Job 13888] Job succeeded: Successful
+----
+. ボリュームを確認します。
++
+[listing]
+----
+cluster::*> vol show -vserver fli
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+fli       fli_root     aggr1        online     RW          1GB    972.6MB    5%
+fli       fli_vol      aggr1        online     RW          2TB     1.90TB    5%
+2 entries were displayed.
+----
+. 各ボリュームの fraction_reserveoption を 0 に設定し ' スナップショット・ポリシーを none に設定します
++
+[listing]
+----
+DataMig-cmode::> vol modify -vserver datamig -volume * -fractional-reserve 0 –snapshot-policy none
+Volume modify successful on volume winvol of Vserver datamig.
+----
+. ボリュームの設定を確認します。
++
+[listing]
+----
+DataMig-cmode::> vol show -vserver datamig -volume * -fields fractional-reserve,snapshot-policy
+vservervolumesnapshot-policyfractional-reserve
+-----------------------------------------------
+datamigdatamig_rootnone0%
+datamigwinvolnone0%
+Volume modify successful on volume winvol of Vserver datamig.
+----
+. 既存の Snapshot コピーを削除します。
++
+[listing]
+----
+DataMig-cmode::> set advanced; snap delete –vserver datamig –vol winvol –snapshot * -force true
+1 entry was acted on.
+----
++
+[NOTE]
+====
+FLI 移行では、ターゲット LUN のすべてのブロックが変更されます。FLI 移行前に、ボリュームにデフォルトまたはその他の Snapshot コピーが存在すると、ボリュームがいっぱいになります。FLI 移行前に、ポリシーを変更して既存の Snapshot コピーを削除する必要があります。Snapshot ポリシーは移行後に再度設定できます。
+
+====
++
+[NOTE]
+====
+lun create コマンドは、パーティションオフセットに基づいてサイズとアライメントを検出し、 foreign-disk オプションに従って LUN を作成します。I/O のミスアライメントの詳細については、ネットアップの技術情報アーティクル「 What is an unaligned I/O * ？」を参照してください。また、一部の I/O は常に部分的な書き込みとなるため、ミスアライメントとしてレポートされることに注意してください。この例としては、データベースログがあります。
+
+====
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/What_is_an_unaligned_I%2F%2FO%3F["ミスアライメントされている I/O とは何ですか？"]
+
+. ターゲット LUN を作成します。lun create コマンドは ' パーティション・オフセットに基づいてサイズとアライメントを検出し 'foreign-disk 引数を使用して対応する LUN を作成します
++
+[listing]
+----
+cluster::*> lun create -vserver fli -path /vol/fli_vol/OnlineFLI_LUN -ostype windows_2008 -foreign-disk 600601603F103100662E70861000E511
+
+Created a LUN of size 1t (1099511627776)
+----
+. 新しい LUN を検証します。
++
+[listing]
+----
+cluster::*> lun show -vserver fli
+Vserver   Path                            State   Mapped   Type        Size
+--------- ------------------------------- ------- -------- -------- --------
+fli       /vol/fli_vol/OnlineFLI_LUN      online  unmapped windows_2008  1TB
+----
+. プロトコル FCP の igroup を作成し、ホストイニシエータを追加します。
++
+[listing]
+----
+cluster::*> igroup create -vserver fli -igroup FLI -protocol fcp -ostype windows -initiator 10:00:00:00:c9:e6:e2:79
+----
+. ホストが新しい igroup へのすべてのパスにログインしていることを確認します。
++
+[listing]
+----
+cluster::*> igroup show –vserver fli –igroup FLI
+   Vserver name: fli
+    Igroup name: FLI
+       Protocol: fcp
+     OS Type: Windows
+Portset Binding Igroup: -
+   Igroup UUID: 5c664f48-0017-11e5-877f-00a0981cc318
+          ALUA: true
+    Initiators: 10:00:00:00:c9:e6:e2:77 (logged in)
+10:00:00:00:c9:e6:e2:79 (logged in)
+----
+. デスティネーション LUN をオフラインにします。
++
+[listing]
+----
+cluster::*> lun offline -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
+
+Warning: This command will take LUN "/vol/fli_vol/OnlineFLI_LUN" in Vserver "fli" offline.
+Do you want to continue? {y|n}: y
+----
+. デスティネーション LUN を igroup にマッピングします。
++
+[listing]
+----
+cluster::*> lun map -vserver fli -path /vol/fli_vol/OnlineFLI_LUN -igroup FLI
+----
+. 新しい LUN と外部 LUN のインポート関係を作成します。
++
+[listing]
+----
+cluster::*> lun import create -vserver fli -path /vol/fli_vol/OnlineFLI_LUN -foreign-disk 600601603F103100662E70861000E511
+----
+

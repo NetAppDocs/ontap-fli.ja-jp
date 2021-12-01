@@ -1,0 +1,22 @@
+---
+permalink: san-migration/concept_benchmarks_for_estimating_migration_durations.html 
+sidebar: sidebar 
+keywords: benchmarks, estimating, migration, durations 
+summary: 計画を立てるためには、特定の前提条件に基づいてデータ移行の作業レベルと所要時間を見積もることができます。 
+---
+= 移行時間の見積もりのためのベンチマーク
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+計画を立てるためには、特定の前提条件に基づいてデータ移行の作業レベルと所要時間を見積もることができます。
+
+実際のパフォーマンスを正確に見積もるには、特定の環境における正確なパフォーマンスの値を得るために、異なるサイズのテスト移行を複数実行する必要があります。
+
+[NOTE]
+====
+次のベンチマークは、計画を立てるためのものであり、特定の環境について正確な値を得られるものではありません。
+
+====
+前提条件：ホストの移行にかかる時間は、 LUN が 8 個、データの合計が 2TB のホストの場合で 5 時間です。これらのパラメータから、計画においては 1 時間あたり約 400GB として見積もることができます。

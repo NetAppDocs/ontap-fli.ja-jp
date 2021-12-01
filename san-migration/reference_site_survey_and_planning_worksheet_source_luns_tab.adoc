@@ -1,0 +1,127 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_source_luns_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, source luns tab 
+summary: Site Survey and Planning ワークシートの一部として、ソース LUN の情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートのソース LUN タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、ソース LUN の情報を含むタブを設定する必要があります。
+
+次に ' ソース LUN タブの設定方法の例を示します
+
+|===
+5+| ソース LUN 
+
+
+ a| 
+マスクされた LUN
+
+
+
+ a| 
+ストレージグループ名
+ a| 
+ホスト LUN ID
+ a| 
+アレイ LUN の ID
+ a| 
+シック / シン
+ a| 
+UID
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+0
+ a| 
+30
+ a| 
+厚み（ Thick ）
+ a| 
+60060e801046b96004f2bf460000001e
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+1.
+ a| 
+14
+ a| 
+厚み（ Thick ）
+ a| 
+60060e801046b96004f2bf460000000e
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+2.
+ a| 
+15
+ a| 
+厚み（ Thick ）
+ a| 
+60060e801046b96004f2bf460000000f
+
+|===
+|===
+5+| ソース LUN 
+
+
+ a| 
+すべての LUN 。 2a
+| カスタムプレフィックス 
+
+
+ a| 
+LUN 名
+ a| 
+UID
+ a| 
+開始セクター
+ a| 
+パーティションオフセット（ Partition Offset ）
+ a| 
+
+
+
+| LUN 30  a| 
+ a| 
+ a| 
+368050176
+ a| 
+0
+
+
+
+ a| 
+LUN14
+ a| 
+ a| 
+ a| 
+33619968
+ a| 
+0
+
+
+
+ a| 
+LUN15
+ a| 
+ a| 
+ a| 
+33619968
+ a| 
+0
+
+|===

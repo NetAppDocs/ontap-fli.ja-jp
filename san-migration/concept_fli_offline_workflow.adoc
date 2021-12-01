@@ -1,0 +1,21 @@
+---
+permalink: san-migration/concept_fli_offline_workflow.html 
+sidebar: sidebar 
+keywords: fli, offline, workflow 
+summary: ここでは、 4 つの FLI ワークフローのうちの 1 つである FLI オフラインワークフローの例を示します。 
+---
+= FLI オフラインワークフロー
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ここでは、 4 つの FLI ワークフローのうちの 1 つである FLI オフラインワークフローの例を示します。
+
+このワークフローでは、 HDS AMS2100 アレイをソースアレイとして使用します。オフラインワークフローのタスクは次のとおりです。
+
+. カットオーバーの準備
+. データをインポートする
+. 移行結果の確認（オプション）
+. FLI オフラインの移行後のタスク
+

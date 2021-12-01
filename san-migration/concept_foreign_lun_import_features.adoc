@@ -1,0 +1,25 @@
+---
+permalink: san-migration/concept_foreign_lun_import_features.html 
+sidebar: sidebar 
+keywords: foreign, lun, import, features 
+summary: FLI の機能を使用すると、サードパーティの SAN ストレージから ONTAP システムにデータを移行できます。FLI の移行機能では、さまざまなプロセスやシステムがサポートされます。 
+---
+= Foreign LUN Import の機能
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI の機能を使用すると、サードパーティの SAN ストレージから ONTAP システムにデータを移行できます。FLI の移行機能では、さまざまなプロセスやシステムがサポートされます。
+
+* オンラインおよびオフラインの移行をサポート。
+* オペレーティングシステムに依存しない：ブロックレベルのデータ移行は、ボリュームマネージャやオペレーティングシステムのユーティリティに依存しません。
+* Fibre Channel ファブリックに依存しない： FLI は Brocade および Cisco の FC ファブリックとの完全な互換性を備えています。
+* ほとんどの Fibre Channel ストレージアレイをサポート。サポートされているアレイの一覧については、 Interoperability Matrix を参照してください。
+* 標準のマルチパスと負荷分散をサポート。
+* CLI ベースの管理。
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]

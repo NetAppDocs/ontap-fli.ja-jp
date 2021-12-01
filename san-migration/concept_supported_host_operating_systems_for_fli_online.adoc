@@ -1,0 +1,41 @@
+---
+permalink: san-migration/concept_supported_host_operating_systems_for_fli_online.html 
+sidebar: sidebar 
+keywords: supported, host, operating, systems, fli, online 
+summary: FLI オンラインワークフローは、次のいずれかのオペレーティングシステムを実行しているホストに接続された LUN に使用できます。 
+---
+= FLI オンラインでサポートされているホストオペレーティングシステム
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI オンラインワークフローは、次のいずれかのオペレーティングシステムを実行しているホストに接続された LUN に使用できます。
+
+. Microsoft （リストされているすべてのバージョンのサーバがサポートされています）：
++
+** Windows Server 2008 （ Windows Server フェイルオーバークラスタを含む）
+** Microsoft Hyper-V サーバ 2008
+** Windows Server 2012 （ Windows Server 2012 クラスタを含む）
+** Microsoft Hyper-V Server 2012
+
+
+. VMware ：
++
+** ESXi 5.x のすべてのリリース
+
+
+. Linux ：
++
+** Red Hat Enterprise Linux （ RHEL ） 5.x / 6.x
+
+
+
+
+上記のリストにないホストオペレーティングシステムでは、 FLI オフラインワークフローを使用することを検討してください。
+
+[NOTE]
+====
+ネットアップコントローラのデスティネーションが MetroCluster の場合は、オンラインワークフローを使用しないでください。オンラインインポートの実行中にサイトのフェイルオーバーが発生した場合、ソースアレイへの書き込みパススルーが失敗することがあり、検証エラーが発生してデータが失われる可能性があります。デスティネーションが MetroCluster の場合は、ホスト OS に関係なく、 FLI オフラインプロセスを使用してください。
+
+====

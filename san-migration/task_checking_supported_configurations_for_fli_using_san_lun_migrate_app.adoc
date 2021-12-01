@@ -1,0 +1,23 @@
+---
+permalink: san-migration/task_checking_supported_configurations_for_fli_using_san_lun_migrate_app.html 
+sidebar: sidebar 
+keywords: check, supported configurations, fli, using, san lun migrate app 
+summary: ONTAP 9.9.9..1 以降では、 SAN LUN 移行アプリケーションを使用して、外部ソースアレイを FLI の対象として指定できます。目的の外部アレイが FLI IMT にリストされていない場合は、 SAN LUN 移行アプリケーションを使用できます。 
+---
+= SAN LUN Migrate App を使用した FLI でサポートされる構成の確認
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.9.9..1 以降では、 SAN LUN 移行アプリケーションを使用して、外部ソースアレイを FLI の対象として指定できます。目的の外部アレイが FLI IMT にリストされていない場合は、 SAN LUN 移行アプリケーションを使用できます。
+
+.手順
+. ネットアップサポートサイトにアクセスします。
+. [ カテゴリでフィルタ ] で [ 移行 ] を選択します。
+. [SAN LUN の移行 ] で、 [ アプリのダウンロード ] をクリックします
+. ソースアレイへのブロックアクセスがある FC または iSCSI Linux ホストからアプリケーションを実行します。
++
+外部ソースアレイが認定されている場合は、緑色のチェックマークが表示されます。外部ソースアレイが認定されない場合は、赤い X が表示されます。ご使用のアレイが条件を満たしていない場合は、ネットアップサポートにお問い合わせください。
+
+

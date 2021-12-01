@@ -1,0 +1,31 @@
+---
+permalink: san-migration/concept_foreign_lun_import_concepts.html 
+sidebar: sidebar 
+keywords: foreign, lun, import, concepts 
+summary: 基本的な FLI の概念を理解することで、適切な運用が可能になり、初期設定の手間が省けます。 
+---
+= Foreign LUN Import の概念
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+基本的な FLI の概念を理解することで、適切な運用が可能になり、初期設定の手間が省けます。
+
+* * 外部アレイ *
++
+外部アレイは、 ONTAP を実行していないストレージデバイスです。他社製アレイまたはソースアレイとも呼ばれます。7-Mode から ONTAP への移行の場合、外部アレイは ONTAP 7-Mode を実行しているネットアップ製のアレイになります。
+
+* * Foreign LUN *
++
+外部 LUN とは、サードパーティ製アレイでそのアレイのネイティブディスクフォーマットを使用してホストされているユーザデータを含む LUN です。
+
+* * FLI LUN 関係 *
++
+FLI LUN 関係は、データインポート用にソースストレージとデスティネーションストレージの間で確立された永続的なペアリングです。ソースエンドポイントとデスティネーションエンドポイントは LUN です。
+
+* * lun import *
++
+LUN インポートは、外部 LUN のデータをサードパーティ形式からネイティブネットアップ形式の LUN に転送するプロセスです。
+
+

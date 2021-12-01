@@ -1,0 +1,35 @@
+---
+permalink: san-migration/task_multipath_verification_for_windows_hosts.html 
+sidebar: sidebar 
+keywords: multipath, verification, windows hosts 
+summary: Foreign LUN Import （ FLI ）プロセスの一環として、マルチパスがホストで正しく構成されて機能していることを確認する必要があります。 
+---
+= Windows ホストのマルチパスの検証
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import （ FLI ）プロセスの一環として、マルチパスがホストで正しく構成されて機能していることを確認する必要があります。
+
+Windows ホストについて、次の手順を実行します。
+
+.手順
+. ディスクの管理を開きます。
++
+.. Windows デスクトップで、 [ スタート ] ボタンをクリックします。
+.. [ 検索の開始 ] フィールドに diskmgmt.msc と入力します
+.. [ プログラム ] リストで、 [`diskmgmt] をクリックします。
+
+
+. 複数のパスを確認する各ディスクを右クリックし、 * プロパティ * をクリックします。
+. MPIO タブの MPIO ポリシーの選択リストで、アクティブなすべてのパスをクリックします。
++
+image::../media/windows_host_1.png[Windows MPIO のプロパティ]
+
++
+コマンドラインを使用してマルチパスを検証するには、次の手順を実行します。
+
+. Windows のコマンドプロンプトを開きます。
+. mpclaim.exe -v c ： \multipathconfig.txt を実行して、マルチパス構成を取得します。
+

@@ -1,0 +1,90 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_hba_and_zone_information_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, hba and zone information tab 
+summary: Site Survey and Planning ワークシートの一部として、 HBA とゾーンの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの HBA and Zone Information タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、 HBA とゾーンの情報を含むタブを設定する必要があります。
+
+次の例は 'HBA およびゾーン情報タブを設定する方法を示しています
+
+[cols="4*"]
+|===
+4+| ファブリックの詳細 
+
+
+ a| 
+ホスト名
+ a| 
+説明
+ a| 
+WWPN
+ a| 
+ファブリック名
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+HBA0
+ a| 
+21 ： 00 ： 00 ： 24 ： ff ： xx ： xx
+ a| 
+本番環境 A
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+HBA1
+ a| 
+21 ： 00 ： 00 ： 24 ： ff ： xx ： xx
+ a| 
+本番環境 B
+
+|===
+[cols="4*"]
+|===
+4+| ファブリックの詳細 
+
+
+ a| 
+VSAN / ドメイン
+ a| 
+ポート番号
+ a| 
+移行前のゾーンメンバーシップ
+ a| 
+移行後のゾーンメンバーシップ
+
+
+
+ a| 
+10.
+ a| 
+FC2 / 3
+ a| 
+rx21_AMS2100
+ a| 
+rx21_flicDOT
+
+
+
+ a| 
+10.
+ a| 
+FC2 / 3
+ a| 
+rx21_AMS2100
+ a| 
+rx21_flicDOT
+
+|===

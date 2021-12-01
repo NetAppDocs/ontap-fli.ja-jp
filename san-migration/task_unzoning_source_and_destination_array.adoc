@@ -1,0 +1,89 @@
+---
+permalink: san-migration/task_unzoning_source_and_destination_array.html 
+sidebar: sidebar 
+keywords: unzone, source, destination, array 
+summary: 移行と検証がすべて完了したら、ソースアレイとデスティネーションアレイのゾーニングを解除できます。 
+---
+= ソースアレイとデスティネーションアレイのゾーニングを解除します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行と検証がすべて完了したら、ソースアレイとデスティネーションアレイのゾーニングを解除できます。
+
+ソースアレイとデスティネーションアレイのゾーニングを解除するには、ソースストレージからデスティネーションへのゾーンを両方のファブリックから削除します。
+
+Brocade ファブリックの例
+
+.手順
+. ファブリック A のゾーンセットからゾーンを削除します
++
+[listing]
+----
+cfgDelete "PROD_LEFT", "ZONE_AMS2100_cDOT_Initiator_fabA"
+zoneDelete "ZONE_AMS2100_cDOT_Initiator_fabA"
+----
+. ファブリック A でゾーンセットをアクティブにします
++
+[listing]
+----
+cfgEnable "PROD_LEFT"
+cfgSave
+----
+. ファブリック B のゾーンセットからゾーンを削除します
++
+[listing]
+----
+cfgDelete "PROD_RIGHT", "ZONE_AMS2100_cDOT_Initiator_fabB"
+zoneDelete "ZONE_AMS2100_cDOT_Initiator_fabA"
+----
+. ファブリック B でゾーンセットをアクティブにします
++
+[listing]
+----
+cfgEnable "PROD_RIGHT"
+cfgSave
+----
+
+
+Cisco ファブリックの例
+
+.手順
+. ファブリック A のゾーンセットからゾーンを削除します
++
+[listing]
+----
+conf t
+zoneset name PROD_LEFT vsan 10
+no member ZONE_AMS2100_cDOT_Initiator_fabA
+no zone name ZONE_AMS2100_cDOT_Initiator_fabA vsan 10
+exit
+----
+. ファブリック A でゾーンセットをアクティブにします
++
+[listing]
+----
+zoneset activate name PROD_LEFT vsan 10
+end
+copy running-config startup-config
+----
+. ファブリック B のゾーンセットからゾーンを削除します
++
+[listing]
+----
+conf t
+zoneset name PROD_RIGHT vsan 10
+no member ZONE_AMS2100_cDOT_Initiator_fabB
+no zone name ZONE_AMS2100_cDOT_Initiator_fabB vsan 10
+exit
+----
+. ファブリック B でゾーンセットをアクティブにします
++
+[listing]
+----
+zoneset activate name PROD_RIGHT vsan 10
+end
+Copy running-config startup-config
+----
+

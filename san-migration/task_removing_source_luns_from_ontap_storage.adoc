@@ -1,0 +1,32 @@
+---
+permalink: san-migration/task_removing_source_luns_from_ontap_storage.html 
+sidebar: sidebar 
+keywords: remove, source, luns, ontap, storage 
+summary: 移行の完了後に ONTAP ストレージからソース LUN を削除する手順を次に示します。 
+---
+= ONTAP ストレージからのソース LUN の削除
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行の完了後に ONTAP ストレージからソース LUN を削除する手順を次に示します。
+
+
+NOTE: このタスクの例では、 _HDS AMS2100 アレイを使用します。実際のタスクは、使用しているアレイやアレイ GUI のバージョンによって異なる場合があります。
+
+.手順
+. Hitachi Storage Navigator Modular にログインします。
+. 計画フェーズで作成した ONTAP ホストグループを選択し、 * ホストグループの編集 * を選択します。
++
+image::../media/remove_source_luns_from_ontap_storage_1.png[ホストグループ]
+
+. [* Ports] を選択し、 [* Forced set] を選択して選択したすべてのポートに適用します。
++
+image::../media/remove_source_luns_from_ontap_storage_2.png[ホストグループを編集します]
+
+. 割り当てられた論理 LUN から移行されたホスト LUN を選択します。Source LUNs ワークシートに記載されている各ホストの LUN 名を使用します。ここで、 Windows Server 2012 、 RHEL 5.10 、 ESXi 5.5 ホストの LUN を選択し、 * Remove * を選択します。
++
+image::../media/remove_source_luns_from_ontap_storage_3.png[ONTAP ストレージからソース LUN を削除 3.]
+
+

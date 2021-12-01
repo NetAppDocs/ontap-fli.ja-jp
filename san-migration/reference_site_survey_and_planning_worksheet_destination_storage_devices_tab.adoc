@@ -1,0 +1,163 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_destination_storage_devices_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, destination storage devices tab 
+summary: Site Survey and Planning ワークシートの一部として、移行先ストレージデバイスの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの Destination Storage Devices タブを参照してください
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行先ストレージデバイスの情報を含むタブを設定する必要があります。
+
+[cols="6*"]
+|===
+6+| ストレージシステム 
+
+
+ a| 
+クラスタ名
+ a| 
+IP アドレス
+ a| 
+アレイモード
+ a| 
+ONTAP
+ a| 
+Vserver
+ a| 
+ポートタイプ（ Port Type ）
+
+
+
+ a| 
+clustered Data ONTAP
+ a| 
+10.x.x.x
+ a| 
+FAS8080
+ a| 
+8.3.1
+ a| 
+データマート
+ a| 
+ターゲット
+
+
+
+ a| 
+clustered Data ONTAP
+ a| 
+10.x.x.x
+ a| 
+FAS8080
+ a| 
+8.3.1
+ a| 
+データマート
+ a| 
+ターゲット
+
+
+
+ a| 
+clustered Data ONTAP
+ a| 
+10.x.x.x
+ a| 
+FAS8080
+ a| 
+8.3.1
+ a| 
+DataMig-01
+ a| 
+イニシエータ
+
+
+
+ a| 
+clustered Data ONTAP
+ a| 
+10.x.x.x
+ a| 
+FAS8080
+ a| 
+8.3.1
+ a| 
+DataMig-01
+ a| 
+イニシエータ
+
+|===
+[cols="5*"]
+|===
+5+| ストレージシステム 
+
+
+ a| 
+ポート名
+ a| 
+LIF 名
+ a| 
+WWPN
+ a| 
+ファブリック名
+ a| 
+ターゲットタイプ（ Target Type ）
+
+
+
+ a| 
+0c
+ a| 
+miglif1
+ a| 
+20 ： 01 ： 00 ： a0 ： 98 ： 2f ： xx ： xx
+ a| 
+本番環境 A
+ a| 
+ターゲット
+
+
+
+ a| 
+0d
+ a| 
+miglif2
+ a| 
+20 ： 01 ： 00 ： a0 ： 98 ： 2f ： xx ： xx
+ a| 
+本番環境 B
+ a| 
+ターゲット
+
+
+
+ a| 
+0a
+ a| 
+該当なし
+ a| 
+50 ： 0a ： 09 ： 81 ： 00 ： xx ： xx ： xx
+ a| 
+本番環境 A
+ a| 
+ターゲット
+
+
+
+ a| 
+0 億
+ a| 
+該当なし
+ a| 
+50 ： 0a ： 09 ： 81 ： 00 ： xx ： xx ： xx
+ a| 
+本番環境 B
+ a| 
+ターゲット
+
+|===
+次に、 Destination Storage Devices タブの設定例を示します。

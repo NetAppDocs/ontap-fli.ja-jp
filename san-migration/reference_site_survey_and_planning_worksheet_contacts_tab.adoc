@@ -1,0 +1,35 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_contacts_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, contacts tab 
+summary: Site Survey and Planning ワークシートの一部として、移行プロジェクトの担当者情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの連絡先タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行プロジェクトの担当者情報を含むタブを設定する必要があります。
+
+次に、 [ 連絡先 ] タブの設定方法の例を示します。
+
+[cols="6*"]
+|===
+6+| 移行プロジェクトの担当者 
+
+
+ a| 
+リソース名
+ a| 
+組織
+ a| 
+プロジェクトロール
+ a| 
+会社の電話番号
+ a| 
+携帯電話
+ a| 
+E メール
+
+|===

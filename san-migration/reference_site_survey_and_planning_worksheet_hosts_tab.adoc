@@ -1,0 +1,82 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_hosts_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, hosts tab 
+summary: Site Survey and Planning ワークシートの一部として、移行プロジェクトのホスト情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの Hosts タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行プロジェクトのホスト情報を含むタブを設定する必要があります。
+
+次に、 Hosts タブの設定方法の例を示します。
+
+[cols="8*"]
+|===
+8+| ホスト 
+
+
+ a| 
+* 電流 *
+ a| 
+* ネットアップ推奨 *
+
+
+
+ a| 
+ホスト名
+ a| 
+ドライバ
+ a| 
+ファームウェア
+ a| 
+HUK の場合
+ a| 
+MPIO
+ a| 
+SnapDrive
+ a| 
+SnapManager
+ a| 
+ホットフィックス
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+dm-rx200s6-22
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+dm-rx200s6-20
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===

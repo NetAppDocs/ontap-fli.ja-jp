@@ -1,0 +1,23 @@
+---
+permalink: san-migration/concept_enablement_for_non_supported_luns_interoperability.html 
+sidebar: sidebar 
+keywords: enablement, non-supported, luns 
+summary: ソースアレイのホスト OS 、 HBA 、スイッチ、および ONTAP アレイと最終的な構成がすべてサポートされていることを Interoperability Matrix で確認することが重要です。 
+---
+= サポートされていない LUN の有効化
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソースアレイのホスト OS 、 HBA 、スイッチ、および ONTAP アレイと最終的な構成がすべてサポートされていることを Interoperability Matrix で確認することが重要です。
+
+ここでは、これらのユースケースについて説明します。
+
+* iSCSI LUN を FC LUN としてインポートする
+* 移行した LUN を AFF プラットフォームに移動しています
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]

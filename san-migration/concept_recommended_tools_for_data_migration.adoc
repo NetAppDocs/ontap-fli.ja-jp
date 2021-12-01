@@ -1,0 +1,56 @@
+---
+permalink: san-migration/concept_recommended_tools_for_data_migration.html 
+sidebar: sidebar 
+keywords: recommended, tools, data, migration 
+summary: サービスツールは、リモートからのデータ収集、構成、ストレージ管理タスクなどの有用な機能を実行するための標準化された方法を提供します。 
+---
+= データ移行に推奨されるツール
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+サービスツールは、リモートからのデータ収集、構成、ストレージ管理タスクなどの有用な機能を実行するための標準化された方法を提供します。
+
+次のサービスツールを使用して、データを収集および解析します。
+
+* * OneCollect *
++
+NetApp Active IQ OneCollect は Web ベースの UI または CLI で使用でき、 SAN 環境と NAS 環境の両方で、ストレージ、ホスト、ファブリック、スイッチからデータを収集できます。収集されたデータは、トラブルシューティング、解決策検証、データ移行、アップグレード評価に使用されます。環境に関連する診断コンテンツをネットアップに送信して分析を行ったり、オンプレミスで分析したりすることができます。
+
+* * ネットアップのデータ移行 Solaris Relabeler *
++
+Solaris Relabeler は、移行後に Volume Table Of Contents （ VTOC ）ディスクの ASCII ラベルを更新する機能を備えたコマンドラインユーティリティです。
+
++
+最初の VTOC ディスク初期化ルーチンで、 Solaris format コマンドによってディスクに対する SCSI 照会が実行され、ディスクラベルにベンダー固有の情報（メーカー、製品、リビジョン）が書き込まれます。以降の照会は、いずれも実際のデバイスではなくディスクラベルに対して実行されます。ブロックレベルの移行では、このディスクラベルが新しいディスクにコピーされ、システムツールとログには古い SCSI 照会データが引き続き表示されます。Relabeler を実行すると、移行後のディスクが新しい照会データで更新されます。
+
+
+
+FLI 移行プロジェクトに役立つその他のツールとユーティリティを次に示します。
+
+* * Interoperability Matrix *
++
+Interoperability Matrix Tool （ IMT ）は、ネットアップ、 FlexArray 、および他社製ソフトウェアコンポーネントの相互運用性チェックに使用するネットアップの Web ベースユーティリティです。
+
+* * ONTAP システム・マネージャ *
++
+ONTAP System Manager は、グラフィカルインターフェイスを使用して NetApp FAS システムのリモートストレージを管理できるツールです。
+
+* * OnCommand Workflow Automation *
++
+WFA は、ストレージワークフローを作成し、プロビジョニング、移行、運用停止、クローニングなどのストレージ管理タスクを自動化するためのソフトウェア解決策です。
+
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/site/tools["ネットアップのツール"]
+
+http://mysupport.netapp.com/NOW/download/tools/ndcp/["ネットアップのツール： Data Center Planner"]
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61372["ネットアップのマニュアル： OnCommand System Manager （現在のリリース）"]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61550["ネットアップのマニュアル： OnCommand Workflow Automation （現在のリリース）"]

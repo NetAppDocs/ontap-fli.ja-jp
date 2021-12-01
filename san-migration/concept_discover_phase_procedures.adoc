@@ -1,0 +1,15 @@
+---
+permalink: san-migration/concept_discover_phase_procedures.html 
+sidebar: sidebar 
+keywords: discover, phase, data, collection, procedures 
+summary: 調査フェーズでは、移行の計画と実行に必要なお客様の環境の情報を収集します。 
+---
+= 調査フェーズのデータ収集手順
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+調査フェーズでは、移行の計画と実行に必要なお客様の環境の情報を収集します。
+
+データ収集フェーズで Active IQ OneCollect を使用詳細については、『 Active IQ OneCollect 』を参照してください https://mysupport.netapp.com/site/tools["ドキュメント"]。

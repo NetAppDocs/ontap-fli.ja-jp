@@ -1,0 +1,26 @@
+---
+permalink: san-migration/task_create_a_post_migration_snapshot_copy.html 
+sidebar: sidebar 
+keywords: Create, post-migration, snapshot, copies 
+summary: 移行後の Snapshot コピーを作成しておくと、あとで必要に応じてリバートできます。 
+---
+= 移行後の Snapshot コピーを作成する
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行後の Snapshot コピーを作成しておくと、あとで必要に応じてリバートできます。
+
+.ステップ
+. 移行後の Snapshot コピーを作成するには、「 snap create 」コマンドを実行します。
++
+[listing]
+----
+DataMig-cmode::> snap create -vserver datamig -volume winvol -snapshot post-migration
+
+DataMig-cmode::> snap create -vserver datamig -volume linuxvol -snapshot post-migration
+
+DataMig-cmode::> snap create -vserver datamig -volume esxvol -snapshot post-migration
+----
+

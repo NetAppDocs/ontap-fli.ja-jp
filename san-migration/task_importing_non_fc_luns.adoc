@@ -1,0 +1,30 @@
+---
+permalink: san-migration/task_importing_non_fc_luns.html 
+sidebar: sidebar 
+keywords: import, non-fc luns 
+summary: Foreign LUN Import （ FLI ）では FlexArray テクノロジを利用して外部 LUN をマウントするため、ソースアレイへの接続には FCP しか使用できません。FLI では FC LUN のみがサポートされます。ただし、 iSCSI LUN をインポートできる回避策があります。iSCSI LUN を FC LUN としてインポートするため、他の FLI オンラインの 7-Mode から ONTAP へのワークフローとは異なり、このワークフロー全体で中断時間が発生します。 
+---
+= FC 以外の LUN をインポートする
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import （ FLI ）では FlexArray テクノロジを利用して外部 LUN をマウントするため、ソースアレイへの接続には FCP しか使用できません。FLI では FC LUN のみがサポートされます。ただし、 iSCSI LUN をインポートできる回避策があります。iSCSI LUN を FC LUN としてインポートするため、他の FLI オンラインの 7-Mode から ONTAP へのワークフローとは異なり、このワークフロー全体で中断時間が発生します。
+
+iSCSI LUN を FC LUN としてインポートするため、他の FLI オンラインの 7-Mode から ONTAP へのワークフローとは異なり、このワークフロー全体で中断時間が発生します。
+
+.手順
+. ソースアレイで、目的の iSCSI LUN の iSCSI igroup へのマッピングを解除する必要があります。
+. ソースアレイで、 LUN を FC igroup にマッピングし、デスティネーションアレイの WWPN が igroup に追加されていることを確認します。
+. LUN をインポートします。
+. LUN のインポートが完了したら、新しい iSCSI igroup を作成してホストを追加します。
+. ホストで、 LUN を再スキャンします。
++
+本ドキュメントに記載されている製品や機能のバージョンがお客様の環境でサポートされるかどうかについては、ネットアップサポートサイトで Interoperability Matrix Tool （ IMT ）を参照してください。NetApp IMT には、ネットアップがサポートする構成を構築するために使用できる製品コンポーネントやバージョンが定義されています。サポートの可否は、お客様の実際のインストール環境が公表されている仕様に従っているかどうかによって異なります。
+
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]

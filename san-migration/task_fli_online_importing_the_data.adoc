@@ -1,0 +1,28 @@
+---
+permalink: san-migration/task_fli_online_importing_the_data.html 
+sidebar: sidebar 
+keywords: fli online, import, data 
+summary: ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。 
+---
+= FLI オンライン：データのインポート
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。
+
+.手順
+. 移行のインポートを開始します。
++
+[listing]
+----
+cluster::*> lun import start -vserver fli_72C -path /vol/flivol/72Clun1
+----
+. FLI のステータスを表示します。
++
+[listing]
+----
+cluster::*> lun import show -vserver fli_72C -path /vol/flivol/72Clun1
+----
+

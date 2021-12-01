@@ -1,0 +1,15 @@
+---
+permalink: san-migration/concept_fli_offline_preparation_for_cutover.html 
+sidebar: sidebar 
+keywords: fli, offline, preparation, cutover 
+summary: Foreign LUN Import （ FLI ）の移行前の準備として、ホストとソース LUN のパスを検証します。ホストがリブートしたら、移行に備えてシャットダウンします。 
+---
+= FLI オフライン：カットオーバーの準備
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import （ FLI ）の移行前の準備として、ホストとソース LUN のパスを検証します。ホストがリブートしたら、移行に備えてシャットダウンします。
+
+移行と修正が完了したら、ホストを稼働状態にして新しいデスティネーションストレージに接続し、エンドユーザがアプリケーションを検証できるようにします。

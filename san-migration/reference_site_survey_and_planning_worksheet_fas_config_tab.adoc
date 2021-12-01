@@ -1,0 +1,110 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_fas_config_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, fas config tab 
+summary: Site Survey and Planning ワークシートの一部として、 FAS 設定の情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの FAS 設定タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、 FAS 設定の情報を含むタブを設定する必要があります。
+
+次に、 FAS 設定タブの設定方法の例を示します。
+
+|===
+| クラスタ名 | クラスタ管理 IP アドレス | クラスタ管理クレデンシャルの有無 2+| ONTAP システムマネージャホスト 
+
+
+|  |  |  | * IP アドレス * | * 使用可能な資格情報 * 
+
+
+|  |  |  |  |  
+|===
+|===
+6+| ネットワークポート 
+
+
+| ノード | Interface Name の略 | ポートタイプ | ポート速度 | VLAN 名 / ID | IFGRP 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+|===
+| SVM 名 | を入力します | プロトコル | アグリゲート | SVM ルートボリューム 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+|===
+| SVM | ボリューム | アグリゲート | サイズ | SAN 
+
+
+|  |  |  | * LUN 名 * | * LUN サイズ * 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+|===
+6+| SVM ネットワークインターフェイス 
+
+
+| SVM | Interface Name の略 | インターフェイスロール | IP アドレス / ネットマスク | ホームノード / ホームポート | フェイルオーバーグループ 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+|===
+6+| SVM FCP ターゲットポート 
+
+
+| SVM | FCP ポート名 | WWPN | WWNN | ホームノード | ホームポート 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+|===
+6+| ノード FCP イニシエータポート 
+
+
+| ノード名 | FCP ポート名 | WWPN | WWN | ホームノード | ホームポート 
+
+
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===

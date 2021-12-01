@@ -1,0 +1,63 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_switches_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, switches tab 
+summary: Site Survey and Planning ワークシートの一部として、移行のスイッチ情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートのスイッチタブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行のスイッチ情報を含むタブを設定する必要があります。
+
+次に、 Switches タブの設定方法の例を示します。
+
+|===
+8+| スイッチ 
+
+
+ a| 
+最新
+ a| 
+ネットアップを推奨します
+
+
+
+ a| 
+ホスト名
+ a| 
+IP アドレス
+ a| 
+ベンダー
+ a| 
+モデル
+ a| 
+ファブリック名
+ a| 
+VSAN / ドメイン
+ a| 
+ファームウェア
+ a| 
+ファームウェア
+
+
+
+ a| 
+C9506-1-A
+ a| 
+10.x.x.x
+ a| 
+シスコ
+ a| 
+9506
+ a| 
+本番環境 A
+ a| 
+10.
+ a| 
+3.3 （ 5a ）
+ a| 
+
+|===

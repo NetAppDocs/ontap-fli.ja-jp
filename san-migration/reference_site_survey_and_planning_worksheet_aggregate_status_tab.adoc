@@ -1,0 +1,35 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_aggregate_status_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning, worksheet, aggregate status tab 
+summary: Site Survey and Planning ワークシートの一部として、アグリゲートステータスの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートのアグリゲートステータスタブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、アグリゲートステータスの情報を含むタブを設定する必要があります。
+
+次の例は、 Aggregate Status タブの設定方法を示しています。
+
+[cols="6*"]
+|===
+6+| ネットアップアグリゲート情報 
+
+
+ a| 
+コントローラ
+ a| 
+アグリゲート
+ a| 
+合計サイズ（ GB ）
+ a| 
+使用容量（ GB ）
+ a| 
+使用可能容量（ GB ）
+ a| 
+前のバージョン（ Previous to Build Out ）
+
+|===

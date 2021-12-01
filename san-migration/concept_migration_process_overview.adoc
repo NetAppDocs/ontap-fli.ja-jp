@@ -1,0 +1,17 @@
+---
+permalink: san-migration/concept_migration_process_overview.html 
+sidebar: sidebar 
+keywords: migration, process, overview 
+summary: FLI 移行プロセスは、環境調査、分析、計画、実行、検証の 5 つのフェーズからなるデータ移行手法です。 
+---
+= 移行プロセスの概要
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI 移行プロセスは、環境調査、分析、計画、実行、検証の 5 つのフェーズからなるデータ移行手法です。
+
+image::../media/migration_overview_1.png[5 つのフェーズからなる移行手法]
+
+これらのフェーズは、移行プロセスのどの段階で一般的なタスクが実行されるかを特定するのに役立つ、一般的なフレームワークとなります。このセクションのグラフでは、主要なコンポーネントであるホスト、ファブリック、デスティネーションストレージ、ソースストレージの 4 つで実行できるタスクを並べて示します。

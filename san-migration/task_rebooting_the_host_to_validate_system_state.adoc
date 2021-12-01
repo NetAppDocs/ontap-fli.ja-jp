@@ -1,0 +1,21 @@
+---
+permalink: san-migration/task_rebooting_the_host_to_validate_system_state.html 
+sidebar: sidebar 
+keywords: reboot, host, validate, system state 
+summary: 移行ホストの設定に変更を加える前に、移行ホストをリブートします。移行を進める前に、システムが正常な状態であることを確認します。 
+---
+= ホストをリブートしてシステム状態を検証
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行ホストの設定に変更を加える前に、移行ホストをリブートします。移行を進める前に、システムが正常な状態であることを確認します。
+
+リブート後もサーバの設定が初期状態のまま維持されていることを確認するには、次の手順を実行します。
+
+.手順
+. 開いているすべてのアプリケーションをシャットダウンします。
+. ホストをリブートします。
+. ログを参照してエラーがないか確認します。
+

@@ -1,0 +1,152 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_source_storage_devices_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, source storage devices tab 
+summary: Site Survey and Planning ワークシートの一部として、移行元のソースストレージデバイスの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートのソースストレージデバイスタブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行元のソースストレージデバイスの情報を含むタブを設定する必要があります。
+
+次に ' ソース・ストレージ・デバイス・タブの設定方法の例を示します
+
+|===
+5+| ストレージシステム 
+
+
+ a| 
+アレイ名
+ a| 
+IP アドレス
+ a| 
+ベンダー
+ a| 
+アレイモデル
+ a| 
+マイクロコード FW/ONTAP
+
+
+
+ a| 
+AMS2100
+ a| 
+10.x.x.x
+ a| 
+日立
+ a| 
+AMS 2100
+ a| 
+0893/B-X
+
+
+
+ a| 
+AMS2100
+ a| 
+10.x.x.x
+ a| 
+日立
+ a| 
+AMS 2100
+ a| 
+0893/B-X
+
+
+
+ a| 
+AMS2100
+ a| 
+10.x.x.x
+ a| 
+日立
+ a| 
+AMS 2100
+ a| 
+0893/B-X
+
+
+
+ a| 
+AMS2100
+ a| 
+10.x.x.x
+ a| 
+日立
+ a| 
+AMS 2100
+ a| 
+0893/B-X
+
+|===
+|===
+5+| ストレージシステム 
+
+
+ a| 
+コントローラ / ノード
+ a| 
+ポート名
+ a| 
+WWPN
+ a| 
+ファブリック名
+ a| 
+ターゲットタイプ（ Target Type ）
+
+
+
+ a| 
+コントローラ 0
+ a| 
+0a
+ a| 
+50060E80xxxxxxxx
+ a| 
+本番ファブリック A
+ a| 
+ソース
+
+
+
+ a| 
+コントローラ 0
+ a| 
+0E
+ a| 
+50060E80xxxxxxxx
+ a| 
+本番ファブリック B
+ a| 
+ソース
+
+
+
+ a| 
+コントローラ 1
+ a| 
+1A
+ a| 
+50060E80xxxxxxxx
+ a| 
+本番ファブリック A
+ a| 
+ソース
+
+
+
+ a| 
+コントローラ 1
+ a| 
+1E
+ a| 
+50060E80xxxxxxxx
+ a| 
+本番ファブリック A
+ a| 
+ソース
+
+|===

@@ -1,0 +1,30 @@
+---
+permalink: san-migration/concept_analyze_phase_procedures.html 
+sidebar: sidebar 
+keywords: analyze, phase, imt, best practices 
+summary: 分析フェーズでは、移行作業に進む前に対処する必要がある項目について調べます。ホストの構成情報を、 NetApp Interoperability Matrix （ IMT ）に記載されているサポート対象の構成と比較する必要があります。 
+---
+= 分析フェーズの IMT のベストプラクティス
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+分析フェーズでは、移行作業に進む前に対処する必要がある項目について調べます。ホストの構成情報を、 NetApp Interoperability Matrix （ IMT ）に記載されているサポート対象の構成と比較する必要があります。
+
+IMT は Web ベースのユーティリティで、ネットアップが認定した他社の製品やコンポーネントと連携するネットアップ製品の構成に関する情報を検索できます。IMT には、ネットアップのサポート対象構成と認定構成の両方が含まれていますサポート対象構成とはネットアップが動作確認を行った構成で、認定構成とは、ネットアップのコンポーネントと連携することをサードパーティが確認した構成のことです。
+
+
+
+== IMT のベストプラクティス
+
+* 計画ワークシートの「 Switches and Hosts 」セクションに、必要なソフトウェアとアップグレードに関する NetApp IMT の推奨事項を入力します。
+* 最初に、 ONTAP OS 、プロトコル、 CF モードなどの静的な情報を IMT に入力します。次に、 Site Survey をフィルタガイドとして使用して、ホスト OS 、ボリュームマネージャ、 HBA の情報を入力します。
+* 具体的な情報を入力しすぎると結果が返されません。複数の結果が返されるようにして、その中から最適なものを選択することを推奨します。
+* ホスト HBA は、 OEM パーツ番号で報告されることがあり、 IMT に入力する前に相互参照する必要があります。
+* 各ホストについて、 IMT でサポートされるかどうかを確認します。
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["ネットアップの相互運用性"]

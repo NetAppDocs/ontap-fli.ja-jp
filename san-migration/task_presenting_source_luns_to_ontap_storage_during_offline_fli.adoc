@@ -1,0 +1,19 @@
+---
+permalink: san-migration/task_presenting_source_luns_to_ontap_storage_during_offline_fli.html 
+sidebar: sidebar 
+keywords: present, source luns, ontap storage, fli 
+summary: オフライン FLI プロセスの一環として、ソース LUN を ONTAP ストレージに提供する必要があります。 
+---
+= FLI での ONTAP ストレージへのソース LUN の提供
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オフライン FLI プロセスの一環として、ソース LUN を ONTAP ストレージに提供する必要があります。
+
+.手順
+. ソースアレイにログインします。
+. 計画フェーズで作成したホストグループにネットアップイニシエータを追加します。
+. 使用可能な論理 LUN から移行する必要があるホスト LUN を選択します。Site Survey and Planning ワークシートのソース LUN のセクションに記載されている各ホストの LUN 名を使用します。
+

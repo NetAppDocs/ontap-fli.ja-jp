@@ -1,0 +1,29 @@
+---
+permalink: san-migration/reference_host_remediation.html 
+sidebar: sidebar 
+keywords: host remediation 
+summary: ホストの修正は、移行の種類に応じて、移行と並行して実行する場合（ Foreign LUN Import オンラインと 7-Mode から ONTAP への移行）と移行の完了後に実行する場合（ Foreign LUN Import オフライン）があります。 
+---
+= ホストの修正
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ホストの修正は、移行の種類に応じて、移行と並行して実行する場合（ Foreign LUN Import オンラインと 7-Mode から ONTAP への移行）と移行の完了後に実行する場合（ Foreign LUN Import オフライン）があります。
+
+修正手順はホスト OS ごとに異なります。それぞれの移行に固有の手順については、ギャップ分析を行って計画フェーズと分析フェーズで情報をまとめ、ネットアップやベンダーの該当するドキュメントを参照してください。
+
+[NOTE]
+====
+FLI では、 7MTT と同じ更新手順を使用します。そのため、それぞれで別々に手順を文書化するのではなく、同じ修正ドキュメントを利用することを推奨します。
+
+====
+[NOTE]
+====
+CAW の修正には、 ESXi CAW / ATS の修正プロセスを使用します。
+
+====
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/index.html["SAN ホストの移行および修復"]

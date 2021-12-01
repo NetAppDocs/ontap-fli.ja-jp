@@ -1,0 +1,17 @@
+---
+permalink: san-migration/concept_fli_offline_post_migration_tasks.html 
+sidebar: sidebar 
+keywords: fli, offline, post-migration, tasks 
+summary: 移行後のタスクとして、まだ実行していない未処理のサーバの修正を実行します。 
+---
+= FLI オフラインの移行後のタスク
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行後のタスクとして、まだ実行していない未処理のサーバの修正を実行します。
+
+他社製ソフトウェアを削除し、ネットアップソフトウェアをインストールして設定を行い、ホストを起動してネットアップの LUN にアクセスします。特定のホストタイプの移行後の修正の例については、各トピック「ホストの修正」を参照してください。
+
+ログを参照してエラーがないかを確認し、パスを確認し、アプリケーションのテストを実施して、移行が正常に完了したことを確認します。

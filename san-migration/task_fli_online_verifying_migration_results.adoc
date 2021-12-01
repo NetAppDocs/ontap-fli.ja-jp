@@ -1,0 +1,65 @@
+---
+permalink: san-migration/task_fli_online_verifying_migration_results.html 
+sidebar: sidebar 
+keywords: fli online, verify, migration, results 
+summary: 検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。 
+---
+= FLI オンライン：移行結果の確認
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。
+
+検証ジョブを開始して、ソース LUN とデスティネーション LUN を比較します。検証の進捗を監視します。検証セッション中は、検証対象の LUN をオフラインにする必要があります。ソース LUN とデスティネーション LUN をブロック単位で比較するので、検証セッションには時間がかかることがあります。検証は必須ではありませんが、インポートプロセスに問題がないことを確認するために、インポート / 移行された LUN の一部を検証することを推奨します。これらの検証は、テスト移行で実行される検証に加えて行われます。
+
+[NOTE]
+====
+このプロセスはシステムの停止を伴います。
+
+====
+[NOTE]
+====
+LUN をオンラインに戻す前に、 lun import verify を明示的に停止する必要があります。そうしないと、 LUN のオンライン化に失敗します。次の CLI 出力を参照してください。
+
+====
+.手順
+. 検証する LUN をオフラインにします。< ここから中断時間が始まります >
++
+[listing]
+----
+cluster::*> lun offline -vserver fli_72C -path /vol/flivol/72Clun1
+Warning: This command will take LUN "/vol/flivol/72Clun1" in Vserver "fli_72C" offline.
+Do you want to continue? {y|n}: y
+----
+. LUN の検証を開始します。
++
+[listing]
+----
+lun import verify start -vserver fli_72C -path /vol/flivol/72Clun1
+----
+. LUN 検証のステータスを表示します。
++
+[listing]
+----
+ontaptme-fc-cluster::*> lun import show -vserver fli_72C -path /vol/flivol/72Clun1
+vserver foreign-disk   path                operation admin operational percent
+                                         in progress state state       complete
+-------------------------------------------------------------------------------
+fli_72C D0i1E+G8Wg6m   /vol/flivol/72Clun1 verify    started
+                                                                        9
+----
+. LUN の検証を停止します。この手順は、検証のステータスが完了になっている場合でも、手動で実行する必要があります。
++
+[listing]
+----
+lun import verify stop -vserver fli_72C -path /vol/flivol/72Clun1
+----
+. 検証が完了したら、 LUN をオンラインにします。< ここで中断時間は終了します >
++
+[listing]
+----
+lun online -vserver fli_72C -path /vol/flivol/72Clun1
+----
+

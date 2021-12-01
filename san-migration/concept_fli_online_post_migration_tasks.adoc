@@ -1,0 +1,17 @@
+---
+permalink: san-migration/concept_fli_online_post_migration_tasks.html 
+sidebar: sidebar 
+keywords: fli, online, post-migration, tasks 
+summary: 移行後のタスクとして、移行前に実行していないサーバの修正を実行します。 
+---
+= FLI オンラインの移行後のタスク
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行後のタスクとして、移行前に実行していないサーバの修正を実行します。
+
+サードパーティ製ソフトウェアはすべて削除されます。ネットアップソフトウェアをインストールして設定します。特定のホストタイプの移行後の修正の例については、ホストの修正を参照してください。
+
+ログを参照してエラーがないかを確認し、パスを確認し、アプリケーションのテストを実施して、移行が正常に完了したことを確認します。

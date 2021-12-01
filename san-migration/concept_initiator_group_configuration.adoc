@@ -1,0 +1,33 @@
+---
+permalink: san-migration/concept_initiator_group_configuration.html 
+sidebar: sidebar 
+keywords: initiator, group, configuration 
+summary: 正しい運用には、 LUN マスキングを適切に設定することが重要です。ONTAP ストレージのすべてのイニシエータポート（両方のノード上のもの）が同じ igroup に属している必要があります。 
+---
+= イニシエータグループの構成
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+正しい運用には、 LUN マスキングを適切に設定することが重要です。ONTAP ストレージのすべてのイニシエータポート（両方のノード上のもの）が同じ igroup に属している必要があります。
+
+FLI 移行の実行時は、ソースストレージ LUN にネットアップストレージからアクセスする必要があります。ゾーニングとは別にアクセスを有効にするには、デスティネーションストレージのイニシエータポートの World Wide Port Name （ WWPN ）を使用してソースストレージにイニシエータグループを作成する必要があります。
+
+ネットアップアレイのイニシエータグループでは、常に Asymmetric Logical Unit Access （ ALUA ；非対称論理ユニットアクセス）を有効にしてください。
+
+イニシエータグループは、ベンダーや製品によって名前が異なります。例：
+
+* HITACHI はホスト・グループを使用しています
+* NetApp E シリーズでは「 host entry 」が使用されます。
+* EMC では ' イニシエータ・レコード ' またはストレージ・グループを使用しています
+* NetApp では「 igroup 」を使用しています。
+
+
+これらの呼び方に関係なく、イニシエータグループの目的は、同じ LUN マッピングを共有するイニシエータを WWPN で識別することです。
+
+イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。また、サードパーティ製ストレージ構成の要件については、『 FlexArray 仮想化実装ガイド』を参照してください。
+
+* 関連情報 *
+
+https://docs.netapp.com/us-en/ontap-flexarray/implement-third-party/index.html["サードパーティ製ストレージ向けの FlexArray 仮想化の実装"]

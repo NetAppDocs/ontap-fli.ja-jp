@@ -1,0 +1,21 @@
+---
+permalink: san-migration/concept_fli_using_workflow_automation_wfa.html 
+sidebar: sidebar 
+keywords: fli, using, workflow, automation, wfa, migration 
+summary: Workflow Automation を FLI と組み合わせて使用すると、移行前と移行後のタスクや移行の実行、およびステータスチェックを自動化できます。自動移行では、 FLI による移行プロセスの一部を Workflow Automation ソフトウェアを使用して自動化します。WFA を使用した FLI は、オンラインモードまたはオフラインモードのいずれかで使用できます。 
+---
+= FLI での Workflow Automation （ WFA ）の使用
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation を FLI と組み合わせて使用すると、移行前と移行後のタスクや移行の実行、およびステータスチェックを自動化できます。自動移行では、 FLI による移行プロセスの一部を Workflow Automation ソフトウェアを使用して自動化します。WFA を使用した FLI は、オンラインモードまたはオフラインモードのいずれかで使用できます。
+
+WFA を FLI と組み合わせて使用するには、 WFA をダウンロードし、環境内の適切なサーバにインストールする必要があります。WFA をインストールしたら、指定のワークフローをダウンロードします。ダウンロード可能な FLI 自動化パックには、 FLI オフラインと FLI オンラインの 2 つがあります。自動化パックのサポートのルールは、 FLI オフラインおよび FLI オンラインのワークフローと同じです。これには、 FLI オンラインをサポートするホストオペレーティングシステムのリストなどが含まれます。
+
+WFA 自動化パックは WFA Automation Store からダウンロードできます。実行される具体的な操作やその他の詳細なワークフロー情報の詳細については、各パックに組み込まれているヘルプファイルを参照してください。
+
+* 関連情報 *
+
+http://docs.netapp.com["OnCommand Workflow Automation - ワークフロー開発者ガイド"]

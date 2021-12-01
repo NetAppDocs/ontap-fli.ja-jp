@@ -1,0 +1,15 @@
+---
+permalink: san-migration/concept_data_migration_challenges.html 
+sidebar: sidebar 
+keywords: data, migration, challenges 
+summary: データ移行に伴う課題には、長時間のダウンタイム、潜在的なリスク、限られたリソース、専門知識の不足などがあります。 
+---
+= データ移行の課題
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データ移行に伴う課題には、長時間のダウンタイム、潜在的なリスク、限られたリソース、専門知識の不足などがあります。
+
+データ可用性の要件がますます厳しくなり、ダウンタイムが許容できないものとなっているため、ビジネス運用環境でデータ移行プロセスが促進されています。データ移行プロセスでは、本番システムのパフォーマンスへの影響、データの破損や損失など、さまざまなリスク要因に対処する必要があります。

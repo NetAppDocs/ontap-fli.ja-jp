@@ -1,0 +1,47 @@
+---
+permalink: san-migration/concept_performance_enhancements_in_clustered_data_ontap_8_3_1.html 
+sidebar: sidebar 
+keywords: performance, enhancements, ontap 8.3.1 
+summary: パフォーマンス管理を改善し、ワークロードで過負荷が発生しないように、 FLI の機能が拡張されています。ONTAP 8.3.1 では、 FLI の機能強化として、新しい throttle コマンドが追加されたほか、 lun import show でスループットと QoS ポリシーグループが表示されるようになりました。 
+---
+= ONTAP 8.3.1 におけるパフォーマンスの強化
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+パフォーマンス管理を改善し、ワークロードで過負荷が発生しないように、 FLI の機能が拡張されています。ONTAP 8.3.1 では、 FLI の機能強化として、新しい throttle コマンドが追加されたほか、 lun import show でスループットと QoS ポリシーグループが表示されるようになりました。
+
+lun import throttle コマンドを使用して、インポートを実行できる最大速度を制限できます。
+
+[listing]
+----
+cluster::*> lun import throttle -vserver fli_72C -path /vol/flivol/72Clun1 -max-throughput-limit
+
+{<integer>[KB|MB|GB|TB|PB]}  Maximum Throughput Limit (per sec)
+----
+スロットルおよび QoS 情報を含む拡張 LUN インポート情報を表示するには 'instance スイッチを lun import show とともに使用します
+
+[listing]
+----
+cluster::*> lun import show -instance
+
+    Vserver Name: fli_72C
+    LUN Path: /vol/flivol/72Clun1
+    Foreign Disk Serial Number: D0i1E+G8Wg6m
+    Import Home Node: ontaptme-fc-cluster-01
+    Import Current Node: ontaptme-fc-cluster-01
+    Operation In Progress: import
+    Admin State: stopped
+    Operational State: stopped
+    Percent Complete: 0
+    Blocks Imported: -
+    Blocks Compared: -
+    Total Blocks: 6297480
+    Estimated Remaining Duration: -
+    Failure Reason: -
+    Maximum Throughput Limit(per sec): -
+    Current Throughput (per sec): -
+    QoS Policy Group: -
+----
+「 current throughput 」の値は、インポートまたは検証処理の現在のスループットレートを示します。スロットル値を設定する前に、このチェックボックスをオンにしてください。実行中でない場合は空になります。LUN インポート・スロットルを使用した場合は 'QoS policy group に QoS グループが表示されます

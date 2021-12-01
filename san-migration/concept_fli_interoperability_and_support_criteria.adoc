@@ -1,0 +1,32 @@
+---
+permalink: san-migration/concept_fli_interoperability_and_support_criteria.html 
+sidebar: sidebar 
+keywords: fli, interoperability, support, criteria 
+summary: FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常によく似ていますが、 FLI と連携するネットアップ認定ソースアレイのサポートを強化する目的でまったく別の相互運用性ツールとして追加されたものです。 
+---
+= FLI の相互運用性とサポート条件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常によく似ていますが、 FLI と連携するネットアップ認定ソースアレイのサポートを強化する目的でまったく別の相互運用性ツールとして追加されたものです。
+
+Foreign LUN Import を実行する前に、相互運用性について次の 2 つを確認する必要があります。
+
+* FLI がサポートされていることを確認します。これについては、 FLI の IMT で確認できます。
+* インポート完了後のエンドツーエンドの完全な構成がサポートされている構成であることを確認します。これは FAS / AFF IMT で実現されています。
+
+
+さらに、ターゲットの ONTAP バージョンについて、次の 3 つの条件を確認します。
+
+* ソースストレージのプラットフォームのモデルとマイクロコードバージョン。
+* SAN スイッチのモデルとマイクロコードバージョン。
+* ネットアップコントローラ、お客様の環境（スイッチ、 HBA 、ファームウェア、サーバハードウェアなど）、および移行後に LUN をマウントする SAN 接続クライアント。
+
+
+これらの 3 つのコンポーネントのいずれかがサポートされていない場合は、移行プロセスの実行中と実行後に正常に動作してサポートされるようにするために、一部修正が必要になることがあります。
+
+* 関連情報 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["ネットアップの相互運用性"]

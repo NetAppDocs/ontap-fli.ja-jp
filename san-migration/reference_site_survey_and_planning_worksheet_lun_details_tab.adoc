@@ -1,0 +1,296 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_lun_details_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, lun details tab 
+summary: Site Survey and Planning ワークシートの一部として、 LUN の詳細情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの LUN Details タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、 LUN の詳細情報を含むタブを設定する必要があります。
+
+次に 'LUN の詳細タブの設定方法の例を示します
+
+|===
+5+| LUN の詳細 
+
+
+ a| 
+ソース
+
+
+
+ a| 
+ホスト名
+ a| 
+ストレージグループ
+ a| 
+オペレーティングシステム
+ a| 
+クラスタ化
+ a| 
+ストレージコントローラ
+
+
+
+ a| 
+dm-rx200s6-21
+ a| 
+dm-rx200s6-21
+ a| 
+Microsoft Windows Server 2012 R2 Datacenter
+ a| 
+いいえ
+ a| 
+AMS2100
+
+
+
+ a| 
+dm-rx200s6-22
+ a| 
+dm-rx200s6-22
+ a| 
+Red Hat Enterprise Linux Server リリース 5.10
+ a| 
+いいえ
+ a| 
+AMS2100
+
+
+
+ a| 
+dm-rx200s6-20
+ a| 
+dm-rx200s6-20
+ a| 
+ESXi 5.5.0 ビルド 1331820
+ a| 
+いいえ
+ a| 
+AMS2100
+
+
+
+ a| 
+dm-rx200s6-20
+ a| 
+dm-rx200s6-20
+ a| 
+ESXi 5.5.0 ビルド 1331820
+ a| 
+いいえ
+ a| 
+AMS2100
+
+|===
+|===
+5+| LUN の詳細 
+
+
+ a| 
+ソース
+
+
+
+ a| 
+マウントポイント
+ a| 
+物理ドライブ番号
+ a| 
+ポート
+ a| 
+バス
+ a| 
+ターゲット
+
+
+
+ a| 
+C ：
+ a| 
+PHYSICALDRIVE0
+ a| 
+2.
+ a| 
+0
+ a| 
+0
+
+
+
+ a| 
+/
+ a| 
+SDA
+ a| 
+0
+ a| 
+0
+ a| 
+0
+
+
+
+ a| 
+Bootlun_Datastore
+ a| 
+NAA.60060e801046b96004f2bf4600000014
+ a| 
+0
+ a| 
+0
+ a| 
+0
+
+
+
+ a| 
+VM_Datastore の場合
+ a| 
+NAA.60060e801046b96004f2bf4600000015
+ a| 
+0
+ a| 
+0
+ a| 
+0
+
+|===
+|===
+5+| LUN の詳細 
+
+
+ a| 
+ソース
+
+
+
+ a| 
+LUN
+ a| 
+PG80 SN
+ a| 
+PG83 SN / UID
+ a| 
+LUN サイズ（ GB ）
+ a| 
+開始オフセット（ Starting Offset ）
+
+
+
+ a| 
+0
+ a| 
+ a| 
+60060e801046b96004f2bf460000001e
+ a| 
+40
+ a| 
+0
+
+
+
+ a| 
+0
+ a| 
+ a| 
+60060e801046b96004f2bf4600000010
+ a| 
+20
+ a| 
+
+
+
+ a| 
+0
+ a| 
+ a| 
+60060e801046b96004f2bf4600000014
+ a| 
+20
+ a| 
+
+
+
+ a| 
+1.
+ a| 
+ a| 
+60060e801046b96004f2bf4600000015
+ a| 
+40
+ a| 
+
+|===
+|===
+5+| LUN の詳細 
+
+
+ a| 
+ソース
+
+
+
+ a| 
+LUN タイプ
+ a| 
+アライメント済み
+ a| 
+カスタムプレフィックス（ブロック数）
+ a| 
+カスタムプレフィックス（バイト数）
+ a| 
+
+
+
+ a| 
+Windows の場合
+ a| 
+アライメント済み
+ a| 
+0
+ a| 
+0
+ a| 
+
+
+
+ a| 
+Linux の場合
+ a| 
+アライメント済み
+ a| 
+0
+ a| 
+0
+ a| 
+
+
+
+ a| 
+VMware
+ a| 
+アライメント済み
+ a| 
+0
+ a| 
+0
+ a| 
+
+
+
+ a| 
+VMware
+ a| 
+アライメント済み
+ a| 
+0
+ a| 
+0
+ a| 
+
+|===

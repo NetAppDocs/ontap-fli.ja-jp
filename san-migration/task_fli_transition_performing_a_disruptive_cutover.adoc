@@ -1,0 +1,72 @@
+---
+permalink: san-migration/task_fli_transition_performing_a_disruptive_cutover.html 
+sidebar: sidebar 
+keywords: perform, disruptive, cutover, fli 7-mode, ontap 
+summary: この例では、 FLI 移行プロセスの停止を伴うカットオーバーを実行する一般的な手順を示します。 
+---
+= FLI の 7-Mode から ONTAP への移行の停止を伴うカットオーバーの実行
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+この例では、 FLI 移行プロセスの停止を伴うカットオーバーを実行する一般的な手順を示します。
+
+Windows 、 Linux 、 ESXi のホストの修正手順については、このガイドの関連するトピック、およびホストオペレーティングシステムとホスト接続キットのドキュメントを参照してください。
+
+.手順
+. 7-Mode システムで、ソース LUN がマッピングされている igroup を表示します。
++
+[listing]
+----
+stme-7ma> igroup show
+    FLI_on_fcp (FCP) (ostype: windows):
+        10:00:00:00:c9:e6:e2:79 (logged in on: 0c, vtic)
+        50:0a:09:81:00:96:43:70 (logged in on: 0c, vtic)
+        50:0a:09:81:00:96:3c:f0 (logged in on: 0c, vtic)
+----
++
+[NOTE]
+====
+UNMAP コマンドを実行するとすぐにシステムが停止します。通常、中断時間は分単位です。これは文字どおり、ホストを新しいネットアップターゲットに移動して LUN をスキャンするのにかかる時間です。
+
+====
+. インポートする対象が ESXi ホストの LUN の場合は、 _ESXi CAW / ATS の修正トピックの手順を確認して指示に従います。
+. UNMAP コマンドを使用して、ホストから LUN を移動します。ここから中断時間が始まります。
++
+[listing]
+----
+stme-7ma> igroup remove -f FLI_on_fcp 10:00:00:00:c9:e6:e2:79
+----
+. ホストイニシエータが存在しないことを確認します。
++
+[listing]
+----
+stme-7ma> igroup show
+    FLI_on_fcp (FCP) (ostype: windows):
+        50:0a:09:81:00:96:43:70 (logged in on: 0c, vtic)
+        50:0a:09:81:00:96:3c:f0 (logged in on: 0c, vtic)
+----
+. ONTAP クラスタで、デスティネーション LUN をオンラインにし、マッピングされていることを確認します。
++
+[listing]
+----
+cluster::*> lun online -vserver fli_72C -path /vol/flivol/72Clun1
+
+cluster::*> lun show -path /vol/flivol/72Clun1
+Vserver   Path                            State   Mapped   Type        Size
+--------- ------------------------------- ------- -------- -------- --------
+fli_72C   /vol/flivol/72Clun1             online  mapped   windows_2008
+                                                                      3.00GB
+----
+. ホスト上のディスクを再スキャンし、 ONTAP ターゲット上の LUN を検索します。
++
+[NOTE]
+====
+中断時間はここまでです。
+
+====
++
+LUN がオンラインでマッピングされた状態になり、ホストで新しい ONTAP ホスト LUN がマウントされます。読み取りは ONTAP アレイを介してソース LUN に渡され、書き込みは新しい ONTAP ホスト LUN と元のソース LUN の両方に書き込まれます。ソース LUN とデスティネーション LUN は、移行が完了して LUN 関係が解除されるまで同期されたままになります。
+
+

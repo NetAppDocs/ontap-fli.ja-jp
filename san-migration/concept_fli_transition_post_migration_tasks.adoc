@@ -1,0 +1,24 @@
+---
+permalink: san-migration/concept_fli_transition_post_migration_tasks.html 
+sidebar: sidebar 
+keywords: fli, transition, workflow, post-migration, tasks 
+summary: FLI の 7-Mode から ONTAP への移行ワークフローの移行後のタスクは、他の FLI ワークフローと同様です。 
+---
+= FLI 移行ワークフローの移行後のタスク
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI の 7-Mode から ONTAP への移行ワークフローの移行後のタスクは、他の FLI ワークフローと同様です。
+
+* 準備ができたら、 LUN インポート関係を削除できます。
++
+新しい ONTAP LUN へのすべての I/O について、ホストが新しいネットアップアレイにアクセスするようになり、ソースの 7-Mode LUN が使用されなくなったため、 LUN インポート関係を安全に削除できます。
+
+* サーバの修正は、すべて移行後に実行します。
++
+他社製ソフトウェアを削除し、ネットアップソフトウェアをインストールして設定を行い、ホストを起動してネットアップの LUN にアクセスします。
+
+* ログを参照してエラーがないかを確認し、パスを確認し、アプリケーションのテストを実施して、移行が正常に完了したことを確認します。
+

@@ -1,0 +1,31 @@
+---
+permalink: san-migration/concept_lun_requirements_and_limitations.html 
+sidebar: sidebar 
+keywords: lun, requirements, limitations 
+summary: FLI 移行を開始する前に、 LUN が次の要件を満たしている必要があります。 
+---
+= LUN の要件と制限事項
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI 移行を開始する前に、 LUN が次の要件を満たしている必要があります。
+
+* FLI を実行するには、各コントローラに少なくとも 1 つの FC ポートが必要です。また、 LUN をイニシエータモードで直接移行する必要があります。
+* 外部 LUN は、 ONTAP からの割り当てを防ぐために、デスティネーションアレイで foreign とマークされている必要があります。
+* 外部 LUN は、インポート関係を確立してからインポートを開始する必要があります。
+* LUN は外部 LUN と同じサイズで、ディスクブロックサイズが同じである必要があります。これらの両方の要件が LUN の作成手順で考慮されます。
+* LUN は、拡張も縮小もできません。
+* LUN は少なくとも 1 つの igroup にマッピングされている必要があります。
+* 関係を作成する前に、 NetApp LUN をオフラインにしておく必要があります。ただし、オンライン FLI の場合は、 LUN 関係の作成後にオンラインに戻すことができます。
+
+
+
+
+== 制限
+
+* 移行はすべて LUN レベルで行われます。
+* FLI では Fibre Channel （ FC ）接続のみがサポートされます。
+* FLI では iSCSI 接続は直接はサポートされていません。FLI を使用して iSCSI LUN を移行するには、 LUN タイプを FC に変更する必要があります。移行が完了したら、 LUN タイプを iSCSI に戻します。
+

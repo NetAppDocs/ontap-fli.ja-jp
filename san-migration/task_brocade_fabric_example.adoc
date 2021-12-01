@@ -1,0 +1,51 @@
+---
+permalink: san-migration/task_brocade_fabric_example.html 
+sidebar: sidebar 
+keywords: brocade, fabric, example 
+summary: この手順は、 Brocade ファブリックのゾーンセットからソースストレージとホストゾーンを削除する方法を示しています。 
+---
+= Brocade ファブリックの例
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+この手順は、 Brocade ファブリックのゾーンセットからソースストレージとホストゾーンを削除する方法を示しています。
+
+[NOTE]
+====
+この例のゾーン名は _rx21_AMS2100 _ です。
+
+====
+.手順
+. ファブリック A のゾーンセットからゾーンを削除します
++
+[listing]
+----
+cfgDelete "PROD_LEFT", "rx21_AMS2100"
+cfgDelete "PROD_LEFT", "rx22_AMS2100"
+cfgDelete "PROD_LEFT", "rx20_AMS2100"
+----
+. ファブリック A でゾーンセットをアクティブにします
++
+[listing]
+----
+cfgEnable "PROD_LEFT"
+cfgSave
+----
+. ファブリック B のゾーンセットからゾーンを削除します
++
+[listing]
+----
+cfgDelete "PROD_RIGHT", "rx21_AMS2100"
+cfgDelete "PROD_RIGHT", "rx22_AMS2100"
+cfgDelete "PROD_RIGHT", "rx20_AMS2100"
+----
+. ファブリック B でゾーンセットをアクティブにします
++
+[listing]
+----
+cfgEnable "PROD_RIGHT"
+cfgSave
+----
+

@@ -1,0 +1,15 @@
+---
+permalink: san-migration/concept_prepare_hosts_for_the_transition.html 
+sidebar: sidebar 
+keywords: prepare, hosts, transition 
+summary: 実行フェーズには、移行ホストの準備が含まれます。 
+---
+= ホストで移行を準備
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+実行フェーズには、移行ホストの準備が含まれます。
+
+多くの場合、この修正は事前に完了しておくことができます。完了していない場合は、ホスト接続キットや DSM のインストールなどのホストの更新をここで実行します。分析フェーズから、 NetApp ONTAP を使用してサポート対象の構成にするために各ホストで実行する必要がある項目のギャップリストが得られます。実行する移行の種類に応じて、ホストを更新してからリブートするか（オンラインの 7-Mode から ONTAP への FLI ）、ホストをリブートして修正してからシャットダウンします（オフラインの 7-Mode から ONTAP への FLI ）。

@@ -1,0 +1,217 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_sds_cli_scripts_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, sds cli scripts tab 
+summary: Site Survey and Planning ワークシートの一部として、 SDS CLI スクリプトの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの [SDS CLI Scripts] タブをクリックします
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、 SDS CLI スクリプトの情報を含むタブを設定する必要があります。
+
+次に、 [SDS CLI スクリプト ] タブの設定方法の例を示します。
+
+|===
+| コントローラ 1 | コントローラ 2 
+
+
+ a| 
+ボリュームサイズ vol0 aggr0 108g
+ a| 
+
+
+
+ a| 
+スナップリザーブ bootcampvol 0
+ a| 
+
+
+
+ a| 
+スナップリザーブ vol0 20
+ a| 
+
+
+
+ a| 
+snap autodelete bootcampvol on をクリックします
+ a| 
+
+
+
+ a| 
+snap autodelete bootcampvol コミットメントを試してください
+ a| 
+
+
+
+ a| 
+snap autodelete bootcampvol トリガーボリューム
+ a| 
+
+
+
+ a| 
+snap autodelete bootcampvol target_free_space 20 をクリックします
+ a| 
+
+
+
+ a| 
+snap autodelete bootcampvol defer_delete user_created
+ a| 
+
+
+
+ a| 
+vol0 の snap autodelete をオンにします
+ a| 
+
+
+
+ a| 
+snap autodelete vol0 コミットメントが試行されます
+ a| 
+
+
+
+ a| 
+snap autodelete vol0 によってボリュームがトリガーされます
+ a| 
+
+
+
+ a| 
+snap autodelete vol0 target_free_space 20 を削除します
+ a| 
+
+
+
+ a| 
+snap autodelete vol0 defer_delete user_created
+ a| 
+
+
+
+ a| 
+vol autosize bootcampvol on をオンにします
+ a| 
+
+
+
+ a| 
+ボリュームが vol0 のオートサイズを実行します
+ a| 
+
+
+
+ a| 
+vol options bootcampvol try_first volume_grow です
+ a| 
+
+
+
+ a| 
+vol options bootcampvol fractional_reserve 100
+ a| 
+
+
+
+ a| 
+vol options vol0 try_first volume_grow です
+ a| 
+
+
+
+ a| 
+vol options vol0 fractional_reserve 100
+ a| 
+
+
+
+ a| 
+qtree のセキュリティ /vol/bootcampvol unix
+ a| 
+
+
+
+ a| 
+qtree セキュリティ /vol/vol0 NTFS
+ a| 
+
+
+
+ a| 
+snap sched bootcampvol 0 0
+ a| 
+
+
+
+ a| 
+snap sched vol0 0 2 6 @ 8 、 12 、 16 、 20
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/qavol_narayan/testlun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm25_boot_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm25_data1_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm25_data2_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm26_boot_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm26_data1_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm26_data2_LUN の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm27_boot_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm27_data1_lun の LUN マッピングがスキップされました。
+ a| 
+
+
+
+ a| 
+LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm27_data2 _lun の LUN マッピングがスキップされました。
+ a| 
+
+|===

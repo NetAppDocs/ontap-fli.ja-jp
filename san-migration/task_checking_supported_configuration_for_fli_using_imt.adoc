@@ -1,0 +1,31 @@
+---
+permalink: san-migration/task_checking_supported_configuration_for_fli_using_imt.html 
+sidebar: sidebar 
+keywords: check, supported configurations, fli using imt 
+summary: ネットアップが認定した他社の製品やコンポーネントと連携するネットアップ製品の構成については、 Interoperability Matrix Tool （ IMT ）を使用してください。 
+---
+= IMT を使用した FLI でサポートされている構成の確認
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ネットアップが認定した他社の製品やコンポーネントと連携するネットアップ製品の構成については、 Interoperability Matrix Tool （ IMT ）を使用してください。
+
+[NOTE]
+====
+ONTAP 9.9..1 以降では、アレイが IMT でサポート対象として表示されない場合は、ネットアップサポートサイトの SAN LUN 移行アプリケーションを使用して、アレイがサポートされるかどうかを確認できます。
+
+====
+.手順
+. Interoperability Matrix Tool にアクセスします。
+. アレイモデルを検索します。
+. 解決策 * Foreign LUN Import （ FLI ） Back-End Interoperability * を選択します。
+. サポートされている構成を確認するには、 * FAS モデル * と * ONTAP バージョン * を選択します。
+. フロントエンドでサポートされるホスト構成の場合は、 [* build end to end view with ONTAP SAN host* ] をクリックします。
+. スイッチがサポート ONTAP する構成の場合は、 [*SAN ホスト *] タブで [SAN スイッチ *] のビルド終了から終了までの表示 ] をクリックします。
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["ネットアップの相互運用性"]

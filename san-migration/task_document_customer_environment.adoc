@@ -1,0 +1,25 @@
+---
+permalink: san-migration/task_document_customer_environment.html 
+sidebar: sidebar 
+keywords: document, newly, migrated, environment 
+summary: お客様の環境を文書化するには、 AutoSupport the 問題コマンドを実行する必要があります。 
+---
+= 新たに移行した環境を文書化
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+お客様の環境を文書化するには ' AutoSupport コマンドを使用する必要問題があります
+
+お客様の環境を文書化するには、次の手順を実行します。
+
+.手順
+. AutoSupport 最終的な構成を文書化するための問題コマンド。
++
+[listing]
+----
+B9CModeCluster::*> autosupport invoke -node DataMig-cmode-01 -type all –message “migration-final”
+----
+. 新たに移行した環境を完全に文書化します。
+

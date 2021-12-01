@@ -1,0 +1,62 @@
+---
+permalink: san-migration/reference_esxi_caw_ats_remediation.html 
+sidebar: sidebar 
+keywords: esxi, caw/ats, remediation 
+summary: オンライン FLI では、 VMware Atomic Test and Set （ ATS ） / SCSI Compare and Write （ CAW ）はサポートされていません。このことは、 VMFS5 を使用していてソースアレイで CAW がサポートされている場合に重要です。ホストを修正するには、このセクションで説明するプロセスに従う必要があります。 
+---
+= ESXi CAW / ATS の修正
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オンライン FLI では、 VMware Atomic Test and Set （ ATS ） / SCSI Compare and Write （ CAW ）はサポートされていません。このことは、 VMFS5 を使用していてソースアレイで CAW がサポートされている場合に重要です。ホストを修正するには、このセクションで説明するプロセスに従う必要があります。
+
+FLI オンラインの LUN 関係では ATS / CAW のコマンドはサポートされず、デスティネーション ESXi 5.x ホストへの VMFS5 ファイルシステムのマウントが失敗します。この原因は、 VMware では VMFS5 ヘッダーに ATS ビットが格納されることにあります。これにより、 CAW / ATS が適用され、 ATS を使用しないホストまたはアレイではヘッダーが機能しなくなります。ATS ビットは、 VMFS ヘッダーの _spanned Partitions _ に示されている最初の LUN の一部です。複数のエクステントが表示されている場合、修正が必要なのはこの LUN だけです。
+
+LUN が複数のホストで共有されている場合は、いずれかのホストで更新すれば十分です。他のすべてのホストは、再スキャン後に自動的に更新されます。共有しているホストのいずれかからの VM または ESXi のアクティブ I/O が LUN で実行されていると、 ATS / CAW を無効化できません。ATS / CAW に変更を加える必要があるときには、 LUN を共有している VM などのホストマシンをシャットダウンすることを推奨します。この操作は、該当する FLI ワークフローの _Disruptive cutover_section に記載されている、ホストの再ポイントやカットオーバーのシステム停止を伴う部分の先頭で実行できます。
+
+LUN が複数のホストで共有されている場合は、 ATS ビットを有効または無効にするとき、すべてのホストをオフラインにする必要があります。ATS を有効または無効にしたら、 LUN を更新する必要があります。再マッピングが完了したら、ホストを起動状態に戻し、 LUN にアクセスできることを確認できます。
+
+以前のバージョンの VMFS を実行している場合、または以前のバージョンからアップグレードした場合は、修正を行う必要はありません。ATS / CAW の有効と無効を切り替える必要がある場合は、後述するコマンドを使用できます。ただし、 VM がアクティブで VMFS5 データストアに対する I/O が実行されている場合はどちらのコマンドも機能しません。ホストマシンをシャットダウンしてから、 ATS / CAW に必要な変更を行い、該当する FLI ワークフローの _Disruptive cutover_section に記載されている、ホストの再ポイントやカットオーバーの残りの部分を実行することを推奨します。
+
+ATS / CAW のステータスを確認するには、次のコマンドを実行します。
+
+[listing]
+----
+~ # vmkfstools -Ph -v 1 /vmfs/volumes/fli-orig-3
+VMFS-5.58 file system spanning 1 partitions.
+File system label (if any): fli-orig-3
+Mode: public ATS-only
+Capacity 99.8 GB, 58.8 GB available, file block size 1 MB, max file size 62.9 TB
+Volume Creation Time: Wed Jun 10 13:56:05 2015
+Files (max/free): 130000/129979
+Ptr Blocks (max/free): 64512/64456
+Sub Blocks (max/free): 32000/31995
+Secondary Ptr Blocks (max/free): 256/256
+File Blocks (overcommit/used/overcommit %): 0/41931/0
+Ptr Blocks  (overcommit/used/overcommit %): 0/56/0
+Sub Blocks  (overcommit/used/overcommit %): 0/5/0
+Volume Metadata size: 804159488
+UUID: 557841f5-145136df-8de6-0025b501a002
+Partitions spanned (on "lvm"):
+naa.60080e50001f83d4000003075576b218:1
+Is Native Snapshot Capable: YES
+OBJLIB-LIB: ObjLib cleanup done.
+~ # vmkfstools -Ph -v 1 /vmfs/volumes/fli-orig-3
+~ # vmkfstools --help
+----
+モードに「 public only 」と表示されている場合は、更新は必要ありません。Mode に「 abovepublic ats-only 」と表示されている場合は、 ATS が有効になっているので、インポートが完了するまで無効にする必要があります。インポートが完了したら、再び有効にできます。
+
+LUN で ATS / CAW を無効にするには、次のコマンドを使用します。
+
+[listing]
+----
+# vmkfstools --configATSOnly 0 /vmfs/devices/disks/naa.xxxxxxxxxxxxxxx
+----
+ATS / CAW を再度有効にするには、移行完了後に次のコマンドを使用します。
+
+[listing]
+----
+# vmkfstools --configATSOnly 1 /vmfs/devices/disks/naa.xxxxxxxxxxxxxxx
+----

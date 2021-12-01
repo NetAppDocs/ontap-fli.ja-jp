@@ -1,0 +1,53 @@
+---
+permalink: san-migration/task_fli_transition_importing_the_data.html 
+sidebar: sidebar 
+keywords: import, data, fli 7-mode, ontap 
+summary: FLI を使用して 7-Mode ソース LUN から ONTAP デスティネーション LUN にデータをインポートする手順は次のとおりです。 
+---
+= FLI の 7-Mode から ONTAP へのデータのインポート
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FLI を使用して 7-Mode ソース LUN から ONTAP デスティネーション LUN にデータをインポートする手順は次のとおりです。
+
+.手順
+. 移行のインポートを開始します。
++
+[listing]
+----
+cluster::*> lun import start -vserver fli_72C -path /vol/flivol/72Clun1
+----
+. FLI のステータスを表示します。
++
+[listing]
+----
+cluster::*> lun import show -vserver fli_72C -path /vol/flivol/72Clun1
+vserver foreign-disk   path                operation admin operational percent
+                                         in progress state state       complete
+-------------------------------------------------------------------------------
+fli_72C D0i1E+G8Wg6m   /vol/flivol/72Clun1 import    started
+                                                           completed        100
+----
++
+移行完了後にソース LUN の整合性を維持するには、次の手順を実行する必要があります。
+
++
+** import show で完了したことを確認したら、ホストをシャットダウンします。
+** LUN 関係を削除します。 lun import delete -vserver fli_72C -path /vol/flivol/72Clun1
++
+[NOTE]
+====
+LUN 関係を解除すると、新しい LUN のみが変更されるため、 LUN の同期がすぐに失われることに注意してください。したがって、元の状態に戻す必要がある場合は一貫した状態を維持すると効果的なことがありますが、新しい LUN に対する変更はソース LUN に反映されない可能性があります。
+
+====
++
+[NOTE]
+====
+インポート関係は、インポートを検証する場合を除き、インポートの停止後に破棄できます。
+
+====
+
+
+

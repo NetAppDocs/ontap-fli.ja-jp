@@ -1,0 +1,27 @@
+---
+permalink: san-migration/concept_migration_report.html 
+sidebar: sidebar 
+keywords: migration, report 
+summary: インポートのログは、クラスタのイベントログファイルに記録されます。ログでエラーがないかを確認し、移行が正常に完了したことを確認してください。 
+---
+= 移行レポート
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+インポートのログは、クラスタのイベントログファイルに記録されます。ログでエラーがないかを確認し、移行が正常に完了したことを確認してください。
+
+移行レポートは次のように表示されます。
+
+[listing]
+----
+DataMig-cmode::*> rows 0; event log show –nodes * –event fli*
+7/7/2014 18:37:21   DataMig-cmode-01 INFORMATIONAL fli.lun.verify.complete: Import verify of foreign LUN 83017542001E of size 42949672960 bytes from array model DF600F belonging to vendor HITACHI  with NetApp LUN QvChd+EUXoiS is successfully completed.
+~~~~~~ Output truncated ~~~~~~~
+----
+[NOTE]
+====
+ソース LUN とデスティネーション LUN を比較する検証手順については、移行実行フェーズで説明しています。インポートと LUN の検証手順については、インポートジョブと外部 LUN にリンクされているため、移行の実行フェーズで説明します。
+
+====

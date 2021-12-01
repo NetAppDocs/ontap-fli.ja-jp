@@ -1,0 +1,76 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_netapp_lun_layouts_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, netapp lun layouts tab 
+summary: Site Survey and Planning ワークシートの一部として、 LUN レイアウトの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシート NetApp LUN Layouts タブ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、 LUN レイアウトの情報を含むタブを設定する必要があります。
+
+NetAppLUN Layouts タブの設定例を次に示します。
+
+|===
+7+| NetApp LUN 情報 
+
+
+ a| 
+ストレージコントローラ
+ a| 
+アグリゲート
+ a| 
+ボリューム名
+ a| 
+ボリュームサイズ
+ a| 
+ボリュームギャランティ
+ a| 
+スナップリザーブ
+ a| 
+LUN 名
+
+|===
+|===
+7+| NetApp LUN 情報 
+
+
+ a| 
+S/N
+ a| 
+LUN タイプ
+ a| 
+カスタムプレフィックス
+ a| 
+LUN 概要の略
+ a| 
+GB サイズ
+ a| 
+LUN リザベーション
+ a| 
+フラクショナルリザーブ
+
+|===
+|===
+7+| NetApp LUN 情報 
+
+
+ a| 
+ボリュームのオートサイズ
+ a| 
+Snapshot の自動削除
+ a| 
+igroup
+ a| 
+LUN ID
+ a| 
+ホストタイプ
+ a| 
+ドライブレター
+ a| 
+ホスト
+
+|===

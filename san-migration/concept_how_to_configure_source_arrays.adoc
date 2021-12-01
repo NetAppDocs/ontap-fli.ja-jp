@@ -1,0 +1,13 @@
+---
+permalink: san-migration/concept_how_to_configure_source_arrays.html 
+sidebar: sidebar 
+keywords: configure, source, arrays 
+summary: イニシエータポートのホストエントリ（ LUN マスキング、ネットアップでは igroup と呼びます）を追加するには、ソースアレイのドキュメントを参照してください。この情報は、 Site Survey and Planning ワークシートのストレージグループセクションから取得できます。 
+---
+= ソースアレイの構成方法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+イニシエータポートのホストエントリ（ LUN マスキング、ネットアップでは igroup と呼びます）を追加するには、ソースアレイのドキュメントを参照してください。この情報は、 Site Survey and Planning ワークシートのストレージグループセクションから取得できます。

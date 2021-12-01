@@ -1,0 +1,38 @@
+---
+permalink: san-migration/reference_site_survey_and_planning_worksheet_migration_schedule_tab.html 
+sidebar: sidebar 
+keywords: site, survey and planning worksheet, migration schedule tab 
+summary: Site Survey and Planning ワークシートの一部として、移行スケジュールの情報を含むタブを設定する必要があります。 
+---
+= Site Survey and Planning ワークシートの Migration Schedule タブで
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Site Survey and Planning ワークシートの一部として、移行スケジュールの情報を含むタブを設定する必要があります。
+
+次に、 [ 移行スケジュール ] タブの設定方法の例を示します。
+
+|===
+8+| 移行スケジュール 
+
+
+ a| 
+移行日
+ a| 
+ホスト
+ a| 
+OS
+ a| 
+アプリケーション
+ a| 
+ストレージコントローラ
+ a| 
+LUN UID
+ a| 
+LUN のサイズ
+ a| 
+ステータス
+
+|===

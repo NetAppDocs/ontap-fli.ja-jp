@@ -1,0 +1,19 @@
+---
+permalink: san-migration/concept_7_mode_to_ontap_supported_configurations.html 
+sidebar: sidebar 
+keywords: 7-mode, ontap, fli, supported, configurations 
+summary: 最終的に移行するホスト OS 、 HBA 、スイッチ、 ONTAP アレイがサポートされていることを確認することが重要です。 
+---
+= 7-Mode から ONTAP への FLI でサポートされる構成
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+最終的に移行するホスト OS 、 HBA 、スイッチ、 ONTAP アレイがサポートされていることを確認することが重要です。
+
+FLI の 7-Mode から ONTAP への移行ワークフローを使用する場合、 FlexArray IMT でソース（ 7-Mode コントローラ）を確認する必要はありません。掲載はされませんが、この移行ワークフローに対して明示的にサポートされています。この場合も、すべてのホストがサポート対象の構成に含まれていることを確認する必要があります。
+
+プラットフォームに関して FLI 固有の要件はありません。7-Mode Data ONTAP の最小バージョン要件はありませんが、ファイバチャネルプロトコル（ FCP ）をサポートするバージョンである必要があります。
+
+FLI でインポートできる LUN の最大サイズは 6TB です。これは、 ONTAP で現在サポートされているドライブの最大サイズに基づく制限です。これよりも大きな外部 LUN をマウントしようとすると、その LUN は broken としてマークされ、ラベルを書き込めなくなります。
