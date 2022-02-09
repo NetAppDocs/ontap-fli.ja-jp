@@ -12,6 +12,7 @@ summary: 本番ファブリック B の Brocade ファブリックの例を次�
 [role="lead"]
 本番ファブリック B の Brocade ファブリックの例を次に示します
 
+.手順
 . 本番ファブリック B にゾーンを作成します
 +
 [listing]

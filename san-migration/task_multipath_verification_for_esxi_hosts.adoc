@@ -118,7 +118,7 @@ naa.60060e801046b96004f2bf4600000018                            vml.020004000060
 ~ #
 ----
 . データストアの UUID を記録します。
-. /etc/vmware/hostd/ vmInventory.xml のコピーを作成し、ファイルの内容と vmx 構成パスをメモします。
+. /etc/vmware/hostd/vmInventory.xml のコピーを作成し、ファイルと vmx 構成パスの内容をメモします。
 +
 [listing]
 ----

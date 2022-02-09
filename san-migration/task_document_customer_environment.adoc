@@ -15,7 +15,7 @@ summary: お客様の環境を文書化するには、 AutoSupport the 問題コ
 お客様の環境を文書化するには、次の手順を実行します。
 
 .手順
-. AutoSupport 最終的な構成を文書化するための問題コマンド。
+. 問題 最終的な構成を文書化する AutoSupport コマンド
 +
 [listing]
 ----

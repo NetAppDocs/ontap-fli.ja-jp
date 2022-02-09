@@ -7,7 +7,6 @@
   <block id="af500a5659130b953b1aaa544c6a0927" category="paragraph">LUN が複数のホストで共有されている場合は、 ATS ビットを有効または無効にするとき、すべてのホストをオフラインにする必要があります。ATS を有効または無効にしたら、 LUN を更新する必要があります。再マッピングが完了したら、ホストを起動状態に戻し、 LUN にアクセスできることを確認できます。</block>
   <block id="d4c0da0e413010dec4d7c586a702cb9a" category="paragraph">以前のバージョンの VMFS を実行している場合、または以前のバージョンからアップグレードした場合は、修正を行う必要はありません。ATS / CAW の有効と無効を切り替える必要がある場合は、後述するコマンドを使用できます。ただし、 VM がアクティブで VMFS5 データストアに対する I/O が実行されている場合はどちらのコマンドも機能しません。ホストマシンをシャットダウンしてから、 ATS / CAW に必要な変更を行い、該当する FLI ワークフローの _Disruptive cutover_section に記載されている、ホストの再ポイントやカットオーバーの残りの部分を実行することを推奨します。</block>
   <block id="b9125bb0d0a2719952566e797bbc87d8" category="paragraph">ATS / CAW のステータスを確認するには、次のコマンドを実行します。</block>
-  <block id="a74b9c9d4b6c9527065b4031f26db010" category="paragraph">モードに「 public only 」と表示されている場合は、更新は必要ありません。Mode に「 abovepublic ats-only 」と表示されている場合は、 ATS が有効になっているので、インポートが完了するまで無効にする必要があります。インポートが完了したら、再び有効にできます。</block>
   <block id="786f914160b8e10857d5043def09e1f5" category="paragraph">LUN で ATS / CAW を無効にするには、次のコマンドを使用します。</block>
   <block id="bcd5c5dc804423a93948f3bfaaf2b8d0" category="paragraph">ATS / CAW を再度有効にするには、移行完了後に次のコマンドを使用します。</block>
   <block id="82ace49e37ca11b2bc063013ceb3d2d2" category="summary">FLI オフラインワークフローでは、ソース LUN とデスティネーション LUN を設定する必要があります。</block>
@@ -37,7 +36,6 @@
   <block id="612c6ba81aba3ac58aded1a4788f669e" category="doc">新たに移行した環境を文書化</block>
   <block id="4b01ccfdb3280d21ab30c98722404e14" category="paragraph">お客様の環境を文書化するには ' AutoSupport コマンドを使用する必要問題があります</block>
   <block id="eab8fbcbd63b2bcc58a738edcf07ee89" category="paragraph">お客様の環境を文書化するには、次の手順を実行します。</block>
-  <block id="d3bc15134b9b89158a56f1a4958ee36d" category="list-text">AutoSupport 最終的な構成を文書化するための問題コマンド。</block>
   <block id="0170954f27b1bc746248a2082fc577ca" category="list-text">新たに移行した環境を完全に文書化します。</block>
   <block id="0815db692d92e6b68693c7dc13e0e8e1" category="summary">移行後のタスクとして、移行前に実行していないサーバの修正を実行します。</block>
   <block id="6793732288bb5f2142753d1aacd2e36d" category="doc">FLI オンラインの移行後のタスク</block>
@@ -201,7 +199,6 @@
   <block id="a4d212c349a12dc67caaf1bdfa5e4d19" category="list-text">7-Mode システムで、ソース LUN がマッピングされている igroup を表示します。</block>
   <block id="db44befee07d23bb1b809e30950d2c3c" category="paragraph">UNMAP コマンドを実行するとすぐにシステムが停止します。通常、中断時間は分単位です。これは文字どおり、ホストを新しいネットアップターゲットに移動して LUN をスキャンするのにかかる時間です。</block>
   <block id="fa405c1c690c46367f1ef1157ddf641c" category="list-text">インポートする対象が ESXi ホストの LUN の場合は、 _ESXi CAW / ATS の修正トピックの手順を確認して指示に従います。</block>
-  <block id="f42b3dd272148a8d6162afe53e1aa0b6" category="list-text">UNMAP コマンドを使用して、ホストから LUN を移動します。ここから中断時間が始まります。</block>
   <block id="17b0701d0156a56f3b06f4e8ca360a2d" category="list-text">ホストイニシエータが存在しないことを確認します。</block>
   <block id="81b4eb05f5436ff7d6fa2f03ab1c0cf7" category="list-text">ONTAP クラスタで、デスティネーション LUN をオンラインにし、マッピングされていることを確認します。</block>
   <block id="e62bb1753cacdbef374c3d6549f43f42" category="list-text">ホスト上のディスクを再スキャンし、 ONTAP ターゲット上の LUN を検索します。</block>
@@ -247,7 +244,6 @@
   <block id="1fdab799789df4703c0465cc9b2beb1b" category="list-text">本番ファブリック B でゾーンをアクティブにします</block>
   <block id="2f449876355c69512df7e569fe9c6a65" category="summary">パフォーマンス管理を改善し、ワークロードで過負荷が発生しないように、 FLI の機能が拡張されています。ONTAP 8.3.1 では、 FLI の機能強化として、新しい throttle コマンドが追加されたほか、 lun import show でスループットと QoS ポリシーグループが表示されるようになりました。</block>
   <block id="8c4a124ca6c953340797ff9481b86241" category="doc">ONTAP 8.3.1 におけるパフォーマンスの強化</block>
-  <block id="63eeae1818a9dfec81b1b6cd4746532c" category="paragraph">lun import throttle コマンドを使用して、インポートを実行できる最大速度を制限できます。</block>
   <block id="e0e081b71a49cfb03b7e6586a50b4ec6" category="paragraph">スロットルおよび QoS 情報を含む拡張 LUN インポート情報を表示するには 'instance スイッチを lun import show とともに使用します</block>
   <block id="1110e5db0b802b9d4685f94410bce548" category="paragraph">「 current throughput 」の値は、インポートまたは検証処理の現在のスループットレートを示します。スロットル値を設定する前に、このチェックボックスをオンにしてください。実行中でない場合は空になります。LUN インポート・スロットルを使用した場合は 'QoS policy group に QoS グループが表示されます</block>
   <block id="197e64993a9bd9d23c9208a3a59ae427" category="summary">このガイドは、外部アレイから ONTAP へのデータ移行を検討しているネットアップのお客様や、 NetApp 7-Mode アレイから ONTAP への LUN の移行を検討しているお客様を対象としています。</block>
@@ -470,7 +466,6 @@
   <block id="44023aa16885f326f40c8d26a3d792dc" category="list-text">自動移行では、 FLI による移行プロセスの一部を Workflow Automation （ WFA ）ソフトウェアを使用して自動化します。WFA を使用した FLI は、オンラインモードまたはオフラインモードのいずれかで使用できます。</block>
   <block id="ed84643b976a61e35dab90c06a1328ad" category="paragraph">アーキテクチャの点では、 4 つの移行ワークフローはとてもよく似ています。いずれのワークフローでも、ネットアップの FlexArray テクノロジを利用して、 ONTAP コントローラをソースアレイの前に配置したイニシエータとして機能させ、この位置を利用して、 LUN をブロック単位でソースからデスティネーション ONTAP アレイ上の LUN にコピーします。</block>
   <block id="4d01f8ae44780dd783a9a1352d13eb15" category="paragraph">各ワークフローの違いは、カットオーバーが発生する状況、中断時間の長さ、自動化の使用、ソースアレイが ONTAP 7-Mode を実行しているネットアップアレイか他社製アレイかにあります。</block>
-  <block id="ebe02209a860979dd6e9ae77de5b53da" category="paragraph">Foreign LUN Import オンラインワークフローをサポートするホストオペレーティングシステム</block>
   <block id="ee08544761e8c3668ae2cf410df0176e" category="summary">ONTAP FLI の情報ライブラリへようこそ。ここでは、外部アレイから ONTAP にデータを移行する手順、および NetApp 7-Mode アレイから ONTAP に LUN を移行する手順について説明します。</block>
   <block id="b4f00c3dc8ec2262f8447975755acf2d" category="doc">Foreign LUN Import を使用した SAN の移行</block>
   <block id="53a51b7dcda82a62f1a85a24f43b7788" category="summary">検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。</block>
@@ -584,8 +579,6 @@
   <block id="1c1b0e617e80d3e2dbae61aacaedca3e" category="summary">ONTAP 9.9.9..1 以降では、 SAN LUN 移行アプリケーションを使用して、外部ソースアレイを FLI の対象として指定できます。目的の外部アレイが FLI IMT にリストされていない場合は、 SAN LUN 移行アプリケーションを使用できます。</block>
   <block id="af164dd8145e1764ed12737fe49cab35" category="doc">SAN LUN Migrate App を使用した FLI でサポートされる構成の確認</block>
   <block id="a1a90dff83c0faf191818ad546b59252" category="list-text">ネットアップサポートサイトにアクセスします。</block>
-  <block id="b73cbaaa9320f00644c84f4f03a236a9" category="list-text">[ カテゴリでフィルタ ] で [ 移行 ] を選択します。</block>
-  <block id="a5d139676dbba59a8e909de2e942741e" category="list-text">[SAN LUN の移行 ] で、 [ アプリのダウンロード ] をクリックします</block>
   <block id="159d7130f3d54d274afe13039b4ede40" category="list-text">ソースアレイへのブロックアクセスがある FC または iSCSI Linux ホストからアプリケーションを実行します。</block>
   <block id="26e7b511886f2cfa073850c2af28b79e" category="paragraph">外部ソースアレイが認定されている場合は、緑色のチェックマークが表示されます。外部ソースアレイが認定されない場合は、赤い X が表示されます。ご使用のアレイが条件を満たしていない場合は、ネットアップサポートにお問い合わせください。</block>
   <block id="0494482584ffb3a3845ebc27d94cf2c6" category="summary">オフライン移行ワークフローは、移行プロセスの実行フェーズで実行されます。次のオフラインワークフローの図は、ホスト、ファブリック、デスティネーションストレージ、ソースストレージで実行されるタスクを示しています。</block>
@@ -712,9 +705,7 @@
   <block id="12d51f0d0be473e79e59c83fa299c84a" category="list-text">AMS 2100 アレイを選択し、 * Show and Configure Array* をクリックします。</block>
   <block id="dd1756f111b1bbeab7f11d4f29b44065" category="list-text">[*Groups] を選択し、 [*Host Groups] を選択します。</block>
   <block id="423fa3edfa40593a696506ec9b87fb7a" category="list-text">cDOT _ FLI igroup _ を選択し、 * ホストグループの編集 * をクリックします。</block>
-  <block id="86a3dad40c70e95d7983fcbf18aea7d1" category="list-text">Edit Host Group （ホストグループの編集）ウィンドウで、テスト LUN をマッピングするために選択したすべてのターゲットポートを選択し、 * Forced Set to all selected ports * （選択したすべてのポートに強制設定）を選択します。</block>
   <block id="6faa9428b17f6337269c355ad7611403" category="list-text">論理ユニット * タブを選択します。</block>
-  <block id="5542bb8f92dc6fbcf06ec00600f7157c" category="list-text">割り当てられた論理ユニットウィンドウからテスト LUN を選択します</block>
   <block id="4a47689d7570ed61cf2648819fdfbefe" category="list-text">「 * Remove * 」を選択して LUN マッピングを削除します。</block>
   <block id="18d0ad44a1e563aaf9f5871e32535a6c" category="list-text">[OK] をクリックします。</block>
   <block id="06cd0fe07d89be63e096ae9b935a9747" category="list-text">ホストグループは削除せずに、テスト用 LUN の削除を続行します。</block>
@@ -973,7 +964,6 @@
   <block id="2691d88591e88679a1811b61d2e2f59d" category="list-text">RDM デバイスにマッピングされている LUN NAA を特定します。</block>
   <block id="0cf65c7ab3af2e525287b55acd731b21" category="list-text">仮想マシンの構成を確認します（ esxcli storage filesystem list | grep VMFS' ）</block>
   <block id="1abcd23a32826bbad4ffb904fde775e9" category="list-text">データストアの UUID を記録します。</block>
-  <block id="c2dbaecbb6484b150b9df9ec555c57fe" category="list-text">/etc/vmware/hostd/ vmInventory.xml のコピーを作成し、ファイルの内容と vmx 構成パスをメモします。</block>
   <block id="6fb738ad7ba8ebd383451fcc9c614c23" category="list-text">仮想マシンのハードディスクを特定します。</block>
   <block id="30d5000b9319e73f23641aa68fbe7723" category="paragraph">この情報は、移行後に削除された RDM デバイスを順番に追加するために必要になります。</block>
   <block id="9dbb45357e9175d4d9379f631599e6eb" category="list-text">RDM デバイス、仮想マシンマッピング、互換モードを確認します。</block>
@@ -1163,7 +1153,6 @@
   <block id="a4354633cd0119e1314f471d610ea422" category="paragraph">Windows ホストについて、次の手順を実行します。</block>
   <block id="7ae3521b4795a0df6960b48844b8bede" category="list-text">ディスクの管理を開きます。</block>
   <block id="36a890df783d05afe153f32ada876698" category="list-text">Windows デスクトップで、 [ スタート ] ボタンをクリックします。</block>
-  <block id="b94b9ba613928ff9d75e25ce0cb374e2" category="list-text">[ 検索の開始 ] フィールドに diskmgmt.msc と入力します</block>
   <block id="39ddfcd62e9a6f642a082e4825c6ff4f" category="list-text">[ プログラム ] リストで、 [`diskmgmt] をクリックします。</block>
   <block id="8b103231da97e357c81333af4cc4b45e" category="list-text">複数のパスを確認する各ディスクを右クリックし、 * プロパティ * をクリックします。</block>
   <block id="c0829f1bd784906bc2260964e7df8fcc" category="list-text">MPIO タブの MPIO ポリシーの選択リストで、アクティブなすべてのパスをクリックします。</block>
@@ -1246,7 +1235,6 @@
   <block id="6957ef5bef3e2b05030e2f318c20f70e" category="list-text">表示されたストレージエラーの詳細を確認します。エラーによっては、処理を続行する前に対処が必要なものもありただし、次の例に示すエラーは無視しても問題ありません。 "This device is an ONTAP(R) LUN".</block>
   <block id="b8e20808df451129caa39264a050e4ae" category="paragraph">「 This device is an ONTAP\ （ R ） LUN. 」というエラーメッセージが表示されるのは、 FLI が ONTAP テクノロジに依存していて、 FlexArray または ONTAP ターゲットの仮想化をサポートしていないためです。FLI では LUN をインポートできますが、 FlexArray では仮想化はサポートされていません。</block>
   <block id="e5810d56320059c0373293d0da4050c0" category="list-text">7-Mode ストレージからマッピングされている LUN を表示します。ディスクのプロパティとパスを確認します。</block>
-  <block id="625ca7c53b2a8736ccd6170298b95c8c" category="list-text">ターゲット LUN を作成します。lun create コマンドは、パーティションオフセットに基づいてサイズとアライメントを検出し、 foreign-disk 引数に従って LUN を作成します</block>
   <block id="97c500043e97619a7cdae1db7eb50436" category="list-text">ターゲット LUN を作成します。</block>
   <block id="785fe114b1b46895afc9982f8587b494" category="list-text">テスト用 LUN をテスト用 igroup にマッピングします。</block>
   <block id="07bf6de22d85337808d6babd2bfc8074" category="list-text">テスト用 LUN をオフラインにします。</block>
@@ -1332,4 +1320,16 @@
   <block id="a4d60e73cb9c1bfe95e0f1e874619b10" category="sidebar">FLI の移行後の手順</block>
   <block id="11bfb49706ab1fb0b0c2c70607371003" category="sidebar">ゾーンセットからソースストレージとホストゾーンを削除します</block>
   <block id="faad5f79401b38fa8970d5b9e778ca6a" category="sidebar">Foreign LUN Import のパフォーマンス</block>
+  <block id="1e82f5734f8c489d66bfd28dadbe2e7b" category="paragraph">モードに _public only_ という単語が表示されている場合は、修正は必要ありません。上記の _public ats-only_ は、 ATS が有効になっていることを意味します。インポートが完了するまで無効にする必要があります。インポートが完了したら、再び有効にできます。</block>
+  <block id="f39acf9ee6c52999fba0318708fad80c" category="list-text">各ボリュームの fraction_reserveoption を 0 に設定し ' スナップショット・ポリシーを none に設定します</block>
+  <block id="4ad1ced7e20a50ce9a61f18de8cc52c9" category="list-text">問題 最終的な構成を文書化する AutoSupport コマンド</block>
+  <block id="603c38097d9812f10e39fcf68d323217" category="list-text">LUN をホストから移動するには 'UNMAP コマンドを使用しますここから中断時間が始まります。</block>
+  <block id="8d844627d2b3d4a9f5e6fd64bb23fbdd" category="paragraph">lun import throttle コマンドは、インポートを実行できる最大速度を制限するために使用します。</block>
+  <block id="fe9b94814e39a3c7f451e4e91676e2a1" category="list-text">[ カテゴリによるフィルタ ] で、 [ * 移行 ] を選択します。</block>
+  <block id="803493b6d9dbe590ab30e0e80a8e1b97" category="list-text">[* SAN LUN Migration * （ SAN LUN の移行） ] で、 [ * Download App * ] をクリックします。</block>
+  <block id="bcc013c3b737d7967f7bd1b74a363b17" category="list-text">[Edit Host Group] ウィンドウで ' テスト LUN をマッピングするために選択したすべてのターゲット・ポートを選択し '[* Forced Set to all selected ports] を選択します</block>
+  <block id="8c3b55fef9c0e25a2fe01d90beac075c" category="list-text">[*Assigned Logical Units*] ウィンドウからテスト LUN を選択します。</block>
+  <block id="0115886be5608c75c55151af2dbe24c0" category="list-text">/etc/vmware/hostd/vmInventory.xml のコピーを作成し、ファイルと vmx 構成パスの内容をメモします。</block>
+  <block id="d0148f5ec81506fa10252eb7af3017af" category="list-text">[ 検索の開始 ] フィールドに「 diskmgmt.msc 」と入力します。</block>
+  <block id="c4d603e30723f5c0bb46df3db3fd8bc6" category="list-text">ターゲット LUN を作成します。lun create コマンドは ' パーティション・オフセットに基づいてサイズとアライメントを検出し 'foreign-disk 引数を使用して対応する LUN を作成します</block>
 </blocks>

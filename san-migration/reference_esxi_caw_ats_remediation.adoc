@@ -46,7 +46,7 @@ OBJLIB-LIB: ObjLib cleanup done.
 ~ # vmkfstools -Ph -v 1 /vmfs/volumes/fli-orig-3
 ~ # vmkfstools --help
 ----
-モードに「 public only 」と表示されている場合は、更新は必要ありません。Mode に「 abovepublic ats-only 」と表示されている場合は、 ATS が有効になっているので、インポートが完了するまで無効にする必要があります。インポートが完了したら、再び有効にできます。
+モードに _public only_ という単語が表示されている場合は、修正は必要ありません。上記の _public ats-only_ は、 ATS が有効になっていることを意味します。インポートが完了するまで無効にする必要があります。インポートが完了したら、再び有効にできます。
 
 LUN で ATS / CAW を無効にするには、次のコマンドを使用します。
 
