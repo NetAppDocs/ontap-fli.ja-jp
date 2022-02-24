@@ -1,5 +1,6 @@
 ---
 permalink: san-migration/concept_enablement_for_non_supported_luns_interoperability.html 
+redirect: ontap-fli/san-migration/task_importing_non_fc_luns.html 
 sidebar: sidebar 
 keywords: enablement, non-supported, luns 
 summary: ソースアレイのホスト OS 、 HBA 、スイッチ、および ONTAP アレイと最終的な構成がすべてサポートされていることを Interoperability Matrix で確認することが重要です。 

@@ -1,7 +1,6 @@
 ---
 section: san-migration
 title: FLI を使用した SAN の移行
-url: "/san-migration/index.html"
 entries:
 - title: データ移行プログラムの概要
   entries:
@@ -66,19 +65,15 @@ entries:
   - title: 分析フェーズのワークフロー
     url: "/san-migration/concept_migration_analyze_phase_workflow.html"
   - title: 計画フェーズのワークフロー
-    entries:
-    - title: 概要
-      url: "/san-migration/concept_migration_plan_phase_workflow.html"
-    - title: FLI でサポートされる構成
-      url: "/san-migration/concept_fli_supported_configurations.html"
+    url: "/san-migration/concept_migration_plan_phase_workflow.html"
+  - title: FLI でサポートされる構成
+    url: "/san-migration/concept_fli_supported_configurations.html"
   - title: 実行フェーズのワークフロー
-    entries:
-    - title: 概要
-      url: "/san-migration/concept_migration_execute_phase_workflow.html"
-    - title: オフライン移行ワークフロー
-      url: "/san-migration/concept_fli_offline_migration.html"
-    - title: オンライン移行ワークフロー
-      url: "/san-migration/concept_fli_online_migration.html"
+    url: "/san-migration/concept_migration_execute_phase_workflow.html"
+  - title: オフライン移行ワークフロー
+    url: "/san-migration/concept_fli_offline_migration.html"
+  - title: オンライン移行ワークフロー
+    url: "/san-migration/concept_fli_online_migration.html"
   - title: 検証フェーズのワークフロー
     url: "/san-migration/concept_migration_verify_phase_workflow.html"
   - title: 調査フェーズのデータ収集手順
@@ -114,11 +109,9 @@ entries:
     - title: ソースアレイの構成方法
       url: "/san-migration/concept_how_to_configure_source_arrays.html"
     - title: 移行のテスト
-      entries:
-      - title: 概要
-        url: "/san-migration/concept_migration_tests.html"
-      - title: Hitachi AMS2100 を使用したテスト移行の例
-        url: "/san-migration/task_test_migration_example_using_hitachi_ams2100.html"
+      url: "/san-migration/concept_migration_tests.html"
+    - title: Hitachi AMS2100 を使用したテスト移行の例
+      url: "/san-migration/task_test_migration_example_using_hitachi_ams2100.html"
 - title: FLI オフラインワークフロー
   entries:
   - title: 概要
@@ -203,6 +196,8 @@ entries:
   url: "/san-migration/concept_fli_using_workflow_automation_wfa.html"
 - title: FLI の移行後の手順
   entries:
+  - title: 概要
+    url: "/san-migration/concept_fli_post_migration_procedures_all_workflows.html"
   - title: ONTAP ストレージからのソース LUN の削除
     url: "/san-migration/task_removing_source_luns_from_ontap_storage.html"
   - title: ホストからのソース LUN の削除
@@ -229,6 +224,8 @@ entries:
     url: "/san-migration/task_document_customer_environment.html"
 - title: Foreign LUN Import のパフォーマンス
   entries:
+  - title: 概要
+    url: "/san-migration/concept_performance.html"
   - title: ONTAP 8.3.1 におけるパフォーマンスの強化
     url: "/san-migration/concept_performance_enhancements_in_clustered_data_ontap_8_3_1.html"
   - title: Foreign LUN Import 移行のパフォーマンスに影響する可変要素

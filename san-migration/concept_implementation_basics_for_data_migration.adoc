@@ -1,5 +1,6 @@
 ---
 permalink: san-migration/concept_implementation_basics_for_data_migration.html 
+redirect: ontap-fli/san-migration/concept_physical_wiring_requirements_for_fli.html 
 sidebar: sidebar 
 keywords: implementation, basics, data, migration 
 summary: Foreign LUN Import （ FLI ）の実装手順には、物理的な配線、ゾーニング、イニシエータレコードの作成が含まれます。ネットアップストレージのイニシエータポートとソースストレージの初期設定で移行に向けた環境の準備を行います。 

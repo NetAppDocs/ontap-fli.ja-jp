@@ -1,11 +1,7 @@
 ---
 permalink: san-migration/index.html 
-sidebar: sidebar 
-keywords: san migration, using, foreign lun import 
-summary: ONTAP FLI の情報ライブラリへようこそ。ここでは、外部アレイから ONTAP にデータを移行する手順、および NetApp 7-Mode アレイから ONTAP に LUN を移行する手順について説明します。 
+redirect: ontap-fli/san-migration/concept_data_migration_program_overview.html 
 ---
-= Foreign LUN Import を使用した SAN の移行
-:icons: font
-:imagesdir: ../media/
+= 
 
 

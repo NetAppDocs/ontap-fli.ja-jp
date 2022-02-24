@@ -1,5 +1,6 @@
 ---
 permalink: san-migration/concept_verifying_host_lun_path_and_multipath_configuration.html 
+redirect: ontap-fli/san-migration/task_multipath_verification_for_windows_hosts.html 
 sidebar: sidebar 
 keywords: verify, host lun path, multipath, configuration, verification 
 summary: 移行の前に、マルチパスが正しく構成され、適切に動作していることを確認する必要があります。LUN への使用可能なすべてのパスがアクティブである必要があります。 

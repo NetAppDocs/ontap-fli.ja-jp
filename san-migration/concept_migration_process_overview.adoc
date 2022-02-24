@@ -1,5 +1,6 @@
 ---
 permalink: san-migration/concept_migration_process_overview.html 
+redirect: ontap-fli/san-migration/concept_migration_discover_phase_workflow.html 
 sidebar: sidebar 
 keywords: migration, process, overview 
 summary: FLI 移行プロセスは、環境調査、分析、計画、実行、検証の 5 つのフェーズからなるデータ移行手法です。 
