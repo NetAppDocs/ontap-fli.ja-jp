@@ -12,6 +12,8 @@ sidebar:
   - title: ONTAP FLI のドキュメント
     url: "/index.html"
   - section: san-migration
+  - title: 法的通知
+    url: "/reference_legal_notices.html"
 homepage:
   tiles:
   - title: FLI のワークフロー

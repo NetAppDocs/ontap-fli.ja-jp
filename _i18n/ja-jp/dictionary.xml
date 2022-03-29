@@ -466,8 +466,6 @@
   <block id="44023aa16885f326f40c8d26a3d792dc" category="list-text">自動移行では、 FLI による移行プロセスの一部を Workflow Automation （ WFA ）ソフトウェアを使用して自動化します。WFA を使用した FLI は、オンラインモードまたはオフラインモードのいずれかで使用できます。</block>
   <block id="ed84643b976a61e35dab90c06a1328ad" category="paragraph">アーキテクチャの点では、 4 つの移行ワークフローはとてもよく似ています。いずれのワークフローでも、ネットアップの FlexArray テクノロジを利用して、 ONTAP コントローラをソースアレイの前に配置したイニシエータとして機能させ、この位置を利用して、 LUN をブロック単位でソースからデスティネーション ONTAP アレイ上の LUN にコピーします。</block>
   <block id="4d01f8ae44780dd783a9a1352d13eb15" category="paragraph">各ワークフローの違いは、カットオーバーが発生する状況、中断時間の長さ、自動化の使用、ソースアレイが ONTAP 7-Mode を実行しているネットアップアレイか他社製アレイかにあります。</block>
-  <block id="ee08544761e8c3668ae2cf410df0176e" category="summary">ONTAP FLI の情報ライブラリへようこそ。ここでは、外部アレイから ONTAP にデータを移行する手順、および NetApp 7-Mode アレイから ONTAP に LUN を移行する手順について説明します。</block>
-  <block id="b4f00c3dc8ec2262f8447975755acf2d" category="doc">Foreign LUN Import を使用した SAN の移行</block>
   <block id="53a51b7dcda82a62f1a85a24f43b7788" category="summary">検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。</block>
   <block id="ce91b6039e58611f253af932de050269" category="doc">FLI オフライン：移行結果の確認</block>
   <block id="47d2204501856353838ee78e45555084" category="list-text">検証ジョブを開始して、ソース LUN とデスティネーション LUN を比較します。検証の進捗を監視します。</block>
@@ -1332,4 +1330,20 @@
   <block id="0115886be5608c75c55151af2dbe24c0" category="list-text">/etc/vmware/hostd/vmInventory.xml のコピーを作成し、ファイルと vmx 構成パスの内容をメモします。</block>
   <block id="d0148f5ec81506fa10252eb7af3017af" category="list-text">[ 検索の開始 ] フィールドに「 diskmgmt.msc 」と入力します。</block>
   <block id="c4d603e30723f5c0bb46df3db3fd8bc6" category="list-text">ターゲット LUN を作成します。lun create コマンドは ' パーティション・オフセットに基づいてサイズとアライメントを検出し 'foreign-disk 引数を使用して対応する LUN を作成します</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">著作権に関する声明、商標、特許などにアクセスできます。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法的通知</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">著作権</block>
+  <block id="de6edae22bc37b97b38a15c7f8af62e2" category="paragraph"><block ref="de6edae22bc37b97b38a15c7f8af62e2" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp のロゴ、および NetApp の商標ページに記載されているマークは、 NetApp, Inc. の商標です。その他の会社名および製品名は、それぞれの所有者の商標である場合があります。</block>
+  <block id="a93bc0a57623c2facaa010825c808507" category="paragraph"><block ref="a93bc0a57623c2facaa010825c808507" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">特許</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">ネットアップが所有する特許の最新リストは、次のサイトで入手できます。</block>
+  <block id="547ea2e305891e64d8e744949b0aca2c" category="paragraph"><block ref="547ea2e305891e64d8e744949b0aca2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">プライバシーポリシー</block>
+  <block id="50921fca0d376fca62102a5e608994e2" category="paragraph"><block ref="50921fca0d376fca62102a5e608994e2" category="inline-link-rx"></block></block>
+  <block id="b4de17ead867a3cf0b9d11e57e562672" category="section-title">機械翻訳</block>
+  <block id="dd3918c571093dff2b94f7cef5066d01" category="inline-link-macro">NetApp.com にアクセスします</block>
+  <block id="5db028f960e19ec42098e3252e4fb1e3" category="paragraph">翻訳版のコンテンツに関する重要な情報については、を参照してください <block ref="7e89bb7928e951b6f80ad1dab5c58475" category="inline-link-macro-rx"></block></block>
+  <block id="d648f2a68a54fd1b3329efc3cf24d29c" category="sidebar">法的通知</block>
 </blocks>
