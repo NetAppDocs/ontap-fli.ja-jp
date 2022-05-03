@@ -5,6 +5,7 @@ keywords: fli online, prepare, lun path
 summary: FLI オンライン移行の準備として、ホストとソース LUN のパスおよびその他の詳細を確認します。 
 ---
 = FLI オンライン： LUN パスの準備をしています
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

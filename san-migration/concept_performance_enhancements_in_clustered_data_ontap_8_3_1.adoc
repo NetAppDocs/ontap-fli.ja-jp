@@ -5,6 +5,7 @@ keywords: performance, enhancements, ontap 8.3.1
 summary: パフォーマンス管理を改善し、ワークロードで過負荷が発生しないように、 FLI の機能が拡張されています。ONTAP 8.3.1 では、 FLI の機能強化として、新しい throttle コマンドが追加されたほか、 lun import show でスループットと QoS ポリシーグループが表示されるようになりました。 
 ---
 = ONTAP 8.3.1 におけるパフォーマンスの強化
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: fli online, verify, migration, results
 summary: 検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。 
 ---
 = FLI オンライン：移行結果の確認
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

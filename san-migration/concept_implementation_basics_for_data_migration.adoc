@@ -6,6 +6,7 @@ keywords: implementation, basics, data, migration
 summary: Foreign LUN Import （ FLI ）の実装手順には、物理的な配線、ゾーニング、イニシエータレコードの作成が含まれます。ネットアップストレージのイニシエータポートとソースストレージの初期設定で移行に向けた環境の準備を行います。 
 ---
 = データ移行の実装の基本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

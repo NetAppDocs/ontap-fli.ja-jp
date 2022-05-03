@@ -5,6 +5,7 @@ keywords: data migration methodology
 summary: データ移行プロセスは、テストした手法に基づく一連のフェーズで構成されます。データ移行手法を使用して、移行の選択肢やタスクの範囲設定、計画、文書化を行うことができます。 
 ---
 = データ移行手法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

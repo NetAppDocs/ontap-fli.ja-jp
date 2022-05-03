@@ -5,6 +5,7 @@ keywords: fli, interoperability, support, criteria
 summary: FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常によく似ていますが、 FLI と連携するネットアップ認定ソースアレイのサポートを強化する目的でまったく別の相互運用性ツールとして追加されたものです。 
 ---
 = FLI の相互運用性とサポート条件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

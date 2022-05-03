@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, storage groups tab
 summary: Site Survey and Planning ワークシートの一部として、ストレージグループの情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートのストレージグループタブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

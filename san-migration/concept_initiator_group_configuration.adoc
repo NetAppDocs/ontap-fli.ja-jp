@@ -5,6 +5,7 @@ keywords: initiator, group, configuration
 summary: 正しい運用には、 LUN マスキングを適切に設定することが重要です。ONTAP ストレージのすべてのイニシエータポート（両方のノード上のもの）が同じ igroup に属している必要があります。 
 ---
 = イニシエータグループの構成
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

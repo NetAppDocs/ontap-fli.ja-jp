@@ -5,6 +5,7 @@ keywords: recommended, tools, data, migration
 summary: サービスツールは、リモートからのデータ収集、構成、ストレージ管理タスクなどの有用な機能を実行するための標準化された方法を提供します。 
 ---
 = データ移行に推奨されるツール
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

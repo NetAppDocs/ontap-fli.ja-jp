@@ -5,6 +5,7 @@ keywords: lun, requirements, limitations
 summary: FLI 移行を開始する前に、 LUN が次の要件を満たしている必要があります。 
 ---
 = LUN の要件と制限事項
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: plan, phase, workflow
 summary: データ移行プロセスの計画フェーズでは、詳細な移行計画を作成して実際の移行に向けた準備がすべて整っていることを確認するために必要なタスクを行います。移行作業の大半を占めるのが、このフェーズで実施する計画です。 
 ---
 = 計画フェーズのワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

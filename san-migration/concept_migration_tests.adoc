@@ -5,6 +5,7 @@ keywords: migration, tests
 summary: アレイ、スイッチ、ホストが適切に構成されているかどうかを検証し、移行期間と作業レベルを見極めるための判断材料となるサンプルをいくつか入手するには、テスト移行を 1 回以上実施する必要があります。 
 ---
 = 移行のテスト
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

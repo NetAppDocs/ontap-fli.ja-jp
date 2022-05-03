@@ -5,6 +5,7 @@ keywords: clean up, fli, online migration
 summary: FLI オンライン移行が完了したら、 LUN インポート関係を削除します。 
 ---
 = FLI オンライン移行をクリーンアップしています
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

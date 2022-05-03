@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, contacts tab
 summary: Site Survey and Planning ワークシートの一部として、移行プロジェクトの担当者情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートの連絡先タブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

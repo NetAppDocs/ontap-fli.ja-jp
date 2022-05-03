@@ -5,6 +5,7 @@ keywords: discover phase workflow
 summary: 移行プロセスの調査フェーズでは、ホストの修正や移行計画の作成などの以降の手順で使用する情報を収集します。ほとんどの情報は、 OneCollect などのデータ収集ツールを使用して自動的に収集されます。 
 ---
 = 調査フェーズのワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

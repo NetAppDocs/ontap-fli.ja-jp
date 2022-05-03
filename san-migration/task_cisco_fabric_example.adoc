@@ -5,6 +5,7 @@ keywords: cisco, fabric, example
 summary: この手順は、 Cisco ファブリックのゾーンセットからソースストレージとホストゾーンを削除する方法を示しています。 
 ---
 = Cisco ファブリックの例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

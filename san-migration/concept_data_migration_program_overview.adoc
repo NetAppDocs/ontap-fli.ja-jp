@@ -5,6 +5,7 @@ keywords: data, migration, program, overview
 summary: データ移行プログラムでは、ネットアップストレージへの移行や NetApp 7-Mode から ONTAP への LUN の移行をお客様が簡単に行えるようにするためのデータ移行ソリューションを作成しています。Foreign LUN Import （ FLI ）は、データ移行ポートフォリオの一部です。 
 ---
 = データ移行プログラムの概要
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

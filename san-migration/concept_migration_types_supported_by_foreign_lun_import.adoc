@@ -5,6 +5,7 @@ keywords: migration, types, supported, foreign, lun, import
 summary: FLI では、オンライン、オフライン、移行、自動の 4 種類の移行ワークフローがサポートされています。使用するワークフローは、構成やその他の要因によって異なります。 
 ---
 = Foreign LUN Import でサポートされる移行の種類
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

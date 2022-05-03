@@ -5,6 +5,7 @@ keywords: foreign, lun, import, features
 summary: FLI の機能を使用すると、サードパーティの SAN ストレージから ONTAP システムにデータを移行できます。FLI の移行機能では、さまざまなプロセスやシステムがサポートされます。 
 ---
 = Foreign LUN Import の機能
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

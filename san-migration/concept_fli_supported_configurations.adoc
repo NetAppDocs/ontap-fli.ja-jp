@@ -5,6 +5,7 @@ keywords: fli, supported, configurations
 summary: FLI の適切な運用とサポートのために、サポートされている方法で環境を導入する必要があります。エンジニアリングで新しい構成が認定されると、サポートされる構成のリストが変更されます。特定の構成がサポートされているかどうかを確認するには、 NetApp Interoperability Matrix を参照してください。 
 ---
 = FLI でサポートされる構成
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

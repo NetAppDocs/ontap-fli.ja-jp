@@ -5,6 +5,7 @@ keywords: brocade, fabric, production, fabric B, example
 summary: 本番ファブリック B の Brocade ファブリックの例を次に示します 
 ---
 = 本番ファブリック B の Brocade ファブリックの例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

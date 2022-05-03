@@ -5,6 +5,7 @@ keywords: fli online, import, data
 summary: ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。 
 ---
 = FLI オンライン：データのインポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

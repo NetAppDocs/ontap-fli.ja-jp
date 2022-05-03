@@ -5,6 +5,7 @@ keywords: verify, phase, workflow
 summary: 移行プロセスの検証フェーズでは、移行後のクリーンアップと移行計画どおりに実行できたかどうかの確認を行います。ソースストレージのイニシエータレコードと、ソースとデスティネーションの間のゾーンが削除されます。 
 ---
 = 検証フェーズのワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

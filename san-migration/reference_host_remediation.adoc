@@ -5,6 +5,7 @@ keywords: host remediation
 summary: ホストの修正は、移行の種類に応じて、移行と並行して実行する場合（ Foreign LUN Import オンラインと 7-Mode から ONTAP への移行）と移行の完了後に実行する場合（ Foreign LUN Import オフライン）があります。 
 ---
 = ホストの修正
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

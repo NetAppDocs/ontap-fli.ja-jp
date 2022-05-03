@@ -5,6 +5,7 @@ keywords: fli, offline, post-migration, tasks
 summary: 移行後のタスクとして、まだ実行していない未処理のサーバの修正を実行します。 
 ---
 = FLI オフラインの移行後のタスク
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

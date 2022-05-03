@@ -5,6 +5,7 @@ keywords: document, newly, migrated, environment
 summary: お客様の環境を文書化するには、 AutoSupport the 問題コマンドを実行する必要があります。 
 ---
 = 新たに移行した環境を文書化
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

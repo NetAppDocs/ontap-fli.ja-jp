@@ -5,6 +5,7 @@ keywords: reboot, host, validate, system state
 summary: 移行ホストの設定に変更を加える前に、移行ホストをリブートします。移行を進める前に、システムが正常な状態であることを確認します。 
 ---
 = ホストをリブートしてシステム状態を検証
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

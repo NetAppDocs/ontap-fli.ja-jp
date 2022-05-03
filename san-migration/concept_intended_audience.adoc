@@ -5,6 +5,7 @@ keywords: intended, audience
 summary: このガイドは、外部アレイから ONTAP へのデータ移行を検討しているネットアップのお客様や、 NetApp 7-Mode アレイから ONTAP への LUN の移行を検討しているお客様を対象としています。 
 ---
 = 対象読者
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

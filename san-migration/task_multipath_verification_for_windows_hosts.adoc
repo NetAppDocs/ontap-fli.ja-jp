@@ -5,6 +5,7 @@ keywords: multipath, verification, windows hosts
 summary: Foreign LUN Import （ FLI ）プロセスの一環として、マルチパスがホストで正しく構成されて機能していることを確認する必要があります。 
 ---
 = Windows ホストのマルチパスの検証
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

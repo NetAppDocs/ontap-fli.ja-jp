@@ -5,6 +5,7 @@ keywords: remove, source, luns, hosts
 summary: FLI 移行の完了後にホストからソース LUN を削除する手順を次に示します。 
 ---
 = ホストからのソース LUN の削除
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: prepare, hosts, transition
 summary: 実行フェーズには、移行ホストの準備が含まれます。 
 ---
 = ホストで移行を準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

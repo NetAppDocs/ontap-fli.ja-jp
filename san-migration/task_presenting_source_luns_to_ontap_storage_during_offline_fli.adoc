@@ -5,6 +5,7 @@ keywords: present, source luns, ontap storage, fli
 summary: オフライン FLI プロセスの一環として、ソース LUN を ONTAP ストレージに提供する必要があります。 
 ---
 = FLI での ONTAP ストレージへのソース LUN の提供
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ keywords: migration, process, overview
 summary: FLI 移行プロセスは、環境調査、分析、計画、実行、検証の 5 つのフェーズからなるデータ移行手法です。 
 ---
 = 移行プロセスの概要
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

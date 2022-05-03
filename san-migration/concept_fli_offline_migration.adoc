@@ -5,6 +5,7 @@ keywords: offline, migration, workflow
 summary: オフライン移行ワークフローは、移行プロセスの実行フェーズで実行されます。次のオフラインワークフローの図は、ホスト、ファブリック、デスティネーションストレージ、ソースストレージで実行されるタスクを示しています。 
 ---
 = オフライン移行ワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

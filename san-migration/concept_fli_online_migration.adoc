@@ -5,6 +5,7 @@ keywords: online, migration, workflow
 summary: オンライン移行ワークフローは、移行プロセスの実行フェーズで実行されます。次のオンラインワークフローの図は、ホスト、ファブリック、デスティネーションストレージ、ソースストレージで実行されるタスクを示しています。 
 ---
 = オンライン移行ワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

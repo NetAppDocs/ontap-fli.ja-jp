@@ -5,6 +5,7 @@ keywords: gap, analysis, report
 summary: ギャップ分析は、お客様の現在およびネットアップが推奨する環境に関するレポートです。移行後に実行する必要がある、お客様の環境で推奨されるすべてのアップグレードが提示されます。 
 ---
 = ギャップ分析レポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

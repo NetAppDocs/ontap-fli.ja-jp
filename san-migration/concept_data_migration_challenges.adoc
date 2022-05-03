@@ -5,6 +5,7 @@ keywords: data, migration, challenges
 summary: データ移行に伴う課題には、長時間のダウンタイム、潜在的なリスク、限られたリソース、専門知識の不足などがあります。 
 ---
 = データ移行の課題
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

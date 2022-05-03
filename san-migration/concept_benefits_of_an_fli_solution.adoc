@@ -5,6 +5,7 @@ keywords: benefits, fli-based, solution
 summary: FLI 解決策は、ネットアップのお客様に優れた価値とメリットを提供できるように設計されています。 
 ---
 = FLI ベースの解決策のメリット
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: configure, migration, jobs
 summary: FLI オフラインワークフローでは、ソース LUN とデスティネーション LUN を設定する必要があります。 
 ---
 = 移行ジョブの設定
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

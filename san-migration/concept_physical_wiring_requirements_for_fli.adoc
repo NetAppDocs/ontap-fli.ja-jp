@@ -5,6 +5,7 @@ keywords: physical, wiring, requirements, fli
 summary: FLI の配線の要件は、 NetApp FlexArray と同じです。ネットアップストレージのイニシエータポートを、ソースストレージのターゲットポートが接続されているファブリックに接続します。ソースストレージをネットアップストレージに接続する際は、 FlexArray のベストプラクティスに従ってください。 
 ---
 = FLI の物理的な配線の要件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

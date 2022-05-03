@@ -5,6 +5,7 @@ keywords: brocade, fabric, example
 summary: この手順は、 Brocade ファブリックのゾーンセットからソースストレージとホストゾーンを削除する方法を示しています。 
 ---
 = Brocade ファブリックの例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

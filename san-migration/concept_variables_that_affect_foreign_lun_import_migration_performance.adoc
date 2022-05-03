@@ -5,6 +5,7 @@ keywords: variables, affect, foreign lun import, migration, performance
 summary: 移行が完了するまでの時間にはいくつかの可変要素が影響します。 
 ---
 = Foreign LUN Import 移行のパフォーマンスに影響する可変要素
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

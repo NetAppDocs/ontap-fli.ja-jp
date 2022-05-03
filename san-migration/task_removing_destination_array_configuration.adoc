@@ -5,6 +5,7 @@ keywords: remove, destination, array, configuration
 summary: FLI 移行の完了後にソースアレイからデスティネーションアレイの構成を削除する手順を次に示します。 
 ---
 = デスティネーションアレイ構成を削除しています
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

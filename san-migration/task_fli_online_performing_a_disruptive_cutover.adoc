@@ -5,6 +5,7 @@ keywords: fli online, perform, disruptive, cutover
 summary: この例では、 FLI オンライン移行プロセスの停止を伴うカットオーバーを実行する一般的な手順を示します。 
 ---
 = FLI オンライン：停止を伴うカットオーバーの実行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

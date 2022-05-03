@@ -5,6 +5,7 @@ keywords: Create, post-migration, snapshot, copies
 summary: 移行後の Snapshot コピーを作成しておくと、あとで必要に応じてリバートできます。 
 ---
 = 移行後の Snapshot コピーを作成する
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

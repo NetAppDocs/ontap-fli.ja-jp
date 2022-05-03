@@ -5,6 +5,7 @@ keywords: target, initiator, port, zoning
 summary: FLI 移行の実行時は、ソースストレージ LUN にネットアップストレージからアクセスする必要があります。そのためには、ソースストレージのターゲットポートをデスティネーションストレージのイニシエータポートとゾーニングします。 
 ---
 = ターゲットポートとイニシエータポートのゾーニング
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

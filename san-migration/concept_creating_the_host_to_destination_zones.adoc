@@ -5,6 +5,7 @@ keywords: create, host, destination, zones
 summary: ホストからデスティネーションへのゾーンを作成する必要があります。本番ファブリックには、ファブリック A とファブリック B の 2 つのタイプがあります 
 ---
 = ホストからデスティネーションへのゾーンを作成する
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

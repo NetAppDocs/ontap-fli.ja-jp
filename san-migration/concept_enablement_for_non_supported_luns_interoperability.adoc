@@ -6,6 +6,7 @@ keywords: enablement, non-supported, luns
 summary: ソースアレイのホスト OS 、 HBA 、スイッチ、および ONTAP アレイと最終的な構成がすべてサポートされていることを Interoperability Matrix で確認することが重要です。 
 ---
 = サポートされていない LUN の有効化
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

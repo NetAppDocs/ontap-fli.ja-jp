@@ -5,6 +5,7 @@ keywords: plan, prepare, phase, procedures
 summary: FLI 計画フェーズでは、詳細な移行計画を作成し、実際の移行に向けてお客様の環境を準備するために必要なタスクを行います。このフェーズでは、 Foreign LUN Import のインストールとセットアップを確認するために 1 つ以上のテスト移行が実行されます。 
 ---
 = 計画 / 準備フェーズの手順
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

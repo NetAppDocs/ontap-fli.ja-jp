@@ -5,6 +5,7 @@ keywords: check, supported configurations, fli using imt
 summary: ネットアップが認定した他社の製品やコンポーネントと連携するネットアップ製品の構成については、 Interoperability Matrix Tool （ IMT ）を使用してください。 
 ---
 = IMT を使用した FLI でサポートされている構成の確認
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

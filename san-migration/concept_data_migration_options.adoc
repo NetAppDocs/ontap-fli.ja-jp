@@ -5,6 +5,7 @@ keywords: data, migration, options
 summary: データ移行オプションを選択する際の考慮事項として、データ転送アプライアンスやアプリケーションベースの移行の使用について説明します。 
 ---
 = データ移行のオプション
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

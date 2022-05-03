@@ -5,6 +5,7 @@ keywords: professional, services, san, migration, solutions
 summary: ネットアップとパートナーのプロフェッショナルサービスは、実績ある手法に基づいて SAN の移行の主要なすべてのフェーズを支援します。 
 ---
 = SAN 移行ソリューション向けのプロフェッショナルサービス
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

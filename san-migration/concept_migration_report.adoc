@@ -5,6 +5,7 @@ keywords: migration, report
 summary: インポートのログは、クラスタのイベントログファイルに記録されます。ログでエラーがないかを確認し、移行が正常に完了したことを確認してください。 
 ---
 = 移行レポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

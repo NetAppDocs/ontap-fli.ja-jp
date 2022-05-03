@@ -5,6 +5,7 @@ keywords: supported, host, operating, systems, fli, online
 summary: FLI オンラインワークフローは、次のいずれかのオペレーティングシステムを実行しているホストに接続された LUN に使用できます。 
 ---
 = FLI オンラインでサポートされているホストオペレーティングシステム
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

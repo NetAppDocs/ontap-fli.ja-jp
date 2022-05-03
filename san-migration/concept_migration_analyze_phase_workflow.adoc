@@ -5,6 +5,7 @@ keywords: analyze, phase, workflow
 summary: 分析フェーズでは、移行計画を立てる前に対処する必要がある項目について調べます。Interoperability Matrix と一致しないホスト構成の仕様を特定する必要があります。 
 ---
 = 分析フェーズのワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

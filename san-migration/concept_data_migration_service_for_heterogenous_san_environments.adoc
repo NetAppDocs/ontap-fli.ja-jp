@@ -5,6 +5,7 @@ keywords: data, migration, service, heterogeneous, san, environments
 summary: 異機種混在 SAN 環境向けのデータ移行サービスは、 FLI テクノロジを使用した包括的なデータ移行解決策です。SAN データ移行サービスは、エラーを減らし、生産性を高め、一貫したデータ移行を促進する、ネットアップとパートナーのプロフェッショナルサービスのソフトウェアとサービスを提供します。 
 ---
 = 異機種混在 SAN 環境向けのデータ移行サービス
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

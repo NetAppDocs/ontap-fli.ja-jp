@@ -6,6 +6,7 @@ keywords: verify, host lun path, multipath, configuration, verification
 summary: 移行の前に、マルチパスが正しく構成され、適切に動作していることを確認する必要があります。LUN への使用可能なすべてのパスがアクティブである必要があります。 
 ---
 = ホスト LUN のパスとマルチパス構成の検証
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

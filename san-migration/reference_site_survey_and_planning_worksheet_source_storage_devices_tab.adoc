@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, source storage devices tab
 summary: Site Survey and Planning ワークシートの一部として、移行元のソースストレージデバイスの情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートのソースストレージデバイスタブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: discover, phase, data, collection, procedures
 summary: 調査フェーズでは、移行の計画と実行に必要なお客様の環境の情報を収集します。 
 ---
 = 調査フェーズのデータ収集手順
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

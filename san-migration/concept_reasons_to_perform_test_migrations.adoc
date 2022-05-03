@@ -5,6 +5,7 @@ keywords: reasons, perform, test, migrations
 summary: 本番環境のデータを移行する前に、お客様のテスト環境ですべての構成をテストすることを推奨します。 
 ---
 = テスト移行を実施する理由
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: fli, 7-mode, ontap, transition, workflow
 summary: ここでは、 FLI の 7-Mode から ONTAP への移行ワークフローの例を示します。移行ワークフローは、オンラインとオフラインのどちらのワークフローとしても実行できます。 
 ---
 = FLI の 7-Mode から ONTAP への移行ワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

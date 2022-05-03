@@ -5,6 +5,7 @@ keywords: verify, source luns, destination storage, offline fli
 summary: オフライン Foreign LUN Import プロセスの一環として、デスティネーションストレージのソース LUN を確認する必要があります。 
 ---
 = オフライン FLI のためのデスティネーションストレージのソース LUN の確認
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

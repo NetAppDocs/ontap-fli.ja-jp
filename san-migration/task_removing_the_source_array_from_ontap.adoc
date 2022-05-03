@@ -5,6 +5,7 @@ keywords: remove, source array, ontap
 summary: FLI 移行の完了後にデスティネーションアレイからソースアレイを削除する手順を次に示します。 
 ---
 = ONTAP からソースアレイを削除しています
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

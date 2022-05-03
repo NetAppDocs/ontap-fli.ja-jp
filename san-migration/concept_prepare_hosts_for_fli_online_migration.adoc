@@ -5,6 +5,7 @@ keywords: prepare, hosts, fli, online, migration
 summary: FLI オンラインの実行フェーズには、移行ホストをサポートされている構成にするための準備が含まれます。 
 ---
 = FLI オンライン移行のためのホストの準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

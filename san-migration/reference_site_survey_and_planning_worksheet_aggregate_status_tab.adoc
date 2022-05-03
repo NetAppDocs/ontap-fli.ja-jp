@@ -5,6 +5,7 @@ keywords: site, survey and planning, worksheet, aggregate status tab
 summary: Site Survey and Planning ワークシートの一部として、アグリゲートステータスの情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートのアグリゲートステータスタブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

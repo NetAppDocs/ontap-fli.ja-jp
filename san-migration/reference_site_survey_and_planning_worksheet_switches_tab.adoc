@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, switches tab
 summary: Site Survey and Planning ワークシートの一部として、移行のスイッチ情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートのスイッチタブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

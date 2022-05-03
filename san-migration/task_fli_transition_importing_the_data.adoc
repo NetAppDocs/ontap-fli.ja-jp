@@ -5,6 +5,7 @@ keywords: import, data, fli 7-mode, ontap
 summary: FLI を使用して 7-Mode ソース LUN から ONTAP デスティネーション LUN にデータをインポートする手順は次のとおりです。 
 ---
 = FLI の 7-Mode から ONTAP へのデータのインポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

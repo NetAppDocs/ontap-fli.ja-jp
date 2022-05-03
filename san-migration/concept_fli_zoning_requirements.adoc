@@ -5,6 +5,7 @@ keywords: fli, zoning, requirements
 summary: FLI を使用した標準的な移行シナリオでは、次の 4 つのゾーンが必要です。各ゾーンに特定のポートを含める必要があります。 
 ---
 = FLI のゾーニングの要件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

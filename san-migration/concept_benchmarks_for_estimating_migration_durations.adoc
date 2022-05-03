@@ -5,6 +5,7 @@ keywords: benchmarks, estimating, migration, durations
 summary: 計画を立てるためには、特定の前提条件に基づいてデータ移行の作業レベルと所要時間を見積もることができます。 
 ---
 = 移行時間の見積もりのためのベンチマーク
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

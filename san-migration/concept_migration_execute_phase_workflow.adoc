@@ -5,6 +5,7 @@ keywords: execute, phase, workflows
 summary: 実行フェーズでは、 FLI オフラインまたはオンライン移行を実行するための LUN 移行タスクを行います。 
 ---
 = 実行フェーズのワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

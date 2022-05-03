@@ -5,6 +5,7 @@ keywords: fli, using, workflow, automation, wfa, migration
 summary: Workflow Automation を FLI と組み合わせて使用すると、移行前と移行後のタスクや移行の実行、およびステータスチェックを自動化できます。自動移行では、 FLI による移行プロセスの一部を Workflow Automation ソフトウェアを使用して自動化します。WFA を使用した FLI は、オンラインモードまたはオフラインモードのいずれかで使用できます。 
 ---
 = FLI での Workflow Automation （ WFA ）の使用
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

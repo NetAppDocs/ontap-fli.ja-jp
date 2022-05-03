@@ -5,6 +5,7 @@ keywords: foreign, lun, import, overview
 summary: Foreign LUN Import （ FLI ）は、外部アレイ LUN からネットアップ LUN にデータを簡単かつ効率的にインポートできる ONTAP の組み込みの機能です。 
 ---
 = Foreign LUN Import の概要を参照してください
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

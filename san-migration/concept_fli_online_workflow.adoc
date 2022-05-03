@@ -5,6 +5,7 @@ keywords: fli, online, workflow
 summary: ここでは、 4 つの FLI ワークフローのうちの 2 つ目の例として、 FLI オンライン移行の例を示します。 
 ---
 = FLI オンラインワークフロー
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

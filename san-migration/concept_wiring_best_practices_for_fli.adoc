@@ -5,6 +5,7 @@ keywords: wire, best practices, fli migration
 summary: FLI 移行用に ONTAP ストレージを構成するには、計画の情報と推奨されるベストプラクティスに基づいてソースストレージをファブリックに接続する必要があります。 
 ---
 = FLI 移行のための配線のベストプラクティス
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, fas config tab
 summary: Site Survey and Planning ワークシートの一部として、 FAS 設定の情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートの FAS 設定タブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

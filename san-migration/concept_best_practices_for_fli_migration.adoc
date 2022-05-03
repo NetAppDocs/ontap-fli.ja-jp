@@ -5,6 +5,7 @@ keywords: best practices, foreign lun, import migration
 summary: 移行の範囲設定や計画の支援のほか、お客様の担当者向けの Foreign LUN Import （ FLI ）を使用した 7-Mode から ONTAP へのデータ移行のトレーニングも受けられるため、プロフェッショナルサービスまたはパートナープロフェッショナルサービスを利用することを強く推奨します。 
 ---
 = Foreign LUN Import 移行のベストプラクティスを紹介します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

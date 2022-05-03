@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, lun details tab
 summary: Site Survey and Planning ワークシートの一部として、 LUN の詳細情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートの LUN Details タブ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: prepare, hosts, fli, offline, migration
 summary: FLI オフラインの実行フェーズには、移行ホストの準備が含まれます。 
 ---
 = FLI オフライン移行のためのホストの準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

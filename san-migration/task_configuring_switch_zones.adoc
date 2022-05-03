@@ -5,6 +5,7 @@ keywords: configure, switch, zones
 summary: ソースストレージをデスティネーションストレージに接続するために、 SAN スイッチに必要なゾーンを作成する必要があります。 
 ---
 = スイッチゾーンを設定しています
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

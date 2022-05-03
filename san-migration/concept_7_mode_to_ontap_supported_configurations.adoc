@@ -5,6 +5,7 @@ keywords: 7-mode, ontap, fli, supported, configurations
 summary: 最終的に移行するホスト OS 、 HBA 、スイッチ、 ONTAP アレイがサポートされていることを確認することが重要です。 
 ---
 = 7-Mode から ONTAP への FLI でサポートされる構成
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

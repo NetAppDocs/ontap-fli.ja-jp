@@ -5,6 +5,7 @@ keywords: analyze, phase, imt, best practices
 summary: 分析フェーズでは、移行作業に進む前に対処する必要がある項目について調べます。ホストの構成情報を、 NetApp Interoperability Matrix （ IMT ）に記載されているサポート対象の構成と比較する必要があります。 
 ---
 = 分析フェーズの IMT のベストプラクティス
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

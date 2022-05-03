@@ -5,6 +5,7 @@ keywords: prepare, source, destination, arrays, migration
 summary: FLI の 7-Mode から ONTAP への移行の準備として、ホストとソース LUN のパスおよびその他の詳細を確認します。 
 ---
 = ソースアレイとデスティネーションアレイの移行の準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

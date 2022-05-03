@@ -5,6 +5,7 @@ keywords: unzone, source, destination, array
 summary: 移行と検証がすべて完了したら、ソースアレイとデスティネーションアレイのゾーニングを解除できます。 
 ---
 = ソースアレイとデスティネーションアレイのゾーニングを解除します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

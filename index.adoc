@@ -6,6 +6,7 @@ summary: ONTAP Foreign LUN Import の略
 ---
 = ONTAP Foreign LUN Import に関するドキュメント
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

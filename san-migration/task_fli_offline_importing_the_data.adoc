@@ -5,6 +5,7 @@ keywords: fli offline, import data
 summary: ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。 
 ---
 = FLI オフライン：データのインポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

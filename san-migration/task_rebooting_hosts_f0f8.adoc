@@ -5,6 +5,7 @@ keywords: reboot, hosts
 summary: このワークフローを開始する前にホストをリブートすることで、ホストが正常な状態であることを確認できます。 
 ---
 = ホストのリブート中です
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

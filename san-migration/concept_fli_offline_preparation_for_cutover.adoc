@@ -6,6 +6,7 @@ keywords: fli, offline, preparation, cutover
 summary: Foreign LUN Import （ FLI ）の移行前の準備として、ホストとソース LUN のパスを検証します。ホストがリブートしたら、移行に備えてシャットダウンします。 
 ---
 = FLI オフライン：カットオーバーの準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

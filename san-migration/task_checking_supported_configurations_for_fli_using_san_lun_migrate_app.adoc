@@ -5,6 +5,7 @@ keywords: check, supported configurations, fli, using, san lun migrate app
 summary: ONTAP 9.9.9..1 以降では、 SAN LUN 移行アプリケーションを使用して、外部ソースアレイを FLI の対象として指定できます。目的の外部アレイが FLI IMT にリストされていない場合は、 SAN LUN 移行アプリケーションを使用できます。 
 ---
 = SAN LUN Migrate App を使用した FLI でサポートされる構成の確認
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

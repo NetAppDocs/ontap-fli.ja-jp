@@ -5,6 +5,7 @@ keywords: use, foreign lun import, import luns, aff
 summary: ONTAP は、 FlexArray ソフトウェアのすべてのリリースで AFF をサポートしているわけではありません。それらのリリースでは、 AFF と同じクラスタの AFF 以外のハイアベイラビリティ（ HA ）ペアに Foreign LUN Import （ FLI ）をステージングする必要があります。 
 ---
 = Foreign LUN Import を使用した AFF への LUN のインポート
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

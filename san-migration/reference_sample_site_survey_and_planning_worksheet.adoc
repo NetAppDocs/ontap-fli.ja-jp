@@ -5,6 +5,7 @@ keywords: sample, site, survey and planning, worksheet
 summary: 移行方法を決める分析フェーズと計画フェーズでは、 Site Survey and Planning ワークシートを使用して、既存の構成、ターゲット構成、ギャップ、および修正計画を文書化する必要があります。 
 ---
 = Site Survey and Planning ワークシートの例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: site, survey and planning worksheet, migration schedule tab
 summary: Site Survey and Planning ワークシートの一部として、移行スケジュールの情報を含むタブを設定する必要があります。 
 ---
 = Site Survey and Planning ワークシートの Migration Schedule タブで
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

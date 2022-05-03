@@ -5,6 +5,7 @@ keywords: perform, disruptive, cutover, fli 7-mode, ontap
 summary: この例では、 FLI 移行プロセスの停止を伴うカットオーバーを実行する一般的な手順を示します。 
 ---
 = FLI の 7-Mode から ONTAP への移行の停止を伴うカットオーバーの実行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
