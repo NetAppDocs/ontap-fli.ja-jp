@@ -11,24 +11,24 @@ summary: FLI オンラインワークフローは、次のいずれかのオペ�
 
 
 [role="lead"]
-FLI オンラインワークフローは、次のいずれかのオペレーティングシステムを実行しているホストに接続された LUN に使用できます。
+FLIオンラインワークフローは、次のいずれかのバージョンのオペレーティングシステムを実行しているホストに接続されたLUNで使用できます。
 
 . Microsoft （リストされているすべてのバージョンのサーバがサポートされています）：
 +
-** Windows Server 2008 （ Windows Server フェイルオーバークラスタを含む）
-** Microsoft Hyper-V サーバ 2008
-** Windows Server 2012 （ Windows Server 2012 クラスタを含む）
-** Microsoft Hyper-V Server 2012
+** Windows Server 2008以降（Windows Serverフェイルオーバークラスタを含む）
+** Microsoft Hyper-V Server 2008以降
+** Windows Server 2012以降（Windows Server 2012クラスタを含む）
+** Microsoft Hyper-V Server 2012以降
 
 
 . VMware ：
 +
-** ESXi 5.x のすべてのリリース
+** ESXi 5.x以降のすべてのリリース
 
 
 . Linux ：
 +
-** Red Hat Enterprise Linux （ RHEL ） 5.x / 6.x
+** Red Hat Enterprise Linux（RHEL）5.x以降
 
 
 
