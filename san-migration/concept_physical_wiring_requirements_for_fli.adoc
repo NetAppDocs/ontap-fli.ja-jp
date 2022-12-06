@@ -21,10 +21,6 @@ image::../media/physical_wiring_1.png[物理的配線 1]
 
 配線に際しては、次のベストプラクティスに従ってください。
 
-* ソースストレージとデスティネーションストレージの配線については、 NetApp FlexArray のベストプラクティスを使用してください。詳細については、 FlexArray 仮想化インストール要件およびリファレンスガイドを参照してください。
+* で説明したように、ソースストレージとデスティネーションストレージの配線には、NetApp FlexArray のベストプラクティスを使用してください https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化のインストール要件"]。
 * ONTAP ストレージでは、ファブリックに接続するための空きイニシエータポートが必要です。空きポートがない場合は、イニシエータポートを設定します。
 
-
-* 関連情報 *
-
-https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化のインストール要件およびリファレンス"]
