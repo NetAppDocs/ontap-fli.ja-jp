@@ -1332,12 +1332,11 @@
   <block id="d1b92a4930d50c6ed1038655db0d2684" category="sidebar">すべてのONTAP 製品ドキュメント</block>
   <block id="ea55df179f5c8f2dc6d72bdcb7fe2e57" category="summary">このコンテンツは、外部アレイからONTAP にデータを移行する場合や、NetApp 7-ModeアレイからONTAP にLUNを移行する場合に役立ちます。</block>
   <block id="401497503074d7ec7406c3ce5a48dbc8" category="paragraph">ゾーニング、LUNマスキング、LUNを移行する必要があるホストオペレーティングシステム、ONTAP 、ソースのサードパーティアレイなど、SANの一般的な概念とプロセスを理解しておく必要があります。</block>
-  <block id="bccfda2dd766fcf9db897075f70d113a" category="inline-link">FlexArray 仮想化のインストール要件</block>
-  <block id="8899c4f28badd5881e532a34f2c0d2d7" category="list-text">で説明したように、ソースストレージとデスティネーションストレージの配線には、NetApp FlexArray のベストプラクティスを使用してください<block ref="af4972f8b97e166c7432d033e734d43e" category="inline-link-rx"></block>。</block>
   <block id="b0f36dbc8cbf7c56840f51534500c27b" category="inline-link">データ移行ツールクイックリファレンス</block>
   <block id="baca4f7d8c0223a33622dbfb8e5e38de" category="paragraph">FLI の移行処理はすべて LUN レベルで実行されます。FLI はあくまでブロックベースのツールです。ファイル、レコード、 NFS 、 CIFS をベースとする移行はサポートしていません。NFSやCIFS / SMBなど、ファイルレベルのプロトコル向けのその他の移行方法については、を参照してください<block ref="e415da1b4972963be10dbe349c4850a6" category="inline-link-rx"></block>。</block>
   <block id="e0a83b8c461db09706d982eeea30d1df" category="paragraph">FLI を実行するには、各コントローラに少なくとも 1 つの物理 FC ポートが必要です。また、 LUN をイニシエータモードで直接移行する必要があります。ファブリックごとに 1 つずつ、 2 つのポートを使用することを推奨しますが、単一ポートの構成も可能です。これらのポートはソースアレイへの接続に使用され、ソース LUN を認識してマウントできるようにゾーニングおよびマスキングする必要があります。ポートをターゲットからイニシエータに変更する必要がある場合は、を参照してください<block ref="66f8c243fef55cbf3f49d4ec76027b8d" category="inline-link-rx"></block> FCポートをターゲットからイニシエータに変換するプロセスを確認する。</block>
   <block id="7a6d059da8a56b5bb032ab555e452fb8" category="paragraph">ここでは、 4 つの FLI ワークフローのうちの 2 つ目の例として、 FLI オンライン移行の例を示します。この例のソースアレイは、 EMC VNX5500 です。</block>
   <block id="b107b92b08e1507c6d61c65a86b28086" category="paragraph">オンラインワークフローのタスクは次のとおりです。</block>
-  <block id="0acd87400826433082ab90260e9cc109" category="paragraph">イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。を確認することもできます<block ref="737823659babb212ffbc8948b616644f" category="inline-link-rx"></block> サードパーティ製ストレージ構成の要件については、を参照してください。</block>
+  <block id="d65237d15ed3f23354581867591cc773" category="list-text">で説明したように、ソースストレージとデスティネーションストレージの配線には、NetApp FlexArray のベストプラクティスを使用してください<block ref="66f8c243fef55cbf3f49d4ec76027b8d" category="inline-link-rx"></block>。</block>
+  <block id="6c98897f95672b5dde701dffbd4b05a0" category="paragraph">イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。また、を確認することもできます<block ref="737823659babb212ffbc8948b616644f" category="inline-link-rx"></block> サードパーティ製ストレージ構成の要件については、を参照してください。</block>
 </blocks>

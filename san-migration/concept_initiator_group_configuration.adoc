@@ -30,4 +30,4 @@ NOTE: このセクションの例では、 Hitachi Data Systems （ HDS ） AMS 
 
 これらの呼び方に関係なく、イニシエータグループの目的は、同じ LUN マッピングを共有するイニシエータを WWPN で識別することです。
 
-イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。を確認することもできます https://docs.netapp.com/us-en/ontap-flexarray/implement-third-party/index.html["サードパーティ製ストレージ向けの FlexArray 仮想化の実装"] サードパーティ製ストレージ構成の要件については、を参照してください。
+イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。また、を確認することもできます https://docs.netapp.com/us-en/ontap-flexarray/implement-third-party/index.html["サードパーティ製ストレージ向けの FlexArray 仮想化の実装"] サードパーティ製ストレージ構成の要件については、を参照してください。
