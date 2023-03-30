@@ -18,12 +18,12 @@ summary: ソース LUN からデスティネーション LUN にデータをイ�
 +
 [listing]
 ----
-cluster::*> lun import start -vserver fli_72C -path /vol/flivol/72Clun1
+cluster::*> lun import start -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
 ----
 . FLI のステータスを表示します。
 +
 [listing]
 ----
-cluster::*> lun import show -vserver fli_72C -path /vol/flivol/72Clun1
+cluster::*> lun import start -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
 ----
 
