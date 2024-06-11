@@ -13,24 +13,4 @@ summary: Foreign LUN Import （ FLI ）プロセスの一環として、マル�
 [role="lead"]
 Foreign LUN Import （ FLI ）プロセスの一環として、マルチパスがホストで正しく構成されて機能していることを確認する必要があります。
 
-Windows ホストについて、次の手順を実行します。
-
-.手順
-. ディスクの管理を開きます。
-+
-.. Windows デスクトップで、 [ スタート ] ボタンをクリックします。
-.. [ 検索の開始 ] フィールドに「 diskmgmt.msc 」と入力します。
-.. [ プログラム ] リストで、 [`diskmgmt] をクリックします。
-
-
-. 複数のパスを確認する各ディスクを右クリックし、 * プロパティ * をクリックします。
-. MPIO タブの MPIO ポリシーの選択リストで、アクティブなすべてのパスをクリックします。
-+
-image::../media/windows_host_1.png[Windows MPIO のプロパティ]
-
-+
-コマンドラインを使用してマルチパスを検証するには、次の手順を実行します。
-
-. Windows のコマンドプロンプトを開きます。
-. mpclaim.exe -v c ： \multipathconfig.txt を実行して、マルチパス構成を取得します。
-
+Windowsホストの詳細な手順については、のマルチパスに関するセクションを参照してください。 link:https://docs.netapp.com/us-en/ontap-sanhost/hu_windows_2022.html#multipathing["ONTAP で2022にWindows Serverを使用する"^]。
