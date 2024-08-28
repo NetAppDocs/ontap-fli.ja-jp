@@ -1326,4 +1326,7 @@
   <block id="6c98897f95672b5dde701dffbd4b05a0" category="paragraph">イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。また、を確認することもできます<block ref="737823659babb212ffbc8948b616644f" category="inline-link-rx"></block> サードパーティ製ストレージ構成の要件については、を参照してください。</block>
   <block id="29b512fbc4379581cd2fd8694ca529c4" category="inline-link-macro">ONTAP で2022にWindows Serverを使用する</block>
   <block id="82e292bca3bfc1c57dd6f3dc796412a0" category="paragraph">Windowsホストの詳細な手順については、のマルチパスに関するセクションを参照してください。 <block ref="cce832a1ed6f79df8eb06042aeeb6d79" category="inline-link-macro-rx"></block>。</block>
+  <block id="9a4c1be88c2720ce2a1f8a5fd2b27a5c" category="sidebar">FLIワークフロー</block>
+  <block id="9661e4f0a38203cee0d0ec82dcba896f" category="sidebar">オフラインワークフロー</block>
+  <block id="afec4ed45e968a4fe6c00ed1c1e83691" category="sidebar">オンラインワークフロー</block>
 </blocks>
