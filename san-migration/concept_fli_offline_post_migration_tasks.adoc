@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fli, offline, post-migration, tasks 
 summary: 移行後のタスクとして、まだ実行していない未処理のサーバの修正を実行します。 
 ---
-= FLI オフラインの移行後のタスク
+= ONTAP FLIオフライン移行後タスクを実行する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

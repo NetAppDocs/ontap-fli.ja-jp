@@ -17,7 +17,7 @@ summary: データ移行プロセスの計画フェーズでは、詳細な移�
 
 次の図に、計画のワークフローを示します。
 
-image::../media/plan_and_prepare_phase_1.png[計画と準備フェーズ 1.]
+image::../media/plan_and_prepare_phase_1.png[移行計画ワークフロー]
 
 計画フェーズのタスクを次の表に示します。
 

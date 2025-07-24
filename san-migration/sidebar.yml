@@ -48,10 +48,10 @@ entries:
     url: "/san-migration/concept_implementation_basics_for_data_migration.html"
   - title: FLI の物理的な配線の要件
     url: "/san-migration/concept_physical_wiring_requirements_for_fli.html"
-  - title: ターゲットポートとイニシエータポートのゾーニング
+  - title: FCアダプタのイニシエータ モード設定
+    url: san-migration/configure-fc-adapter-initiator.html
+  - title: FLIのターゲットおよびイニシエーターポートのゾーニング
     url: "/san-migration/concept_target_and_initiator_port_zoning.html"
-  - title: FLI のゾーニングの要件
-    url: "/san-migration/concept_fli_zoning_requirements.html"
   - title: イニシエータグループの構成
     url: "/san-migration/concept_initiator_group_configuration.html"
   - title: テスト移行を実施する理由
@@ -112,63 +112,41 @@ entries:
       url: "/san-migration/concept_migration_tests.html"
     - title: Hitachi AMS2100 を使用したテスト移行の例
       url: "/san-migration/task_test_migration_example_using_hitachi_ams2100.html"
-- title: FLI オフラインワークフロー
+- title: FLIオフライン移行
   entries:
-  - title: 概要
+  - title: ワークフロー
     url: "/san-migration/concept_fli_offline_workflow.html"
-  - title: FLI オフライン：カットオーバーの準備
-    entries:
-    - title: 概要
-      url: "/san-migration/concept_fli_offline_preparation_for_cutover.html"
-    - title: ホストをリブートしてシステム状態を検証
-      url: "/san-migration/task_rebooting_the_host_to_validate_system_state.html"
-    - title: ホスト LUN のパスとマルチパス構成の検証
-      entries:
-      - title: 概要
-        url: "/san-migration/concept_verifying_host_lun_path_and_multipath_configuration.html"
-      - title: Windows ホストのマルチパスの検証
-        url: "/san-migration/task_multipath_verification_for_windows_hosts.html"
-      - title: Linux ホストのマルチパスの検証
-        url: "/san-migration/task_multipath_verification_for_linux_hosts.html"
-      - title: ESXi ホストのマルチパスの検証
-        url: "/san-migration/task_multipath_verification_for_esxi_hosts.html"
-    - title: FLI オフライン移行のためのホストの準備
-      url: "/san-migration/concept_prepare_hosts_for_fli_offline_migration.html"
-    - title: FLI での ONTAP ストレージへのソース LUN の提供
-      url: "/san-migration/task_presenting_source_luns_to_ontap_storage_during_offline_fli.html"
-    - title: オフライン FLI のためのデスティネーションストレージのソース LUN の確認
-      url: "/san-migration/task_verifying_source_luns_on_destination_storage_for_offline_foreign_lun_import.html"
-    - title: 移行ジョブの設定
-      url: "/san-migration/task_configuring_migration_jobs.html"
-  - title: FLI オフライン：データのインポート
+  - title: 移行のためのホストの準備
+    url: "/san-migration/prepare-host-offline-migration.html"
+  - title: 移行のために外部LUNを準備する
+    url: "/san-migration/prepare-foreign-lun-offline.html"
+  - title: LUNインポート関係を作成する
+    url: "/san-migration/create-lun-import-relationship-offline.html"
+  - title: データのインポート
     url: "/san-migration/task_fli_offline_importing_the_data.html"
-  - title: FLI オフライン：移行結果の確認
+  - title: 移行結果を確認する
     url: "/san-migration/task_fli_offline_verifying_migration_results.html"
-  - title: FLI オフラインの移行後のタスク
+  - title: LUNインポート関係を削除します
+    url: "/san-migration/remove-lun-import-relationship-offline.html"
+  - title: 移行後のタスクを実行する
     url: "/san-migration/concept_fli_offline_post_migration_tasks.html"
-- title: FLI オンラインワークフロー
+- title: FLIオンライン移行
   entries:
-  - title: 概要
+  - title: ワークフロー
     url: "/san-migration/concept_fli_online_workflow.html"
-  - title: ホストのリブート中です
-    url: "/san-migration/task_rebooting_hosts_f0f8.html"
-  - title: FLI オンラインでサポートされているホストオペレーティングシステム
-    url: "/san-migration/concept_supported_host_operating_systems_for_fli_online.html"
-  - title: ホスト LUN のパスとマルチパス構成を検証する
-    url: "/san-migration/concept_verify_host_lun_path_and_multipath_configuration_fa1e.html"
-  - title: FLI オンライン移行のためのホストの準備
-    url: "/san-migration/concept_prepare_hosts_for_fli_online_migration.html"
-  - title: FLI オンライン： LUN パスの準備をしています
-    url: "/san-migration/task_fli_online_preparing_the_lun_path.html"
-  - title: FLI オンライン：停止を伴うカットオーバーの実行
-    url: "/san-migration/task_fli_online_performing_a_disruptive_cutover.html"
-  - title: FLI オンライン：データのインポート
+  - title: 移行のためのホストの準備
+    url: "/san-migration/prepare-host-online-migration.html"
+  - title: LUNインポート関係を作成する
+    url: "/san-migration/create-lun-import-relationship-online.html"
+  - title: ソースLUNを宛先アレイにマップする
+    url: "/san-migration/map-source-lun-to-destination-online-migration.html"
+  - title: データのインポート
     url: "/san-migration/task_fli_online_importing_the_data.html"
-  - title: FLI オンライン：移行結果の確認
+  - title: 移行結果を確認する
     url: "/san-migration/task_fli_online_verifying_migration_results.html"
-  - title: FLI オンライン移行をクリーンアップしています
-    url: "/san-migration/task_fli_online_cleanup.html"
-  - title: FLI オンラインの移行後のタスク
+  - title: LUNインポート関係を削除します
+    url: "/san-migration/remove-lun-import-relationship-online.html"
+  - title: 移行後のタスクを実行する
     url: "/san-migration/concept_fli_online_post_migration_tasks.html"
 - title: FLI の 7-Mode から ONTAP への移行ワークフロー
   entries:
@@ -196,8 +174,6 @@ entries:
   url: "/san-migration/concept_fli_using_workflow_automation_wfa.html"
 - title: FLI の移行後の手順
   entries:
-  - title: 概要
-    url: "/san-migration/concept_fli_post_migration_procedures_all_workflows.html"
   - title: ONTAP ストレージからのソース LUN の削除
     url: "/san-migration/task_removing_source_luns_from_ontap_storage.html"
   - title: ホストからのソース LUN の削除
@@ -224,8 +200,6 @@ entries:
     url: "/san-migration/task_document_customer_environment.html"
 - title: Foreign LUN Import のパフォーマンス
   entries:
-  - title: 概要
-    url: "/san-migration/concept_performance.html"
   - title: ONTAP 8.3.1 におけるパフォーマンスの強化
     url: "/san-migration/concept_performance_enhancements_in_clustered_data_ontap_8_3_1.html"
   - title: Foreign LUN Import 移行のパフォーマンスに影響する可変要素

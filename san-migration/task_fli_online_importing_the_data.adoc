@@ -2,28 +2,38 @@
 permalink: san-migration/task_fli_online_importing_the_data.html 
 sidebar: sidebar 
 keywords: fli online, import, data 
-summary: ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。 
+summary: LUN インポート関係が確立され、ホストが外部アレイからONTAPアレイにカットオーバーされたら、外部ソース LUN からONTAP宛先 LUN にデータをインポートできます。 
 ---
-= FLI オンライン：データのインポート
+= ONTAP FLIオンライン移行を使用して外部アレイからデータをインポートする
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。
+LUN インポート関係が確立され、ホスト接続が外部アレイからONTAPアレイに移動されたら、外部ソース LUN からONTAP宛先 LUN にデータをインポートできます。
 
 .手順
+. 権限レベルをadvancedに設定します。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 続行するかどうかを確認するメッセージが表示されたら、「 y 」と入力します。
 . 移行のインポートを開始します。
 +
-[listing]
+[source, cli]
 ----
-cluster::*> lun import start -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
+lun import start -vserver <SVM_name> -path <volume_path|storage_unit_path>
 ----
 . FLI のステータスを表示します。
 +
-[listing]
+[source, cli]
 ----
-cluster::*> lun import start -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
+lun import show -vserver <SVM_name> -path <volume_path|storage_unit_path>
 ----
 
+
+.次の手順
+link:task_fli_online_verifying_migration_results.html["移行結果を確認する"] 。

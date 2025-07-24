@@ -17,10 +17,9 @@ FLI の配線の要件は、 NetApp FlexArray と同じです。ネットアッ�
 
 この図は、デュアルファブリックのストレージの配線の例を示したものです。
 
-image::../media/physical_wiring_1.png[物理的配線 1]
+image::../media/physical_wiring_1.png[デュアルファブリックのストレージ配線の例]
 
 配線に際しては、次のベストプラクティスに従ってください。
 
-* で説明したように、ソースストレージとデスティネーションストレージの配線には、NetApp FlexArray のベストプラクティスを使用してください https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化のインストール要件およびリファレンス"]。
 * ONTAP ストレージでは、ファブリックに接続するための空きイニシエータポートが必要です。空きポートがない場合は、イニシエータポートを設定します。
 

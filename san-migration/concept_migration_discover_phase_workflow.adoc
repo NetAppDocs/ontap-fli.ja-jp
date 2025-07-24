@@ -15,7 +15,7 @@ summary: 移行プロセスの調査フェーズでは、ホストの修正や�
 
 次の図に、調査フェーズのワークフローを示します。
 
-image::../media/discover_phase_1.png[調査フェーズ 1.]
+image::../media/discover_phase_1.png[発見フェーズのワークフロー]
 
 調査フェーズのタスクを次の表に示します。
 

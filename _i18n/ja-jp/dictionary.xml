@@ -38,14 +38,9 @@
   <block id="eab8fbcbd63b2bcc58a738edcf07ee89" category="paragraph">お客様の環境を文書化するには、次の手順を実行します。</block>
   <block id="0170954f27b1bc746248a2082fc577ca" category="list-text">新たに移行した環境を完全に文書化します。</block>
   <block id="0815db692d92e6b68693c7dc13e0e8e1" category="summary">移行後のタスクとして、移行前に実行していないサーバの修正を実行します。</block>
-  <block id="6793732288bb5f2142753d1aacd2e36d" category="doc">FLI オンラインの移行後のタスク</block>
   <block id="a39f5c618e0d64c8fd6478de7c699877" category="paragraph">サードパーティ製ソフトウェアはすべて削除されます。ネットアップソフトウェアをインストールして設定します。特定のホストタイプの移行後の修正の例については、ホストの修正を参照してください。</block>
   <block id="e729cdc318bd95286f3bd093cabb1aaf" category="paragraph">ログを参照してエラーがないかを確認し、パスを確認し、アプリケーションのテストを実施して、移行が正常に完了したことを確認します。</block>
-  <block id="80cf7b1e2f3a6eb700df545f53fc35ce" category="summary">ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。</block>
-  <block id="90f958290599dbd7bf414b64e5451345" category="doc">FLI オフライン：データのインポート</block>
   <block id="671cd4b2e80816faac52efc2dd60f3c0" category="list-text">移行のインポートを開始します。</block>
-  <block id="a065c5e22748be69f76070b1617df200" category="list-text">インポートの進捗を監視します。表示される進捗状況と、テスト移行の実施後に見積もりを行った想定されるパフォーマンスとを比較できます。</block>
-  <block id="6fb459e749d9fd185556292952260212" category="list-text">インポートジョブが正常に完了したことを確認します。</block>
   <block id="8c0b0439d6366451bf78824af79d5085" category="summary">FLI 計画フェーズでは、詳細な移行計画を作成し、実際の移行に向けてお客様の環境を準備するために必要なタスクを行います。このフェーズでは、 Foreign LUN Import のインストールとセットアップを確認するために 1 つ以上のテスト移行が実行されます。</block>
   <block id="1710e939bc78370d1721b65cfede5318" category="doc">計画 / 準備フェーズの手順</block>
   <block id="4f7f184473b2f286bdfb0f5c8ccc0ba7" category="paragraph">計画フェーズでは、次のタスクを実行します。</block>
@@ -113,7 +108,6 @@
   <block id="55f9a6545253be753da13bfa19ed39bb" category="list-text">[* Ports] を選択し、 [* Forced set] を選択して選択したすべてのポートに適用します。</block>
   <block id="d1d7ad384c51ea55bb59ff5d43a8d68d" category="image-alt">ホストグループを編集します</block>
   <block id="65dff2da7c6b1d550ddea5c786a3c66b" category="list-text">割り当てられた論理 LUN から移行されたホスト LUN を選択します。Source LUNs ワークシートに記載されている各ホストの LUN 名を使用します。ここで、 Windows Server 2012 、 RHEL 5.10 、 ESXi 5.5 ホストの LUN を選択し、 * Remove * を選択します。</block>
-  <block id="018e6717cb26bb683acaeb00a2666e18" category="image-alt">ONTAP ストレージからソース LUN を削除 3.</block>
   <block id="3d648a1b7064ebcecfe1e6c08a5a1530" category="summary">計画を立てるためには、特定の前提条件に基づいてデータ移行の作業レベルと所要時間を見積もることができます。</block>
   <block id="8e94185148e108a39b3101ed4c1bafd9" category="doc">移行時間の見積もりのためのベンチマーク</block>
   <block id="bc104667bcbfcfc0a37425919ac2dd58" category="paragraph">実際のパフォーマンスを正確に見積もるには、特定の環境における正確なパフォーマンスの値を得るために、異なるサイズのテスト移行を複数実行する必要があります。</block>
@@ -121,7 +115,6 @@
   <block id="befddf42be49f0ca600570cf2bd7d093" category="paragraph">前提条件：ホストの移行にかかる時間は、 LUN が 8 個、データの合計が 2TB のホストの場合で 5 時間です。これらのパラメータから、計画においては 1 時間あたり約 400GB として見積もることができます。</block>
   <block id="bce9fade38befeda7e50ae556c80a80a" category="summary">オンライン移行ワークフローは、移行プロセスの実行フェーズで実行されます。次のオンラインワークフローの図は、ホスト、ファブリック、デスティネーションストレージ、ソースストレージで実行されるタスクを示しています。</block>
   <block id="2fb3498de44b62c20b8ce57d8d187b14" category="doc">オンライン移行ワークフロー</block>
-  <block id="22c6c33d6054ef7fe383f8db81dd5c8d" category="image-alt">オンライン移行 1.</block>
   <block id="9f6801036d4e8f2676721826ab34c70e" category="paragraph">オンラインワークフローのタスクを次の表に示します。</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">コンポーネント</block>
   <block id="ef615563c8e8ea902c7fcac3cd2c4246" category="cell">タスク</block>
@@ -183,10 +176,8 @@
   <block id="3ce8bd6c1992bd681505fc41c17c030b" category="doc">FLI の物理的な配線の要件</block>
   <block id="e23cfe3f5f5db6eba97c79167e9f598f" category="paragraph">移行で使用するストレージアレイには、両方のファブリックに各コントローラ（使用中）からのプライマリパスが必要です。つまり、移行するソースアレイとデスティネーションアレイのノードが両方のファブリックの共通のゾーンに存在している必要があります。ネットアップクラスタに他のコントローラを追加する必要はありません。必要なのは実際に LUN をインポートまたは移行するコントローラのみです。移行に間接パスを使用することもできますが、ソースアレイとデスティネーションアレイの間の最適化されたアクティブなパスを使用することを推奨します。次の図は、両方のファブリックにプライマリ（アクティブ）パスが存在する HDS AMS2100 ストレージと NetApp ONTAP ストレージを示しています。</block>
   <block id="b86568f0ab2436e9a4ea2cfd9d49fcd5" category="paragraph">この図は、デュアルファブリックのストレージの配線の例を示したものです。</block>
-  <block id="e0bf412f811af5d2ff097a082cf5c13d" category="image-alt">物理的配線 1</block>
   <block id="3798557e78dc0ab485623d8d2387bacb" category="paragraph">配線に際しては、次のベストプラクティスに従ってください。</block>
   <block id="363d30e9a00e0b43fea3e9ac48cdf525" category="list-text">ONTAP ストレージでは、ファブリックに接続するための空きイニシエータポートが必要です。空きポートがない場合は、イニシエータポートを設定します。</block>
-  <block id="70894d5c0a41692947485c0d0a19e60a" category="inline-link">FlexArray 仮想化のインストール要件およびリファレンス</block>
   <block id="5944df1e5ed1e52e4fe16947c1409df9" category="summary">この手順は、 Cisco ファブリックのゾーンセットからソースストレージとホストゾーンを削除する方法を示しています。</block>
   <block id="86a4dc023813209073ffb6165caf17d6" category="paragraph">この例のゾーン名は _rx21_AMS2100 _ です。</block>
   <block id="bf3c5489c33b59824c4bd80dbd544bb9" category="list-text">ファブリック A でゾーンセットをアクティブにします</block>
@@ -204,8 +195,6 @@
   <block id="54abc54782ef4714657f07e14443d8c1" category="paragraph">LUN がオンラインでマッピングされた状態になり、ホストで新しい ONTAP ホスト LUN がマウントされます。読み取りは ONTAP アレイを介してソース LUN に渡され、書き込みは新しい ONTAP ホスト LUN と元のソース LUN の両方に書き込まれます。ソース LUN とデスティネーション LUN は、移行が完了して LUN 関係が解除されるまで同期されたままになります。</block>
   <block id="ec59a082cedf4b26b971396986bb5fed" category="summary">イニシエータポートのホストエントリ（ LUN マスキング、ネットアップでは igroup と呼びます）を追加するには、ソースアレイのドキュメントを参照してください。この情報は、 Site Survey and Planning ワークシートのストレージグループセクションから取得できます。</block>
   <block id="5ee8ee2a99ffe423b13a541e47bc95ab" category="doc">ソースアレイの構成方法</block>
-  <block id="430bb9de60ed37ded761bc53823e00d8" category="summary">ソース LUN からデスティネーション LUN にデータをインポートする手順は次のとおりです。</block>
-  <block id="8a3d18b4a87fce9fd30e1b06c8c97dd1" category="doc">FLI オンライン：データのインポート</block>
   <block id="fcd58d8ff11fa75a65432bee980f3a36" category="list-text">FLI のステータスを表示します。</block>
   <block id="6e25df31da1e71534f8796a6f959ba6c" category="summary">ギャップ分析は、お客様の現在およびネットアップが推奨する環境に関するレポートです。移行後に実行する必要がある、お客様の環境で推奨されるすべてのアップグレードが提示されます。</block>
   <block id="ec322643bc7f184bacaaffdb6d7f8792" category="doc">ギャップ分析レポート</block>
@@ -214,7 +203,6 @@
   <block id="9d394fd64d52277e34b6478f3116be34" category="paragraph">通常、必要な変更は、実際の移行イベントを開始するまでは行われません。これは、通常、メンテナンス時間のスケジュールを設定する必要があるためです。一般に、移行前に MPIO 構成に加えた変更は、現在のストレージのサポートにも影響します。</block>
   <block id="3980e7fb5116c733aeb5a4fc02fad438" category="paragraph">ギャップ分析レポートは、 Site Survey and Planning ワークシートの Hosts セクションにある、ネットアップが推奨する完成したセクションになります。ギャップ分析は、移行プロジェクトに含まれるすべてのホストについて実行する必要があります。完成したギャップ分析レポートは、お客様と一緒に確認する必要があります。</block>
   <block id="9c778c3c375b04ff9f5870bdd4a07e73" category="paragraph">ギャップ分析レポートの例を次に示します。</block>
-  <block id="313a854fd8839de2bdf22552f3bc8fb2" category="image-alt">ギャップ分析レポート 1 を作成します</block>
   <block id="cb3628a430baab7a93ffd421b659b087" category="summary">Site Survey and Planning ワークシートの一部として、移行元のソースストレージデバイスの情報を含むタブを設定する必要があります。</block>
   <block id="66d379978b8364c9b7e4cace88b5bf8f" category="doc">Site Survey and Planning ワークシートのソースストレージデバイスタブ</block>
   <block id="e11ebb23473888246705e815adf2fb83" category="paragraph">次に ' ソース・ストレージ・デバイス・タブの設定方法の例を示します</block>
@@ -259,7 +247,6 @@
   <block id="fdecad17e386bdc5ab1eca5d53907be3" category="summary">移行プロセスの調査フェーズでは、ホストの修正や移行計画の作成などの以降の手順で使用する情報を収集します。ほとんどの情報は、 OneCollect などのデータ収集ツールを使用して自動的に収集されます。</block>
   <block id="338c47dc58565ebf90b38f82b1a78ab1" category="doc">調査フェーズのワークフロー</block>
   <block id="36bf5858463397b1ff924ea03c5822fc" category="paragraph">次の図に、調査フェーズのワークフローを示します。</block>
-  <block id="46bc9d3fb968b4c71e1c07b8dee740c3" category="image-alt">調査フェーズ 1.</block>
   <block id="9f9080f3b976922f4cfc4db2052e5599" category="paragraph">調査フェーズのタスクを次の表に示します。</block>
   <block id="04320a61909653cc31562fa2760af192" category="list-text">HBA WWPN を特定します（ゾーンの作成に使用します）。</block>
   <block id="5b9b6c7213c2067325eb7bd3d7ff0615" category="list-text">LUN の情報（サイズ、シリアル番号、パーティションのレイアウト、およびオフセット）を特定します。</block>
@@ -302,10 +289,7 @@
   <block id="9a2c19262a187bcd4df293aeb52e1f4c" category="doc">ホストからのソース LUN の削除</block>
   <block id="c6e498e8376efcb4f757c84c3a3e8c6c" category="paragraph">ホストからソース LUN を削除するには、次の手順を実行します。</block>
   <block id="86478cc867d8e2aa1f61370fd34f1954" category="list-text">移行するホストを選択し、 * Edit Host Group * を選択します。</block>
-  <block id="6eece95105089574d413e5558218d874" category="image-alt">ホスト 1 からソース LUN を削除します</block>
-  <block id="6346b96a2b0626379f6debc6634e2ac3" category="image-alt">ホスト 2 からソース LUN を削除します</block>
   <block id="e4bd4ad1c3c660ca40f9bcf83893ee4c" category="list-text">割り当てられた論理 LUN から移行されたホスト LUN を選択します。Source LUNs ワークシートに記載されている各ホストの LUN 名を使用します。ここで、 Windows Server 2012 ホストの LUN を選択し、 * 削除 * を選択します。</block>
-  <block id="d80c56eff54b89020c751b58c97ed631" category="image-alt">ホスト 3 からソース LUN を削除します</block>
   <block id="6e0070e0532e1c48bfd6eca0a07a0120" category="list-text">Linux ホストと VMware ESX ホストについて、同じ手順を繰り返します。</block>
   <block id="d6bd93468ec139fb3210b412a692cf3c" category="summary">インポートのログは、クラスタのイベントログファイルに記録されます。ログでエラーがないかを確認し、移行が正常に完了したことを確認してください。</block>
   <block id="35c0629618c7002c8c170854c5ac05ed" category="doc">移行レポート</block>
@@ -372,14 +356,9 @@
   <block id="d535235692fb253ef3bba1707bd4b8f7" category="doc">本番ファブリック A の Brocade ファブリックの例</block>
   <block id="649af838f80334608d3f85b2c8bcf6c6" category="list-text">本番ファブリック A にゾーンを作成します</block>
   <block id="18f3717603a0469912a341c387795b1b" category="list-text">本番ファブリック A でゾーンをアクティブにします</block>
-  <block id="0d1ab32d2e734165cc6fa60ad4e92f19" category="summary">ここでは、 4 つの FLI ワークフローのうちの 2 つ目の例として、 FLI オンライン移行の例を示します。</block>
-  <block id="d0d7a8d464c5eb9f10cf2c7f522fdff3" category="doc">FLI オンラインワークフロー</block>
-  <block id="207c99dbe101d7af2533d861e39077d9" category="list-text">LUN パスを準備しています</block>
   <block id="de95ff0b767f79557fe9a9b692d65ab1" category="list-text">停止を伴うカットオーバーの実行</block>
-  <block id="3892b30160c9653f481e358d32fbc22f" category="list-text">ソース LUN のデータをインポートする</block>
   <block id="ad8b1deda6773a7334e6ada18297afc4" category="list-text">移行結果の検証</block>
   <block id="531d6e8475a573cc2be090591d43baef" category="list-text">FLI オンライン移行をクリーンアップしています</block>
-  <block id="e467310a29ce4a08b3fb35835aa67bea" category="paragraph">ネットアップコントローラのデスティネーションが MetroCluster の場合は、オンラインワークフローを使用しないでください。オンラインインポートの実行中にサイトのフェイルオーバーが発生した場合、ソースアレイへの書き込みパススルーが失敗することがあり、検証エラーが発生してデータが失われる可能性があります。デスティネーションが MetroCluster の場合は、 FLI オフラインプロセスを使用してください。</block>
   <block id="35b043ebc171de32d54be5dbeae52dd3" category="summary">実行フェーズでは、 FLI オフラインまたはオンライン移行を実行するための LUN 移行タスクを行います。</block>
   <block id="964a0546e66ef43fd51704954c30ee65" category="doc">実行フェーズのワークフロー</block>
   <block id="0371a2b790b684d89139aa01a9d899dd" category="paragraph">問題を検出して修正し、リスクを軽減するために、ホストイベントログを確認します。大規模な再構成を行う前に、ホストをリブートして、ホストに根本的な問題がないことを確認します。</block>
@@ -455,20 +434,9 @@
   <block id="ed84643b976a61e35dab90c06a1328ad" category="paragraph">アーキテクチャの点では、 4 つの移行ワークフローはとてもよく似ています。いずれのワークフローでも、ネットアップの FlexArray テクノロジを利用して、 ONTAP コントローラをソースアレイの前に配置したイニシエータとして機能させ、この位置を利用して、 LUN をブロック単位でソースからデスティネーション ONTAP アレイ上の LUN にコピーします。</block>
   <block id="4d01f8ae44780dd783a9a1352d13eb15" category="paragraph">各ワークフローの違いは、カットオーバーが発生する状況、中断時間の長さ、自動化の使用、ソースアレイが ONTAP 7-Mode を実行しているネットアップアレイか他社製アレイかにあります。</block>
   <block id="53a51b7dcda82a62f1a85a24f43b7788" category="summary">検証ジョブはオプションですが、実行することを推奨します。ソース LUN とデスティネーション LUN が、ブロック単位で比較されます。検証ジョブには、移行とほぼ同じか、それよりも少し時間がかかります。</block>
-  <block id="ce91b6039e58611f253af932de050269" category="doc">FLI オフライン：移行結果の確認</block>
-  <block id="47d2204501856353838ee78e45555084" category="list-text">検証ジョブを開始して、ソース LUN とデスティネーション LUN を比較します。検証の進捗を監視します。</block>
-  <block id="046d51f7e741a0f96a8de41d5947020b" category="list-text">検証ジョブのステータスを監視します。</block>
-  <block id="69514061677672d46f94e4140574dd55" category="list-text">検証ジョブが完了したことを確認します。</block>
-  <block id="4094df43285495c7722dddff7afa8de1" category="list-text">検証が完了したら、検証ジョブを停止します。</block>
-  <block id="1c855787e352fecbe853364612560c5a" category="list-text">インポート関係を削除して、移行ジョブを削除します。</block>
-  <block id="1f7d9093a87f1223652de0690e80f57c" category="list-text">インポートジョブが削除されたことを確認する。</block>
   <block id="e57e82538b681c873e1cfb334a6f3601" category="list-text">外部 LUN 属性を false に設定します</block>
-  <block id="d9d9448417571874dd3a7adfce11eee6" category="list-text">インポート後に ' 外部 LUN が false としてマークされていることを確認します</block>
-  <block id="8e7d752a0fa07e965902dd236a3c89b4" category="list-text">lun online コマンドを使用して、デスティネーション LUN をオンラインにします。</block>
   <block id="63e1b9537e12694060f7e57218806fa8" category="list-text">LUN がオンラインであることを確認します。</block>
-  <block id="b76188f3e00e84a81eb898fcfa30419f" category="paragraph">インポートのログはクラスタのイベントログファイルに保存されます。</block>
   <block id="86fa04f5a596e6f9f13f9033ee5fc85e" category="summary">FLI を使用した標準的な移行シナリオでは、次の 4 つのゾーンが必要です。各ゾーンに特定のポートを含める必要があります。</block>
-  <block id="1c277dacf0a919a6930125acd1208bce" category="doc">FLI のゾーニングの要件</block>
   <block id="90b71c66184e127a11eaca1e2a141dac" category="list-text">ゾーン 1 ：ソースストレージとデスティネーションストレージ（本番ファブリック A ）</block>
   <block id="29f1f61f2d914a97b194e33d1c2ff993" category="paragraph">ゾーン 1 には、ファブリック A のすべてのノード上のすべてのデスティネーションストレージイニシエータポートとすべてのソースストレージターゲットポートを含める必要がありますゾーンメンバーは次のとおりです。</block>
   <block id="9bf4b910f4f253458069b57912f24a35" category="list-text">ONTAP - ノード 1 - 0a</block>
@@ -568,7 +536,6 @@
   <block id="159d7130f3d54d274afe13039b4ede40" category="list-text">ソースアレイへのブロックアクセスがある FC または iSCSI Linux ホストからアプリケーションを実行します。</block>
   <block id="0494482584ffb3a3845ebc27d94cf2c6" category="summary">オフライン移行ワークフローは、移行プロセスの実行フェーズで実行されます。次のオフラインワークフローの図は、ホスト、ファブリック、デスティネーションストレージ、ソースストレージで実行されるタスクを示しています。</block>
   <block id="6696f8ecf38c4df0054e0dc95a616d3d" category="doc">オフライン移行ワークフロー</block>
-  <block id="9295fcebcba793fecd195c670dd2da3b" category="image-alt">オフライン移行 1.</block>
   <block id="3aa626aa3e52fc795314efbdb381efd0" category="paragraph">オフラインワークフローのタスクを次の表に示します。</block>
   <block id="df0069e14eb07d2a819349dd58bd76d3" category="list-text">ホストをリブートして、すべてのファイルシステムがマウントされ、すべての LUN パスが使用可能で、サービスが開始されていることを確認します。</block>
   <block id="39da6748c115a968eefbc1de1e2b9541" category="list-text">ホストを準備してシャットダウンします。</block>
@@ -590,7 +557,6 @@
   <block id="a240b24dd20a7186ef47310e58829086" category="list-text">EMC では ' イニシエータ・レコード ' またはストレージ・グループを使用しています</block>
   <block id="62cc656c82973e8ebe8c1a1926a6d435" category="list-text">NetApp では「 igroup 」を使用しています。</block>
   <block id="425d84ebe29c9da22fd1d2621c3dc21e" category="paragraph">これらの呼び方に関係なく、イニシエータグループの目的は、同じ LUN マッピングを共有するイニシエータを WWPN で識別することです。</block>
-  <block id="2e97596bf006ab4a63eb1ab1532e9166" category="inline-link">サードパーティ製ストレージ向けの FlexArray 仮想化の実装</block>
   <block id="812fbde33504c45051c067a08f4f1901" category="summary">FLI 移行用に ONTAP ストレージを構成するには、計画の情報と推奨されるベストプラクティスに基づいてソースストレージをファブリックに接続する必要があります。</block>
   <block id="84a737f44c8713a3904d04f2744e05c1" category="doc">FLI 移行のための配線のベストプラクティス</block>
   <block id="2fe64cf0bee4b9242f1610457f3a8f7b" category="paragraph">ONTAP ストレージを FLI 移行用に構成する際の配線に関する推奨されるベストプラクティスを次に示します。</block>
@@ -610,7 +576,6 @@
   <block id="aaa7adc716c48a8aa682b90c344d1ba8" category="paragraph">LUN 関係を解除すると、新しい LUN のみが変更されるため、 LUN の同期がすぐに失われることに注意してください。したがって、元の状態に戻す必要がある場合は一貫した状態を維持すると効果的なことがありますが、新しい LUN に対する変更はソース LUN に反映されない可能性があります。</block>
   <block id="4b1add994933944f0dad2a099242949a" category="paragraph">インポート関係は、インポートを検証する場合を除き、インポートの停止後に破棄できます。</block>
   <block id="85dcd53bfc5f07c4a98d73313b4f570e" category="summary">FLI 移行の実行時は、ソースストレージ LUN にネットアップストレージからアクセスする必要があります。そのためには、ソースストレージのターゲットポートをデスティネーションストレージのイニシエータポートとゾーニングします。</block>
-  <block id="2d7aac8e15b885459bdb591f875227ce" category="doc">ターゲットポートとイニシエータポートのゾーニング</block>
   <block id="0563060901338899c028f626f4134563" category="paragraph">ソースストレージからホストへの既存のゾーンは変更されず、移行後は非アクティブ化されます。移行された LUN にホストがデスティネーションストレージからアクセスできるように、ホストからデスティネーションストレージへのゾーンが作成されます。</block>
   <block id="0d746ac95713ef6642cc8474a8d4baf1" category="paragraph">FLI を使用した標準的な移行シナリオでは、次の 4 つのゾーンが必要です。</block>
   <block id="2523d9153706772df49042f8b87bd471" category="paragraph">ゾーニングに際しては次のベストプラクティスに従ってください。</block>
@@ -838,9 +803,7 @@
   <block id="d9c43eb41a966c4cd2f474b639c1448e" category="list-text">[* AMS 2100 * array] を選択し、 [* Show * and * Configure Array] をクリックします。</block>
   <block id="9ca93b79ed4c53368139920e666bfb9b" category="list-text">Groups を展開し、 * Host Groups * を選択します。</block>
   <block id="7a09bce6ca5ac1274dc9d0706d56d250" category="list-text">cDOT * FLI * ホストグループを選択し、 * ホストグループの削除 * をクリックします。</block>
-  <block id="3f66bfc9699b3a9f210f8ace9839c3ec" category="image-alt">ソースアレイ 1 からデスティネーションアレイ構成を削除します</block>
   <block id="37ae0e3bb3bfe5e18a101b7fabd0ddf8" category="list-text">ホストグループを削除することを確認します。</block>
-  <block id="9ed256c05bdd47ac51dac0478f5b5ee8" category="image-alt">ソースアレイ 2 からデスティネーションアレイ構成を削除します</block>
   <block id="86033efc4416bb3a4b039fe0b75a7246" category="summary">この例では、 FLI オンライン移行プロセスの停止を伴うカットオーバーを実行する一般的な手順を示します。</block>
   <block id="b2da880bb7635a9dcafebf8a42591f94" category="doc">FLI オンライン：停止を伴うカットオーバーの実行</block>
   <block id="cf4a2b53966e70213ad267a1c1279b4b" category="paragraph">Windows 、 Linux 、 ESXi のホストの修正手順については、このガイドの後続のセクション、およびホストオペレーティングシステムとホスト接続キットのドキュメントを参照してください。</block>
@@ -907,15 +870,10 @@
   <block id="0f413e47bf69d6dd85e783e2bfc60184" category="paragraph">ホットフィックス</block>
   <block id="9f4d12c5edf6cc2529e6ad9c95d20d18" category="summary">移行の前に、マルチパスが正しく構成され、適切に動作していることを確認する必要があります。LUN への使用可能なすべてのパスがアクティブである必要があります。</block>
   <block id="f4ebdd2db6081517f5add79e163450fa" category="doc">ホスト LUN のパスとマルチパス構成の検証</block>
-  <block id="2bc364a426afaf286122a406602b2f3f" category="doc">FLI オンライン：移行結果の確認</block>
-  <block id="592acd1bddde2107e08b7fab9870ec8f" category="paragraph">検証ジョブを開始して、ソース LUN とデスティネーション LUN を比較します。検証の進捗を監視します。検証セッション中は、検証対象の LUN をオフラインにする必要があります。ソース LUN とデスティネーション LUN をブロック単位で比較するので、検証セッションには時間がかかることがあります。検証は必須ではありませんが、インポートプロセスに問題がないことを確認するために、インポート / 移行された LUN の一部を検証することを推奨します。これらの検証は、テスト移行で実行される検証に加えて行われます。</block>
-  <block id="4e7b785e4493cbe0b79242ce203ac879" category="paragraph">このプロセスはシステムの停止を伴います。</block>
   <block id="372699135a2ba75e0a9de39820284f6a" category="paragraph">LUN をオンラインに戻す前に、 lun import verify を明示的に停止する必要があります。そうしないと、 LUN のオンライン化に失敗します。次の CLI 出力を参照してください。</block>
-  <block id="e1fac940622e70910db7d52852f57a10" category="list-text">検証する LUN をオフラインにします。&lt; ここから中断時間が始まります &gt;</block>
   <block id="a84256d94c5d7dc207681d16b3b74f9c" category="list-text">LUN の検証を開始します。</block>
   <block id="8a06e7cadf858c88a55293291b1df731" category="list-text">LUN 検証のステータスを表示します。</block>
   <block id="4430041a866393962bf0ca6a22b8c82f" category="list-text">LUN の検証を停止します。この手順は、検証のステータスが完了になっている場合でも、手動で実行する必要があります。</block>
-  <block id="2817949546193391fe4e33ff2547300a" category="list-text">検証が完了したら、 LUN をオンラインにします。&lt; ここで中断時間は終了します &gt;</block>
   <block id="88342d3bc522d34c0d7d4b696af5ecbe" category="summary">FLI の機能を使用すると、サードパーティの SAN ストレージから ONTAP システムにデータを移行できます。FLI の移行機能では、さまざまなプロセスやシステムがサポートされます。</block>
   <block id="4a3f341a06b2f81b12a06ac327ed46ae" category="doc">Foreign LUN Import の機能</block>
   <block id="295debfc2712e7f9df807131dc4e4332" category="list-text">オンラインおよびオフラインの移行をサポート。</block>
@@ -1070,7 +1028,6 @@
   <block id="fa8dc6899d89e51526213a2a8ab9aa76" category="summary">移行プロセスの検証フェーズでは、移行後のクリーンアップと移行計画どおりに実行できたかどうかの確認を行います。ソースストレージのイニシエータレコードと、ソースとデスティネーションの間のゾーンが削除されます。</block>
   <block id="fdb87b07dc517f2422992acdcbaba2ce" category="doc">検証フェーズのワークフロー</block>
   <block id="c95e22746ae7f51fc92fdffd42f07397" category="paragraph">次の図に、検証フェーズのワークフローを示します。</block>
-  <block id="95c41a387e815b4edb965c3074645f2e" category="image-alt">フェーズ 1 を確認します</block>
   <block id="37e5739527f14abd34423792a642951a" category="paragraph">検証フェーズのタスクを次の表に示します。</block>
   <block id="f988327a3c5a7e8c3d4cfc29a4a8d770" category="paragraph">お客様がアプリケーションのテストを実施</block>
   <block id="b3f821f9020a8f4c34451218062e4928" category="list-text">ホストからソースストレージへのゾーンをゾーンセットから削除します。</block>
@@ -1119,13 +1076,7 @@
   <block id="90b54dd0fd35f6452d1b6c6464d9cfe6" category="paragraph">LUN をオンラインに戻す前に、 lun import verify を明示的に停止する必要があります。そうしないと、 LUN のオンライン化に失敗します。この動作は、 ONTAP の今後のリリースで変更される予定です。</block>
   <block id="ecd3bf53d542cc1fc8055b3c20fff418" category="list-text">検証する LUN をオフラインにします。</block>
   <block id="2cdc70de3fe5b5fb6f8cf38d2c2c45d5" category="list-text">検証が完了したら、 LUN をオンラインにします。</block>
-  <block id="ae7ab55b954ce2a8356bf4bd743966ef" category="summary">ここでは、 4 つの FLI ワークフローのうちの 1 つである FLI オフラインワークフローの例を示します。</block>
-  <block id="bc27398f19f6acf48269b6f7ee4f086c" category="doc">FLI オフラインワークフロー</block>
-  <block id="0ca2698feff5a5fc2d35a0504189c848" category="paragraph">このワークフローでは、 HDS AMS2100 アレイをソースアレイとして使用します。オフラインワークフローのタスクは次のとおりです。</block>
-  <block id="d1f93c9975320718dcc00c5f80427297" category="list-text">カットオーバーの準備</block>
   <block id="ca63dcfd0f9848e972e7ac63e9bf3494" category="list-text">データをインポートする</block>
-  <block id="ba8f47747c3717527073a5c3d8eacb92" category="list-text">移行結果の確認（オプション）</block>
-  <block id="2c9d6f9fe74e21cf8104c62c4ad61ceb" category="list-text">FLI オフラインの移行後のタスク</block>
   <block id="ee39d65a1817160f3851b1ca24746c37" category="doc">Windows ホストのマルチパスの検証</block>
   <block id="cd2ea2efb6e484e9f76aa6c911f083cf" category="summary">Site Survey and Planning ワークシートの一部として、 FAS 設定の情報を含むタブを設定する必要があります。</block>
   <block id="d816e66cd7b51d120e7ae740a2d2b7d8" category="doc">Site Survey and Planning ワークシートの FAS 設定タブ</block>
@@ -1256,7 +1207,6 @@
   <block id="eac3a1a74e25173545de3b7efc1d8b80" category="doc">計画フェーズのワークフロー</block>
   <block id="0264e1e7f4ae9cc5f9ba5ebe373f57f4" category="paragraph">計画フェーズでは、分析フェーズで収集したホストのギャップ分析情報を使用して更新計画を策定します。ホスト修正情報を盛り込んだ計画を作成します。エンドツーエンドの接続を検証したあと、テスト移行を実行して、本番環境で移行を開始する前にすべてが適切に設定されていることを確認します。</block>
   <block id="9795dd3baed0cc837e1b9cf32a4ccc4a" category="paragraph">次の図に、計画のワークフローを示します。</block>
-  <block id="1946a9dc1ec2894c2234c5ba4d6a5c54" category="image-alt">計画と準備フェーズ 1.</block>
   <block id="612160c830618272ed4c07bdf0279fd3" category="list-text">既存のゾーンセットをバックアップします。</block>
   <block id="be13c48aabcbfa550f5272ec96d5ee4b" category="list-text">ソースストレージをデスティネーションストレージにゾーニングします。</block>
   <block id="f91fe921e2cb5678f810267ad4821614" category="list-text">イニシエータポートをファブリックに接続します。</block>
@@ -1306,7 +1256,6 @@
   <block id="b4de17ead867a3cf0b9d11e57e562672" category="section-title">機械翻訳</block>
   <block id="dd3918c571093dff2b94f7cef5066d01" category="inline-link-macro">NetApp.com にアクセスします</block>
   <block id="5db028f960e19ec42098e3252e4fb1e3" category="paragraph">翻訳版のコンテンツに関する重要な情報については、を参照してください <block ref="7e89bb7928e951b6f80ad1dab5c58475" category="inline-link-macro-rx"></block></block>
-  <block id="d648f2a68a54fd1b3329efc3cf24d29c" category="sidebar">法的通知</block>
   <block id="1e0480ea9333345d355b03ac0ed8c596" category="paragraph">FLIオンラインワークフローは、次のいずれかのバージョンのオペレーティングシステムを実行しているホストに接続されたLUNで使用できます。</block>
   <block id="699bb4733c472f6589e0d75a44cab002" category="list-text">Windows Server 2008以降（Windows Serverフェイルオーバークラスタを含む）</block>
   <block id="16cebcaaa355d1d005ebb411931e91fa" category="list-text">Microsoft Hyper-V Server 2008以降</block>
@@ -1319,14 +1268,326 @@
   <block id="401497503074d7ec7406c3ce5a48dbc8" category="paragraph">ゾーニング、LUNマスキング、LUNを移行する必要があるホストオペレーティングシステム、ONTAP 、ソースのサードパーティアレイなど、SANの一般的な概念とプロセスを理解しておく必要があります。</block>
   <block id="b0f36dbc8cbf7c56840f51534500c27b" category="inline-link">データ移行ツールクイックリファレンス</block>
   <block id="baca4f7d8c0223a33622dbfb8e5e38de" category="paragraph">FLI の移行処理はすべて LUN レベルで実行されます。FLI はあくまでブロックベースのツールです。ファイル、レコード、 NFS 、 CIFS をベースとする移行はサポートしていません。NFSやCIFS / SMBなど、ファイルレベルのプロトコル向けのその他の移行方法については、を参照してください<block ref="e415da1b4972963be10dbe349c4850a6" category="inline-link-rx"></block>。</block>
-  <block id="e0a83b8c461db09706d982eeea30d1df" category="paragraph">FLI を実行するには、各コントローラに少なくとも 1 つの物理 FC ポートが必要です。また、 LUN をイニシエータモードで直接移行する必要があります。ファブリックごとに 1 つずつ、 2 つのポートを使用することを推奨しますが、単一ポートの構成も可能です。これらのポートはソースアレイへの接続に使用され、ソース LUN を認識してマウントできるようにゾーニングおよびマスキングする必要があります。ポートをターゲットからイニシエータに変更する必要がある場合は、を参照してください<block ref="66f8c243fef55cbf3f49d4ec76027b8d" category="inline-link-rx"></block> FCポートをターゲットからイニシエータに変換するプロセスを確認する。</block>
-  <block id="7a6d059da8a56b5bb032ab555e452fb8" category="paragraph">ここでは、 4 つの FLI ワークフローのうちの 2 つ目の例として、 FLI オンライン移行の例を示します。この例のソースアレイは、 EMC VNX5500 です。</block>
-  <block id="b107b92b08e1507c6d61c65a86b28086" category="paragraph">オンラインワークフローのタスクは次のとおりです。</block>
-  <block id="d65237d15ed3f23354581867591cc773" category="list-text">で説明したように、ソースストレージとデスティネーションストレージの配線には、NetApp FlexArray のベストプラクティスを使用してください<block ref="66f8c243fef55cbf3f49d4ec76027b8d" category="inline-link-rx"></block>。</block>
-  <block id="6c98897f95672b5dde701dffbd4b05a0" category="paragraph">イニシエータグループを定義するには、 LUN マスキング（ igroup 、ホストグループ、ストレージグループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。また、を確認することもできます<block ref="737823659babb212ffbc8948b616644f" category="inline-link-rx"></block> サードパーティ製ストレージ構成の要件については、を参照してください。</block>
   <block id="29b512fbc4379581cd2fd8694ca529c4" category="inline-link-macro">ONTAP で2022にWindows Serverを使用する</block>
   <block id="82e292bca3bfc1c57dd6f3dc796412a0" category="paragraph">Windowsホストの詳細な手順については、のマルチパスに関するセクションを参照してください。 <block ref="cce832a1ed6f79df8eb06042aeeb6d79" category="inline-link-macro-rx"></block>。</block>
   <block id="9a4c1be88c2720ce2a1f8a5fd2b27a5c" category="sidebar">FLIワークフロー</block>
   <block id="9661e4f0a38203cee0d0ec82dcba896f" category="sidebar">オフラインワークフロー</block>
   <block id="afec4ed45e968a4fe6c00ed1c1e83691" category="sidebar">オンラインワークフロー</block>
+  <block id="69caf30083972d4411923d4f0737e140" category="summary">SAN データ移行用のONTAP 9.17.1 で利用できる新しい機能について説明します。</block>
+  <block id="418b3d5ad8d61d136fef3a5c58c5591e" category="doc">SANデータ移行におけるONTAP 9.17.1の新機能</block>
+  <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">プラットフォーム</block>
+  <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
+  <block id="654a340048b4ef9f891ad3ff86cfe359" category="paragraph">ASA R2 システムは FLI 移行でサポートされています。</block>
+  <block id="76d4d65ac11114e948cdba5790db04c7" category="inline-link-macro">ASA R2 システム</block>
+  <block id="78f511731820f6cf51be2ac1a22bdfae" category="paragraph">詳細はこちら<block ref="bf5d9e0b88ffc589ea0cce1a42d0e835" category="inline-link-macro-rx"></block> 。</block>
+  <block id="b10bb6cf89b8f23a9ddd660af44ae8d8" category="image-alt">FLIオフライン移行ワークフロー</block>
+  <block id="5866e37daa3cb1932cdb507e8fa5cd40" category="doc">ONTAP FLIオフライン移行後タスクを実行する</block>
+  <block id="9610434e034671f835e2edf9b1e58f70" category="summary">FLIオフライン移行では、サードパーティの外部ストレージアレイからNetAppストレージシステムへのデータ移行中にクライアントシステムがオフラインになります。</block>
+  <block id="9c0286b39853f4a114f1ab22b894283f" category="doc">ONTAP FLIオフライン移行ワークフローの概要</block>
+  <block id="c26e000f4cd991c1262e70807109159f" category="paragraph">外部LUNインポート（FLI）データ移行は、サードパーティ製ストレージアレイからNetAppストレージシステムへのデータ移行を成功させるための、いくつかの重要なステップを含むプロセスです。FLIはオフライン移行とオンライン移行をサポートしています。FLIオフライン移行では、サードパーティ製外部ストレージアレイからNetAppストレージシステムへのデータ移行中、クライアントシステムはオフラインになります。</block>
+  <block id="54818b05d116eadc7f67517a3a6e4b33" category="inline-link-macro">検出</block>
+  <block id="3b671c883959a8ef434b85a104c293d4" category="inline-link-macro">分析</block>
+  <block id="98ded198ba3a0a30e7cc64e4a6a93f45" category="inline-link-macro">計画</block>
+  <block id="608f90a01cc04eb7e823b5dd58873d33" category="list-text">以下の項目を完了してください<block ref="34dcf91ed1b0b2a1e956c6d2b97e30f0" category="inline-link-macro-rx"></block> 、 <block ref="8ddf3347fad2997787e8ebeb2f578201" category="inline-link-macro-rx"></block> 、 そして<block ref="f5e8772ec545f4f5d2ef8d4846b1cdfe" category="inline-link-macro-rx"></block>移行プロセスのフェーズ。</block>
+  <block id="77b2ee5638aee1e17fca8cd59d7f4e4b" category="inline-link-macro">FCアダプタをイニシエーターモードに設定する</block>
+  <block id="b8205a959f555ff4c2a9ca48a982bbf1" category="list-text">あなたがすべき<block ref="c1c02f74e5d9a17ee1f5b57e5f3ec730" category="inline-link-macro-rx"></block> 。</block>
+  <block id="97afe5236aff41dd01bf56ea2bd44453" category="inline-link-macro">外部アレイのターゲットポートをONTAPストレージイニシエータポートでゾーン分けする</block>
+  <block id="0fc8efe60b015f28206045e0571687d6" category="list-text">あなたがすべき<block ref="d888c5965d3cd5d3a05533e7ea9c1d1a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ba69f61f8c9c029f08261b300cc0ab9c" category="paragraph">FLI オフライン ワークフローには、インポート用のホストと外部 LUN の準備、LUN インポート関係の作成、およびデータのインポートが含まれます。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1</block>
+  <block id="13a76fe9b7d552adb9f4cdf81438420f" category="inline-link-macro">ホストを準備する</block>
+  <block id="6f294cdf1ab8f18af24d2ed304537263" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="6f04fd97aa80a6fe6a0cf0da9c7db310" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ffbb113e7eb1214f9ebb70241b28ee4c" category="paragraph">FLI オフライン移行を実行する前に、ホストを再起動し、ホストのマルチパス構成を確認する必要があります。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">2</block>
+  <block id="9709153c662d8a0e7505160cdf64dec4" category="inline-link-macro">外部LUNを準備する</block>
+  <block id="23641a8e210877028b08c81d592cd5f8" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="3b461bb262d2dd49075c54d2ba250c23" category="inline-link-macro-rx"></block> 。</block>
+  <block id="bd10403fdb2296ee97561f175acbb900" category="paragraph">FLI オフライン移行プロセスでは、外部アレイから手動で手順を実行して外部ソース LUN をONTAPストレージ システムに提示する必要があります。その後、追加の手動手順を実行してONTAPストレージ システム上の外部ソース LUN を検出する必要があります。</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三つ</block>
+  <block id="3777850e00dc4533cbceb3347567625d" category="inline-link-macro">LUNインポート関係を作成する</block>
+  <block id="eb9b5392db80859b24d073a538046db8" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="085523e47206d9a02652665cf6da23c9" category="inline-link-macro-rx"></block> 。</block>
+  <block id="a8c56527f99fd0b764ab4d9bd29f51c3" category="paragraph">FLI オフライン移行用の LUN インポート関係を作成するには、ソース アレイ LUN をONTAPで外部として識別し、外部 LUN を含む宛先ボリュームを作成して構成し、宛先ターゲット LUN を作成し、最後にインポート関係を確立する必要があります。</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">4</block>
+  <block id="6f5dfd939ff1e715aafd15d7c67cdaa8" category="inline-link-macro">外部アレイからLUNデータをインポートする</block>
+  <block id="696a9f47c6eb365cc9625d8bb1b11238" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="684c2730f8add2837dc37cde4281853f" category="inline-link-macro-rx"></block> 。</block>
+  <block id="13968a94131f8a1f1196ac8f7290cfc6" category="paragraph">FLI を使用して、外部アレイから LUN データをインポートします。</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五</block>
+  <block id="436493873ac3e18567676ceb509a4136" category="inline-link-macro">移行結果を確認する</block>
+  <block id="289f99c44eb64ac1057ce3fac3a466b2" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9a95fb8d643ab3762f2b004297129094" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ae4ab2ed3617bed9f4ee92980343f10f" category="paragraph">移行が完了して正確であることを確認するために、ソース LUN と移行先 LUN のブロックごとの比較を実行します。</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">六</block>
+  <block id="f33c4ea3fc8d363090b878f7b42872ba" category="inline-link-macro">LUNインポート関係を削除します</block>
+  <block id="84481f5710ea3bb896c1b5a5be5baea1" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="094b2fb8c85dfc2075f7ff71db128426" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e9ee17725602e73372292c273067dd0b" category="paragraph">FLI オフライン移行が完了したら、LUN インポート関係を安全に削除できます。</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">セブン</block>
+  <block id="34dd00e8cc88cd555bb734d368252f5f" category="inline-link-macro">移行後のタスクを実行する</block>
+  <block id="5f81996acb9c5b3474850dffe7a0250c" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c2a517eff6648e50bb89057cecc1d521" category="inline-link-macro-rx"></block> 。</block>
+  <block id="1f01e9ecdff4b18a10d73ab961408b46" category="paragraph">ログでエラーを確認し、ホストのマルチパス構成を確認し、アプリケーション テストを実行して移行が正常に完了したことを確認します。</block>
+  <block id="e19a9363f80859e1ae191e0af47fbf72" category="image-alt">FlIオンライン移行ワークフロー</block>
+  <block id="13bafdcce7ae052bb5696f95ac4a0bf8" category="doc">ONTAP FLIオンライン移行後タスクを実行する</block>
+  <block id="f07198e877db552b0cef3bad39379ae5" category="summary">FLI オンライン移行では、サードパーティの外部ストレージ アレイからNetAppストレージ システムへのデータ移行中、クライアント システムはオンラインのままになります。</block>
+  <block id="0ddf66a5f23405989da519f1f8617ec7" category="doc">ONTAP FLIオンライン移行ワークフローの概要</block>
+  <block id="0210f6c570de9671236e087dae59f995" category="paragraph">Foreign LUN Import (FLI) データ移行は、サードパーティ製ストレージアレイからNetAppストレージシステムへのデータ移行を成功させるための、いくつかの重要なステップを含むプロセスです。FLIはオフラインとオンラインの移行をサポートしています。ForeignLUN Import (FLI) オンライン移行では、サードパーティ製ストレージアレイからNetAppストレージシステムへのデータ移行中も、クライアントシステムはオンライン状態を維持します。</block>
+  <block id="b4a0cb24fc1c2a28e5b0fd5fa8308158" category="list-title">開始する前に：</block>
+  <block id="6aa2f49f4c3c442a88387a0c3c9f03a6" category="list-text">ホスト タイプとNetApp宛先ストレージ アレイ構成でオンライン移行がサポートされていることを確認する必要があります。</block>
+  <block id="783cadcf237c5696bde27f81ced2d660" category="inline-link-macro">FLIオフライン移行プロセス</block>
+  <block id="15025f0a32222966dc2446bcb29aad96" category="paragraph">MetroCluster構成ではオンライン移行はサポートされていません。アクティブなオンラインインポート中にサイトのフェイルオーバーが発生した場合、ソースアレイへの書き込みパススルーが失敗し、検証エラーが発生し、データ損失が発生する可能性があります。NetAppの移行先コントローラがMetroCluster構成の場合は、 <block ref="d176a2f0f4344e0c8a054d60fd3ab34d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="496e6d6cb799156ce5cff696eb331b5d" category="paragraph">オンライン移行は、以下のバージョンのWindows、Linux、またはESXiホストオペレーティングシステムでサポートされています。その他のホストオペレーティングシステムの場合は、 <block ref="d176a2f0f4344e0c8a054d60fd3ab34d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="4c133ef444dafacc5b24672b2d262950" category="list-text">Windows Server 2008 R2 以降 (Windows Server フェールオーバー クラスターを含む)</block>
+  <block id="40f6c03c0f62659da0b5fba05b53ca29" category="list-text">Microsoft Hyper-V Server 2008 以降</block>
+  <block id="ef7a532056bb92714a07ba2e7ffd3b19" category="list-text">VMware ESXi 5.x 以降</block>
+  <block id="46d8ed61a841b87f91d1ce1637f44bcd" category="list-text">Red Hat Enterprise Linux (RHEL) 5.x 以降</block>
+  <block id="e658345103e09303f314be1c3c5101fa" category="list-text">ホスト マルチパスが正しく構成され、正常に動作していることを確認する必要があります。LUNへの使用可能なパスは、すべてアクティブな状態である必要があります。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">タスク概要</block>
+  <block id="f4166df408c509e1e8efa977941daff4" category="paragraph">FLI オンライン移行を実行するには、ホストを準備し、LUN インポート関係を作成し、外部 LUN をONTAPストレージ システムにマップし、外部 LUN からデータをインポートし、移行結果を確認し、LUN インポート関係を削除し、最後に移行後のタスクを実行する必要があります。</block>
+  <block id="41a6a6827683b284843f6abc8c9ef518" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="dc5e42fdb9ab00895fe68d70d6b73201" category="inline-link-macro-rx"></block> 。</block>
+  <block id="10e81a87f846dcfee701de20f6e03019" category="paragraph">必要なホスト修復手順を実行し、ホストを再起動します。</block>
+  <block id="08dbc584e4d9b7e09a68ad019973d050" category="inline-link-macro">LUNインポート関係を作成する</block>
+  <block id="314cc8dafdb90bb39e2e659556d0ff94" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="b53b3864f3b78e0a6e52b739dcc6a099" category="inline-link-macro-rx"></block> 。</block>
+  <block id="097684e53e0b7448f41031d47643872e" category="paragraph">LUN インポート関係の作成には、ソース アレイからインポートする外部 LUN の識別、外部 LUN を格納する宛先ボリュームの作成、 ONTAPストレージ システムでの宛先ターゲット LUN の作成、そして最後にインポート関係の確立が含まれます。</block>
+  <block id="ec18602c63588db79c1617cfda3270ad" category="inline-link-macro">外部LUNをONTAPストレージシステムにマッピングする</block>
+  <block id="8be2a457edc04b06e98d6f8d47898db9" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="69d058b332a54a7d8efb366c8c969b6a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="57c86deac97332d795acb8efd15880e8" category="paragraph">外部アレイで、移行する LUN のマップを解除し、 ONTAPストレージ システムに再マップします。このプロセスはシステム停止を伴います。</block>
+  <block id="a01d08dabfd421c3693e94a7299a73d3" category="inline-link-macro">外部LUNからデータをインポートする</block>
+  <block id="121422d6f45b8aad004595b11bd04f47" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="ef0a436e5bafac20f418c7e95188cc23" category="inline-link-macro-rx"></block> 。</block>
+  <block id="bf610c145d514582fce8663f0a3abeb9" category="paragraph">外部アレイのソース LUN からONTAP の宛先 LUN にデータをインポートします。</block>
+  <block id="ca92fe332631fe5b3fa7cc2a1980aacb" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="df3b9bb7d0424d2237d4ae96281a9704" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6879236135ab94bcfafe3da5bba84c42" category="paragraph">FLIを使用して、ソースLUNとターゲットLUNのブロックごとの比較を実行し、移行が完了して正確であることを確認します。</block>
+  <block id="094d3bb193018a648a1565d27930dd5c" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="8ecb395a80e6a0bd1ed4f0239a31a16f" category="inline-link-macro-rx"></block> 。</block>
+  <block id="b68b47dcf2bc42b36d209f945728578e" category="paragraph">FLI オンライン移行が完了したら、LUN インポート関係を安全に削除できます。</block>
+  <block id="915a2a4d9003f641b338302a11aa0740" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="bd936607b12e91c9b550a8906167c3af" category="inline-link-macro-rx"></block> 。</block>
+  <block id="7cc4420d1efa96e0e8b743296e556571" category="paragraph">ログでエラーを確認し、ホストのマルチパス構成を確認し、アプリケーション テストを実行して移行が正常に完了したことを確認します。</block>
+  <block id="e04779adc83d025c50de61d79a8d8ff0" category="inline-link-macro">FCアダプタの設定</block>
+  <block id="cebb291af9c80cc73cb406d1a61141eb" category="paragraph">FLIでは、各コントローラに少なくとも1つの物理FCポートが必要であり、LUNをイニシエータモードで直接移行する必要があります。各ファブリックに1つずつ、合計2つのポートが推奨されますが、1つのポートでも構いません。これらのポートはソースアレイへの接続に使用され、ソースLUNを認識しマウントできるようにゾーニングとマスクを設定する必要があります。ポートをターゲットからイニシエータに変更する必要がある場合は、以下を参照してください。 <block ref="1d735329ceaa48f044777bd789c7018d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6d41b719f583940a087db3a759bdb881" category="image-alt">ギャップ分析レポートの例</block>
+  <block id="9b0510f7bb03e8656bf4b84e8ff146ab" category="paragraph">イニシエータ グループを定義するには、LUNマスキング（igroup、ホスト グループ、ストレージ グループなど）の設定方法を、ご使用のアレイのドキュメントで確認してください。</block>
+  <block id="e3146253f94c3d4bd12e45c3666bb43e" category="image-alt">発見フェーズのワークフロー</block>
+  <block id="93894c4cde9e82e4ffd7ad717e28d079" category="image-alt">移行計画ワークフロー</block>
+  <block id="60f87743c6fb04cdeedc8d826c8f1c89" category="image-alt">移行検証フェーズのワークフロー</block>
+  <block id="2519e2e812174bdf590292dc06494ebc" category="image-alt">デュアルファブリックのストレージ配線の例</block>
+  <block id="b8a8f26517c2d8c506624ec5e4d949c3" category="doc">ONTAP FLI移行のターゲットおよびイニシエータ ポートのゾーニング</block>
+  <block id="a27d0bcd9af0ccb81f8ee2143b9c588d" category="paragraph">FLI移行では、 NetAppストレージから外部アレイのソースLUNにアクセスできるようにする必要があります。これは、ソースストレージのターゲットポートとNetAppターゲットストレージのイニシエータポートをゾーニングすることで実現されます。</block>
+  <block id="104f8e29a3d4ecc1dceb152b63aa6c64" category="summary">イニシエーター モードは、Foreign LUN Import (FLI) を使用してポートをテープ ドライブ、テープ ライブラリ、またはサードパーティのストレージに接続するために使用されます。</block>
+  <block id="916e3c08f20c4c0cb79c17a38d912c36" category="doc">FCアダプタのイニシエータ モード設定</block>
+  <block id="4f45538ab686c37b2e7a6708b7c011c7" category="paragraph">イニシエータモードは、ポートをテープドライブ、テープライブラリ、またはForeign LUN Import（FLI）対応のサードパーティ製ストレージに接続するために使用されます。FCターゲットアダプタをFLIで使用するには、イニシエータモードに変換する必要があります。</block>
+  <block id="b6a53fe2332e603aa14dfb70ca7aeb19" category="list-text">アダプタのLIFを、メンバーとして属するすべてのポート セットから削除する必要があります。</block>
+  <block id="4d4eef948ecf1b54568d077e1fb7b713" category="list-text">物理ポートのパーソナリティをターゲットからイニシエータに変更する前に、変更する物理ポートを使用するすべてのStorage Virtual Machine（SVM）のすべてのLIFを、移行するか破棄する必要があります。</block>
+  <block id="297ed1cd6470874c602e7a7c1f7a1fd7" category="list-text">アダプタからすべてのLIFを削除します。</block>
+  <block id="d6dcd079ff1ce9b6d59726f3cc7aacb5" category="list-text">アダプタをオフラインにします。</block>
+  <block id="af98ea07946dba68c17d3d2a96785140" category="paragraph">アダプタがオフラインにならない場合、システムの該当するアダプタ ポートからケーブルを取り外すこともできます。</block>
+  <block id="ea1cc3310ef4ae9c09dfc3606e95d261" category="list-text">アダプタをターゲットからイニシエータに変更します。</block>
+  <block id="82ae8f32c970f7e7ea866a96bbe2060f" category="list-text">変更したアダプタをホストしているノードをリブートします。</block>
+  <block id="670faa803b23e148bec7a424a670dfbd" category="list-text">構成に対してFCポートが正しい状態で設定されていることを確認します。</block>
+  <block id="1acbe818af6cbc53e83ce8e0fecb89ac" category="list-text">アダプタをオンラインに戻します。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">次の手順</block>
+  <block id="152358ebcbde61490a8b7d4c91ef5c99" category="paragraph">外部アレイのターゲット ポートをONTAPストレージのイニシエーター ポートでゾーン分けします。</block>
+  <block id="0bc6f00e2a04cb51ed2eea70745b9311" category="summary">外部アレイからONTAPストレージにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。</block>
+  <block id="2ab27027defc7b0dfcde70aabaea0c69" category="doc">ONTAP FLIオフライン移行用のLUNインポート関係を作成する</block>
+  <block id="7fa7f3e981d416a0f266e35f99d8fae6" category="paragraph">外部アレイからONTAPストレージシステムにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。ソース エンドポイントとデスティネーション エンドポイントはLUNです。</block>
+  <block id="7b168256a5d513247e39ef8196e8b9cb" category="paragraph">外部 LUN インポート (FLI) オフライン移行用の LUN インポート関係を作成するには、ソース アレイ LUN をONTAPで外部として識別し、外部 LUN を格納する宛先ボリュームを作成して構成し、宛先ターゲット LUN を作成し、最後にインポート関係を確立する必要があります。</block>
+  <block id="95a3c451b1e56006687cf9ead77d64e5" category="inline-link-macro">FLIオフライン移行のために外部LUNを準備する</block>
+  <block id="0e81f8cb7e5870b796941d92225e3199" category="paragraph">以下の手順を完了しているはずです<block ref="f2a74c30324df3a78f13d3ca5fdc9d35" category="inline-link-macro-rx"></block> 。</block>
+  <block id="c8abf36d0ce400142a3e666a626b7db5" category="section-title">ステップ1: ONTAPでソースアレイLUNを外部として識別する</block>
+  <block id="413dd330c6ee4b53d453bf66ed50acb3" category="paragraph">FLI オフライン移行を開始する前に、 ONTAPでソース アレイ LUN を外部 LUN として識別する必要があります。</block>
+  <block id="536bd22e118b1a4f94d4e76576131b9b" category="list-text">外部アレイからマップされたソース LUN を一覧表示し、ディスクのプロパティとパスを確認します。</block>
+  <block id="b0d8593710b3e8a8d14336ce4b824cc3" category="paragraph">次の例は、Hitachi DF600F アレイのソース LUN を示しています。</block>
+  <block id="c288c9fdd8643a1c3e10173e33ed037c" category="list-text">シリアル番号を使用して、ソース LUN をONTAPで外部としてマークします。</block>
+  <block id="fe0f3d74556ccae03c2b7acce83e1d49" category="paragraph">次の例では、Hitachi DF600F アレイのソース LUN を外部としてマークします。</block>
+  <block id="60b745c31344b3bc5f73cc194cd5ad22" category="paragraph">次の例は、外部としてマークされた Hitachi DF600F アレイのソース LUN を示しています。</block>
+  <block id="14b0dfddfc5b8030f51c6fffb617c3c7" category="section-title">ステップ2: 宛先ボリュームを作成して構成する</block>
+  <block id="5aa9a661345c8cee3ed7264ef3e93155" category="paragraph">FLI オフライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。</block>
+  <block id="2cd577459cad6744e7019c9292b33538" category="paragraph">ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。</block>
+  <block id="fde1abb5537b55c34521d414267b3f70" category="inline-link-macro">ASA r2 システム</block>
+  <block id="b533834da0f9efb9e0a6ac490f2c2ac8" category="paragraph">詳細はこちら<block ref="9f40590ca1185cea7261c2a60fc922ea" category="inline-link-macro-rx"></block> 。</block>
+  <block id="98e9dcffbe0bf95deaf2fceec7e865ab" category="paragraph">次の例では、 <block ref="71b98aecfb0a3fc6df73567e458c82a4" prefix=" " category="inline-code"></block>上の<block ref="70d2c7701d2837552c0a38c02a326592" prefix=" " category="inline-code"></block> 100 GB のサイズの合計。</block>
+  <block id="90081ca28fa94c52e01e5b2df4745abd" category="list-text">各ボリュームのデフォルトのスナップショット ポリシーを無効にします。</block>
+  <block id="c94e6dbcfb901c08b9a584d3cb004395" category="paragraph">FLI移行前に、デフォルトのSnapshotコピーが存在する場合は、変更されたデータを格納するための追加スペースがボリュームに必要です。</block>
+  <block id="fc7e99306143cc031bb23815595cc387" category="paragraph">次の例では、 <block ref="71b98aecfb0a3fc6df73567e458c82a4" prefix=" " category="inline-code"></block>音量。</block>
+  <block id="b9dbbe5562a20a0b18bcd4fbf264ec88" category="paragraph">次の例では、 <block ref="c1acac5c4332e37ec1f281fcbaf0765a" prefix=" " category="inline-code"></block>オプション<block ref="cfcd208495d565ef66e7dff9f98764da" prefix=" " category="inline-code"></block>スナップショットポリシーは<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block> datamig SVM 内のすべてのボリュームに対して。</block>
+  <block id="fc0204a96f768d35cc5dc6d47b397700" category="list-text">音量設定を確認してください。</block>
+  <block id="3c5c596fcda7ebb99aa301535f95903a" category="paragraph">派閥予備軍とスナップショットポリシーの設定は<block ref="cfcd208495d565ef66e7dff9f98764da" prefix=" " category="inline-code"></block>そして<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block> 、 それぞれ。</block>
+  <block id="e163e8edc9ab8a2da1aeadf6a5c94d4c" category="section-title">ステップ3: 宛先LUNとLUNインポート関係を作成する</block>
+  <block id="e1910275934a603646595f4d66452d75" category="paragraph">FLI オフライン移行の場合、 ONTAPストレージ システム上の宛先 LUN を作成し、igroup にマッピングしてから、LUN インポート関係を作成する前にオフラインにする必要があります。</block>
+  <block id="bfd8356e78c5079e98d68c26379236e5" category="paragraph">ONTAP9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行は、以下の場合にサポートされます<block ref="9f40590ca1185cea7261c2a60fc922ea" category="inline-link-macro-rx"></block>。ASA r2システムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。そのため、 ASA r2システムでは、 <block ref="8853f93d631cadbd0584fb9e36789dfb" prefix=" " category="inline-code"></block> LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。</block>
+  <block id="d54c0b4f31d7153b6365b774317d5c75" category="list-text">宛先 LUN を作成します。</block>
+  <block id="bfd884a0a24ea817ebfe231bcbc3804b" category="paragraph">以下の例では、指定されたパスと外部ディスクのシリアル番号で<block ref="1b523fdae68699bfe92c5f6bfc8a0a7d" prefix=" " category="inline-code"></block> SVM 上に LUN を作成します。<block ref="73721187d72b88e53c3fdf1986c5ab0c" prefix=" " category="inline-code"></block>オプションは、LUN のオペレーティング システムの種類を指定します。</block>
+  <block id="9b4ce7fc8a752604ed12608b03cb5b4d" category="paragraph">その<block ref="7c192459e62b85875b59970db3d2b9ee" prefix=" " category="inline-code"></block>コマンドはパーティションオフセットに基づいてLUNのサイズとアライメントを検出し、foreign-diskオプションを使用してそれに応じたLUNを作成します。一部のI/Oは常に部分的な書き込みとして認識されるため、アライメントがずれているように見えます。この例としては、データベース ログがあります。</block>
+  <block id="6bc46e127accf24effb7b1774abc43c4" category="list-text">新しく作成された LUN のサイズとソース LUN を確認します。</block>
+  <block id="b47ca04c9474b41e542da84d1d694d7d" category="paragraph">次の例は、 <block ref="1b523fdae68699bfe92c5f6bfc8a0a7d" prefix=" " category="inline-code"></block>パス、状態、マップされたステータス、タイプ、およびサイズを持つ SVM。</block>
+  <block id="4dd187170896203bf16c8afddc9da512" category="list-text">ONTAP 9.15.1 以降を実行している場合は、新しく作成された LUN のスペース割り当てを無効にします。</block>
+  <block id="da18d08f349676220a4b6d32af77937a" category="paragraph">ONTAP 9.15.1 以降では、新しく作成された LUN に対してスペース割り当てがデフォルトで有効になっています。</block>
+  <block id="27d000a09f018cfc6dd5e169e5ca46a9" category="list-text">スペース割り当てが無効になっていることを確認します。</block>
+  <block id="8c4e72e795cee4a490c2d6eff560b519" category="list-text">プロトコル FCP のホスト igroup を作成し、ホスト イニシエーターを追加します。</block>
+  <block id="491e13dcfa7ac9b8491f19cbd3426cb9" category="paragraph">サイト サーベイ計画ワークシートのストレージ グループ セクションからイニシエーター WWPN を見つけます。</block>
+  <block id="fe667bb315e44383058f056f9c5fbe8f" category="paragraph">次の例では、指定されたオペレーティング システム タイプとイニシエータを使用して、宛先 LUN の igroup を作成します。</block>
+  <block id="b2ef1a3f9ce9d1f74f1acf2e6d265fa7" category="list-text">宛先 LUN を igroup にマッピングします。</block>
+  <block id="aaa0e1237b8b0dc6ecc6e1d233aaea8b" category="paragraph">次の例では、指定されたパスと LUN ID を使用して、宛先 LUN をそれぞれの igroup にマッピングします。</block>
+  <block id="f106121dd8a70e33471a2e671d5c9ba4" category="paragraph">次の例では、 <block ref="1b523fdae68699bfe92c5f6bfc8a0a7d" prefix=" " category="inline-code"></block> SVM。</block>
+  <block id="06810cc852981796e48ee46c1a7fa51a" category="list-text">宛先 LUN とソース LUN の間に LUN インポート関係を作成します。</block>
+  <block id="6424b245ec682cd35fd35d1f48f69794" category="paragraph">次の例では、 <block ref="1b523fdae68699bfe92c5f6bfc8a0a7d" prefix=" " category="inline-code"></block>それぞれのパスと外部ディスクのシリアル番号を持つ SVM。</block>
+  <block id="9c8ae6d98d6bedb33c34563e7c2e9e65" category="list-text">LUN インポート関係が作成されたことを確認します。</block>
+  <block id="6e2708659ab6e635be9ac7cc70d49e31" category="paragraph">次の例は、 <block ref="1b523fdae68699bfe92c5f6bfc8a0a7d" prefix=" " category="inline-code"></block>それぞれの外部ディスクとパスを持つ SVM。</block>
+  <block id="16aa8cf24ba6f4464e35887d7f0f6b38" category="inline-link-macro">外部LUNからONTAP LUNにデータをインポートする</block>
+  <block id="54e565bb91cb71fb43c1049dbf76f128" category="paragraph"><block ref="56591cf7192e5388b325b8e69e757839" category="inline-link-macro-rx"></block> 。</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">関連情報</block>
+  <block id="a2e697ac04dd555be360501670fbf18f" category="inline-link">非整列I/Oについて詳しく見る</block>
+  <block id="cb61fe942806068c6d1b2482a8beba99" category="list-text"><block ref="65ea43fe57d37a9a3d85fe1ef14c0129" category="inline-link-rx"></block> 。</block>
+  <block id="96b33f4b16ea10a16e30c8fae2848b4d" category="inline-link">SANプロトコルのスペース割り当ての有効化について詳しくは、</block>
+  <block id="666f892489ccf6b0a630b5055d3be185" category="list-text"><block ref="dfda4fa3e44e7655dde5e2004e107921" category="inline-link-rx"></block> 。</block>
+  <block id="0993dc2e0670c46c255b72cff1255320" category="doc">ONTAP FLIオンライン移行用のLUNインポート関係を作成する</block>
+  <block id="cc46bd2023eb0c869b9d3a53a1728b8c" category="paragraph">外部アレイからONTAPストレージにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。ソース エンドポイントとデスティネーション エンドポイントはLUNです。</block>
+  <block id="d86a62d2b262ea261b5bdde368754550" category="paragraph">外部 LUN インポート (FLI) オンライン移行用の LUN インポート関係の作成には、ソース アレイからインポートする外部 LUN の識別、外部 LUN を格納するための宛先ボリュームの作成と構成、宛先ターゲット LUN の作成、そして最後にインポート関係の確立が含まれます。</block>
+  <block id="9b556f6bb631ec84a9c87cff6dd8561c" category="section-title">ステップ1: ONTAPでソースアレイLUNを外部LUNとして識別する</block>
+  <block id="da60a9afd8ccd52abfacb568c8cace72" category="paragraph">FLI オンライン移行を開始する前に、ソース アレイ LUN を外部 LUN として識別する必要があります。</block>
+  <block id="350a6577777c90fdd007168fc3c4c31c" category="list-text">ONTAPで、権限レベルを「advanced」に変更します。</block>
+  <block id="037d7cc099f6ccde12147eb7747bdcff" category="paragraph">次の例は、DGC LUNZ アレイの検出を示しています。</block>
+  <block id="c075eeec6d2e43d2141c55863e51f785" category="paragraph">次の例は、DGC LUNZ アレイの詳細を示しています。</block>
+  <block id="676aaf2c86a3d82172164be62356a489" category="paragraph">次の例は、すべてのイニシエーター ポートを通じて検出された DGC LUNZ アレイを示しています。</block>
+  <block id="d1b2f56df437dae495346e5734819489" category="list-text">ソース ストレージからマップされた LUN を一覧表示し、ディスクのプロパティとパスを確認します。</block>
+  <block id="7ea792c1a5f9af2eee4a44a334cc9ae2" category="paragraph">次の例は、ソース ストレージからマップされた LUN を示しています。</block>
+  <block id="2205dafb991f3eba976b6203133120f8" category="paragraph">次の例は、ソース LUN を示しています。</block>
+  <block id="e59b34538f8f24958ddcc93460f80f5d" category="paragraph">次の例は、ソース LUN を外部としてマークするコマンドを示しています。</block>
+  <block id="f6a5473331f2daf7831d6672068d5574" category="paragraph">次の例は、ソース LUN が外部としてマークされていることを示しています。</block>
+  <block id="00ad52ebf93c65dc61f71015722c9c3c" category="list-text">すべての外部LUNとそのシリアル番号を一覧表示します。</block>
+  <block id="faa638e01a027f3e33ce873fec967f8a" category="paragraph">シリアル番号は、FLI LUNインポート コマンドで使用します。</block>
+  <block id="6f6829770b4585c77f91df7632cfa37b" category="paragraph">次の例は、外部 LUN とそのシリアル番号を示しています。</block>
+  <block id="501a07ad7efd92d4ab6857db010311d9" category="paragraph">FLI オンライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。</block>
+  <block id="e206a420950b325cd731e287640847e1" category="paragraph">ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。</block>
+  <block id="36c24dd9dc232796178e694a76c5bb02" category="paragraph">詳細はこちら<block ref="9f40590ca1185cea7261c2a60fc922ea" category="inline-link-macro-rx"></block> 。</block>
+  <block id="a08233060f61816c66576ecb8a6b108d" category="list-text">ボリュームが作成されたことを確認します。</block>
+  <block id="c9d18f8008099eef7df9f27c2445e7e7" category="paragraph">次の例は、*fli* SVM に作成された *fli_vol* ボリュームを示しています。</block>
+  <block id="04203f877ce7e592d9d5de814d92d02b" category="list-text">音量設定を確認してください。</block>
+  <block id="83235d0637914f9f18c5842d764fa93f" category="paragraph">次の例では、*fractional-reserve*が次のように設定されていることを示しています。 <block ref="cfcd208495d565ef66e7dff9f98764da" prefix=" " category="inline-code"></block> *スナップショットポリシー*は次のように設定されています<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block> *fli* SVM の *fli_vol* ボリューム用。</block>
+  <block id="b1b47e0b1faf8a580e60044eb5c19a29" category="section-title">ステップ3: 宛先LUNとLUNインポート関係を作成する</block>
+  <block id="54f6c1b9a33d71b4f7863d2d6fb2425a" category="paragraph">外部 LUN のインポートを準備するには、宛先 LUN と igroup を作成し、LUN を igroup にマップして、LUN インポート関係を作成します。</block>
+  <block id="896af4cf8b9d5ecd09e5f1f65b5b49ce" category="list-text">宛先 LUN を作成します。</block>
+  <block id="bfc4036582fc51b5c3fe84c2dc41c306" category="list-text">新しい LUN が作成されたことを確認します。</block>
+  <block id="cf820e2d4daf580dfea32ae3f8c032d4" category="paragraph">次の例は、*fli* SVM に作成された新しい LUN を示しています。</block>
+  <block id="cae85a053d2f99dde39bc59d3d6a205d" category="list-text">ホストが新しい igroup へのすべてのパスにアクセスできることを確認します。</block>
+  <block id="d10396b24bb2a32abfeebff582c6a802" category="paragraph">次の例は、2 つのイニシエータがログインしている *fli* SVM 内の *FLI* igroup を示しています。</block>
+  <block id="ea04ea060e8f7761372e7b388f173d86" category="paragraph">次の例は、*fli* SVM で新しい LUN をオフラインにするコマンドを示しています。</block>
+  <block id="12e4fd35797788596367a36dba6ef090" category="inline-link-macro">ソースLUNをONTAPの宛先LUNにマッピングする</block>
+  <block id="a251eaafbb6c9a70aedbcf74de4a8d81" category="paragraph"><block ref="173f29ecc4b03cb8030c18dead71d0a4" category="inline-link-macro-rx"></block> 。</block>
+  <block id="858e81d76fddbf61df78b439ed943049" category="paragraph"><block ref="0d8d7b10bd9cb415e98f35f02d872ed4" category="inline-link-rx"></block> 。</block>
+  <block id="d64519e4b3b646c46a8661566318cb5b" category="doc">FLIオンライン移行のためにソースLUNをONTAPアレイにマッピングする</block>
+  <block id="c4a6c5388c3f1307dd474cee06ecc459" category="paragraph">外部アレイLUNからデータをインポートするには、まず外部アレイ上でLUNのマッピングを解除し、 ONTAPストレージシステムに再マッピングする必要があります。外部アレイ上のLUNのマッピングを解除するコマンドは、アレイベンダーによって異なります。全体的なプロセスについては、提供されている手順に従い、具体的なコマンドについては、外部アレイのドキュメントを参照してください。</block>
+  <block id="7411225492e02d1310145a81baacd0db" category="paragraph">igroupからホスト（イニシエータ）を削除すると、そのigroupにマッピングされているすべてのLUNに影響します。外部アレイ上の他のLUNへの影響を防ぐため、移行するLUNは、そのigroupにマッピングされている唯一のLUNである必要があります。igroupを共有している他のLUNがある場合は、それらを別のigroupに再マッピングするか、移行するLUN専用の新しいigroupを作成してください。適切なコマンドについては、ベンダーのドキュメントを参照してください。</block>
+  <block id="483dadf6fd428be4ea01ab3990920f46" category="list-text">インポートするLUNがESXiホスト用の場合は、以下の手順を確認して従ってください。 <block ref="3fde5969682824a0abc875456e73e44e" category="inline-link-macro-rx"></block> 。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="35ff7f552b871d7fdd49c2088cd168e9" category="paragraph">分析および計画フェーズで特定された、中断を伴う未処理のホスト修復タスクがない限り、この移行の中断部分は完了しています。</block>
+  <block id="6b61dfebc11beae78522278812965ed5" category="paragraph"><block ref="ef0a436e5bafac20f418c7e95188cc23" category="inline-link-macro-rx"></block> 。</block>
+  <block id="05f59eb71c4906f53fe4417635febda8" category="summary">FLI オフライン移行プロセスでは、外部ソース LUN をONTAPストレージに提示し、次にONTAPストレージ上で外部ソース LUN を検出する必要があります。</block>
+  <block id="6932408615b180800a977f0e7ed71cc9" category="doc">ONTAP FLIオフライン移行用に外部ストレージアレイLUNを準備する</block>
+  <block id="0a702a543864c95b2dbb65d51b70226c" category="paragraph">外部 LUN インポート (FLI) オフライン移行では、外部ストレージ アレイから手動で手順を実行して外部ソース LUN をONTAPストレージ システムに提示する必要があります。その後、 ONTAPストレージ システムから手順を実行して外部 LUN を検出する必要があります。</block>
+  <block id="c665016d57be0cb6517e327edb51bc67" category="section-title">ステップ1: 外部アレイソースLUNをONTAPストレージに提示する</block>
+  <block id="693b1583274a67ba3016480d7129fc78" category="paragraph">FLI オフライン移行を使用して外部ストレージ アレイ LUN からデータのインポートを開始する前に、外部ストレージ アレイ上のソース LUN をONTAPストレージ システムに提示する必要があります。</block>
+  <block id="e76a45ef34369b3d90f44effd201579d" category="list-text">利用可能な論理LUNから移行する必要があるホストLUNを選択します。</block>
+  <block id="e5393f69964892429b64d3d1d338347a" category="inline-link-macro">敷地調査と計画ワークシート</block>
+  <block id="afde35e0cdbd3ed3f8dd11c937027ac3" category="paragraph">ソースLUNセクションに記載されている各ホストのLUN名を使用します。 <block ref="3e7b13f8c27a4162db7405113e1fdabe" category="inline-link-macro-rx"></block> 。</block>
+  <block id="df7cbb7e90f5eb4d44a41ded75580613" category="section-title">ステップ2: ONTAPで外部アレイソースLUNを検出する</block>
+  <block id="bbc96ca171c7321a2f2faf0d3f35482d" category="paragraph">外部アレイ ソース LUN をONTAPストレージ システムに提示した後、LUN インポート関係を作成する前に、 ONTAPで LUN を検出する必要があります。</block>
+  <block id="dcde9eb8b72b611c50de8e3dc7d0f354" category="list-text">ソース LUN と、ソース ストレージから宛先ストレージへのマッピングを確認します。</block>
+  <block id="e22d9b1d726a7b2f893bebfff179f60e" category="list-text">admin ユーザーを使用して SSH 経由でONTAPストレージ システムにログインします。</block>
+  <block id="9dc86985308af04bd4fd794bac96a024" category="list-text">モードを詳細に変更します。</block>
+  <block id="92c935fd4460054f7fccdffcff362cde" category="list-text">ONTAP上のソース アレイを検出します。数分待ってから、ソース アレイの検出を再試行します。</block>
+  <block id="8ec426fc914e0461f797a5ade56e8bd9" category="paragraph">次の例は、Hitachi DF600F アレイの検出を示しています。</block>
+  <block id="ea20aa46ab24a8afc2c299588cd3f4a2" category="paragraph">次の例は、すべてのイニシエーター ポートを通じて検出された Hitachi DF600F アレイを示しています。</block>
+  <block id="e9e3e5712df1354645ca953ad8d504bf" category="paragraph"><block ref="085523e47206d9a02652665cf6da23c9" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3e8a07db53d0039425b8fba1d0fc7677" category="summary">FLI オフライン移行を開始する前に、ホストの修復に必要な手順を実行し、ホストを再起動して、ホストのマルチパスが正しく構成されていることを確認する必要があります。</block>
+  <block id="f601f077ada758b95a2de5e9c7a27aa8" category="doc">ONTAP FLIオフライン移行用のホストを準備する</block>
+  <block id="1a9fd97a2ad3345e26b86580e12f42b9" category="paragraph">外部LUNインポート（FLI）によるオフライン移行を開始する前に、分析フェーズで特定されたホスト修復に必要な手順（ホスト接続キットやDSMのインストールなど）をすべて実行する必要があります。また、ホストを再起動し、ホストのマルチパスが正しく構成されていることを確認する必要があります。</block>
+  <block id="87e8b4365203203b34365d1c28e8a376" category="inline-link-macro">分析フェーズ</block>
+  <block id="41fbaaf264004e2dd6fac98856fd1f0c" category="list-text">必要なホスト修復手順を実行します。 <block ref="c8c34cd4825b0b32fe4f592845e72579" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3b96b8ba9a983b530f8ec2452b440c7b" category="list-text">ホストのマルチパス構成を確認します。</block>
+  <block id="d6c1c7f323728d4ee7b2a28be79bbbd1" category="list-text">Windowsホストの場合: 参照<block ref="84ab7508f8719b602a5cd998757efe8e" category="inline-link-macro-rx"></block>マルチパス構成を確認する手順については、こちらをご覧ください。</block>
+  <block id="228d92d2642970adddef6e21f9965bfa" category="list-text">Linuxホストの場合: <block ref="69ceccb1aea0d97021dd55c8b13a4b8e" prefix=" " category="inline-code"></block>コマンドを実行し、出力を確認します。すべてのパスがアクティブかつ準備完了として表示されるはずです。</block>
+  <block id="dc9a05616f70f63d9b65ed6a5f4e1125" category="example-title">multipath-llコマンドのサンプル出力</block>
+  <block id="3a01a2d4f1e0fa7d5e5096185a40ba2b" category="paragraph">mpath2 (360060e801046b96004f2bf4600000012) dm-6 日立、DF600F</block>
+  <block id="47db0160be743755ac2f712e8ed93752" category="paragraph">\_ ラウンドロビン 0 [prio=1][アクティブ] \_ 0:0:1:2 sdg 8:96 [アクティブ][準備完了] \_ 1:0:1:2 sdo 8:224 [アクティブ][準備完了] \_ ラウンドロビン 0 [prio=0][有効] \_ 0:0:0:2 sdc 8:32 [アクティブ][準備完了] \_ 1:0:0:2 sdk 8:160 [アクティブ][準備完了] mpath1 (360060e801046b96004f2bf4600000011) dm-5 HITACHI,DF600F</block>
+  <block id="d7138b7494b82daad9751996b1d23d1e" category="paragraph">\_ ラウンドロビン 0 [prio=1][アクティブ] \_ 0:0:0:1 sdb 8:16 [アクティブ][準備完了] \_ 1:0:0:1 sdj 8:144 [アクティブ][準備完了] \_ ラウンドロビン 0 [prio=0][有効] \_ 0:0:1:1 sdf 8:80 [アクティブ][準備完了] \_ 1:0:1:1 sdn 8:208 [アクティブ][準備完了] mpath0 (360060e801046b96004f2bf4600000010) dm-0 HITACHI,DF600F</block>
+  <block id="ea824d2777de7815b95812c467efb75b" category="paragraph">\_ ラウンドロビン 0 [prio=1][アクティブ] \_ 0:0:1:0 sde 8:64 [アクティブ][準備完了] \_ 1:0:1:0 sdm 8:192 [アクティブ][準備完了] \_ ラウンドロビン 0 [prio=0][有効] \_ 0:0:0:0 sda 8:0 [アクティブ][準備完了] \_ 1:0:0:0 sdi 8:128 [アクティブ][準備完了] mpath3 (360060e801046b96004f2bf4600000013) dm-7 HITACHI,DF600F</block>
+  <block id="dc50ff3641076d5104f9fe3a211a2bad" category="paragraph">\_ ラウンドロビン 0 [prio=1][アクティブ] \_ 0:0:0:3 sdd 8:48 [アクティブ][準備完了] \_ 1:0:0:3 sdl 8:176 [アクティブ][準備完了] \_ ラウンドロビン 0 [prio=0][有効] \_ 0:0:1:3 sdh 8:112 [アクティブ][準備完了] \_ 1:0:1:3 sdp 8:240 [アクティブ][準備完了] [root@dm-rx200s6-22 ~]#</block>
+  <block id="bde069c55679c6dcc0ab67d5d7eebeb9" category="paragraph">外部 LUN インポート (FLI) プロセスの一環として、ESXi ホストでマルチパスが正しく構成され、機能していることを確認する必要があります。</block>
+  <block id="fdf8464478d8fe236aac5b2d594eefe2" category="list-text">走る<block ref="981ec21879e0a01e3fc45af085cc6888" prefix=" " category="inline-code"></block>マルチパス情報を取得します。</block>
+  <block id="05bbfdeeb62f8dc4ff8cac1c6478a0e9" category="inline-link-macro">FLIオフライン移行用に外部ストレージアレイLUNを準備する</block>
+  <block id="9dba2f25b5c94d718bf9b3f9b0320d0b" category="paragraph"><block ref="448644ceb01e25e66d67a4d7051c8f46" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5838bddb42f739ca21db68e9121b4e6e" category="doc">ONTAP FLIオンライン移行用のホストを準備する</block>
+  <block id="8976e93062b210e5c0fdc8d648b32cf0" category="paragraph">Foreign LUN Import（FLI）オンライン移行を開始する前に、分析フェーズで特定されたホスト修復に必要な手順（ホスト接続キットやDSMのインストールなど）をすべて実行する必要があります。必要な修復手順を実行した後は、ホストを再起動することをお勧めします。</block>
+  <block id="b0d0d0ea34d9f46098d7924b60fc0508" category="paragraph">予防措置として、後で必要になった場合に簡単に元に戻せるように、ホスト データのスナップショット コピーを作成しておきます。</block>
+  <block id="7f7deee22f95d78e578cd84f2142131c" category="list-text">必要なホスト修復手順を実行します。</block>
+  <block id="b5730439fbe6b3324ebeced00b7adc62" category="paragraph"><block ref="619ce8c63d8c128306d2ae05da685736" category="inline-link-macro-rx"></block> 。</block>
+  <block id="af3182c87d2be8d3150cbb4afff88df4" category="doc">ONTAP FLIオフライン移行後にLUNインポート関係を削除する</block>
+  <block id="e6aeb3b626481a3da289ef691041a3aa" category="paragraph">外部LUNインポート（FLI）オフライン移行が完了したら、LUNインポート関係を安全に削除できます。ホストは新しいONTAP LUNへのすべてのI/Oを新しいNetAppアレイで実行するようになり、ソースLUNは使用されなくなったため、インポート関係は不要になりました。</block>
+  <block id="5fe94d73b75a6def3a9ecf131093a7be" category="paragraph">ONTAP9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行は、以下の場合にサポートされます<block ref="9f40590ca1185cea7261c2a60fc922ea" category="inline-link-macro-rx"></block>。ASA r2システムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。そのため、 ASA r2システムでは、 <block ref="8853f93d631cadbd0584fb9e36789dfb" prefix=" " category="inline-code"></block> LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。</block>
+  <block id="d5e1d2a965089d86d6fdbcb3f74b4b58" category="list-text">データのインポート ジョブを削除するには、インポート関係を削除します。</block>
+  <block id="58a740e848242dc28dbca9bf2265503b" category="paragraph">この例では、*winvol* ボリュームと *datamig* SVM 内の *bootlun*、*fdrive*、および *gdrive* という名前の LUN のインポート関係を削除するコマンドを示します。</block>
+  <block id="1b8764772a7a092889b740c6d73bb313" category="list-text">インポート ジョブが削除されたことを確認します。</block>
+  <block id="d1339460594d8a94000b89c6e72dd8df" category="paragraph">この例では、*datamig* SVM のインポート ジョブが削除されたことを確認するコマンドを示します。</block>
+  <block id="b9fb178590cedb5c9f204f1017680845" category="paragraph">この例では、外部LUN属性をマークするコマンドを示します。 <block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> *winvol* ボリュームおよび *datamig* SVM 内の *bootlun*、*fdrive*、*gdrive* という名前の LUN の場合。</block>
+  <block id="a857f0def0a0d9279c1e8e7e76f6c1f3" category="list-text">外部LUNが次のようにマークされていることを確認します<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 。</block>
+  <block id="aacf30d1c86841937f16c9629d88cba1" category="paragraph">この例では、外部LUNが次のようにマークされていることを確認するコマンドを示します。 <block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> *HITACHI_DF600F_1* アレイ上。</block>
+  <block id="68b0e92edd5030cf416742d31db299ee" category="list-text">宛先 LUN をオンラインにします。</block>
+  <block id="2c77327e9581d3f916e0941a225948ce" category="paragraph">この例では、*winvol* ボリュームおよび *datamig* SVM 内の *bootlun*、*fdrive*、および *gdrive* という名前の LUN の宛先 LUN をオンラインにするコマンドを示します。</block>
+  <block id="19d2e3e4f659da7521518b8656602c04" category="paragraph">この例では、*datamig* SVM の LUN がオンラインであることを確認するコマンドを示します。</block>
+  <block id="c1c010aa8582429982f54d1b514e094e" category="list-text">必要に応じて、イベント ログを表示して移行結果を確認します。</block>
+  <block id="2a6960ae1aeee52871e99047dca18f7d" category="paragraph">この例では、FLI 移行結果のイベント ログを表示するコマンドのサンプル出力を示します。</block>
+  <block id="86b69aec947723c0eee53909a3ae8f74" category="inline-link-macro">FLIオフライン移行の移行後タスクを実行する</block>
+  <block id="462a2772545b3175e31df8335d823a7e" category="paragraph"><block ref="0de1a1c6c42e5bfcde604527eed8f220" category="inline-link-macro-rx"></block> 。</block>
+  <block id="baa8ecf38b7008f9bd8c9d83ea20b469" category="doc">ONTAP FLIオンライン移行後にLUNインポート関係を削除する</block>
+  <block id="51aa26d78f36a3c88206273ff696cec7" category="paragraph">Foreign LUN Import（FLI）オンライン移行が完了すると、LUNインポート関係を安全に削除できます。ホストは新しいONTAP LUNへのすべてのI/Oを新しいNetAppアレイで実行し、ソースLUNは使用されなくなります。</block>
+  <block id="ed8fe490521d1e63a454325d2348367a" category="list-text">インポート関係が削除されたことを確認します。</block>
+  <block id="77b896bc5c5e5f619047baf8dd400ca6" category="paragraph"><block ref="bd936607b12e91c9b550a8906167c3af" category="inline-link-macro-rx"></block> 。</block>
+  <block id="355451298fb1bc66489346ee2ba20743" category="summary">FLI オフライン移行のためにソース LUN と宛先 LUN の間に LUN インポート関係を作成したら、外部アレイからONTAPストレージ システムにデータをインポートできます。</block>
+  <block id="1875eb1e1a6ce70c6182a071873eb54b" category="doc">ONTAP FLIオフライン移行を使用して外部アレイからデータをインポートする</block>
+  <block id="1ce201eaf0b169f6aab8b96c54a0d340" category="paragraph">ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAr2システムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。したがって、 ASA r2システムでは、 <block ref="8853f93d631cadbd0584fb9e36789dfb" prefix=" " category="inline-code"></block> LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。</block>
+  <block id="e08023cdb4d8501417d384ce42bdb526" category="list-text">外部 LUN からONTAP LUN へのデータのインポートを開始します。</block>
+  <block id="0d8cae7f9f61374730de794a5aac773f" category="paragraph">この例では、*winvol* ボリュームおよび *datamig* SVM 内の *bootlun*、*fdrive*、および *gdrive* という名前の LUN のデータ インポートを開始するコマンドを示します。</block>
+  <block id="0421281ad3630a6f68f9fa132620f1dc" category="list-text">インポートの進捗状況を監視します。</block>
+  <block id="5f744f6c099cb0a050bdc4eae49bd2b5" category="paragraph">ここで表示される進捗状況と、テスト移行の実行後に作成した移行パフォーマンスの推定値を比較してみます。</block>
+  <block id="9efd63dca0abef55515667c250d2b0f7" category="paragraph">この例では、*datamig* SVM のインポートの進行状況を監視するコマンドを示します。</block>
+  <block id="46b3c36842a76fc19d10f9443193ff40" category="list-text">データのインポートが正常に完了したことを確認します。</block>
+  <block id="2bfedca5474e7309ea23c83006221f6b" category="paragraph">この例では、*datamig* SVM のインポート ステータスを確認するコマンドを示します。</block>
+  <block id="7159a1b3101b0959db2bf47bfa73f5f3" category="paragraph">インポート ジョブが正常に完了すると、*操作ステータス* が *完了* と表示されます。</block>
+  <block id="7bc6cf1d5ea27d01c2dba21727c2a677" category="paragraph"><block ref="9a95fb8d643ab3762f2b004297129094" category="inline-link-macro-rx"></block> 。</block>
+  <block id="7bd91c22127e38a6b6f74402036b0fc6" category="doc">ONTAP FLIオフライン移行の結果を確認する</block>
+  <block id="bdb5c28ad9c2c228128a0f910bb10d26" category="paragraph">LUNが外部アレイからONTAPストレージシステムに移行された後、FLIはソースLUNとターゲットLUNをブロック単位で比較し、移行が完了し、正確であることを確認します。移行検証には、移行とほぼ同じ時間（またはそれよりわずかに長い時間）かかります。</block>
+  <block id="b4036baa8b9b8834ee76f41af0be269a" category="paragraph">移行の検証は必須ではありませんが、強くお勧めします。</block>
+  <block id="1dd92a161b6bbe48e6f377be66ae30a7" category="list-text">LUN 移行の検証を開始します。</block>
+  <block id="67a72eaf64c08198d8c103d87ca29779" category="paragraph">この例では、*winvol* ボリュームおよび *datamig* SVM 内の *bootlun*、*fdrive*、および *gdrive* という名前の LUN の LUN 移行検証を開始するコマンドを示します。</block>
+  <block id="f3de152b8212891eed3d9bb772c2bf6e" category="list-text">検証ステータスを監視します。</block>
+  <block id="54b8104ac6da0e24b865fd41e8d424f1" category="paragraph">この例では、*datamig* SVM の検証ステータスを監視するコマンドを示します。</block>
+  <block id="94b95e66c875d883d9a1711392229338" category="paragraph">同じコマンドを実行して、検証の進行状況を追跡できます。検証ジョブが正常に完了すると、*operational-state* に *completed* というステータスが表示されます。</block>
+  <block id="0d83832e320e8fd7d068ef7aad825279" category="list-text">LUN 検証を停止します。</block>
+  <block id="fd6d6a5c9fa3e3d20b8818dc1226bb8a" category="paragraph">この例では、*datamig* SVM の LUN 検証を停止するコマンドを示します。</block>
+  <block id="4e353e77e87cbe4ec7472e6d01e6ba81" category="paragraph">LUNをオンラインに戻す前に、LUNインポート検証を明示的に停止する必要があります。そうしないと、 <block ref="23225408559d8aff3667f7cc3ca34adc" prefix=" " category="inline-code"></block>コマンドは失敗します。ステータスが検証完了と表示されていても、この手順は手動で実行する必要があります。</block>
+  <block id="f04db8b0b6c9a9a3c79ed9e753fd520e" category="paragraph"><block ref="094b2fb8c85dfc2075f7ff71db128426" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5492530e08eb7114998b59bf9818524a" category="summary">LUN インポート関係が確立され、ホストが外部アレイからONTAPアレイにカットオーバーされたら、外部ソース LUN からONTAP宛先 LUN にデータをインポートできます。</block>
+  <block id="0eec82420f4378e3f6fd41c5e3e9e21e" category="doc">ONTAP FLIオンライン移行を使用して外部アレイからデータをインポートする</block>
+  <block id="7d8bee5c182a62cf83c4c01f51c5e7b3" category="paragraph">LUN インポート関係が確立され、ホスト接続が外部アレイからONTAPアレイに移動されたら、外部ソース LUN からONTAP宛先 LUN にデータをインポートできます。</block>
+  <block id="3c84f1de018751821bb0b4202f14bf0a" category="list-text">権限レベルをadvancedに設定します。</block>
+  <block id="ac0d826e0cacb0cd87b5171a4243c7ef" category="paragraph"><block ref="df3b9bb7d0424d2237d4ae96281a9704" category="inline-link-macro-rx"></block> 。</block>
+  <block id="2570d363eb16d22db684c584ca6ae66d" category="doc">ONTAP FLIオンライン移行の結果を確認する</block>
+  <block id="c926b1ec88f5052eee3ffc5ebcb7b331" category="paragraph">LUNが外部アレイからONTAPアレイに移行された後、Foreign LUN Import（FLI）は、移行元LUNと移行先LUNをブロック単位で比較し、移行が完了し、正確であることを確認します。移行検証には、移行とほぼ同じ時間（またはそれよりわずかに長い時間）かかります。</block>
+  <block id="dbd4f77b57c98448b0555d77dfe2f5cb" category="list-text">移行検証は中断を伴います。検証対象のLUNは、検証中はオフラインにする必要があります。</block>
+  <block id="851a57e88a94f05dc56e58b2ba2ca6c9" category="paragraph">この例では、*flivol* ボリュームおよび *fli_72C* SVM 内の *72Clun1* という名前の LUN をオフラインにするコマンドを示します。</block>
+  <block id="05dbd8feb6f11d79a6cf0a0b8d4c55f0" category="paragraph">この例では、*flivol* ボリュームおよび *fli_72C* SVM 内の *72Clun1* という名前の LUN の検証ステータスを監視するコマンドを示します。</block>
+  <block id="1d0e718d7ca4f6d8b4f4ebbf1f525efd" category="paragraph">LUNをオンラインに復帰させる前に、lun import verifyを明示的に停止する必要があります。そうしないと、LUNのオンライン化に失敗します。ステータスに検証が完了したことが示されている場合でも、この手順は手動で実行する必要があります。</block>
+  <block id="2b62aed05af8d76bbe5a621528fb47db" category="list-text">LUN をオンラインにします。</block>
+  <block id="dfc1fa86f6e642b28835e1c6ce85936c" category="paragraph"><block ref="8ecb395a80e6a0bd1ed4f0239a31a16f" category="inline-link-macro-rx"></block> 。</block>
+  <block id="cc515cb1595dbb780d680639beb7c7dd" category="image-alt">ソースアレイから宛先アレイの構成を削除する</block>
+  <block id="5feb9f16c10156907544e9d578b1fde3" category="image-alt">ホストグループ編集画面</block>
+  <block id="24926d4f5951c7ea0cced64e9937014c" category="image-alt">ホストグループポート編集画面</block>
+  <block id="8fbad98986850af5f847919b98de76c1" category="image-alt">論理ユニットの削除画面</block>
+  <block id="a947dfd4aa9cdebbdbd3e5d9b2f52f2a" category="image-alt">LUNを削除する</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリース ノート</block>
+  <block id="db63e5e7d34efa3840098020c2d030bc" category="sidebar">ONTAP 9.17.1の新機能</block>
+  <block id="b845b04a02808188548cb279dc1b7efa" category="sidebar">FLIのターゲットおよびイニシエーターポートのゾーニング</block>
+  <block id="5c85b34ddc611aad4c1c95da5183b039" category="sidebar">FLIオフライン移行</block>
+  <block id="24f47cdbe9ddba774a7cc53e51d9032e" category="sidebar">ワークフロー</block>
+  <block id="8658404b30e07f845a21a01256528b26" category="sidebar">移行のためのホストの準備</block>
+  <block id="d3210f7679f24b8c20933ddb6d77d566" category="sidebar">移行のために外部LUNを準備する</block>
+  <block id="c8cfbbbe4253e14390b2b14d7e60d9c8" category="sidebar">データのインポート</block>
+  <block id="cd8953245a7b632e7c40bdd158cf53f5" category="sidebar">移行結果を確認する</block>
+  <block id="f93ebe1eaf4c78ebab1a110b95f655d8" category="sidebar">FLIオンライン移行</block>
+  <block id="a9fa02c73b0556989b39e0a09dc2fb37" category="sidebar">移行のためのホストの準備</block>
+  <block id="9cc66e684b29dae71b3873021ab5f900" category="sidebar">ソースLUNを宛先アレイにマップする</block>
 </blocks>

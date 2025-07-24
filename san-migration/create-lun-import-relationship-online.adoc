@@ -1,0 +1,420 @@
+---
+permalink: san-migration/create-lun-import-relationship-online.html 
+sidebar: sidebar 
+keywords: fli online, prepare, lun path 
+summary: 外部アレイからONTAPストレージにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。 
+---
+= ONTAP FLIオンライン移行用のLUNインポート関係を作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+外部アレイからONTAPストレージにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。ソース エンドポイントとデスティネーション エンドポイントはLUNです。
+
+外部 LUN インポート (FLI) オンライン移行用の LUN インポート関係の作成には、ソース アレイからインポートする外部 LUN の識別、外部 LUN を格納するための宛先ボリュームの作成と構成、宛先ターゲット LUN の作成、そして最後にインポート関係の確立が含まれます。
+
+
+
+== ステップ1: ONTAPでソースアレイLUNを外部LUNとして識別する
+
+FLI オンライン移行を開始する前に、ソース アレイ LUN を外部 LUN として識別する必要があります。
+
+.手順
+. ONTAPで、権限レベルを「advanced」に変更します。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 続行するかどうかを確認するメッセージが表示されたら、「 y 」と入力します。
+. ソースアレイがデスティネーションコントローラで認識されることを確認します。
++
+[source, cli]
+----
+storage array show
+----
++
+次の例は、DGC LUNZ アレイの検出を示しています。
+
++
+[listing]
+----
+cluster::*> storage array show
+Prefix                         Name   Vendor            Model Options
+-------- ---------------------------- -------- ---------------- ----------
+DGC-1                      DGC_LUNZ_1      DGC             LUNZ
+1 entries were displayed.
+----
+. ソース LUN の詳細を表示します。
++
+[source, cli]
+----
+storage array config show -array-name <array_name> -instance
+----
++
+次の例は、DGC LUNZ アレイの詳細を示しています。
+
++
+[listing]
+----
+cluster::*> storage array config show -array-name DGC_LUNZ_1 -instance
+
+           Controller Name: ontaptme-fc-cluster-01
+                 LUN Group: 0
+        Array Target Ports: 500601643ea067da
+                 Initiator: 0c
+                Array Name: DGC_LUNZ_1
+   Target Side Switch Port: stme-5010-3:2-1
+Initiator Side Switch Port: stme-5010-3:2-3
+      Number of array LUNs: 1
+
+           Controller Name: ontaptme-fc-cluster-01
+                 LUN Group: 0
+        Array Target Ports: 500601653ea067da
+                 Initiator: 0d
+                Array Name: DGC_LUNZ_1
+   Target Side Switch Port: stme-5010-4:2-1
+Initiator Side Switch Port: stme-5010-4:2-3
+      Number of array LUNs: 1
+~~~~~~~~~~~ output truncated for readability ~~~~~~~~~~~~~~~~~
+8 entries were displayed.
+----
+. ソースアレイがすべてのイニシエータポートで検出されていることを確認します。
++
+[source, cli]
+----
+storage array config show -array-name <array_name>
+----
++
+次の例は、すべてのイニシエーター ポートを通じて検出された DGC LUNZ アレイを示しています。
+
++
+[listing]
+----
+cluster::*> storage array config show -array-name DGC_LUNZ_1
+             LUN   LUN
+Node         Group Count                   Array Name       Array Target Port Initiator
+------------ ----- ----- ---------------------------- ----------------------- ---------
+ontaptme-fc-cluster-01
+                 0     1                   DGC_LUNZ_1        500601643ea067da        0c
+                                                             500601653ea067da        0d
+                                                             5006016c3ea067da        0c
+                                                             5006016d3ea067da        0d
+ontaptme-fc-cluster-02
+                 0     1                   DGC_LUNZ_1        500601643ea067da        0c
+                                                             500601653ea067da        0d
+                                                             5006016c3ea067da        0c
+                                                             5006016d3ea067da        0d
+8 entries were displayed.
+----
+. ソース ストレージからマップされた LUN を一覧表示し、ディスクのプロパティとパスを確認します。
++
+[source, cli]
+----
+storage disk show -array-name <array_name> -container-type lun
+----
++
+次の例は、ソース ストレージからマップされた LUN を示しています。
+
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1 -instance
+                  Disk: DGC-1.9
+        Container Type: unassigned
+            Owner/Home: -  / -
+               DR Home: -
+    Stack ID/Shelf/Bay: -  / -  / -
+                   LUN: 0
+                 Array: DGC_LUNZ_1
+                Vendor: DGC
+                 Model: VRAID
+         Serial Number: 600601603F103100662E70861000E511
+                   UID: 60060160:3F103100:662E7086:1000E511:00000000:00000000:00000000:00000000:00000000:00000000
+                   BPS: 512
+         Physical Size: -
+              Position: present
+Checksum Compatibility: block
+             Aggregate: -
+                  Plex: -
+Paths:
+                               LUN  Initiator Side        Target Side                                                        Link
+Controller         Initiator     ID  Switch Port           Switch Port           Acc Use  Target Port                TPGN    Speed      I/O KB/s          IOPS
+------------------ ---------  -----  --------------------  --------------------  --- ---  -----------------------  ------  -------  ------------  ------------
+ontaptme-fc-cluster-02
+                   0c             0  stme-5010-3:2-4       stme-5010-3:2-2       AO  INU  5006016c3ea067da              2   4 Gb/S             0             0
+ontaptme-fc-cluster-02
+                   0d             0  stme-5010-4:2-4       stme-5010-4:2-2       AO  INU  5006016d3ea067da              2   4 Gb/S             0             0
+ontaptme-fc-cluster-02
+                   0d             0  stme-5010-4:2-4       stme-5010-4:2-1       ANO RDY  500601653ea067da              1   4 Gb/S             0             0
+
+Errors:
+-
+----
+. ソース LUN を表示します。
++
+[source, cli]
+----
+storage disk show -array-name <array_name>
+----
++
+次の例は、ソース LUN を示しています。
+
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+DGC-1.9                   -     -   - LUN     unassigned  -         -
+----
+. ソース LUN を外部としてマークします。
++
+[source, cli]
+----
+storage disk set-foreign-lun -is-foreign true -disk <disk_name>
+----
++
+次の例は、ソース LUN を外部としてマークするコマンドを示しています。
+
++
+[listing]
+----
+cluster::*> storage disk set-foreign-lun -is-foreign true -disk DGC-1.9
+----
+. ソース LUN が外部としてマークされていることを確認します。
++
+[source, cli]
+----
+storage disk show -array-name <array_name>
+----
++
+次の例は、ソース LUN が外部としてマークされていることを示しています。
+
++
+[listing]
+----
+cluster::*> storage disk show -array-name DGC_LUNZ_1
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+DGC-1.9
+----
+. すべての外部LUNとそのシリアル番号を一覧表示します。
++
+[source, cli]
+----
+storage disk show -container-type foreign -fields serial-number
+----
++
+シリアル番号は、FLI LUNインポート コマンドで使用します。
+
++
+次の例は、外部 LUN とそのシリアル番号を示しています。
+
++
+[listing]
+----
+disk    serial-number
+------- --------------------------------
+DGC-1.9 600601603F103100662E70861000E511
+----
+
+
+
+
+== ステップ2: 宛先ボリュームを作成して構成する
+
+FLI オンライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。
+
+.タスク概要
+ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。
+
+詳細はこちらlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^] 。
+
+.手順
+. デスティネーションボリュームを作成
++
+[source, cli]
+----
+volume create -vserver <SVM_name> -volume <volume_name> -aggregate <aggregate_name> -size <size>
+----
+. ボリュームが作成されたことを確認します。
++
+[source, cli]
+----
+volume show -vserver <SVM_name>
+----
++
+次の例は、*fli* SVM に作成された *fli_vol* ボリュームを示しています。
+
++
+[listing]
+----
+cluster::*> vol show -vserver fli
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+fli       fli_root     aggr1        online     RW          1GB    972.6MB    5%
+fli       fli_vol      aggr1        online     RW          2TB     1.90TB    5%
+2 entries were displayed.
+----
+. 各ボリュームの fraction_reserveoption を 0 に設定し ' スナップショット・ポリシーを none に設定します
++
+[source, cli]
+----
+volume modify -vserver <SVM_name> -volume * -fractional-reserve 0 -snapshot-policy none
+----
+. 音量設定を確認してください。
++
+[source, cli]
+----
+volume show -vserver <SVM_name> -volume * -fields fractional-reserve,snapshot-policy
+----
++
+次の例では、*fractional-reserve*が次のように設定されていることを示しています。  `0` *スナップショットポリシー*は次のように設定されています `none` *fli* SVM の *fli_vol* ボリューム用。
+
++
+[listing]
+----
+cluster::*> vol show -vserver datamig -volume * -fields fractional-reserve,snapshot-policy
+vservervolumesnapshot-policyfractional-reserve
+-----------------------------------------------
+datamigdatamig_rootnone0%
+datamigwinvolnone0%
+Volume modify successful on volume winvol of Vserver datamig.
+----
+. 既存の Snapshot コピーを削除します。
++
+[source, cli]
+----
+set advanced; snap delete –vserver <SVM_name> –vol <volume_name> –snapshot * -force true
+----
++
+[NOTE]
+====
+FLI 移行では、ターゲット LUN のすべてのブロックが変更されます。FLI 移行前に、ボリュームにデフォルトまたはその他の Snapshot コピーが存在すると、ボリュームがいっぱいになります。FLI 移行前に、ポリシーを変更して既存の Snapshot コピーを削除する必要があります。Snapshot ポリシーは移行後に再度設定できます。
+
+====
+
+
+
+
+== ステップ3: 宛先LUNとLUNインポート関係を作成する
+
+外部 LUN のインポートを準備するには、宛先 LUN と igroup を作成し、LUN を igroup にマップして、LUN インポート関係を作成します。
+
+ONTAP9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行は、以下の場合にサポートされますlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^]。ASA r2システムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。そのため、 ASA r2システムでは、  `-path` LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。
+
+.手順
+. 宛先 LUN を作成します。
++
+[source, cli]
+----
+lun create -vserver <SVM_name> -path <volume_path|storage_unit_path> -ostype <os_type> -foreign-disk <serial_number>
+----
++
+[NOTE]
+====
+その `lun create`コマンドはパーティションオフセットに基づいてLUNのサイズとアライメントを検出し、foreign-diskオプションを使用してそれに応じたLUNを作成します。一部のI/Oは常に部分的な書き込みとして認識されるため、アライメントがずれているように見えます。この例としては、データベース ログがあります。
+
+====
+. 新しい LUN が作成されたことを確認します。
++
+[source, cli]
+----
+lun show -vserver <SVM_name>
+----
++
+次の例は、*fli* SVM に作成された新しい LUN を示しています。
+
++
+[listing]
+----
+cluster::*> lun show -vserver fli
+Vserver   Path                            State   Mapped   Type        Size
+--------- ------------------------------- ------- -------- -------- --------
+fli       /vol/fli_vol/OnlineFLI_LUN      online  unmapped windows_2008  1TB
+----
+. ONTAP 9.15.1 以降を実行している場合は、新しく作成された LUN のスペース割り当てを無効にします。
++
+ONTAP 9.15.1 以降では、新しく作成された LUN に対してスペース割り当てがデフォルトで有効になっています。
+
++
+[source, cli]
+----
+lun modify -vserver <vserver_name> -volume <volume_name> -lun <lun_name> -space-allocation disabled
+----
+. スペース割り当てが無効になっていることを確認します。
++
+[source, cli]
+----
+lun show -vserver <vserver_name> -volume <volume_name> -lun <lun_name> -fields space-allocation
+----
+. プロトコル FCP の igroup を作成し、ホストイニシエータを追加します。
++
+[source, cli]
+----
+igroup create -vserver <SVM_name> -igroup <igroup_name> -protocol fcp -ostype <os_type> -initiator <initiator_name>
+----
+. ホストが新しい igroup へのすべてのパスにアクセスできることを確認します。
++
+[source, cli]
+----
+igroup show -vserver <SVM_name> -igroup <igroup_name>
+----
++
+次の例は、2 つのイニシエータがログインしている *fli* SVM 内の *FLI* igroup を示しています。
+
++
+[listing]
+----
+cluster::*> igroup show –vserver fli –igroup FLI
+   Vserver name: fli
+    Igroup name: FLI
+       Protocol: fcp
+     OS Type: Windows
+Portset Binding Igroup: -
+   Igroup UUID: 5c664f48-0017-11e5-877f-00a0981cc318
+          ALUA: true
+    Initiators: 10:00:00:00:c9:e6:e2:77 (logged in)
+10:00:00:00:c9:e6:e2:79 (logged in)
+----
+. デスティネーション LUN をオフラインにします。
++
+[source, cli]
+----
+lun offline -vserver <SVM_name> -path <volume_path|storage_unit_path>
+----
++
+次の例は、*fli* SVM で新しい LUN をオフラインにするコマンドを示しています。
+
++
+[listing]
+----
+cluster::*> lun offline -vserver fli -path /vol/fli_vol/OnlineFLI_LUN
+
+Warning: This command will take LUN "/vol/fli_vol/OnlineFLI_LUN" in Vserver "fli" offline.
+Do you want to continue? {y|n}: y
+----
+. デスティネーション LUN を igroup にマッピングします。
++
+[source, cli]
+----
+lun map -vserver <SVM_name> -path <volume_path|storage_unit_path> -igroup <igroup_name>
+----
+. 新しい LUN と外部 LUN のインポート関係を作成します。
++
+[source, cli]
+----
+lun import create -vserver <SVM_name> -path <volume_path|storage_unit_path> -foreign-disk <disk_serial_number>
+----
+
+
+.次の手順
+link:map-source-lun-to-destination-online-migration.html["ソースLUNをONTAPの宛先LUNにマッピングする"] 。
+
+.関連情報
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/What_is_an_unaligned_I%2F%2FO%3F["非整列I/Oについて詳しく見る"^] 。

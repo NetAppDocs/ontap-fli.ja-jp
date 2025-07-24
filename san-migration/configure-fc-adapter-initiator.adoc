@@ -1,0 +1,59 @@
+---
+permalink: san-migration/configure-fc-adapter-initiator.html 
+sidebar: sidebar 
+keywords: online, migration, workflow 
+summary: 'イニシエーター モードは、Foreign LUN Import (FLI) を使用してポートをテープ ドライブ、テープ ライブラリ、またはサードパーティのストレージに接続するために使用されます。' 
+---
+= FCアダプタのイニシエータ モード設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+イニシエータモードは、ポートをテープドライブ、テープライブラリ、またはForeign LUN Import（FLI）対応のサードパーティ製ストレージに接続するために使用されます。FCターゲットアダプタをFLIで使用するには、イニシエータモードに変換する必要があります。
+
+.作業を開始する前に
+* アダプタのLIFを、メンバーとして属するすべてのポート セットから削除する必要があります。
+* 物理ポートのパーソナリティをターゲットからイニシエータに変更する前に、変更する物理ポートを使用するすべてのStorage Virtual Machine（SVM）のすべてのLIFを、移行するか破棄する必要があります。
+
+
+.手順
+. アダプタからすべてのLIFを削除します。
++
+[source, cli]
+----
+network interface delete -vserver <SVM_name> -lif <lif_name>,<lif_name>
+----
+. アダプタをオフラインにします。
++
+[source, cli]
+----
+network fcp adapter modify -node <node_name> -adapter <adapter_port> -status-admin down
+----
++
+アダプタがオフラインにならない場合、システムの該当するアダプタ ポートからケーブルを取り外すこともできます。
+
+. アダプタをターゲットからイニシエータに変更します。
++
+[source, cli]
+----
+system hardware unified-connect modify -t initiator <adapter_port>
+----
+. 変更したアダプタをホストしているノードをリブートします。
+. 構成に対してFCポートが正しい状態で設定されていることを確認します。
++
+[source, cli]
+----
+system hardware unified-connect show
+----
+. アダプタをオンラインに戻します。
++
+[source, cli]
+----
+node run -node _node_name_ storage enable adapter <adapter_port>
+----
+
+
+.次の手順
+外部アレイのターゲット ポートをONTAPストレージのイニシエーター ポートでゾーン分けします。

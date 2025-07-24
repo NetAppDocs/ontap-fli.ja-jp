@@ -1,23 +1,50 @@
 ---
 permalink: san-migration/concept_fli_offline_workflow.html 
-redirect: ontap-fli/san-migration/task_rebooting_the_host_to_validate_system_state.html 
 sidebar: sidebar 
 keywords: fli, offline, workflow 
-summary: ここでは、 4 つの FLI ワークフローのうちの 1 つである FLI オフラインワークフローの例を示します。 
+summary: FLIオフライン移行では、サードパーティの外部ストレージアレイからNetAppストレージシステムへのデータ移行中にクライアントシステムがオフラインになります。 
 ---
-= FLI オフラインワークフロー
+= ONTAP FLIオフライン移行ワークフローの概要
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ここでは、 4 つの FLI ワークフローのうちの 1 つである FLI オフラインワークフローの例を示します。
+外部LUNインポート（FLI）データ移行は、サードパーティ製ストレージアレイからNetAppストレージシステムへのデータ移行を成功させるための、いくつかの重要なステップを含むプロセスです。FLIはオフライン移行とオンライン移行をサポートしています。FLIオフライン移行では、サードパーティ製外部ストレージアレイからNetAppストレージシステムへのデータ移行中、クライアントシステムはオフラインになります。
 
-このワークフローでは、 HDS AMS2100 アレイをソースアレイとして使用します。オフラインワークフローのタスクは次のとおりです。
+.作業を開始する前に
+* 以下の項目を完了してくださいlink:concept_migration_discover_phase_workflow.html["検出"] 、 link:concept_migration_analyze_phase_workflow.html["分析"] 、 そしてlink:concept_migration_plan_phase_workflow.html["計画"]移行プロセスのフェーズ。
+* あなたがすべきlink:configure-fc-adapter-initiator.html["FCアダプタをイニシエーターモードに設定する"] 。
+* あなたがすべきlink:concept_target_and_initiator_port_zoning.html["外部アレイのターゲットポートをONTAPストレージイニシエータポートでゾーン分けする"] 。
 
-. カットオーバーの準備
-. データをインポートする
-. 移行結果の確認（オプション）
-. FLI オフラインの移行後のタスク
 
+FLI オフライン ワークフローには、インポート用のホストと外部 LUN の準備、LUN インポート関係の作成、およびデータのインポートが含まれます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]link:prepare-host-offline-migration.html["ホストを準備する"] 。
+[role="quick-margin-para"]
+FLI オフライン移行を実行する前に、ホストを再起動し、ホストのマルチパス構成を確認する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]link:prepare-foreign-lun-offline.html["外部LUNを準備する"] 。
+[role="quick-margin-para"]
+FLI オフライン移行プロセスでは、外部アレイから手動で手順を実行して外部ソース LUN をONTAPストレージ システムに提示する必要があります。その後、追加の手動手順を実行してONTAPストレージ システム上の外部ソース LUN を検出する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]link:create-lun-import-relationship-offline.html["LUNインポート関係を作成する"] 。
+[role="quick-margin-para"]
+FLI オフライン移行用の LUN インポート関係を作成するには、ソース アレイ LUN をONTAPで外部として識別し、外部 LUN を含む宛先ボリュームを作成して構成し、宛先ターゲット LUN を作成し、最後にインポート関係を確立する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"]link:task_fli_offline_importing_the_data.html["外部アレイからLUNデータをインポートする"] 。
+[role="quick-margin-para"]
+FLI を使用して、外部アレイから LUN データをインポートします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:task_fli_offline_verifying_migration_results.html["移行結果を確認する"] 。
+[role="quick-margin-para"]
+移行が完了して正確であることを確認するために、ソース LUN と移行先 LUN のブロックごとの比較を実行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:remove-lun-import-relationship-offline.html["LUNインポート関係を削除します"] 。
+[role="quick-margin-para"]
+FLI オフライン移行が完了したら、LUN インポート関係を安全に削除できます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["セブン"]link:concept_fli_offline_post_migration_tasks.html["移行後のタスクを実行する"] 。
+[role="quick-margin-para"]
+ログでエラーを確認し、ホストのマルチパス構成を確認し、アプリケーション テストを実行して移行が正常に完了したことを確認します。

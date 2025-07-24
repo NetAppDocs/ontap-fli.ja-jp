@@ -22,15 +22,15 @@ NOTE: このタスクの例では、 _HDS AMS2100 アレイを使用します。
 . Hitachi Storage Navigator Modular にログインします。
 . 移行するホストを選択し、 * Edit Host Group * を選択します。
 +
-image::../media/remove_source_luns_from_host_1.png[ホスト 1 からソース LUN を削除します]
+image::../media/remove_source_luns_from_host_1.png[ホストグループ編集画面]
 
 . [* Ports] を選択し、 [* Forced set] を選択して選択したすべてのポートに適用します。
 +
-image::../media/remove_source_luns_from_host_2.png[ホスト 2 からソース LUN を削除します]
+image::../media/remove_source_luns_from_host_2.png[ホストグループポート編集画面]
 
 . 割り当てられた論理 LUN から移行されたホスト LUN を選択します。Source LUNs ワークシートに記載されている各ホストの LUN 名を使用します。ここで、 Windows Server 2012 ホストの LUN を選択し、 * 削除 * を選択します。
 +
-image::../media/remove_source_luns_from_host_3.png[ホスト 3 からソース LUN を削除します]
+image::../media/remove_source_luns_from_host_3.png[論理ユニットの削除画面]
 
 . Linux ホストと VMware ESX ホストについて、同じ手順を繰り返します。
 

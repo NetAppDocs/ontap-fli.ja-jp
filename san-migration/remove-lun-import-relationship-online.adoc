@@ -1,0 +1,52 @@
+---
+permalink: san-migration/remove-lun-import-relationship-online.html 
+sidebar: sidebar 
+keywords: clean up, fli, online migration 
+summary: FLI オンライン移行が完了したら、 LUN インポート関係を削除します。 
+---
+= ONTAP FLIオンライン移行後にLUNインポート関係を削除する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import（FLI）オンライン移行が完了すると、LUNインポート関係を安全に削除できます。ホストは新しいONTAP LUNへのすべてのI/Oを新しいNetAppアレイで実行し、ソースLUNは使用されなくなります。
+
+ONTAP9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行は、以下の場合にサポートされますlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^]。ASA r2システムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。そのため、 ASA r2システムでは、  `-path` LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。
+
+.手順
+. LUN インポート関係を削除します。
++
+[source, cli]
+----
+lun import delete -vserver <SVM_name> -path <volume_path|storage_unit_path>
+----
+. インポート関係が削除されたことを確認します。
++
+[source, cli]
+----
+lun import show -vserver <SVM_name>
+----
+. 必要に応じて、イベント ログを表示して移行結果を確認します。
++
+[source, cli]
+----
+event log show –event fli*
+----
++
+この例では、FLI 移行結果のイベント ログを表示するコマンドのサンプル出力を示します。
+
++
+[listing]
+----
+DataMig-ontap::*> event log  show –event fli*
+
+7/7/2014 18:37:21   DataMig-ontap-01 INFORMATIONAL fli.lun.verify.complete: Import verify of foreign LUN 83017542001E of size 42949672960 bytes from array model DF600F belonging to vendor HITACHI  with NetApp LUN QvChd+EUXoiS is successfully completed.
+7/7/2014 18:37:15   DataMig-ontap-01 INFORMATIONAL fli.lun.verify.complete: Import verify of foreign LUN 830175420015 of size 42949672960 bytes from array model DF600F belonging to vendor HITACHI  with NetApp LUN QvChd+EUXoiX is successfully completed.
+7/7/2014 18:02:21   DataMig-ontap-01 INFORMATIONAL fli.lun.import.complete: Import of foreign LUN 83017542000F of size 3221225472 bytes from array model DF600F belonging to vendor HITACHI  is successfully completed. Destination NetApp LUN is QvChd+EUXoiU.
+----
+
+
+.次の手順
+link:concept_fli_online_post_migration_tasks.html["移行後のタスクを実行する"] 。

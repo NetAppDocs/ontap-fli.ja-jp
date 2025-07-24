@@ -1,0 +1,367 @@
+---
+permalink: san-migration/create-lun-import-relationship-offline.html 
+sidebar: sidebar 
+keywords: ceate, lun import relationship, fli, offline migration 
+summary: 外部アレイからONTAPストレージにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。 
+---
+= ONTAP FLIオフライン移行用のLUNインポート関係を作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+外部アレイからONTAPストレージシステムにLUNを移行する前に、LUNインポート関係を作成する必要があります。LUNインポート関係とは、データのインポートを目的として、ソースストレージとターゲットストレージ間の永続的なペアリングです。ソース エンドポイントとデスティネーション エンドポイントはLUNです。
+
+外部 LUN インポート (FLI) オフライン移行用の LUN インポート関係を作成するには、ソース アレイ LUN をONTAPで外部として識別し、外部 LUN を格納する宛先ボリュームを作成して構成し、宛先ターゲット LUN を作成し、最後にインポート関係を確立する必要があります。
+
+.作業を開始する前に
+以下の手順を完了しているはずですlink:prepare-foreign-lun-offline.html["FLIオフライン移行のために外部LUNを準備する"] 。
+
+
+
+== ステップ1: ONTAPでソースアレイLUNを外部として識別する
+
+FLI オフライン移行を開始する前に、 ONTAPでソース アレイ LUN を外部 LUN として識別する必要があります。
+
+.手順
+. 外部アレイからマップされたソース LUN を一覧表示し、ディスクのプロパティとパスを確認します。
++
+[source, cli]
+----
+storage disk show -array-name <array_name> -fields disk, serial-number, container-type, owner, path-lun-in-use-count, import-in-progress, is-foreign
+----
++
+ケーブル配線に基づいて想定される数のパス（ソースコントローラごとに少なくとも 2 つのパス）が表示されることを確認する必要があります。また、アレイ LUN のマスキング後にイベントログを確認する必要があります。
+
++
+次の例は、Hitachi DF600F アレイのソース LUN を示しています。
+
++
+[listing]
+----
+DataMig-ontap::*> storage disk show -array-name HITACHI_DF600F_1 -fields disk, serial-number, container-type, owner, path-lun-in-use-count, import-in-progress, is-foreign
+
+disk     owner is-foreign container-type import-in-progress path-lun-in-use-count serial-number
+-------- ----- ---------- -------------- ------------------ --------------------- -------------
+HIT-1.2  -     false      unassigned     false        0,0,0,0,0,0,0,0       83017542001E
+HIT-1.3  -     false      unassigned     false        0,0,0,0,0,0,0,0       83017542000E
+HIT-1.14 -     false      unassigned     false        0,0,0,0,0,0,0,0       830175420019
+3 entries were displayed.
+
+----
+. シリアル番号を使用して、ソース LUN をONTAPで外部としてマークします。
++
+[source, cli]
+----
+storage disk set-foreign-lun -serial-number <lun_serial_number> -is-foreign true
+----
++
+次の例では、Hitachi DF600F アレイのソース LUN を外部としてマークします。
+
++
+[listing]
+----
+DataMig-ontap::*> storage disk set-foreign-lun { -serial-number 83017542001E }
+                   -is-foreign true
+DataMig-ontap::*> storage disk set-foreign-lun { -serial-number 83017542000E }
+                   -is-foreign true
+DataMig-ontap::*> storage disk set-foreign-lun { -serial-number 83017542000F }
+                   -is-foreign true
+----
+. ソース LUN が外部としてマークされていることを確認します。
++
+[source, cli]
+----
+storage disk show -array-name <array_name> -fields disk, serial-number, container-type, owner,import-in-progress, is-foreign
+----
++
+次の例は、外部としてマークされた Hitachi DF600F アレイのソース LUN を示しています。
+
++
+[listing]
+----
+DataMig-ontap::*> storage disk show -array-name HITACHI_DF600F_1 -fields disk, serial-number, container-type, owner,import-in-progress, is-foreign
+
+disk     owner is-foreign container-type import-in-progress serial-number
+-------- ----- ---------- -------------- ------------------ -------------
+HIT-1.2  -     true       foreign        false              83017542001E
+HIT-1.3  -     true       foreign        false              83017542000E
+HIT-1.4  -     true       foreign        false              83017542000F
+3 entries were displayed.
+----
+
+
+
+
+== ステップ2: 宛先ボリュームを作成して構成する
+
+FLI オフライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。
+
+.タスク概要
+ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。
+
+詳細はこちらlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^] 。
+
+.手順
+. デスティネーションボリュームを作成
++
+[source, cli]
+----
+volume create -vserver <SVM_name> -volume <volume_name> -aggregate <aggregate> -size <volume_size> -snapshot-policy default
+----
++
+次の例では、  `winvol`上の `aggr1` 100 GB のサイズの合計。
+
++
+[listing]
+----
+DataMig-ontap::*> vol create -vserver datamig winvol aggr1 -size 100g
+----
+. 各ボリュームのデフォルトのスナップショット ポリシーを無効にします。
++
+[source, cli]
+----
+volume modify -vserver <SVM_name> -volume <volume_name> -snapshot-policy none
+----
++
+FLI移行前に、デフォルトのSnapshotコピーが存在する場合は、変更されたデータを格納するための追加スペースがボリュームに必要です。
+
++
+次の例では、  `winvol`音量。
+
++
+[listing]
+----
+DataMig-ontap::> volume modify -vserver datamig -volume winvol -snapshot-policy none
+
+Warning: You are changing the Snapshot policy on volume winvol to none.  Any Snapshot copies on this volume from the previous policy will not be deleted by
+         this new Snapshot policy.
+Do you want to continue? {y|n}: y
+Volume modify successful on volume winvol of Vserver datamig.
+----
+. 各ボリュームの fraction_reserveoption を 0 に設定し ' スナップショット・ポリシーを none に設定します
++
+[source, cli]
+----
+vol modify -vserver <SVM_name> -volume * -fractional-reserve 0 –snapshot-policy none
+----
++
+次の例では、  `fractional-reserve`オプション `0`スナップショットポリシーは `none` datamig SVM 内のすべてのボリュームに対して。
+
++
+[listing]
+----
+DataMig-ontap::> vol modify -vserver datamig -volume * -fractional-reserve 0 –snapshot-policy none
+Volume modify successful on volume winvol of Vserver datamig.
+----
+. 音量設定を確認してください。
++
+[source, cli]
+----
+volume show -vserver <SVM_name> -volume * -fields fractional-reserve,snapshot-policy
+----
++
+派閥予備軍とスナップショットポリシーの設定は `0`そして `none` 、 それぞれ。
+
+. 既存の Snapshot コピーを削除します。
++
+[source, cli]
+----
+set advanced; snap delete –vserver <SVM_name> –volume <volume_name> –snapshot * -force true
+----
++
+[NOTE]
+====
+FLI 移行では、ターゲット LUN のすべてのブロックが変更されます。FLI 移行前に、ボリュームにデフォルトまたはその他の Snapshot コピーが存在すると、ボリュームがいっぱいになります。FLI 移行前に、ポリシーを変更して既存の Snapshot コピーを削除する必要があります。Snapshot ポリシーは移行後に再度設定できます。
+
+====
+
+
+
+
+== ステップ3: 宛先LUNとLUNインポート関係を作成する
+
+FLI オフライン移行の場合、 ONTAPストレージ システム上の宛先 LUN を作成し、igroup にマッピングしてから、LUN インポート関係を作成する前にオフラインにする必要があります。
+
+.タスク概要
+ONTAP9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行は、以下の場合にサポートされますlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^]。ASA r2システムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。各ボリュームには1つのストレージユニットのみが含まれます。そのため、 ASA r2システムでは、  `-path` LUN を作成するときにオプションではなく、ストレージ ユニット パスを含める必要があります。
+
+.手順
+. 宛先 LUN を作成します。
++
+[source, cli]
+----
+lun create -vserver <SVM_name> -path <volume_path|storage_unit_path> -ostype <os_type> -foreign-disk <serial_number>
+----
++
+以下の例では、指定されたパスと外部ディスクのシリアル番号で `datamig` SVM 上に LUN を作成します。 `-ostype`オプションは、LUN のオペレーティング システムの種類を指定します。
+
++
+[listing]
+----
+DataMig-ontap::*> lun create -vserver datamig -path /vol/winvol/bootlun -ostype windows_2008 -foreign-disk 83017542001E
+
+Created a LUN of size 40g (42949672960)
+
+Created a LUN of size 20g (21474836480)
+DataMig-ontap::*> lun create -vserver datamig -path /vol/linuxvol/lvmlun1 -ostype linux -foreign-disk 830175420011
+
+Created a LUN of size 2g (2147483648)
+DataMig-ontap::*> lun create -vserver datamig -path /vol/esxvol/bootlun -ostype vmware -foreign-disk 830175420014
+
+Created a LUN of size 20g (21474836480)
+----
++
+[NOTE]
+====
+その `lun create`コマンドはパーティションオフセットに基づいてLUNのサイズとアライメントを検出し、foreign-diskオプションを使用してそれに応じたLUNを作成します。一部のI/Oは常に部分的な書き込みとして認識されるため、アライメントがずれているように見えます。この例としては、データベース ログがあります。
+
+====
+. 新しく作成された LUN のサイズとソース LUN を確認します。
++
+[source, cli]
+----
+lun show -vserver <SVM_name> -fields vserver, path, state, mapped, type, size
+----
++
+次の例は、  `datamig`パス、状態、マップされたステータス、タイプ、およびサイズを持つ SVM。
+
++
+[listing]
+----
+DataMig-ontap::*> lun show -vserver datamig
+
+Vserver   Path                            State   Mapped   Type        Size
+--------- ------------------------------- ------- -------- -------- --------
+datamig   /vol/esxvol/bootlun             online  unmapped vmware       20GB
+datamig   /vol/esxvol/linuxrdmvlun        online  unmapped linux         2GB
+datamig   /vol/esxvol/solrdmplun          online  unmapped solaris       2GB
+datamig   /vol/winvol/gdrive              online  unmapped windows_2008  3GB
+4 entries were displayed.
+----
+. ONTAP 9.15.1 以降を実行している場合は、新しく作成された LUN のスペース割り当てを無効にします。
++
+ONTAP 9.15.1 以降では、新しく作成された LUN に対してスペース割り当てがデフォルトで有効になっています。
+
++
+[source, cli]
+----
+lun modify -vserver <vserver_name> -volume <volume_name> -lun <lun_name> -space-allocation disabled
+----
+. スペース割り当てが無効になっていることを確認します。
++
+[source, cli]
+----
+lun show -vserver <vserver_name> -volume <volume_name> -lun <lun_name> -fields space-allocation
+----
+. プロトコル FCP のホスト igroup を作成し、ホスト イニシエーターを追加します。
++
+[source, cli]
+----
+lun igroup create -ostype <os_type> -protocol fcp -vserver <SVM_name> -igroup <igroup_name> -initiator <initiator_wwpn1>,<initiator_wwpn2>
+----
++
+サイト サーベイ計画ワークシートのストレージ グループ セクションからイニシエーター WWPN を見つけます。
+
++
+次の例では、指定されたオペレーティング システム タイプとイニシエータを使用して、宛先 LUN の igroup を作成します。
+
++
+[listing]
+----
+DataMig-ontap::*> lun igroup create -ostype windows -protocol fcp -vserver datamig -igroup dm-rx200s6-21 -initiator 21:00:00:24:ff:30:14:c4,21:00:00:24:ff:30:14:c5
+
+DataMig-ontap::*> lun igroup create -ostype linux -protocol fcp -vserver datamig  -igroup dm-rx200s6-22 -initiator 21:00:00:24:ff:30:04:85,21:00:00:24:ff:30:04:84
+
+DataMig-ontap::*> lun igroup create -ostype vmware -protocol fcp -vserver datamig -igroup dm-rx200s6-20 -initiator 21:00:00:24:ff:30:03:ea,21:00:00:24:ff:30:03:eb
+----
++
+[NOTE]
+====
+ソースと同じ LUN ID を使用します。Site Survey and Planning ワークシートのソース LUN のセクションを参照してください。
+
+====
+. 宛先 LUN を igroup にマッピングします。
++
+[source, cli]
+----
+lun map -vserver <SVM_name> -path <volume_path|storage_unit_path> -igroup <igroup_name> -lun-id <lun_id>
+----
++
+次の例では、指定されたパスと LUN ID を使用して、宛先 LUN をそれぞれの igroup にマッピングします。
+
++
+[listing]
+----
+DataMig-ontap::*> lun map -vserver datamig -path /vol/winvol/bootlun -igroup dm-rx200s6-21 -lun-id 0
+DataMig-ontap::*> lun map -vserver datamig -path /vol/linuxvol/bootlun -igroup dm-rx200s6-22 -lun-id 0
+DataMig-ontap::*> lun map -vserver datamig -path /vol/esxvol/bootlun -igroup dm-rx200s6-20 -lun-id 0
+----
+. デスティネーション LUN をオフラインにします。
++
+[source, cli]
+----
+lun offline -vserver <SVM_name> -path <volume_path|storage_unit_path>
+----
++
+次の例では、  `datamig` SVM。
+
++
+[listing]
+----
+DataMig-ontap::*> lun offline -vserver datamig -path /vol/esxvol/bootlun
+DataMig-ontap::*> lun offline -vserver datamig -path /vol/esxvol/linuxrdmvlun
+DataMig-ontap::*> lun offline -vserver datamig -path /vol/esxvol/solrdmplun
+----
+. 宛先 LUN とソース LUN の間に LUN インポート関係を作成します。
++
+[source, cli]
+----
+lun import create -vserver <SVM_name> -path <volume_path|storage_unit_path> -foreign-disk <serial_number>
+----
++
+次の例では、  `datamig`それぞれのパスと外部ディスクのシリアル番号を持つ SVM。
+
++
+[listing]
+----
+DataMig-ontap::*> lun import create -vserver datamig -path /vol/winvol/bootlun -foreign-disk 83017542001E
+DataMig-ontap::*> lun import create -vserver datamig -path /vol/linuxvol/ext3lun -foreign-disk 830175420013
+DataMig-ontap::*> lun import create -vserver datamig -path /vol/esxvol/linuxrdmvlun -foreign-disk 830175420018
+DataMig-ontap::*> lun import create -vserver datamig -path /vol/esxvol/solrdmplun -foreign-disk 830175420019
+----
+. LUN インポート関係が作成されたことを確認します。
++
+[source, cli]
+----
+lun import show -vserver <SVM_name> -fields vserver, foreign-disk, path, operation, admin-state, operational-state, percent-complete
+----
++
+次の例は、  `datamig`それぞれの外部ディスクとパスを持つ SVM。
+
++
+[listing]
+----
+DataMig-ontap::*> lun import show -vserver datamig
+vserver foreign-disk   path                operation admin operational percent
+                                         in progress state state       complete
+-------------------------------------------------------------------------------
+datamig 83017542000E   /vol/winvol/fdrive  import    stopped
+                                                           stopped            0
+datamig 83017542000F   /vol/winvol/gdrive  import    stopped
+                                                           stopped            0
+datamig 830175420010   /vol/linuxvol/bootlun
+                                           import    stopped
+                                                           stopped            0
+3 entries were displayed.
+----
+
+
+.次の手順
+link:task_fli_offline_importing_the_data.html["外部LUNからONTAP LUNにデータをインポートする"] 。
+
+.関連情報
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/What_is_an_unaligned_I%2F%2FO%3F["非整列I/Oについて詳しく見る"] 。
+* https://docs.netapp.com/us-en/ontap/san-admin/enable-space-allocation.html["SANプロトコルのスペース割り当ての有効化について詳しくは、"] 。
+

@@ -1,0 +1,27 @@
+---
+permalink: san-migration/prepare-host-online-migration.html 
+sidebar: sidebar 
+keywords: reboot, hosts, fli, online migration, prepare 
+summary: FLI オフライン移行を開始する前に、ホストの修復に必要な手順を実行し、ホストを再起動して、ホストのマルチパスが正しく構成されていることを確認する必要があります。 
+---
+= ONTAP FLIオンライン移行用のホストを準備する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import（FLI）オンライン移行を開始する前に、分析フェーズで特定されたホスト修復に必要な手順（ホスト接続キットやDSMのインストールなど）をすべて実行する必要があります。必要な修復手順を実行した後は、ホストを再起動することをお勧めします。
+
+.作業を開始する前に
+予防措置として、後で必要になった場合に簡単に元に戻せるように、ホスト データのスナップショット コピーを作成しておきます。
+
+.手順
+. 必要なホスト修復手順を実行します。
+. 開いているすべてのアプリケーションをシャットダウンします。
+. ホストをリブートします。
+. ログを参照してエラーがないか確認します。
+
+
+.次の手順
+link:create-lun-import-relationship-online.html["LUNインポート関係を作成する"] 。

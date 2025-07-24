@@ -28,6 +28,6 @@ image::../media/remove_source_luns_from_ontap_storage_2.png[ホストグルー�
 
 . 割り当てられた論理 LUN から移行されたホスト LUN を選択します。Source LUNs ワークシートに記載されている各ホストの LUN 名を使用します。ここで、 Windows Server 2012 、 RHEL 5.10 、 ESXi 5.5 ホストの LUN を選択し、 * Remove * を選択します。
 +
-image::../media/remove_source_luns_from_ontap_storage_3.png[ONTAP ストレージからソース LUN を削除 3.]
+image::../media/remove_source_luns_from_ontap_storage_3.png[LUNを削除する]
 
 
