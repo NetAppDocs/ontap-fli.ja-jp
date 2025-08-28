@@ -1451,7 +1451,6 @@
   <block id="faa638e01a027f3e33ce873fec967f8a" category="paragraph">シリアル番号は、FLI LUNインポート コマンドで使用します。</block>
   <block id="6f6829770b4585c77f91df7632cfa37b" category="paragraph">次の例は、外部 LUN とそのシリアル番号を示しています。</block>
   <block id="501a07ad7efd92d4ab6857db010311d9" category="paragraph">FLI オンライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。</block>
-  <block id="e206a420950b325cd731e287640847e1" category="paragraph">ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。</block>
   <block id="36c24dd9dc232796178e694a76c5bb02" category="paragraph">詳細はこちら<block ref="9f40590ca1185cea7261c2a60fc922ea" category="inline-link-macro-rx"></block> 。</block>
   <block id="a08233060f61816c66576ecb8a6b108d" category="list-text">ボリュームが作成されたことを確認します。</block>
   <block id="c9d18f8008099eef7df9f27c2445e7e7" category="paragraph">次の例は、*fli* SVM に作成された *fli_vol* ボリュームを示しています。</block>
@@ -1590,4 +1589,5 @@
   <block id="f93ebe1eaf4c78ebab1a110b95f655d8" category="sidebar">FLIオンライン移行</block>
   <block id="a9fa02c73b0556989b39e0a09dc2fb37" category="sidebar">移行のためのホストの準備</block>
   <block id="9cc66e684b29dae71b3873021ab5f900" category="sidebar">ソースLUNを宛先アレイにマップする</block>
+  <block id="3e06682f4f26baa39169365df5a4cbff" category="paragraph">ONTAP 9.17.1 以降、FLI オンライン移行を使用した外部 LUN のデータ移行がASA r2 システムでサポートされるようになりました。ASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。</block>
 </blocks>

@@ -231,7 +231,7 @@ DGC-1.9 600601603F103100662E70861000E511
 FLI オンライン移行用の LUN インポート関係を作成する前に、外部アレイからインポートする LUN を格納するボリュームをONTAPストレージ システムに作成する必要があります。
 
 .タスク概要
-ONTAP 9.17.1以降、 ASA r2システムでは、FLIオフライン移行を使用した外部LUNのデータ移行がサポートされています。ASAASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。
+ONTAP 9.17.1 以降、FLI オンライン移行を使用した外部 LUN のデータ移行がASA r2 システムでサポートされるようになりました。ASAシステムは、ストレージ層の実装において他のONTAPシステム（ASA、 AFF、 FAS）とは異なります。ASAASAシステムでは、ストレージユニット（LUNまたはネームスペース）の作成時にボリュームが自動的に作成されます。したがって、LUNインポート関係を作成する前にボリュームを作成する必要はありません。ASAASAシステムを使用している場合は、この手順をスキップできます。
 
 詳細はこちらlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2 システム"^] 。
 
@@ -417,4 +417,4 @@ lun import create -vserver <SVM_name> -path <volume_path|storage_unit_path> -for
 link:map-source-lun-to-destination-online-migration.html["ソースLUNをONTAPの宛先LUNにマッピングする"] 。
 
 .関連情報
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/What_is_an_unaligned_I%2F%2FO%3F["非整列I/Oについて詳しく見る"] 。
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/What_is_an_unaligned_I%2F%2FO%3F["非整列I/Oについて詳しく見る"^] 。
