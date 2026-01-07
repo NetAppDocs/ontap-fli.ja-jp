@@ -2,7 +2,7 @@
 permalink: san-migration/concept_using_fli_to_import_luns_into_all_flash.html 
 sidebar: sidebar 
 keywords: use, foreign lun import, import luns, aff 
-summary: ONTAP は、 FlexArray ソフトウェアのすべてのリリースで AFF をサポートしているわけではありません。それらのリリースでは、 AFF と同じクラスタの AFF 以外のハイアベイラビリティ（ HA ）ペアに Foreign LUN Import （ FLI ）をステージングする必要があります。 
+summary: ONTAP 9.1 以降、 AFF はFLI をサポートします。FLI を使用すると、他のアレイから LUN をONTAPクラスタに直接インポートできます。 
 ---
 = Foreign LUN Import を使用した AFF への LUN のインポート
 :allow-uri-read: 
@@ -11,10 +11,8 @@ summary: ONTAP は、 FlexArray ソフトウェアのすべてのリリースで
 
 
 [role="lead"]
-ONTAP は、 FlexArray ソフトウェアのすべてのリリースで AFF をサポートしているわけではありません。それらのリリースでは、 AFF と同じクラスタの AFF 以外のハイアベイラビリティ（ HA ）ペアに Foreign LUN Import （ FLI ）をステージングする必要があります。
+ONTAP 9.1 以降、 AFF はFLI をサポートします。FLI を使用すると、他のアレイから LUN をONTAPクラスタに直接インポートできます。
 
-ONTAP 9.1 以降では、 AFF で FLI がサポートされます。FKU を使用して、他のアレイから ONTAP クラスタに直接 LUN をインポートできます。
+ONTAP 8.3.2 以降、 AFF は承認されたプロセス差異要求 (PVR) を使用して FLI をサポートできます。PVR を承認のために提出するには、 NetAppアカウント チームにお問い合わせください。承認されると、提出者 (通常はNetAppシステム エンジニア) は、FLI 機能を有効にするための手順が記載された承認レターを受け取ります。
 
-ONTAP 8.3.2 では、 AFF で FLI をサポートするには Process Variance Request （ PVR ）の承認が必要になります。PVR を申請して承認を得る方法については、担当のネットアップアカウントチームにお問い合わせください。承認されると、通常はネットアップのシステムエンジニアである申請者に、 FLI 機能を有効にするための手順が記載された承認書が届きます。
-
-8.3.2 より前のバージョンの ONTAP ソフトウェアでは、一部の書き込み最適化の影響により、 AFF で FlexArray がサポートされていません。AFF を使用している同じクラスタの AFF 以外の HA ペアに FLI インポートをステージングする必要があります。移行が完了したら、 vol や LUN の移動などのノンストップオペレーション（ NDO ）を使用して、移行した LUN を AFF に移動できます。AFF クラスタに AFF 以外のノードがない場合は、アカウントチームに問い合わせて一時貸し出し機が利用可能かどうかを相談してください。
+8.3.2 より前のバージョンのONTAPソフトウェアでは、 AFFと同じクラスタ上の非AFF HA ペアに FLI インポートをステージングする必要があります。移行が完了したら、ボリュームまたは LUN 移動などの非中断操作 (NDO) を使用して、移行された LUN をAFFに移動できます。AFFクラスターに非AFFノードがない場合、これを容易にするためにスイング ギアを借りる可能性についてアカウント チームに相談してください。

@@ -48,13 +48,7 @@ ontaptme-fc-cluster-02
 
 Warning: Configuration errors were detected.  Use 'storage errors show' for detailed information.
 ----
-. 表示されたストレージエラーの詳細を確認します。エラーによっては、処理を続行する前に対処が必要なものもありただし、次の例に示すエラーは無視しても問題ありません。 "This device is an ONTAP(R) LUN".
-+
-[NOTE]
-====
-「 This device is an ONTAP\ （ R ） LUN. 」というエラーメッセージが表示されるのは、 FLI が ONTAP テクノロジに依存していて、 FlexArray または ONTAP ターゲットの仮想化をサポートしていないためです。FLI では LUN をインポートできますが、 FlexArray では仮想化はサポートされていません。
-
-====
+. 一覧表示されたストレージ エラーの詳細を確認します。エラーによっては、次の手順に進む前に対応が必要になります。
 +
 [listing]
 ----

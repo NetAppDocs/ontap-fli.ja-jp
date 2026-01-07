@@ -32,7 +32,7 @@ FLI 移行プロジェクトに役立つその他のツールとユーティリ�
 
 * * Interoperability Matrix *
 +
-Interoperability Matrix Tool （ IMT ）は、ネットアップ、 FlexArray 、および他社製ソフトウェアコンポーネントの相互運用性チェックに使用するネットアップの Web ベースユーティリティです。
+相互運用性マトリックス ツール (IMT ) は、 NetAppとサードパーティのソフトウェア コンポーネントの相互運用性チェックに使用されるNetApp のWebベースのユーティリティです。
 
 * * ONTAP システム・マネージャ *
 +
@@ -48,10 +48,6 @@ WFA は、ストレージワークフローを作成し、プロビジョニン�
 
 https://mysupport.netapp.com/site/tools["ネットアップのツール"]
 
-http://mysupport.netapp.com/NOW/download/tools/ndcp/["ネットアップのツール： Data Center Planner"]
-
 https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
-
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61372["ネットアップのマニュアル： OnCommand System Manager （現在のリリース）"]
 
 http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61550["ネットアップのマニュアル： OnCommand Workflow Automation （現在のリリース）"]

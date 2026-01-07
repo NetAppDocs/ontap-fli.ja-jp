@@ -2,7 +2,7 @@
 permalink: san-migration/concept_fli_interoperability_and_support_criteria.html 
 sidebar: sidebar 
 keywords: fli, interoperability, support, criteria 
-summary: FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常によく似ていますが、 FLI と連携するネットアップ認定ソースアレイのサポートを強化する目的でまったく別の相互運用性ツールとして追加されたものです。 
+summary: 'FLI 相互運用性マトリックス (IMT) は、FLI で動作するNetApp認定ソース アレイをより適切にサポートするように設計された、明確に異なる相互運用性ツールです。' 
 ---
 = FLI の相互運用性とサポート条件
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常�
 
 
 [role="lead"]
-FLI の Interoperability Matrix （ IMT ）は FlexArray IMT と非常によく似ていますが、 FLI と連携するネットアップ認定ソースアレイのサポートを強化する目的でまったく別の相互運用性ツールとして追加されたものです。
+FLI 相互運用性マトリックス (IMT) は、FLI で動作するNetApp認定ソース アレイをより適切にサポートするように設計された、明確に異なる相互運用性ツールです。
 
 Foreign LUN Import を実行する前に、相互運用性について次の 2 つを確認する必要があります。
 
