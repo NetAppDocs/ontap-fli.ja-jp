@@ -1,5 +1,5 @@
 ---
-permalink: san-migration/reference_site_survey_and_planning_worksheet_lun_details_tab.html 
+permalink: sample-site/reference_site_survey_and_planning_worksheet_lun_details_tab.html 
 sidebar: sidebar 
 keywords: site, survey and planning worksheet, lun details tab 
 summary: Site Survey and Planning ワークシートの一部として、 LUN の詳細情報を含むタブを設定する必要があります。 
