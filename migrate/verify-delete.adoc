@@ -1,0 +1,88 @@
+---
+permalink: migrate/verify-delete.html 
+sidebar: sidebar 
+keywords: verify import, delete import relationship, foreign lun import, fli, lun import delete, lun import verify, import cleanup, san migration, offline verification, asa r2 
+summary: コピーが完了したらインポート関係を削除して移行を完了し、必要に応じて削除前にブロックレベルのデータ整合性を検証します。 
+---
+= FLI LUNインポート関係を確認して削除する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+インポートコピーが完了し、インポート状態が完了したら、lun import deleteコマンドを使用してインポートペアリングを削除することで移行を完了できます。このコマンドは、ソースLUNが使用されなくなり、デスティネーションLUNがホストI/Oのアクティブコピーになった後に、インポート関係を安全に削除します。オフラインFLIワークフローでは、通常、インポートと検証が完了した後にデスティネーションLUNをオンラインにして、ホストが移行されたLUNを再検出してアクセスを再開できるようにします。
+
+関係を削除する前にデータの整合性を確認する必要がある場合は、ブロックごとの比較を実行するlun import verifyを実行できますが、検証をオフラインで実行する必要があるため（つまり、検証中はLUNをオフラインにしてホストからアクセスできないようにする必要があるため）、処理が中断されます。ホストの修復、ゾーニングとイニシエータのクリーンアップ、ドキュメント作成、運用検証などの移行後の操作は、移行後のフェーズで処理されるため、このセクションの範囲外とします。
+
+.タスク概要
+ONTAP 9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行がASA r2システムでサポートされています。ASA r2システムは、ストレージ レイヤの実装において、他のONTAPシステム（ASA、AFF、FAS）とは異なります。ASA r2システムでは、ストレージユニット（LUNまたはネームスペース）が作成されると、ボリュームが自動的に作成されます。各ボリュームにはストレージユニットが1つだけ含まれています。したがって、ASA r2システムの場合、LUNを作成する際に `-path`オプションにボリューム名を含める必要はありません。代わりにストレージユニットのパスを指定する必要があります。
+
+.手順
+. 権限レベルをadvanceに設定します。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. インポート状態を確認してください（削除する前に完了または停止されている必要があります）：
++
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. インポートがまだ進行中で、完了率が100%の場合：
++
+[source, cli]
+----
+lun import stop -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. インポート関係を削除します（完了）：
++
+[source, cli]
+----
+lun import delete -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. 関係が削除されていることを確認します。
++
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. インポート処理が実行中でないことを確認してください（停止または完了している必要があります）：
++
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. LUNをオフラインにする（検証はオフラインで行う必要があります）：
++
+[source, cli]
+----
+lun offline -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. ブロックごとの検証を開始します（オプションですが推奨）：
++
+[source, cli]
+----
+lun import verify start -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. 検証の進捗状況を監視する：
++
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. 検証を停止します（LUNをオンラインにする前に必要です）：
++
+[source, cli]
+----
+lun import verify stop -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. LUNをオンラインにします（中断時間はここで終了します）：
++
+[source, cli]
+----
+lun online -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+

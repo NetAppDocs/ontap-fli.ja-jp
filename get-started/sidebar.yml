@@ -1,0 +1,18 @@
+---
+section: get-started
+title: 作業の開始
+entries:
+- title: 概要
+  url: "/get-started/learn-about-data-migration.html"
+- title: ONTAPへのSANデータ移行
+  url: "/get-started/learn-about-san-data-migration.html"
+- title: Foreign LUN Import の 1 つです
+  url: "/get-started/learn-about-fli.html"
+- title: 7-mode から ONTAP への FLI 移行
+  url: "/get-started/learn-about-7-mode.html"
+- title: 主な特長とメリット
+  url: "/get-started/key-features-benefits.html"
+- title: FLIの前提条件
+  url: "/get-started/prerequisites.html"
+- title: サポートされている構成とプラットフォーム
+  url: "/get-started/supported-configurations.html"

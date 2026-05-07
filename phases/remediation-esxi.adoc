@@ -1,0 +1,193 @@
+---
+permalink: phases/remediation-esxi.html 
+sidebar: sidebar 
+keywords: ontap, fli, foreign lun import, esxi host, pre-migration, offline fli, online fli 
+summary: ESXiホスト上でONTAP FLI移行を実行する前に、移行前の以下の手順を完了してください。オフライン移行とオンライン移行には、それぞれ別の手順が必要です。 
+---
+= ONTAP FLI ESXi ホストの修復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXiホスト上でONTAP FLI移行を実行する前に、移行前の以下の手順を完了してください。オフライン移行とオンライン移行には、それぞれ別の手順が必要です。
+
+
+
+== 移行前 - オフラインFLI
+
+これらの手順は、オンラインFLIとオフラインFLIの両方に共通です。ホストからソースLUNのプロビジョニングを解除する前に、以下の手順が完了していることを確認してください。
+
+[cols="4"]
+|===
+| VM/VMDK | RDM | WSFC | VMSC 
+
+
+ a| 
+ステップ1：ゲストVMを正常にシャットダウンします。
+ a| 
+ステップ 1：RDM を使用している VM の場合、nmp デバイスとのバックエンドマッピングを特定し、RDM ディスクを正常に削除します。
+ a| 
+ステップ 1：WFSC が存在する場合は、クラスターを正常にシャットダウンし、Windows の修復手順に従ってディスクを削除します。
+ a| 
+ステップ 1：VM-HA または VMSC が構成されている場合は、HA を無効にし、ハートビートディスクが存在する場合は解放し、必要に応じてクラスタ構成を調整します。
+
+
+
+ a| 
+ステップ2：移行予定のデータストアをアンマウントします。共有されている場合は、すべてのホストからアンマウントします。
+ a| 
+ステップ2：移行に関係するNMPデバイスを取り外します。
+ a| 
+ステップ2：ゲストVMを正常にシャットダウンします。
+ a| 
+ステップ2：移行予定のデータストアをアンマウントします。共有されている場合は、すべてのホストからアンマウントします。
+
+
+
+ a| 
+ステップ3：VMFSのロックモード（ATSのみかATS+SCSIか）を確認します。ATSのみの場合は、SCSIに変更してください（オンラインFLIの場合のみ必要です）。
+ a| 
+ a| 
+ステップ3：移行予定のデータストアをアンマウントします。共有されている場合は、すべてのホストからアンマウントします。a
+ a| 
+ステップ3：移行に関係するNMPデバイスを切り離します。
+
+
+
+ a| 
+ステップ4：移行に関係するNMPデバイスを切り離します。
+|   a| 
+ステップ4：移行に関係するNMPデバイスを切り離します。
+|  
+|===
+.知っておくべき重要なポイント
+* *ATS専用*設定は、データストアの最初のエクステントに存在するVMFSヘッダーに格納されます。データストアが複数のエクステントにまたがっている場合、最初のエクステントのみを修復する必要があります。
+* データストアが複数のESXiホスト間で共有されている場合、通常は1つのホストから更新するだけで十分です。他のホストは再スキャン/再マウント後に変更を反映させます。
+* ATS専用モードを変更する間は、データストアに対してアクティブなI/O処理を実行できません。VMwareのガイダンスでは、変更を適用するために必要に応じてVMを退避/移行またはシャットダウンし、マウント解除/再マウントを行います。
+
+
+
+
+=== ESXコマンド例：同期ブロック
+
+ホストをメンテナンスモードにする::
+
+
+esxcli system maintenanceMode set --enable true
+
+ストレージデバイスとデータストアを特定する::
+
+
+[Source]
+----
+esxcli storage core device list
+esxcli storage filesystem list
+----
+VMFS ATSロックモードを確認する::
+
+
+vmkfstools --queryfs -h /vmfs/volumes/<DATASTORE_NAME>
+
+データストアをアンマウントします（共有されている場合は、すべてのESXiホストで繰り返してください）::
+
+
+esxcli storage filesystem unmount -l <DATASTORE_NAME>
+
+バッキングデバイス（NMP / naa デバイス）を切り離します::
+
+
+esxcli storage core device set -d <naa.ID> --state=off
+
+デバイスが切り離されていることを確認します::
+
+
+esxcli storage core device list -d <naa.ID>
+
+デタッチ後に再スキャンしてクリーンな状態を確認::
+
+
+esxcli storage core adapter rescan --all
+
+完了後にメンテナンスモードを終了します::
+
+
+esxcli system maintenanceMode set --enable false
+
+
+
+== 移行前 - オンラインFLI
+
+以下にオンラインFLIの具体的な手順を示しますが、これらの手順は移行前のオフラインFLIの手順を完了してから実行する必要があります。
+
+以下の手順は、NetApp LUN がホストにプロビジョニングされた後に実行する必要があります。
+
+この時点で、LUNインポートは既に作成されており、LUNはホストigroupにマッピングされ、ホストからiSCSIまたはFCイニシエータがログインしています。
+
+オフラインFLIの場合、NetApp LUNはオフライン状態のままです。
+
+[cols="3"]
+|===
+| VM/VMDK | RDM | VMSC 
+
+
+| ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 
+
+
+| ステップ2：ボリューム/デバイスの詳細を一覧表示して、LUN上のファイルシステムの詳細を確認します。 | ステップ2：新しいNAA IDを特定し、それぞれのVMにRDMを再度追加します。 | ステップ2：ボリューム/デバイスの詳細を一覧表示して、LUN上のファイルシステムの詳細を確認します。 
+
+
+| ステップ3：データストアの詳細を特定し、データストアをESXiに再マウントします。 | ステップ3：ゲストVMの電源をオンにし、アプリケーションを起動します。 | ステップ3：データストアの詳細を特定し、データストアをESXiに再マウントします。 
+
+
+| ステップ4：ゲストVMの電源をオンにし、アプリケーションを起動します。 |  | ステップ4：ゲストVMの電源をオンにし、アプリケーションを起動します。 
+
+
+|  |  | ステップ5：ゲストVMの電源をオンにしてアプリケーションを起動する 
+|===
+
+NOTE: 最新のコマンド一覧については、OSベンダーのドキュメントを参照してください。
+
+ホストをメンテナンスモードにする::
+
+
+esxcli system maintenanceMode set --enable true
+
+ストレージデバイスとデータストアを特定する::
+
+
+[Source]
+----
+esxcli storage core device list
+esxcli storage filesystem list
+----
+VMFS ATSロックモードを確認する::
+
+
+vmkfstools --queryfs -h /vmfs/volumes/<DATASTORE_NAME>
+
+データストアをアンマウントします（共有されている場合は、すべてのESXiホストで繰り返してください）::
+
+
+esxcli storage filesystem unmount -l <DATASTORE_NAME>
+
+ATSのみが検出された場合は、ATS+SCSIに変換する::
+
+
+vmkfstools --configATSOnly 0 /vmfs/volumes/<DATASTORE_NAME>
+
+バッキングデバイス（NMP / naa デバイス）を切り離します::
+
+
+esxcli storage core device set -d <naa.ID> --state=off
+
+デバイスが切り離されていることを確認します::
+
+
+esxcli storage core device list -d <naa.ID>
+
+デタッチ後に再スキャンしてクリーンな状態を確認::
+
+
+esxcli storage core adapter rescan --all

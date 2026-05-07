@@ -1,0 +1,31 @@
+---
+permalink: get-started/prerequisites.html 
+sidebar: sidebar 
+keywords: fli prerequisites, foreign lun import, ontap fli, fc backend, iscsi backend, intercluster lif, lun discovery, import relationship, 512 byte sectors, igroup, lun mapping, fibre channel, iscsi initiator 
+summary: バックエンド接続、LUN検出、インポート関係要件を含む、ONTAP Foreign LUN Importの前提条件を確認してください。 
+---
+= ONTAP Foreign LUN Importの前提条件について学ぶ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP Foreign LUN Import（FLI）を開始する前に、移行を成功させるために満たす必要がある前提条件がいくつかあります。これらの前提条件は、FLIプロセスが正しく機能するために不可欠な互換性、接続性、および構成要件を網羅しています。
+
+* 選択したトランスポートに対して、バックエンド接続が利用可能である必要があります。
++
+** FC FLIでは、コントローラごとに少なくとも1つのFCポートがイニシエータモードで動作する必要があります（冗長性を確保するため、ファブリックごとに1つずつ、合計2つのポートが推奨されます）。
+** iSCSI FLIは、iSCSIソフトウェアイニシエータがアウトバウンドセッションをIC接続にバインドするため、インタークラスタ（IC）LIF（またはIC LIFをホストできるイーサネットポート）を必要とします。
+
+
+* 外部LUNは、インポート前にONTAPで検出可能である必要があります。外部アレイLUNは、ONTAPストレージ スタックで認識されている必要があります（検出はインポートの前提条件です）。
+* ソースLUNをONTAPで「外部」としてマークします。外部LUNが検出された後、誤って所有権を取得したり、上書きしたりする動作を防ぐために、明示的に外部LUNとしてマークする必要があります。
+* ソースLUNは安定している必要があります。外部LUNは、インポートワークフロー中に拡張または縮小してはなりません。
+* インポート互換性を確保するため、外部LUNは512バイトセクター（512Bブロックサイズ）を使用する必要があります。その他のセクターサイズはインポートではサポートされていません。
+* デスティネーション ONTAP LUN は、ソース LUN のサイズと一致している必要があります。「外部ディスクを使用した LUN の作成」ワークフローにより、デスティネーション LUN が正しいサイズで作成されます。
+* デスティネーションONTAP LUNは、フロントエンドプロトコル計画に基づいて少なくとも1つのigroupにマッピングする必要があります。これにより、ワークフローの適切な段階でホストを接続できます。
+* 外部LUNとデスティネーションONTAP LUNは、インポートコピーを開始する前に、インポート関係を介してペアリングする必要があります。
+
+
+インポート関係を作成する前に、デスティネーションONTAP LUNをオフラインにしておきます。関係が作成された後は、オンラインFLIを実行する場合にのみLUNをオンラインにすることができます。これにより、コピーが継続している間もホストはI/Oを再開できます。

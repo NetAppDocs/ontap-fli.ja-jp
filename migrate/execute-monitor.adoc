@@ -1,0 +1,95 @@
+---
+permalink: migrate/execute-monitor.html 
+sidebar: sidebar 
+keywords: lun import start, execute import, monitor import, foreign lun import, fli, ontap, lun import show, import progress, pause import, resume import, san migration, online fli, offline fli, asa r2 
+summary: LUNのインポートを開始し、進行状況を監視してください。インポートとアクティブホストワークロード間の帯域幅競合を管理するために、コピー ストリームを一時停止および再開します。 
+---
+= FLI LUNのインポートを実行および監視する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+インポート関係が作成されたら、lun import startコマンドを使用して、外部LUNから宛先ONTAP LUNへのバックグラウンドデータインポートを開始します。lun import showコマンドで進捗状況を追跡できます。このコマンドは、現在の操作（インポートや検証など）、管理状態と運用状態、完了率を報告するため、ジョブの完了まで監視できます。
+
+ホストI/Oとインポートが同じバックエンドリソースを競合するオンラインシナリオでは、一時的に`lun import pause`を実行してチェックポイントを失うことなくコピー ストリームを停止し、負荷とレイテンシが安定したら`lun import resume`を実行して最後のチェックポイントから再開することができます。これは、アプリケーションの応答時間を安定させながらアクティブなコピー ストリームを制御するための推奨される制御方法です。
+
+.タスク概要
+ONTAP 9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行がASA r2システムでサポートされています。ASA r2システムは、ストレージ レイヤの実装において、他のONTAPシステム（ASA、AFF、FAS）とは異なります。ASA r2システムでは、ストレージユニット（LUNまたはネームスペース）が作成されると、ボリュームが自動的に作成されます。各ボリュームにはストレージユニットが1つだけ含まれています。したがって、ASA r2システムの場合、LUNを作成する際に `-path`オプションにボリューム名を含める必要はありません。代わりにストレージユニットのパスを指定する必要があります。
+
+.手順
+. 権限レベルをadvanceに設定します。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. LUNインポートを開始します。
++
+[source, cli]
+----
+lun import start -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+. インポートの進捗状況を監視する：
++
+[cols="2"]
+|===
+| コマンド | 説明 
+
+
+| SVM上のすべてのインポートを表示する  a| 
+[source, cli]
+----
+lun import show -vserver <SVM_NAME>
+----
+
+
+| 特定のLUNインポートを表示する  a| 
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+
+
+| 詳細表示（より多くのフィールドが含まれます）  a| 
+[source, cli]
+----
+lun import show -instance
+----
+|===
+. ホストのレイテンシに影響が出ている場合（一般的なオンライン制御）、一時停止/再開：
++
+[cols="2"]
+|===
+| コマンド | 説明 
+
+
+| インポートを一時停止します（チェックポイントは保持されます）  a| 
+[source, cli]
+----
+lun import pause -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+
+
+| 一時停止していることを確認してください  a| 
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+
+
+| 前回のチェックポイントからインポートを再開します  a| 
+[source, cli]
+----
+lun import resume -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+
+
+| 再び実行されていることを確認してください  a| 
+[source, cli]
+----
+lun import show -vserver <SVM_NAME> -path /vol/<VOL>/<LUN_NAME>
+----
+|===
+

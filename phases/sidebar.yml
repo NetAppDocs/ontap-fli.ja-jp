@@ -1,0 +1,36 @@
+---
+section: phases
+title: ONTAP FLI フェーズ
+entries:
+- title: フェーズの概要
+  url: "/phases/phase-overview.html"
+- title: Discovery
+  url: "/phases/discovery-phase.html"
+- title: 分析
+  url: "/phases/analyze-phase.html"
+- title: 計画と準備
+  entries:
+  - title: 概要
+    url: "/phases/plan-overview.html"
+  - title: テスト移行
+    url: "/phases/plan-prepare-phase.html"
+  - title: ホストの修正
+    entries:
+    - title: 推奨されるホスト移行方法
+      url: "/phases/recommended-host-migration.html"
+    - title: AIXホストの修復
+      url: "/phases/remediation-aix.html"
+    - title: ESXiホストの修復
+      url: "/phases/remediation-esxi.html"
+    - title: HPホストの修復
+      url: "/phases/remediation-hp.html"
+    - title: Linuxホストの修復
+      url: "/phases/remediation-linux.html"
+    - title: Solarisホストの修復
+      url: "/phases/remediation-solaris.html"
+    - title: Windowsホストの修復
+      url: "/phases/remediation-windows.html"
+- title: Execute
+  url: "/phases/execute-phase.html"
+- title: 検証
+  url: "/phases/verify-phase.html"

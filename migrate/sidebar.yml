@@ -1,0 +1,12 @@
+---
+section: migrate
+title: FLIの移行
+entries:
+- title: 外部LUNを検出する
+  url: "/migrate/discover-foreign-luns.html"
+- title: インポート関係を作成
+  url: "/migrate/create-import-relationship.html"
+- title: 移行の実行と監視
+  url: "/migrate/execute-monitor.html"
+- title: ソースLUNを確認して削除する
+  url: "/migrate/verify-delete.html"

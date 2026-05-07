@@ -1,0 +1,20 @@
+---
+permalink: get-started/learn-about-7-mode.html 
+sidebar: sidebar 
+keywords: 7 mode transition, foreign lun import, fli, ontap, clustered ontap, lun migration, online workflow, offline workflow, 32 bit aggregates, misaligned lun, data migration, 7 mode to ontap 
+summary: 外部LUNインポートを使用して、NetApp 7-Modeシステムからclustered ONTAPへ、オンラインまたはオフラインのワークフローのいずれかを使用してLUNを移行する方法を説明します。 
+---
+= Foreign LUN Import 7-modeからONTAPへの移行について学ぶ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+7モードとクラスタモードONTAP間の外部LUNインポートを使用したデータ移行は、ソースLUNがONTAP 7モードを実行しているNetAppシステムでホストされており、そのLUNをクラスタ化されたONTAPに移行したい場合に使用します。このアプローチは、32ビットアグリゲート上にホストされているLUNやアライメントがずれたLUNなどのレガシーシナリオにおいて特に有用です。なぜなら、外部LUNのインポートは他のユースケースにも使用できるからです。
+
+外部LUNインポートを使用したデータ移行は、オンラインワークフローまたはオフラインワークフローのいずれを使用しても実行できます。運用上は、標準の FLI オンラインおよびオフライン移行と同じ手順とルールに従いますが、唯一の違いはソースアレイがサードパーティ製のアレイではなく、NetApp 7 Mode コントローラであることです。
+
+つまり、ソースが外部アレイであろうとNetApp 7 Modeアレイであろうと、コアFLI移行ワークフローは同じです。変更されるのはソースプラットフォームのみです。
+
+iSCSI FLIは、NetApp 7 Modeソースからのインポートではサポートされていません。

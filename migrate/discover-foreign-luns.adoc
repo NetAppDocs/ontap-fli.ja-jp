@@ -1,0 +1,90 @@
+---
+permalink: migrate/discover-foreign-luns.html 
+sidebar: sidebar 
+keywords: discover foreign luns, foreign lun import, fli, ontap, storage disk show, mark foreign lun, fc backend, iscsi backend, foreign disk, lun discovery, san migration 
+summary: ホストから外部LUNのプロビジョニングを解除し、ONTAPイニシエータにマッピングして、ONTAPがストレージ スタック内のLUNを検出できるようにします。 
+---
+= FLI移行用の外部LUNを検出
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+バックエンド接続が設定されたら、まずホストからマッピング解除とプロビジョニング解除を行い、次に外部アレイ上のONTAPイニシエータID（ベンダーホストグループとイニシエータレコード）にマッピングおよびマスクして、デュアルプレゼンテーションされないようにすることで、ONTAP検出用のソース（外部）LUNをプロビジョニングします。
+
+次に、バックエンドパスがエンドツーエンドでオンラインであることを確認します（FC FLIではFCゾーニングとマスキング、iSCSI FLIでは正常なONTAPからターゲットへのiSCSIセッション）。外部LUNが想定されるパス冗長性と基本的な適格性を備えてONTAPストレージ スタックで検出されていることを確認します。
+
+外部アレイLUNのNetAppイニシエータへのプロビジョニング。このステップでは、インポート対象として識別されたLUNは、ホストOSから既に安全にプロビジョニング解除されています。次に、このLUNをNetApp iSCSIイニシエータを持つホストグループ（ONTAPのiGroupに相当）にマッピングする必要があります。
+
+.例
+Pure Storage の場合、LUN/ボリュームをイニシエータにマッピングするために使用されるコマンドは次のとおりです（この場合は、NetApp イニシエータ）。
+
+[listing]
+----
+purehost create <HOSTNAME>
+purehost list
+purehost list --all
+purehgroup create <HGROUP>
+purehgroup list
+purehgroup list --connect
+purevol connect --host <HOSTNAME> <VOLUME>
+purevol connect --hgroup <HGROUP> <VOLUME>
+----
+.作業を開始する前に
+Foreign LUN Importは、FCおよびiSCSIバックエンドを介してサポートされています。FLI移行を開始する前に、link:../configure/fc-connectivity-wiring.html["FC"]またはlink:../configure/iscsi-setup-backend-connectivity.html["iSCSI"]バックエンドを設定する必要があります。
+
+.手順
+. 権限レベルをadvancedに設定します。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 外部LUNの可視性を確認する：
++
+[source, cli]
+----
+storage disk show
+----
+. 外部としてマーク：
++
+[source, cli]
+----
+storage disk set-foreign-lun -disk <FOREIGN_DISK_ID> -is-foreign-lun true
+----
+. 外部シリアル番号を取得します（デスティネーションLUNの作成に使用されます）：
++
+[source, cli]
+----
+storage disk show -disk <FOREIGN_DISK_ID> -fields serial-number
+----
+. 検出された外部ディスクを外部ディスクとしてマークする：
++
+[source, cli]
+----
+storage disk set-foreign-lun -disk <FOREIGN_DISK_ID> -is-foreign-lun true
+----
+. 外部ディスクのシリアル番号をキャプチャします（LUN作成に使用）：
++
+[source, cli]
+----
+storage disk show -disk <FOREIGN_DISK_ID> -fields serial-number
+----
+
+
+*例*
+
+[listing]
+----
+C1_Cluster::*> storage disk show  -disk *NET*
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.1                   -     -   - LUN     foreign     -         -
+C1_Cluster::*>
+C1_Cluster::*> storage disk show -disk NET-1.1 -fields serial-number
+disk    serial-number
+------- -------------
+NET-1.1 wtJfv?ZnvjXa
+----

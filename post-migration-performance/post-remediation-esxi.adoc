@@ -1,0 +1,242 @@
+---
+permalink: post-migration-performance/post-remediation-esxi.html 
+sidebar: sidebar 
+keywords: host remediation, esxi, post-migration, fli, ontap 
+summary: 移行後、ESXiホストでは、新しくインポートされたLUNが正しく認識され、正常に機能するようにするための修復手順が必要です。 
+---
+= ONTAP FLI ESXi移行後のホスト修復を実行する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行後、ESXiホストでは、新しくインポートされたLUNが正しく認識され、正常に機能するようにするための修復手順が必要です。
+
+
+
+== 移行後 - オフライン FLI
+
+オフラインFLIの場合は、LUNインポートを削除し、ホストイニシエータが接続されていることを確認した後、LUNをオンラインにしてください。
+
+[cols="4"]
+|===
+| VM/VMDK | RDM | WFSC | VMSC 
+
+
+| ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 
+
+
+| ステップ2：ボリューム/デバイスの詳細を一覧表示して、LUN上のファイルシステムの詳細を確認します。 | ステップ2：新しいNAA IDを特定し、それぞれのVMにRDMを再度追加します。 | ステップ2：ボリューム/デバイスの詳細を一覧表示して、LUN上のファイルシステムの詳細を確認します。 | ステップ2：ボリューム/デバイスの詳細を一覧表示して、LUN上のファイルシステムの詳細を確認します。 
+
+
+| ステップ3：データストアの詳細を特定し、データストアをESXiに再マウントします。 | ステップ3：ゲストVMの電源をオンにし、アプリケーションを起動します。 | ステップ3：データストアの詳細を特定し、データストアをESXiに再マウントします。 | ステップ3：データストアの詳細を特定し、データストアをESXiに再マウントします。 
+
+
+| ステップ4：データストアの詳細を特定し、データストアをESXiにマウントし直します。 |  | ステップ4：データストアの詳細を特定し、データストアをESXiにマウントし直します。 | ステップ4：ゲストVMの電源をオンにし、アプリケーションを起動します。 
+
+
+|  |  | ステップ 5：クラスタで使用されている RDM ディスクを特定し、以前の構成との一貫性を維持するために、同じコントローラ ID とユニット番号（例：SCSI1：0）を使用して WFSC クラスタノードに再マッピングします。 | ステップ5：ゲストVMの電源をオンにしてアプリケーションを起動する 
+
+
+|  |  | ステップ6：ゲストVMの電源をオンにし、クラスタアプリケーションを起動します。 |  
+|===
+
+NOTE: 最新および更新されたコマンドリストについては、OSベンダーのドキュメントを参照してください。
+
+デタッチ後に再スキャンしてクリーンな状態を確認::
+
+
+[source, cli]
+----
+esxcli storage core adapter rescan --all
+----
+完了後にメンテナンスモードを終了します::
+
+
+[source, cli]
+----
+esxcli system maintenanceMode set --enable false
+----
+LUNにマッピングされているすべてのESXiホストでストレージを再スキャンします::
+
+
+[source, cli]
+----
+esxcli storage core adapter rescan --all
+----
+デバイスとファイルシステムを一覧表示して、LUN / ファイルシステムの詳細を確認します::
+
+
+[source, cli]
+----
+esxcli storage core device list
+esxcli storage filesystem list
+----
+移行後に変更があった場合は、新しい NAA ID を特定する::
+
+
+[source, cli]
+----
+esxcli storage core device list | grep -i naa
+----
+VMFS データストアを ESXi にマウントし直す::
+
+
+[source, cli]
+----
+esxcli storage filesystem mount -l <DATASTORE_NAME>
+----
+データストアのマウントを確認する::
+
+
+[source, cli]
+----
+esxcli storage filesystem list
+----
+VMにRDMを再度追加します（vSphere UIで実行）:: 通常、CLIは使用されません。代わりに、バックエンドデバイスの可視性を確認してください。
++
+--
+[source, cli]
+----
+esxcli storage core device list -d <naa.ID>
+----
+--
+メンテナンスモードを終了する（該当する場合）::
+
+
+[source, cli]
+----
+esxcli system maintenanceMode set --enable false
+----
+ゲストVMの電源をオンにする::
++
+--
+（VM 電源操作は通常 vCenter 経由で実行されますが、検証は ESXi ホストで実行できます）
+
+[source, cli]
+----
+vim-cmd vmsvc/getallvms
+vim-cmd vmsvc/power.on <VMID>
+----
+--
+
+
+
+
+== 移行後 - オンライン FLI
+
+インポート関係を削除した後、新しい LUN が CAW / UNMAP / XCOPY / WRITESAME を有効にした状態で独立して動作することを確認してください。
+
+データストアをアンマウントし、ATS のみに設定してから再度マウントすることで、VMFS のロックモードを ATS のみに戻すことができます。LUN インポートを削除した後、LUN が -space-reserve 無効、-space-allocation 有効に設定されているかどうかを確認してください。そうでない場合は、それに応じて修正してください。
+
+[cols="3"]
+|===
+| VM/VMDK | RDM | VMSC 
+
+
+| ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 | ステップ1：マッピングされたすべてのESXiホストでストレージを再スキャンします。 
+
+
+| ステップ2：ゲストVMを正常にシャットダウンします。 |  | ステップ2：ゲストVMを正常にシャットダウンします。 
+
+
+| ステップ3：移行予定のデータストアをアンマウントします。共有されている場合は、すべてのホストからアンマウントします。 |  | ステップ3：移行予定のデータストアをアンマウントします。共有されている場合は、すべてのホストからアンマウントします。 
+
+
+| ステップ4：VMFSのロックモード（ATSのみかATS+SCSIか）を確認します。ATS-SCSIの場合は、ATS-Onlyに変更してください。 |  | ステップ4：VMFSのロックモード（ATSのみかATS+SCSIか）を確認します。ATS-SCSIの場合は、ATS-Onlyに変更してください。 
+
+
+| ステップ5：データストアの詳細を特定し、データストアをESXiにマウントし直します。 |  | ステップ5：VM-HA / DRSを有効にし、必要に応じて必要なハートビートディスクを設定します。 
+
+
+| ステップ6：ゲストVMの電源をオンにし、アプリケーションを起動します。 |  | ステップ6：ゲストVMの電源をオンにしてアプリケーションを起動する 
+
+
+| ステップ7：データストアのロックモードとVM/アプリケーションの健全性を検証する |  | ステップ7：データストアのロックモードとVM/アプリケーションの健全性を検証する 
+|===
+デタッチ後に再スキャンしてクリーンな状態を確認::
+
+
+[source, cli]
+----
+esxcli storage core adapter rescan --all
+----
+完了後にメンテナンスモードを終了します::
+
+
+[source, cli]
+----
+esxcli system maintenanceMode set --enable false
+----
+LUNにマッピングされているすべてのESXiホストでストレージを再スキャンします::
+
+
+[source, cli]
+----
+esxcli storage core adapter rescan --all
+----
+デバイスとファイルシステムを一覧表示して、LUN / ファイルシステムの詳細を確認します::
+
+
+[source, cli]
+----
+esxcli storage core device list
+esxcli storage filesystem list
+----
+移行後に変更があった場合は、新しい NAA ID を特定する::
+
+
+[source, cli]
+----
+esxcli storage core device list | grep -i naa
+----
+VMFS データストアを ESXi にマウントし直す::
+
+
+[source, cli]
+----
+esxcli storage filesystem mount -l <DATASTORE_NAME>
+----
+データストアのマウントを確認する::
+
+
+[source, cli]
+----
+esxcli storage filesystem list
+----
+VMにRDMを再度追加します（vSphere UIで実行）::
++
+--
+通常、CLIは使用されません。代わりに、バックエンドデバイスの可視性を確認してください。
+
+[source, cli]
+----
+esxcli storage core device list -d <naa.ID>
+----
+--
+メンテナンスモードを終了する（該当する場合）::
+
+
+[source, cli]
+----
+esxcli system maintenanceMode set --enable false
+----
+ゲストVMの電源をオンにする::
++
+--
+（VM 電源操作は通常 vCenter 経由で実行されますが、検証は ESXi ホストで実行できます）
+
+[source, cli]
+----
+vim-cmd vmsvc/getallvms
+vim-cmd vmsvc/power.on <VMID>
+----
+--
+ATS+SCSIが検出された場合は、ATSのみに変換する::
+
+
+[source, cli]
+----
+vmkfstools --configATSOnly 1 /vmfs/volumes/<DATASTORE_NAME>
+----

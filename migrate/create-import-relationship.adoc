@@ -1,0 +1,88 @@
+---
+permalink: migrate/create-import-relationship.html 
+sidebar: sidebar 
+keywords: lun import relationship, foreign lun import, fli, ontap, create import relationship, lun create, igroup, lun mapping, destination lun, foreign disk, asa r2, san migration, offline fli, online fli 
+summary: 外部LUNとデスティネーションONTAP LUNをペアリングするLUNインポート関係を作成します。デスティネーションLUNは、ソースLUNに合わせて自動的にサイズが調整されます。 
+---
+= ONTAP FLI LUNインポート関係を作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+外部LUNが検出され、外部としてマークされた後、LUNインポート関係を作成して、外部LUNをデスティネーションONTAP LUNとペアリングできます。デスティネーションONTAP LUNは外部ディスク識別子を使用して作成されるため、ソースに合わせて自動的にサイズが設定されます。デスティネーションLUNは、想定されるフロントエンドプロトコルとカットオーバー計画に基づいて適切なイニシエータグループにマッピングされ、インポートのセットアップ前の安全対策としてオフラインにされます。
+
+ `lun create`および `lun import create`コマンドを次の手順に従って使用します：
+
+* 外部ディスク識別子を使用してデスティネーションONTAP LUNを作成すると、デスティネーションのサイズがソースに合わせて自動的に調整されます。
+* カットオーバー計画で必要とされる、目的のフロントエンドプロトコルに基づいて適切なigroupを定義し、デスティネーションLUNをマッピングすることで、ホストアクセスを準備します。
+* インポート設定を行う前に、安全対策として宛先LUNをオフラインにしてください。
+* 外部ディスクとデスティネーションONTAP LUNを永続的にペアリングするLUNインポート関係を作成し、後続のデータコピー処理に備えます。
+
+
+.タスク概要
+ONTAP 9.17.1以降、FLIオフライン移行を使用した外部LUNのデータ移行がASA r2システムでサポートされています。ASA r2システムは、ストレージ レイヤの実装において、他のONTAPシステム（ASA、AFF、FAS）とは異なります。ASA r2システムでは、ストレージユニット（LUNまたはネームスペース）が作成されると、ボリュームが自動的に作成されます。各ボリュームにはストレージユニットが1つだけ含まれています。したがって、ASA r2システムの場合、LUNを作成する際に `-path`オプションにボリューム名を含める必要はありません。代わりにストレージユニットのパスを指定する必要があります。
+
+.手順
+. 外部ディスクに合わせてサイズ調整された宛先NetApp LUNを作成：
++
+これにより、NetApp LUNと外部LUNのサイズが同じになります。
+
++
+[source, cli]
+----
+lun create -vserver <SVM> -path /vol/<VOL>/<lun_name> -ostype <ostype> -foreign-disk <foreign_serial>
+----
+. igroupを作成し、デスティネーションLUNをマッピングします（プロトコルはフロントエンドプランによって異なります）：
++
+[source, cli]
+----
+igroup create -vserver <SVM> -igroup <igroup> -protocol <iscsi|fcp|mixed> -ostype <ostype> -initiator <host_initiator>
+----
+. NetApp ストレージ アレイLUNをホストにマッピングします：
++
+[source, cli]
+----
+lun map -vserver <SVM> -path /vol/<VOL>/<LUN_NAME> -igroup <igroup>
+----
+. インポート作成前にLUNをオフラインにしておく（ベストプラクティス）：
++
+[source, cli]
+----
+lun offline -vserver <SVM> -path /vol/<VOL>/<LUN_NAME>
+----
+. インポート関係を作成します：
++
+[source, cli]
+----
+lun import create -vserver <SVM> -foreign-disk <foreign_serial> -path /vol/<VOL>/<lun_name>
+----
+. インポート関係が存在することを確認します：
++
+[source, cli]
+----
+lun import show -vserver <svm_name>
+----
++
+[NOTE]
+====
+このステップでLUNがオンラインにならない場合、ワークフローはオフラインFLIとみなされ、NetAppストレージ アレイLUNはホストからI/O処理を実行するために認識されません。
+
+** オフラインFLIとは、インポート期間全体を通してホストがオフライン状態を維持することを意味します。ONTAPは、アプリケーションが停止している間、外部LUNからNetApp LUNへのブロックコピーを実行し、ホストの修復および切り替え作業は、インポートと検証が完了した後にのみ実行されます。
+** オンラインFLIとは、ホストを一度切り替えるだけで、その後はインポート処理がバックグラウンドで継続されることを意味します。通常、切り替え中の停止時間は短く、ホストの修復と切り替え作業はインポートが完了する前に行われ、その間ONTAPはデータのコピーを続行します。
+
+
+ONTAPワークフローの観点から見ると、コアとなるインポートコマンドはどちらのモードでも同じです(`lun import create/start/show/verify/delete`。実際的な動作上の違いは、LUNの状態とタイミングにあります。オフラインFLIでは、通常、完了して提示する準備が整うまで宛先LUNはオフラインのままですが、オンラインFLIでは、バックグラウンドコピー中にホストがアクセスできるように、宛先LUNを早期にオンラインにして提示することができます。
+
+====
+. オンラインFLIの場合、LUNをオンライン状態にします。
++
+[source, cli]
+----
+lun online -vserver <SVM> -path /vol/<VOL>/<lun_name>
+----
++
+LUNがオンラインになったら、ホスト上でLUNを検出し、ホスト固有の修復処理を実行してから、LUN上でワークロードを開始できます。
+
+

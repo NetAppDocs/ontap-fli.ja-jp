@@ -1,0 +1,157 @@
+---
+permalink: post-migration-performance/post-remediation-windows.html 
+sidebar: sidebar 
+keywords: host remediation, windows, post-migration, fli, ontap 
+summary: 移行後、Windowsホストでは、新しくインポートされたLUNが正しく認識され、正常に機能するようにするための修復手順が必要です。 
+---
+= ONTAP FLI Windows 移行後のホスト修復を実行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行後、Windowsホストでは、新しくインポートされたLUNが正しく認識され、正常に機能するようにするための修復手順が必要です。
+
+
+
+== 移行後 - オフライン FLI
+
+オフラインFLIの場合は、LUNインポートを削除し、ホストイニシエータが接続されていることを確認した後、LUNをオンラインにしてください。
+
+[cols="4"]
+|===
+| ファイルシステムデバイス | 物理ドライブ（ファイルシステムなし） | WFSC | Hyper V 
+
+
+| ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします | ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします | ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします | 手順1：ディスク管理を再スキャンします。すべてのディスクが接続されている必要があります。 
+
+
+| ステップ2：リストされているドライブを特定し、ディスクをオンラインにする | ステップ2：必要なアプリケーションに物理ディスクを追加して起動します。 | ステップ2：一覧表示されているドライブを特定し、ディスクをオンラインにします。 | ステップ 2：ディスクを選択してオンラインにします。すべてがオンラインになり、元の名前とディスク文字が付与されます。 
+
+
+| ステップ3：すべてのファイルシステムディスクが使用可能で正常に動作していることを確認します |  | ステップ3：マッピングされたすべてのホストでドライブが使用可能でONLINEになっていることを確認します。 | ステップ3：Virtual Machinesの電源をオンにしてみてください。Virtual Machineは問題なくオンラインになるはずです 
+
+
+| ステップ4：必要なアプリケーションを起動する |  | ステップ4：WFSCクラスタアプリケーションを起動し、必要なクラスタリソースを設定します。 |  
+|===
+
+
+== 移行後 - オンライン FLI
+
+LUNインポートを削除した後、LUNが-space-reserve無効、-space-allocation有効に設定されているかどうかを確認してください。そうでない場合は、それに応じて修正してください。
+
+[cols="2"]
+|===
+| ファイルシステムデバイス | 物理ドライブ（ファイルシステムなし） 
+
+
+| ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします | ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします 
+
+
+| ステップ2：ターゲット側でスペース割り当てが有効になっている場合は、変更を反映させるためにホストの再起動が必要です。 | ステップ2：ターゲット側でスペース割り当てが有効になっている場合は、変更を反映させるためにホストの再起動が必要です。 
+|===
+
+
+=== ファイルシステムデバイス
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします
++
+[source, cli]
+----
+Update-HostStorageCache
+----
+. 表示されているドライブを特定し、ディスクをオンラインにします。
++
+[source, cli]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. ファイルシステムディスクがすべて利用可能で正常に動作していることを確認してください。
++
+[source, cli]
+----
+Get-Volume | Format-Table DriveLetter, FileSystemLabel, Size, SizeRemaining
+----
+. 必要なアプリケーションを起動します。
++
+[source, cli]
+----
+Start-Service -Name <ServiceName>
+----
+
+
+
+
+=== 物理ドライブ（ファイルシステムなし）
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします。
++
+[source, cli]
+----
+Update-HostStorageCache
+----
+. 必要なアプリケーションに物理ディスクを追加して起動します。
+
+
+
+
+=== WSFC
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします。
++
+[source, cli]
+----
+Update-HostStorageCache
+----
+. 表示されているドライブを特定し、ディスクをオンラインにします。
++
+[source, cli]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. マッピングされたすべてのホストでドライブが使用可能で、かつONLINE状態であることを確認してください。
++
+[source, cli]
+----
+Get-ClusterResource | Where-Object ResourceType -eq "Physical Disk"
+----
+. WSFCクラスタアプリケーションを起動し、必要なクラスタリソースを設定します。
++
+[source, cli]
+----
+Start-Cluster -Name <ClusterName>
+Start-ClusterResource -Name <ResourceName>
+----
+
+
+
+
+=== Hyper V
+
+.手順
+. ディスク管理を再スキャンすると、すべてのディスクが接続されます。
++
+[source, cli]
+----
+Update-HostStorageCache
+----
+. ディスクを選択してオンラインにすると、すべてがオンラインになり、元の名前とディスク文字が付与されます。
++
+[source, cli]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. 仮想マシンの電源をオンにしてみてください。仮想マシンは問題なくオンラインになるはずです。
++
+[source, cli]
+----
+Start-VM -Name <VM_Name>
+----
+

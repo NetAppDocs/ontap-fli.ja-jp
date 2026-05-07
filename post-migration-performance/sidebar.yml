@@ -1,0 +1,24 @@
+---
+section: post-migration-performance
+title: FLI移行後
+entries:
+- title: 移行後の概要
+  url: "/post-migration-performance/post-migration-overview.html"
+- title: 移行後のクリーンアップを実行する
+  url: "/post-migration-performance/clean-up.html"
+- title: ESXi VMFSS ATS/CAWの修復を実行する
+  url: "/post-migration-performance/esxi-remediation.html"
+- title: ONTAP FLI ESXi移行後のホスト修復を実行する
+  url: "/post-migration-performance/post-remediation-esxi.html"
+- title: ONTAP FLI AIX移行後のホスト修復を実行する
+  url: "/post-migration-performance/post-remediation-aix.html"
+- title: ONTAP FLI HP移行後のホスト修復を実行する
+  url: "/post-migration-performance/post-remediation-hp.html"
+- title: ONTAP FLI Linux移行後のホスト修復を実行する
+  url: "/post-migration-performance/post-remediation-linux.html"
+- title: ONTAP FLI Solaris 移行後のホスト修復を実行
+  url: "/post-migration-performance/post-remediation-solaris.html"
+- title: ONTAP FLI Windows 移行後のホスト修復を実行
+  url: "/post-migration-performance/post-remediation-windows.html"
+- title: FLI のパフォーマンス
+  url: "/post-migration-performance/performance.html"

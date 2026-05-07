@@ -1,0 +1,56 @@
+---
+permalink: post-migration-performance/esxi-remediation.html 
+sidebar: sidebar 
+keywords: esxi remediation, vmfs, ats, caw, vaai, vmkfstools, datastore, online fli, foreign lun import, fli, vmware, ats-only 
+summary: オンラインFLIインポート関係を介して提示された場合にマウントを妨げる可能性のある、ATS専用のVMFSヘッダーを含むVMware ESXiデータストアを修正します。 
+---
+= ONTAP FLI ESXi VMFSS ATS/CAW修復を実行する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オンラインFLI移行中、一時的なインポート関係はVMware ATSまたはCAW（VAAI Atomic Test and SetまたはSCSI Compare And Write）をサポートしません。データストアがVMFS5で、ATSをサポートするストレージ上に作成されている場合、VMwareはVMFSヘッダーを「ATS専用」とマークする可能性があります。その状態では、オンラインFLI関係を介して提示された場合、データストアのマウントに失敗する可能性があります。
+
+.タスク概要
+* 「ATS専用」設定は、データストアの最初のエクステントに存在するVMFSヘッダーに格納されます。データストアが複数のエクステントにまたがっている場合、最初のエクステントのみを修復する必要があります。
+* データストアが複数の ESXi ホストで共有されている場合、通常は 1 つのホストから更新するだけで十分です。他のホストは再スキャンと再マウント後に変更を取り込みます。
+* ATS専用モードを変更する間は、データストアに対してアクティブなI/O処理を実行できません。VMwareのガイダンスでは、変更を適用するために必要に応じてVMを退避させて移行するか、VMをシャットダウンしてアンマウントおよび再マウントを行います。
+
+
+.手順
+. データストアの現在のATSモードを確認してください。
++
+VMFSボリュームのESXiホストで次のコマンドを実行します：
+
++
+[source, cli]
+----
+vmkfstools -Ph -v1 /vmfs/volumes/<DATASTORE_NAME_OR_UUID>
+----
+. ATS専用を無効にします。
++
+
+IMPORTANT: 変更計画で定められている場合は、仮想マシンが移行されてシャットダウンされ、データストアがすべてのホストからアンマウントされていることを確認してください。最初のエクステントLUN（naa.*）のデバイスパス上で実行します：
+
++
+[source, cli]
+----
+vmkfstools --configATSOnly 0 /vmfs/devices/disks/naa.<naa_id>:1
+----
++
+これにより、非ATSロック（パブリック）を許可するようにボリュームが変更されます。
+
+. ストレージアダプタを再スキャンして（またはデータストアを再マウントして）、ホストが更新されたモードを再読み込みできるようにします。
+. ATSを再度有効にします。
++
+移行が完了し、ATSのみの動作を復元する場合：
+
++
+[source, cli]
+----
+vmkfstools --configATSOnly 1 /vmfs/devices/disks/naa.<naa_id>:1
+----
+. 変更を適用するには、再スキャンして再マウントしてください。
+

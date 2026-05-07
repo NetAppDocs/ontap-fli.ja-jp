@@ -6,13 +6,62 @@ indexpage:
     foreign
   lead: ONTAP Foreign LUN Import の略
   tiles:
-  - title: FLIワークフロー
+  - title: リリース ノート
+    url: "/release-notes.html"
     links:
-    - title: オフラインワークフロー
-      url: "/san-migration/concept_fli_offline_workflow.html"
-    - title: オンラインワークフロー
-      url: "/san-migration/concept_fli_online_workflow.html"
-    - title: FLI の 7-Mode から ONTAP への移行ワークフロー
-      url: "/san-migration/concept_fli_7_mode_to_ontap_transition_workflow.html"
-    - title: FLI での Workflow Automation （ WFA ）の使用
-      url: "/san-migration/concept_fli_using_workflow_automation_wfa.html"
+    - title: ONTAP for SAN データ移行の新機能
+      url: release-notes/whats-new.html
+  - title: 作業の開始
+    url: "/get-started.html"
+    links:
+    - title: ONTAPデータ移行プログラムについて学ぶ
+      url: "/get-started/learn-about-data-migration.html"
+    - title: ONTAPへのSANデータ移行について学ぶ
+      url: "/get-started/learn-about-san-data-migration.html"
+    - title: ONTAP Foreign LUN Importについて学ぶ
+      url: "/get-started/learn-about-fli.html"
+  - title: FLI フェーズ
+    url: "/phases.html"
+    links:
+    - title: ONTAP Foreign LUN Import（FLI）検出フェーズ
+      url: "/phases/discovery-phase.html"
+    - title: ONTAP Foreign LUN Import（FLI）分析フェーズ
+      url: "/phases/analyze-phase.html"
+    - title: ONTAP Foreign LUN Import（FLI）の計画と準備フェーズ
+      url: "/phases/plan-prepare-phase.html"
+    - title: ONTAP Foreign LUN Import（FLI）実行フェーズ
+      url: "/phases/execute-phase.html"
+    - title: ONTAP外部LUNインポート（FLI）検証フェーズ
+      url: "/phases/verify-phase.html"
+  - title: FLI構成
+    url: "/configure.html"
+    links:
+    - title: ONTAP外部LUNインポート（FLI）接続と配線
+      url: "/configure/fc-connectivity-wiring.html"
+    - title: ONTAP Foreign LUNインポート（FLI）推奨のFC配線およびゾーニング方法
+      url: "/configure/iscsi-setup-backend-connectivity.html"
+  - title: FLIの移行
+    url: "/migrate.html"
+    links:
+    - title: FLI移行用の外部LUNを検出
+      url: "/migrate/discover-foreign-luns.html"
+    - title: ONTAP FLI LUNインポート関係を作成する
+      url: "/migrate/create-import-relationship.html"
+    - title: FLI LUNのインポートを実行および監視する
+      url: "/migrate/execute-monitor.html"
+    - title: FLI LUNインポート関係を確認して削除する
+      url: "/migrate/verify-delete.html"
+  - title: FLI移行後
+    url: "/post-migration-performance.html"
+    links:
+    - title: 移行後のクリーンアップを実行する
+      url: "/post-migration-performance/clean-up.html"
+    - title: ESXi VMFSS ATS/CAWの修復を実行する
+      url: "/post-migration-performance/esxi-remediation.html"
+    - title: FLI のパフォーマンス
+      url: "/post-migration-performance/performance.html"
+  - title: Site Survey and Planning ワークシートの例
+    url: "/sample-site.html"
+    links:
+    - title: 概要
+      url: "/san-migration/reference_sample_site_survey_and_planning_worksheet.html"

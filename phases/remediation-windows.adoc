@@ -1,0 +1,226 @@
+---
+permalink: phases/remediation-windows.html 
+sidebar: sidebar 
+keywords: ontap, fli, foreign lun import, windows host, pre-migration, offline fli, online fli 
+summary: Windows ホストで ONTAP FLI 移行を実行する前に、以下の移行前手順を完了してください。オフライン移行とオンライン移行には、それぞれ別の手順が必要です。 
+---
+= ONTAP FLI Windows ホストの修復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ホストで ONTAP FLI 移行を実行する前に、以下の移行前手順を完了してください。オフライン移行とオンライン移行には、それぞれ別の手順が必要です。
+
+
+
+== 移行前 - オフラインFLI
+
+これらの手順は、オフラインFLIとオンラインFLIの両方に適用されます。WindowsホストからソースLUNのマッピングを解除する前に、以下のホスト側準備を完了してください。
+
+[cols="4"]
+|===
+| ファイルシステムデバイス | 物理ドライブ（ファイルシステムなし） | WSFC（WFC） | Hyper V 
+
+
+| ステップ1：移行対象として計画されたファイルシステムディスクを特定する | ステップ1：移行対象として計画された物理ディスクを特定する | ステップ1：移行対象として指定されたクラスタディスクを特定する | ステップ1：仮想マシン上のすべてのアプリケーションを停止し、仮想マシンをシャットダウンします。 
+
+
+| ステップ2：アプリケーションを正常にシャットダウンする | ステップ2 アプリケーションを正常にシャットダウンする | ステップ2 アプリケーションを正常にシャットダウンする | ステップ2：ホストからディスクをオフラインにします。 
+
+
+| ステップ3：ディスクをオフラインにする |  | ステップ3：クラスタをシャットダウンし、すべてのクラスタノードでクラスタサービスを停止します | ステップ3：ホストからすべてのLUNのマッピングを解除します。 
+|===
+
+
+=== ファイルシステムデバイス
+
+.手順
+. 移行予定のファイルシステムディスクを特定します。
++
+Get-Disk | Format-Table Number, FriendlyName, Size, PartitionStyle
+
+. アプリケーションを正常にシャットダウンします。
++
+Stop-Service -Name <ServiceName>
+
+. ディスクをオフラインにします。
++
+Set-Disk -Number <DiskNumber> -IsOffline $true
+
+
+
+
+
+=== 物理ドライブ（ファイルシステムなし）
+
+.手順
+. 移行予定の物理ディスクを特定します。
++
+Get-PhysicalDisk | Format-Table FriendlyName、Size、MediaType
+
+. アプリケーションを正常にシャットダウンします。
++
+Stop-Service -Name <ServiceName>
+
+
+
+
+
+=== WSFC（Windows Server Failover Clustering）
+
+.手順
+. 移行予定のクラスタディスクを特定します。
++
+Get-ClusterResource | Where-Object ResourceType -eq "Physical Disk"
+
+. アプリケーションを正常にシャットダウンします。
++
+Stop-ClusterResource -Name <ResourceName>
+
+. クラスターをシャットダウンし、すべてのクラスターノードでクラスターサービスを停止します。
++
+Stop-Cluster -Name <ClusterName>
+
+
+
+
+
+=== Hyper V
+
+.手順
+. 仮想マシン上のすべてのアプリケーションを停止し、仮想マシンをシャットダウンします。
++
+Stop-VM -Name <VM_Name> -Force
+
+. ホストからディスクをオフラインにします。
++
+Set-Disk -Number <DiskNumber> -IsOffline $true
+
+. ストレージアレイ側から、ホストからすべてのLUNのマッピングを解除します。
+. ホストからディスクが正しく取り外されていることを確認してください。
++
+Get-Disk | Where-Object OperationalStatus -ne "Online"
+
+
+
+
+
+== 移行前 - オンラインFLI
+
+以下にオンラインFLIの具体的な手順を示しますが、これらの手順は移行前のオフラインFLIの手順を完了してから実行する必要があります。
+
+以下の手順は、NetApp LUNがホストにプロビジョニングされた後に実行する必要があります。
+
+この時点で、LUNインポートは既に作成されており、LUNはホストigroupにマッピングされ、ホストからiSCSIまたはFCイニシエータがログインしています。
+
+オフラインFLIの場合、NetApp LUNはオフライン状態のままです。
+
+[cols="2"]
+|===
+| ファイルシステムデバイス | 物理ドライブ（ファイルシステムなし） 
+
+
+| ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします。 | ステップ1：マッピングされたすべてのホスト上のストレージを再スキャンします。 
+
+
+| ステップ2：一覧表示されているドライブを特定し、ディスクをオンラインにします。 | ステップ2：必要なアプリケーションに物理ディスクを追加して起動します。 
+
+
+| ステップ3：すべてのファイルシステムディスクが利用可能で正常に動作していることを確認します。 |  
+
+
+| ステップ4：必要なアプリケーションを起動します。 |  
+|===
+
+
+=== ファイルシステムデバイス
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします。
++
+Update-HostStorageCache
+
+. 表示されているドライブを特定し、ディスクをオンラインにします。
++
+[Source]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. ファイルシステムディスクがすべて利用可能で正常に動作していることを確認してください。
++
+Get-Volume | Format-Table DriveLetter、FileSystemLabel、Size、SizeRemaining
+
+. 必要なアプリケーションを起動します。
++
+Start-Service -Name <ServiceName>
+
+
+
+
+
+=== 物理ドライブ（ファイルシステムなし）
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします。
++
+Update-HostStorageCache
+
+. 必要なアプリケーションに物理ディスクを追加して起動します。
++
+アプリケーション固有の設定
+
+
+
+
+
+=== WSFC
+
+.手順
+. マップされたすべてのホスト上のストレージを再スキャンします。
++
+Update-HostStorageCache
+
+. 表示されているドライブを特定し、ディスクをオンラインにします。
++
+[Source]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. マッピングされたすべてのホストでドライブが使用可能でオンラインになっているかどうかを確認します。
++
+Get-ClusterResource | Where-Object ResourceType -eq "Physical Disk"
+
+. WSFCクラスタアプリケーションを起動し、必要なクラスタリソースを設定します。
++
+[Source]
+----
+Start-Cluster -Name <ClusterName>
+Start-ClusterResource -Name <ResourceName>
+----
+
+
+
+
+=== Hyper V
+
+.手順
+. ディスク管理を再スキャンしてください。すべてのディスクが接続されるはずです。
++
+Update-HostStorageCache
+
+. ディスクを選択してオンラインにすると、すべてがオンラインになり、元の名前とディスク文字が付与されます。
++
+[Source]
+----
+Get-Disk | Where-Object IsOffline -eq $true
+Set-Disk -Number <DiskNumber> -IsOffline $false
+----
+. 仮想マシンの電源をオンにしてみてください。仮想マシンは問題なくオンラインになるはずです。
++
+Start-VM -Name <VM_Name>
+
+

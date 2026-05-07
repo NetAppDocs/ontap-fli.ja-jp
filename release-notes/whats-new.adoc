@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new.html 
+keywords: 'what"s new, release notes, san data migration' 
+summary: ONTAPでSANデータ移行に利用可能な新機能について学びましょう。 
+---
+= ONTAP for SAN データ移行の新機能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAPでSANデータ移行に利用可能な新機能について学びましょう。
+
+
+
+== ONTAP 9.19.1
+
+* ONTAP 9.19.1以降、ONTAP FLIはバックエンド接続用のiSCSIプロトコルをサポートしています。
+
+
+
+
+== ONTAP 9.17.1
+
+* ONTAP 9.17.1以降、ASA R2システムはFLI移行に対応しています。
++
+詳細はこちらlink:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA R2 システム"^] 。
+
+
+
+|===
+|===

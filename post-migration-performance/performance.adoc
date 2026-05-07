@@ -1,0 +1,80 @@
+---
+permalink: post-migration-performance/performance.html 
+sidebar: sidebar 
+keywords: fli performance, foreign lun import, import throttle, throughput, lun import pause, lun import resume, iscsi fli, performance counters, san migration, bandwidth 
+summary: スロットル制御を使用してFLIインポートのスループットを管理し、ワークロードの不足を軽減し、アクティブな本番ワークロード中の帯域幅のバランスを取ります。 
+---
+= ONTAP FLIパフォーマンス制御
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Foreign LUN Import（FLI）には、ワークロード不足のリスクを軽減し、本番I/Oがアクティブな間にインポートが消費する帯域幅を管理するための制御機能が含まれています。
+
+インポートをスロットルする（インポートスループットを制限する）:: ONTAPには、インポート関係に最大スループット制限を適用するLUNインポートスロットル機能があります。値が0の場合は、インポートはユーザーI/Oと並行してベストエフォートで実行されます。0以外の値は、インポートの帯域幅を制限します：
++
+--
+最大インポートスループット（例：3MB/秒）を設定するには、次の手順を実行します：
+
+[source, cli]
+----
+set -privilege advanced
+lun import throttle -vserver <SVM> -path <LUN_PATH> -max-throughput-limit 3MB
+----
+--
+詳細なインポートの進捗状況とスループットを監視:: lun import show -instance（または -fields）を使用して、現在のスループット、最大スループット制限、インポートに対して表示されるQoSコンテキストなど、詳細なステータスを表示します：
++
+--
+[source, cli]
+----
+set -privilege advanced
+lun import show -instance
+----
+--
+一時停止（動作制限）:: オンラインインポートがホストI/Oとバックエンドリソースを共有する場合、ホストI/Oが回復するまでインポートを一時停止し、その後最後のチェックポイントから再開することが運用上有効な場合があります。
++
+--
+[source, cli]
+----
+set -privilege advanced
+lun import pause -vserver <SVM> -path <LUN_PATH>
+----
+--
+インポートを再開する::
++
+--
+[source, cli]
+----
+set -privilege advanced
+lun import resume -vserver <SVM> -path <LUN_PATH>
+----
+--
+
+
+
+
+== iSCSI FLIパフォーマンスカウンタ
+
+利用可能なオブジェクトを検出／確認する（オプション）:: `statistics catalog object show | grep -i iswi`
+統計情報の収集を開始する:: `statistics start -object iswi_session -sample_id import_in_progress`
+iSCSIイニシエータセッションカウンタを収集する:: `statistics show -sample-id import_in_progress`
+
+
+
+
+== ONTAP FLIのパフォーマンスに影響を与える要因
+
+インポートの完了にかかる時間は、以下のような複数の要因によって影響を受けます：
+
+* ソースと宛先間の同時移行数
+* ソースアレイの機能と現在の負荷
+* デスティネーションONTAPの容量と現在の負荷
+* 移行中のホスト I/O 量（特にオンラインインポートに関連）
+* フロントエンドファブリックとネットワーク特性（帯域幅、ファンイン、ファンアウト、全体的なトポロジーなど）
+* クラスタ間LIFリソースを消費するその他の非FLI ONTAPアプリケーション
+* 同時実行性に関して、FLIの一般的なガイダンスでは、最高のパフォーマンスを得るために、ノードあたりの同時実行マイグレーション数を8以下に制限することを推奨しています。
+
+
+これらの変数は環境によって異なるため、パフォーマンスを推定する最も確実な方法は、異なる規模のテスト移行を複数回実行し、測定されたスループットに基づいて本番環境への移行期間を計画することです。

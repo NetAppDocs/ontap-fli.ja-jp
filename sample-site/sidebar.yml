@@ -1,0 +1,36 @@
+---
+section: sample-site
+title: Site Survey and Planning ワークシートの例
+entries:
+- title: 概要
+  url: "/san-migration/reference_sample_site_survey_and_planning_worksheet.html"
+- title: Site Survey and Planning ワークシートの連絡先タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_contacts_tab.html"
+- title: Site Survey and Planning ワークシートのアンケートタブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_questionnaire_tab.html"
+- title: Site Survey and Planning ワークシートのスイッチタブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_switches_tab.html"
+- title: Site Survey and Planning ワークシートのソースストレージデバイスタブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_source_storage_devices_tab.html"
+- title: Site Survey and Planning ワークシートの Destination Storage Devices タブを参照してください
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_destination_storage_devices_tab.html"
+- title: Site Survey and Planning ワークシートの Hosts タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_hosts_tab.html"
+- title: Site Survey and Planning ワークシートの HBA and Zone Information タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_hba_and_zone_information_tab.html"
+- title: Site Survey and Planning ワークシートのソース LUN タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_source_luns_tab.html"
+- title: Site Survey and Planning ワークシートのストレージグループタブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_storage_groups_tab.html"
+- title: Site Survey and Planning ワークシートの LUN Details タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_lun_details_tab.html"
+- title: Site Survey and Planning ワークシート NetApp LUN Layouts タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_netapp_lun_layouts_tab.html"
+- title: Site Survey and Planning ワークシートの Migration Schedule タブで
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_migration_schedule_tab.html"
+- title: Site Survey and Planning ワークシートのアグリゲートステータスタブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_aggregate_status_tab.html"
+- title: Site Survey and Planning ワークシートの FAS 設定タブ
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_fas_config_tab.html"
+- title: Site Survey and Planning ワークシートの [SDS CLI Scripts] タブをクリックします
+  url: "/san-migration/reference_site_survey_and_planning_worksheet_sds_cli_scripts_tab.html"

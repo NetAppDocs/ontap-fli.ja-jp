@@ -1,0 +1,14 @@
+---
+section: configure
+title: ONTAP FLI を設定
+entries:
+- title: 概要
+  url: "/configure/config-overview.html"
+- title: FC接続と配線
+  url: "/configure/fc-connectivity-wiring.html"
+- title: FCアダプタのイニシエータ モード設定
+  url: "/configure/fc-configure-adapter-initiator-mode.html"
+- title: FCゾーニングのベストプラクティス
+  url: "/configure/fc-zoning-model-best-practices.html"
+- title: iSCSIバックエンドの設定
+  url: "/configure/iscsi-setup-backend-connectivity.html"
