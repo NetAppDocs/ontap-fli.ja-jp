@@ -1300,7 +1300,6 @@
   <block id="f54f8723cdd855de6b42f8c6088ea7cf" category="paragraph">Start-VM -Name &lt;VM_Name&gt;</block>
   <block id="3530aa78abbe00fb441a6a913266c4f5" category="summary">移行が計画通りに完了したことを確認し、移行期間中に使用された一時的な設定を削除する検証フェーズについて説明します。</block>
   <block id="c7b5ec48b58689a14b9ca8360ae61c36" category="doc">ONTAP外部LUNインポート（FLI）検証フェーズ</block>
-  <block id="2dc59e510103c83c15f9b3fff186d965" category="paragraph">検証フェーズでは、移行が計画通りに完了したことを確認し、移行後のクリーンアップ作業に重点を置きます。これには、アプリケーションの動作の検証、ONTAP LUNへの正しいホストアクセスとパスの確認、監査およびトラブルシューティングのための移行ログの収集、移行のためだけに使用された一時的な接続および構成の削除が含まれます。</block>
   <block id="312705c3917e0ecf74999294476290b4" category="paragraph">クリーンアップの一環として、不要になったソース側のイニシエータレコードとゾーニングを削除し、運用チームが明確な「構築済み」状態を把握できるよう、最終的な構成を文書化します。</block>
   <block id="f67442f7dd9efc703506d4e505684839" category="paragraph">iSCSI FLIの場合、検証フェーズには、インタークラスタLIF上に作成されたソフトウェアiSCSIイニシエータセッションおよびイニシエータの削除も含まれるべきです。インタークラスタLIFが外部LUNのインポートのためだけに作成された場合、それらのLIFも削除する必要があります。</block>
   <block id="c8253ba169277559e143f0f27d32ba7a" category="section-title">ONTAP FLI検証フェーズのタスク</block>
@@ -1546,4 +1545,5 @@
   <block id="144e3bff2769f72c63f6e00004097fcc" category="sidebar">FLI移行後</block>
   <block id="259c870f8a8594516755af0729eb847a" category="sidebar">移行後の概要</block>
   <block id="5d793778d9d63a7b0602b47ee814bd26" category="sidebar">SANデータ移行の最新情報</block>
+  <block id="d6fe85b2a7716d9377c34dd3d6ea37c4" category="paragraph">検証フェーズでは、移行が計画通りに完了したことを確認し、移行後のクリーンアップ作業に重点を置きます。これには、アプリケーションの動作の検証、ONTAP LUNへの正しいホストアクセスとパスの確認、監査およびトラブルシューティングのための移行ログの収集、移行のためだけに使用された一時的な接続および構成の削除が含まれます。</block>
 </blocks>
