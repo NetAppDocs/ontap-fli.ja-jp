@@ -15,6 +15,7 @@ summary: 移行後、Solarisホストでは、新しくインポートされたL
 
 
 
+[[post-migration-offline-fli]]
 == 移行後 - オフライン FLI
 
 オフラインFLIの場合は、LUNインポートを削除し、ホストイニシエータが接続されていることを確認した後、LUNをオンラインにしてください。
@@ -77,6 +78,7 @@ df -g (to ensure its unmounted)
 
 
 
+[[post-migration-online-fli]]
 == 移行後 - オンラインFLI
 
 LUNインポートを削除した後、LUNが-space-reserve無効、-space-allocation有効に設定されているかどうかを確認してください。そうでない場合は、それに応じて修正してください。

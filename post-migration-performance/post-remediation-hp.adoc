@@ -15,6 +15,7 @@ summary: 移行後、HP-UX ホストでは、新しくインポートされた L
 
 
 
+[[post-migration-offline-fli]]
 == 移行後 - オフライン FLI
 
 オフラインFLIの場合は、LUNインポートを削除し、ホストイニシエータが接続されていることを確認した後、LUNをオンラインにしてください。
@@ -46,6 +47,7 @@ summary: 移行後、HP-UX ホストでは、新しくインポートされた L
 |===
 
 
+[[post-migration-online-fli]]
 == 移行後 - オンラインFLI
 
 LUN インポートを削除した後、LUN が `-space-reserve disabled`および `-space-allocation enabled`で設定されているかどうかを確認します。そうでない場合は、それに応じて修正してください。

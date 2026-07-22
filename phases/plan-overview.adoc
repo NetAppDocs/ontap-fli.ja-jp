@@ -17,6 +17,7 @@ iSCSI FLIの場合、このフェーズではiSCSIバックエンドの設計上
 
 
 
+[[ontap-fli-plan-and-prepare-phase-results]]
 == ONTAP FLI計画および準備フェーズの結果
 
 * ホストギャップ分析を使用して修復計画を最終決定します。これには、移行前に実施される変更や、MPIOの変更など、切り替え期間中に実施される変更が含まれます。
@@ -27,6 +28,7 @@ iSCSI FLIの場合、このフェーズではiSCSIバックエンドの設計上
 
 
 
+[[ontap-fli-plan-and-prepare-phase-tasks]]
 == ONTAP FLIの計画と準備フェーズのタスク
 
 以下は、各コンポーネントのONTAP FLI計画および準備タスクです。

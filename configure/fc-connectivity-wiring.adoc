@@ -15,6 +15,7 @@ FC を介した外部 LUN インポートは、デュアルファブリック SA
 
 
 
+[[ontap-fli-recommended-fc-wiring-and-zoning-practices]]
 == ONTAP FLI推奨FCケーブル接続およびゾーニングのプラクティス
 
 * 冗長性を確保するため、デュアル ファブリック（AとB）を使用してください。

@@ -15,6 +15,7 @@ summary: 移行後、Windowsホストでは、新しくインポートされたL
 
 
 
+[[post-migration-offline-fli]]
 == 移行後 - オフライン FLI
 
 オフラインFLIの場合は、LUNインポートを削除し、ホストイニシエータが接続されていることを確認した後、LUNをオンラインにしてください。
@@ -37,6 +38,7 @@ summary: 移行後、Windowsホストでは、新しくインポートされたL
 |===
 
 
+[[post-migration-online-fli]]
 == 移行後 - オンライン FLI
 
 LUNインポートを削除した後、LUNが-space-reserve無効、-space-allocation有効に設定されているかどうかを確認してください。そうでない場合は、それに応じて修正してください。
@@ -53,6 +55,7 @@ LUNインポートを削除した後、LUNが-space-reserve無効、-space-alloc
 |===
 
 
+[[filesystem-devices]]
 === ファイルシステムデバイス
 
 .手順
@@ -85,6 +88,7 @@ Start-Service -Name <ServiceName>
 
 
 
+[[physical-drives-no-filesystem]]
 === 物理ドライブ（ファイルシステムなし）
 
 .手順
@@ -99,6 +103,7 @@ Update-HostStorageCache
 
 
 
+[[wsfc]]
 === WSFC
 
 .手順
@@ -132,6 +137,7 @@ Start-ClusterResource -Name <ResourceName>
 
 
 
+[[hyper-v]]
 === Hyper V
 
 .手順

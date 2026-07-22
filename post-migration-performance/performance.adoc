@@ -55,6 +55,7 @@ lun import resume -vserver <SVM> -path <LUN_PATH>
 
 
 
+[[iscsi-fli-performance-counters]]
 == iSCSI FLIパフォーマンスカウンタ
 
 利用可能なオブジェクトを検出／確認する（オプション）:: `statistics catalog object show | grep -i iswi`
@@ -64,6 +65,7 @@ iSCSIイニシエータセッションカウンタを収集する:: `statistics 
 
 
 
+[[ontap-fli-factors-that-impact-performance]]
 == ONTAP FLIのパフォーマンスに影響を与える要因
 
 インポートの完了にかかる時間は、以下のような複数の要因によって影響を受けます：
