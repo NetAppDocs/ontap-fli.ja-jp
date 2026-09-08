@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= ONTAP Foreign LUNインポート（FLI）推奨のFC配線およびゾーニング方法
+= ONTAP FLI の iSCSI バックエンド接続のセットアップ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

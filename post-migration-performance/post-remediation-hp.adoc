@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: host remediation, hp-ux, post-migration, fli, ontap 
 summary: 移行後、HP-UX ホストでは、新しくインポートされた LUN が正しく認識され、正常に機能するようにするための修復手順が必要です。 
 ---
-= ONTAP FLI HP移行後のホスト修復を実行する
+= ONTAP FLI HP-UX 移行後のホスト修復を実行する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

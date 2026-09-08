@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: discovery phase, foreign lun import, fli, active iq onecollect, fc fli, iscsi fli, intercluster lif, wwpn, iqn, foreign array, lun discovery, san migration 
 summary: 移行計画の基礎を築くために、ソース環境と接続性に関する情報を収集する検出フェーズについて学びます。 
 ---
-= ONTAP Foreign LUN Import（FLI）検出フェーズ
+= ONTAP FLI 検出フェーズについて
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

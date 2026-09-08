@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: esxi remediation, vmfs, ats, caw, vaai, vmkfstools, datastore, online fli, foreign lun import, fli, vmware, ats-only 
 summary: オンラインFLIインポート関係を介して提示された場合にマウントを妨げる可能性のある、ATS専用のVMFSヘッダーを含むVMware ESXiデータストアを修正します。 
 ---
-= ONTAP FLI ESXi VMFSS ATS/CAW修復を実行する
+= ONTAP FLI ESXi VMFS ATS/CAW 修復の実行
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

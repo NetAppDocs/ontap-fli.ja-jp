@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= ONTAP Foreign LUNインポートにおける推奨FC配線およびゾーニング方法
+= ONTAP FLI FCゾーニングモデルとベストプラクティス
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

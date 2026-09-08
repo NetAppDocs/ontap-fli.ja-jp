@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: execute phase, foreign lun import, fli, offline fli, online fli, cutover, import jobs, san migration, zoning, host remediation, iscsi fli, fc fli 
 summary: 実行フェーズについて学びます。このフェーズでは、オフラインまたはオンラインのFLI移行を実行し、ホストアクセスをONTAPに移行するために必要なエンドツーエンドのタスクについて説明します。 
 ---
-= ONTAP Foreign LUN Import（FLI）実行フェーズ
+= ONTAP FLI 実行フェーズについて学ぶ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

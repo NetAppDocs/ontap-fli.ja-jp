@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ontap, fli, foreign lun import, esxi host, pre-migration, offline fli, online fli 
 summary: ESXiホスト上でONTAP FLI移行を実行する前に、移行前の以下の手順を完了してください。オフライン移行とオンライン移行には、それぞれ別の手順が必要です。 
 ---
-= ONTAP FLI ESXi ホストの修復
+= ONTAP FLI ESXi 移行前ホスト修復の実行
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

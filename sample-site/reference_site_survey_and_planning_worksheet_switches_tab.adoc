@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: site, survey and planning worksheet, switches tab 
 summary: Site Survey and Planning ワークシートの一部として、移行のスイッチ情報を含むタブを設定する必要があります。 
 ---
-= Site Survey and Planning ワークシートのスイッチタブ
+= ONTAP FLI サイト調査および計画ワークシートのスイッチタブ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

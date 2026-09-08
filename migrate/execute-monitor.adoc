@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lun import start, execute import, monitor import, foreign lun import, fli, ontap, lun import show, import progress, pause import, resume import, san migration, online fli, offline fli, asa r2 
 summary: LUNのインポートを開始し、進行状況を監視してください。インポートとアクティブホストワークロード間の帯域幅競合を管理するために、コピー ストリームを一時停止および再開します。 
 ---
-= FLI LUNのインポートを実行および監視する
+= ONTAP FLI LUN インポートの実行と監視
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

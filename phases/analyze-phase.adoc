@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: analyze phase, foreign lun import, fli, gap analysis, interoperability matrix tool, imt, host remediation, hba, mpio, alua, san migration, iscsi fli, fc fli 
 summary: ホストとSANスタック構成をNetApp相互運用性マトリックスと比較して必要な変更を特定する分析フェーズについて説明します。 
 ---
-= ONTAP Foreign LUN Import（FLI）分析フェーズ
+= ONTAP FLI 分析フェーズについて
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

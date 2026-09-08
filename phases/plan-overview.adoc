@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan and prepare phase, foreign lun import, fli, migration planning, test migration, cutover, intercluster lif, iscsi fli, gap analysis, san migration, fc fli, zoning 
 summary: 発見と分析の結果を実行可能な移行計画に変換し、環境の準備状況を検証する計画および準備フェーズについて学びましょう。 
 ---
-= ONTAP Foreign LUN Import（FLI）の計画と準備フェーズ
+= ONTAP FLI の計画および準備フェーズについて学ぶ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

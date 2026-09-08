@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: site, survey and planning worksheet, sds cli scripts tab 
 summary: Site Survey and Planning ワークシートの一部として、 SDS CLI スクリプトの情報を含むタブを設定する必要があります。 
 ---
-= Site Survey and Planning ワークシートの [SDS CLI Scripts] タブをクリックします
+= ONTAP FLI サイト調査および計画ワークシート SDS CLI スクリプトタブ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

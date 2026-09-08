@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= ONTAP Foreign LUN Import（FLI）移行用にFCアダプタをイニシエータモードに設定
+= ONTAP FLI でイニシエータモード用に FC アダプタを設定する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

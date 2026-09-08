@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: site, survey and planning worksheet, hba and zone information tab 
 summary: Site Survey and Planning ワークシートの一部として、 HBA とゾーンの情報を含むタブを設定する必要があります。 
 ---
-= Site Survey and Planning ワークシートの HBA and Zone Information タブ
+= ONTAP FLI サイト調査および計画ワークシート HBA およびゾーン情報タブ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

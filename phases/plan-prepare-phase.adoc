@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan and prepare phase, foreign lun import, fli, migration planning, test migration, cutover, intercluster lif, iscsi fli, gap analysis, san migration, fc fli, zoning, test migration 
 summary: 1 つ以上のテスト移行を実行して、アレイ、ネットワーク、ファブリック、ONTAP 構成とホスト修復手順が正しいことを確認し、本番環境のスケジューリングに外挿できるスループットサンプルを収集します。 
 ---
-= ONTAP外部LUNインポート（FLI）テスト移行およびカットオーバー計画
+= ONTAP FLI 切り替え計画のテスト移行を実行する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

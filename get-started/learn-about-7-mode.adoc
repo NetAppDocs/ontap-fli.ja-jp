@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 7 mode transition, foreign lun import, fli, ontap, clustered ontap, lun migration, online workflow, offline workflow, 32 bit aggregates, misaligned lun, data migration, 7 mode to ontap 
 summary: 外部LUNインポートを使用して、NetApp 7-Modeシステムからclustered ONTAPへ、オンラインまたはオフラインのワークフローのいずれかを使用してLUNを移行する方法を説明します。 
 ---
-= Foreign LUN Import 7-modeからONTAPへの移行について学ぶ
+= Foreign LUN Import 7-Mode から ONTAP への移行について学ぶ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

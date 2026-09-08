@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= ONTAP外部LUNインポート（FLI）接続と配線
+= ONTAP FLI FC接続と配線のベストプラクティス
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
