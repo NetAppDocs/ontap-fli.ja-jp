@@ -2,7 +2,7 @@
 section: post-migration-performance
 title: FLI移行後
 entries:
-- title: 移行後の概要
+- title: 移行後について学ぶ
   url: "/post-migration-performance/post-migration-overview.html"
 - title: 移行後のクリーンアップを実行する
   url: "/post-migration-performance/clean-up.html"
@@ -20,5 +20,5 @@ entries:
   url: "/post-migration-performance/post-remediation-solaris.html"
 - title: ONTAP FLI Windows 移行後のホスト修復を実行
   url: "/post-migration-performance/post-remediation-windows.html"
-- title: FLI のパフォーマンス
+- title: ONTAP FLIパフォーマンス制御
   url: "/post-migration-performance/performance.html"

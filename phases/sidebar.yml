@@ -10,7 +10,7 @@ entries:
   url: "/phases/analyze-phase.html"
 - title: 計画と準備
   entries:
-  - title: 概要
+  - title: 計画と準備について学ぶ
     url: "/phases/plan-overview.html"
   - title: テスト移行
     url: "/phases/plan-prepare-phase.html"

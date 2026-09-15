@@ -2,7 +2,7 @@
 section: configure
 title: ONTAP FLI を設定
 entries:
-- title: 概要
+- title: ONTAP FLI構成について学ぶ
   url: "/configure/config-overview.html"
 - title: FC接続と配線
   url: "/configure/fc-connectivity-wiring.html"

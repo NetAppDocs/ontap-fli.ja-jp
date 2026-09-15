@@ -1,40 +1,28 @@
 ---
 indexpage:
   title: ONTAP Foreign LUN Import に関するドキュメント
-  summary: ONTAP Foreign LUN Import の略
   keywords: fli, ontap, array, fli-based, configuration, lun, import, san, migration,
     foreign
-  lead: ONTAP Foreign LUN Import の略
+  lead: Foreign LUN Import（FLI）は、外部アレイLUNからユーザーデータをコピーしてONTAP LUNに移行することで、ブロックレベル（LUN）のデータ移行を可能にするONTAPの機能です。ONTAPは、SCSIイニシエータとして動作し、外部LUNから読み取り、宛先のONTAP
+    LUNに書き込むことで移行を実行します。
   tiles:
   - title: リリース ノート
     links:
     - title: ONTAP for SAN データ移行の新機能
       url: release-notes/whats-new.html
-  - title: 作業の開始
+  - title: はじめに
     links:
     - title: ONTAPデータ移行プログラムについて学ぶ
       url: "/get-started/learn-about-data-migration.html"
-    - title: ONTAPへのSANデータ移行について学ぶ
-      url: "/get-started/learn-about-san-data-migration.html"
     - title: ONTAP Foreign LUN Importについて学ぶ
       url: "/get-started/learn-about-fli.html"
-  - title: FLI フェーズ
+    - title: ONTAP FLI フェーズについて学ぶ
+      url: "/phases/phase-overview.html"
+  - title: FLIの構成
     links:
-    - title: ONTAP Foreign LUN Import（FLI）検出フェーズ
-      url: "/phases/discovery-phase.html"
-    - title: ONTAP Foreign LUN Import（FLI）分析フェーズ
-      url: "/phases/analyze-phase.html"
-    - title: ONTAP Foreign LUN Import（FLI）の計画と準備フェーズ
-      url: "/phases/plan-prepare-phase.html"
-    - title: ONTAP Foreign LUN Import（FLI）実行フェーズ
-      url: "/phases/execute-phase.html"
-    - title: ONTAP外部LUNインポート（FLI）検証フェーズ
-      url: "/phases/verify-phase.html"
-  - title: FLI構成
-    links:
-    - title: ONTAP外部LUNインポート（FLI）接続と配線
+    - title: ONTAP FLI 接続と配線
       url: "/configure/fc-connectivity-wiring.html"
-    - title: ONTAP Foreign LUNインポート（FLI）推奨のFC配線およびゾーニング方法
+    - title: ONTAP FLI推奨FCケーブル接続およびゾーニングのプラクティス
       url: "/configure/iscsi-setup-backend-connectivity.html"
   - title: FLIの移行
     links:
@@ -54,7 +42,7 @@ indexpage:
       url: "/post-migration-performance/esxi-remediation.html"
     - title: FLI のパフォーマンス
       url: "/post-migration-performance/performance.html"
-  - title: Site Survey and Planning ワークシートの例
+  - title: サンプルサイト調査と計画
     links:
-    - title: 概要
-      url: "/san-migration/reference_sample_site_survey_and_planning_worksheet.html"
+    - title: サンプルサイト調査および計画ワークシート
+      url: "/sample-site/reference_sample_site_survey_and_planning_worksheet.html"

@@ -4,13 +4,14 @@ permalink: legal-notices.html
 keywords: copyrights, notice, trademarks, patents, privacy, open source 
 summary: 著作権に関する声明、商標、特許などにアクセスできます。 
 ---
-= ONTAP FLI の法的通知
+= 法的通知
 :allow-uri-read: 
 :icons: font
+:linkattrs: 
 :imagesdir: ./media/
 
 
-[role="lead"]
+[role="lead lead"]
 著作権に関する声明、商標、特許などにアクセスできます。
 
 
@@ -44,3 +45,10 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 == プライバシーポリシー
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
+
+
+
+[[machine-translation]]
+== 機械翻訳に関する情報
+
+ローカライズされたコンテンツに関する重要な情報は、link:https://www.netapp.com/company/legal/machine-translation/["netapp.com"^]をご覧ください。

@@ -2,7 +2,6 @@
 <blocks>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
   <block id="54011b62f41dfb303a3eed8e66adacf5" category="summary">Site Survey and Planning ワークシートの一部として、移行先ストレージデバイスの情報を含むタブを設定する必要があります。</block>
-  <block id="cd1e0a3493fa61cb2dd0db1374b4f62b" category="doc">Site Survey and Planning ワークシートの Destination Storage Devices タブを参照してください</block>
   <block id="5c6ab1284b6b7a5a7102854a969c99be" category="cell">ストレージシステム</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
   <block id="d6ed36bb2b00046e0edf3d24b526b7ad" category="paragraph">クラスタ名</block>
@@ -41,7 +40,6 @@
   <block id="c2ca16d048ec66e04bca283eab048ec2" category="paragraph">ホスト</block>
   <block id="0ac79129f2a7ba5db5e1f4d755cb3231" category="paragraph">ファブリック</block>
   <block id="cb3628a430baab7a93ffd421b659b087" category="summary">Site Survey and Planning ワークシートの一部として、移行元のソースストレージデバイスの情報を含むタブを設定する必要があります。</block>
-  <block id="66d379978b8364c9b7e4cace88b5bf8f" category="doc">Site Survey and Planning ワークシートのソースストレージデバイスタブ</block>
   <block id="e11ebb23473888246705e815adf2fb83" category="paragraph">次に ' ソース・ストレージ・デバイス・タブの設定方法の例を示します</block>
   <block id="55fe6d37857f38fc5f2d32415d6be244" category="paragraph">アレイ名</block>
   <block id="ec9ceefe0c19f4c029008c23e3c947b7" category="paragraph">ベンダー</block>
@@ -63,7 +61,6 @@
   <block id="c5f590d18e1ea128362eeafb7192cc21" category="paragraph">1E</block>
   <block id="f2b84afd0523a6df7547c404aa3647d8" category="doc">対象読者</block>
   <block id="2021cbde5bf5dfd18378e28e081ea40f" category="summary">Site Survey and Planning ワークシートの一部として、移行プロジェクトの担当者情報を含むタブを設定する必要があります。</block>
-  <block id="9f2428b49944ffbe41d6eaaae6141691" category="doc">Site Survey and Planning ワークシートの連絡先タブ</block>
   <block id="830bf6266222d642dda54d3adac324b5" category="paragraph">次に、 [ 連絡先 ] タブの設定方法の例を示します。</block>
   <block id="23bd44903908dd85f008af4416f452f2" category="cell">移行プロジェクトの担当者</block>
   <block id="cfad9f5ea3aed693642b36f141e70160" category="paragraph">リソース名</block>
@@ -73,7 +70,6 @@
   <block id="faab5da77b26184402e64e2ee7a70060" category="paragraph">携帯電話</block>
   <block id="ce8ae9da5b7cd6c3df2929543a9af92d" category="paragraph">E メール</block>
   <block id="da561bf84fa67d613a7bc697632e7936" category="summary">Site Survey and Planning ワークシートの一部として、ストレージグループの情報を含むタブを設定する必要があります。</block>
-  <block id="a2aabbf550b46ec2c7ba272d1cc49cfe" category="doc">Site Survey and Planning ワークシートのストレージグループタブ</block>
   <block id="d11cedfe393a70a8914339a7ddcf0db4" category="paragraph">次の例は、 Storage Groups （ストレージグループ）タブの設定方法を示しています。</block>
   <block id="e16f703e68085397177a15356b6f6195" category="cell">ストレージグループ</block>
   <block id="12007e1d59f4d09c87dbe2c438256244" category="paragraph">宛先</block>
@@ -90,7 +86,6 @@
   <block id="a1f5a153bb25ffa89fc874e242492ae8" category="paragraph">21 ： 00 ： 00 ： 24 ： ff ： 30 ： 03 ： ea21 ： 00 ： 24 ： ff ： 30 ： 03 ： eb</block>
   <block id="ca4cbb35f003ffb63d5fef7c9ccb68ba" category="paragraph">igroup create -ostype vmware `protocol'fcp`-vserver`datamig-`igroup`igroup`dm-rx200s6-20`-initiator`21:00:00:24:00:ff:30:03:ea, 21:00:24:01:ff:03:03:eb</block>
   <block id="82beca5dd3e21da8b12776479d520195" category="summary">Site Survey and Planning ワークシートの一部として、移行のスイッチ情報を含むタブを設定する必要があります。</block>
-  <block id="9924c373f5e060d3e81782c12188defd" category="doc">Site Survey and Planning ワークシートのスイッチタブ</block>
   <block id="e309370bdd52477ef0d27ea92e98564d" category="paragraph">次に、 Switches タブの設定方法の例を示します。</block>
   <block id="0052efad5d260a806d52bfcfe640936f" category="cell">スイッチ</block>
   <block id="222a267cc5778206b253be35ee3ddab5" category="paragraph">最新</block>
@@ -104,7 +99,6 @@
   <block id="d3d9446802a44259755d38e6d163e820" category="paragraph">10.</block>
   <block id="8532afb409ba7a990336bdee27558254" category="paragraph">3.3 （ 5a ）</block>
   <block id="5dd04a70c599dd3aba4af817ed8f940a" category="summary">Site Survey and Planning ワークシートの一部として、 SDS CLI スクリプトの情報を含むタブを設定する必要があります。</block>
-  <block id="fcbc52c1e9e3f483b5dd4306a9c74eb7" category="doc">Site Survey and Planning ワークシートの [SDS CLI Scripts] タブをクリックします</block>
   <block id="2c87f12de6046ab2b53a48c94446ddc6" category="paragraph">次に、 [SDS CLI スクリプト ] タブの設定方法の例を示します。</block>
   <block id="8d1fc7e767a7204d770eb56c7989e03b" category="cell">コントローラ 1</block>
   <block id="48ed192757d1bc6d4a36d16a10893f48" category="cell">コントローラ 2</block>
@@ -143,7 +137,6 @@
   <block id="a73c68c63356315bd4ea581710355d69" category="paragraph">LUN が igroup にマッピングされていないため、 /vol/bootcampvol/dm27_data2 _lun の LUN マッピングがスキップされました。</block>
   <block id="d349791b0d71ed5b5f5c14e0ca2c1683" category="doc">ホストの修正</block>
   <block id="0e307f6ea434bd4d2171f6accce0a9ba" category="summary">Site Survey and Planning ワークシートの一部として、移行に関する最初のアンケートの移行プロジェクト情報を含むタブを設定する必要があります。</block>
-  <block id="a9045dbda21a2daa2214c339015b971e" category="doc">Site Survey and Planning ワークシートのアンケートタブ</block>
   <block id="10bb602bb2e1131312be193830955c41" category="paragraph">次の例は、アンケートタブの設定方法を示しています。</block>
   <block id="56693cf67971d000c20732a5b7bdbb95" category="cell">移行プロジェクト情報</block>
   <block id="245fe794333c2b0d5c513129b346b93f" category="paragraph">プロジェクトタイプ（ Project Type ）</block>
@@ -224,7 +217,6 @@
   <block id="eda2c5ecf22611ccb137045fed3f3eb2" category="list-text">デスティネーションストレージ上のテスト用 LUN を削除します。</block>
   <block id="ee32bef56e30ab9e874b38d1cd3c3d6c" category="paragraph">別のホスト LUN を選択しないように注意してください。</block>
   <block id="5adfe538d2e4bb2201ca3cd266686c4c" category="summary">Site Survey and Planning ワークシートの一部として、 LUN の詳細情報を含むタブを設定する必要があります。</block>
-  <block id="e74172a70ff5d3d9f3c490416dc3bd83" category="doc">Site Survey and Planning ワークシートの LUN Details タブ</block>
   <block id="0c9aa58f5194cebe062fd903e101ba7f" category="paragraph">次に 'LUN の詳細タブの設定方法の例を示します</block>
   <block id="72db9d9344319d56fe15f5a344ca2954" category="cell">LUN の詳細</block>
   <block id="64d354dc5879cf570ce7b4ef676e75bd" category="paragraph">オペレーティングシステム</block>
@@ -268,7 +260,6 @@
   <block id="e206a54e97690cce50cc872dd70ee896" category="paragraph">Linux の場合</block>
   <block id="92963abd36c896b93a36b8e296ff3387" category="paragraph">VMware</block>
   <block id="d5fe299d7d92cd0254874c8e18bd6667" category="summary">Site Survey and Planning ワークシートの一部として、移行スケジュールの情報を含むタブを設定する必要があります。</block>
-  <block id="9ae6059c986f115d805804d9750f95c8" category="doc">Site Survey and Planning ワークシートの Migration Schedule タブで</block>
   <block id="d658998d22d4a15ffcb56abb26b97f6c" category="paragraph">次に、 [ 移行スケジュール ] タブの設定方法の例を示します。</block>
   <block id="fe04e35b1feab9596669e8b60e5143b8" category="cell">移行スケジュール</block>
   <block id="db5249c8de64163f6987af1bf7d7b50f" category="paragraph">移行日</block>
@@ -280,7 +271,6 @@
   <block id="9299ae51d5e390720987a49406f73c6c" category="summary">移行の範囲設定や計画の支援のほか、お客様の担当者向けの Foreign LUN Import （ FLI ）を使用した 7-Mode から ONTAP へのデータ移行のトレーニングも受けられるため、プロフェッショナルサービスまたはパートナープロフェッショナルサービスを利用することを強く推奨します。</block>
   <block id="d1c7f10a927287be4073a34e717a5457" category="list-text">スループットが最大になるように、各ノードで同時に実行する移行の数は 16 個までにします。</block>
   <block id="b84408b5a0a0c7cc2f546b003567651a" category="summary">Site Survey and Planning ワークシートの一部として、 HBA とゾーンの情報を含むタブを設定する必要があります。</block>
-  <block id="e73883227bd8b82a32f523f166de0ff8" category="doc">Site Survey and Planning ワークシートの HBA and Zone Information タブ</block>
   <block id="b40869fd3c3553f482c858fa5ac4d4f6" category="paragraph">次の例は 'HBA およびゾーン情報タブを設定する方法を示しています</block>
   <block id="09eaea7cdd5eb7f40566ce88dd148114" category="cell">ファブリックの詳細</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="paragraph">説明</block>
@@ -294,7 +284,6 @@
   <block id="5f3087cbd50e3ef143e7c737a425867a" category="paragraph">rx21_AMS2100</block>
   <block id="ec194d0acc244f4d9246902066321e8e" category="paragraph">rx21_flicDOT</block>
   <block id="d7da563f3152abd7a93b06abdd4d95c6" category="summary">Site Survey and Planning ワークシートの一部として、移行プロジェクトのホスト情報を含むタブを設定する必要があります。</block>
-  <block id="36231dd03efc078aabef212947a5b33e" category="doc">Site Survey and Planning ワークシートの Hosts タブ</block>
   <block id="396cb26dedacf281d09182445c92324a" category="paragraph">次に、 Hosts タブの設定方法の例を示します。</block>
   <block id="8124579383e90243e4b06323d2b37f8d" category="cell">ホスト</block>
   <block id="bc8586f2230ff2687e94e61c5bcb4855" category="paragraph">* 電流 *</block>
@@ -306,7 +295,6 @@
   <block id="c7e230d1422228fff3ce57e1b13d1d0c" category="paragraph">SnapManager</block>
   <block id="0f413e47bf69d6dd85e783e2bfc60184" category="paragraph">ホットフィックス</block>
   <block id="c614218c0adf7263666120fbe714869d" category="summary">Site Survey and Planning ワークシートの一部として、アグリゲートステータスの情報を含むタブを設定する必要があります。</block>
-  <block id="acf867d4e1dc8af3eb922419a5b3fe21" category="doc">Site Survey and Planning ワークシートのアグリゲートステータスタブ</block>
   <block id="bceb4f070020d638ef1535978542228d" category="paragraph">次の例は、 Aggregate Status タブの設定方法を示しています。</block>
   <block id="911f94bc298fc88538ecc2c44b5d778d" category="cell">ネットアップアグリゲート情報</block>
   <block id="9bbf373797bf7cf7ba62c80023682e25" category="paragraph">コントローラ</block>
@@ -316,7 +304,6 @@
   <block id="70ed673b65daa8d0437b28e534f4ec4e" category="paragraph">使用可能容量（ GB ）</block>
   <block id="0d4f11be31f944fbc267afc1f7a2f666" category="paragraph">前のバージョン（ Previous to Build Out ）</block>
   <block id="8802080a4dc2981f17e7c4648f43afe7" category="summary">Site Survey and Planning ワークシートの一部として、ソース LUN の情報を含むタブを設定する必要があります。</block>
-  <block id="4037e8193f042717a79bf3fdefd4aae6" category="doc">Site Survey and Planning ワークシートのソース LUN タブ</block>
   <block id="46fdb96658c0c805a565f783cb6eb4a2" category="paragraph">次に ' ソース LUN タブの設定方法の例を示します</block>
   <block id="2d1ef22a8170261433e49f3f13fa84f0" category="cell">ソース LUN</block>
   <block id="40336b4a1c70e07af22b9f21262986c6" category="paragraph">マスクされた LUN</block>
@@ -342,7 +329,6 @@
   <block id="558325bdc5d5119e93467e7fe7fcea48" category="paragraph">33619968</block>
   <block id="3498819c9e2fcba4d3ad19d511ca5791" category="paragraph">LUN15</block>
   <block id="af99c9abf614a82b80d08359e5e0a888" category="summary">Site Survey and Planning ワークシートの一部として、 LUN レイアウトの情報を含むタブを設定する必要があります。</block>
-  <block id="f01d3ff99f3ac13d61d7586c2e8dc665" category="doc">Site Survey and Planning ワークシート NetApp LUN Layouts タブ</block>
   <block id="e672da4fadd27ee2f19017ef42dce852" category="paragraph">NetAppLUN Layouts タブの設定例を次に示します。</block>
   <block id="f4dc3ce9f4d7c741a2ac13a451458d51" category="cell">NetApp LUN 情報</block>
   <block id="5a33fdd3ad048388d676b3cfe62a76b4" category="paragraph">ボリューム名</block>
@@ -361,7 +347,6 @@
   <block id="c2ece9a18147c056e75e4008644a9526" category="paragraph">ホストタイプ</block>
   <block id="16b78e95661c918bc1b982fd64852c02" category="paragraph">ドライブレター</block>
   <block id="cd2ea2efb6e484e9f76aa6c911f083cf" category="summary">Site Survey and Planning ワークシートの一部として、 FAS 設定の情報を含むタブを設定する必要があります。</block>
-  <block id="d816e66cd7b51d120e7ae740a2d2b7d8" category="doc">Site Survey and Planning ワークシートの FAS 設定タブ</block>
   <block id="cb27b289fa8961c6a3dcd409d777c342" category="paragraph">次に、 FAS 設定タブの設定方法の例を示します。</block>
   <block id="b84efa9ec93a064c12da482ba494099b" category="cell">クラスタ管理 IP アドレス</block>
   <block id="9e12573417a5e1a70dacdfe728c09eaa" category="cell">クラスタ管理クレデンシャルの有無</block>
@@ -405,7 +390,6 @@
   <block id="1b6dec684aa1f6e66018baa0a87b5a75" category="list-text">実行フェーズ</block>
   <block id="4a906f3b5858522ee75dd08c0279ffaa" category="list-text">検証フェーズ</block>
   <block id="dbe84cd10fc78ddffac6c2603bb5e334" category="summary">移行方法を決める分析フェーズと計画フェーズでは、 Site Survey and Planning ワークシートを使用して、既存の構成、ターゲット構成、ギャップ、および修正計画を文書化する必要があります。</block>
-  <block id="52d8ff059d88cc5b65a5a53537d4c524" category="doc">Site Survey and Planning ワークシートの例</block>
   <block id="7bafc2e73cbb5786f7652b776e4d06e8" category="paragraph">ここでは、 Site Survey and Planning スプレッドシートに含める必要がある情報の種類の例を示します。推奨されるタブは次のとおりです。</block>
   <block id="bbaff12800505b22a853e8b7f4eb6a22" category="list-text">連絡先</block>
   <block id="179d692ef9707bcf6d92ff37fd394ec8" category="list-text">アンケート</block>
@@ -416,11 +400,7 @@
   <block id="f22322f0d88fb0493fcb4b36d5e1c583" category="list-text">アグリゲートステータス</block>
   <block id="82911d14232afbf61871f222ca6c2a53" category="list-text">FAS 設定</block>
   <block id="6a1242268d67eaeac1c352b218f7960e" category="list-text">SDS CLI スクリプト</block>
-  <block id="3be720072e03679f7ed0f85258130b70" category="summary">ONTAP Foreign LUN Import の略</block>
   <block id="dbd3f1a817d137c052ec01ef60940131" category="doc">ONTAP Foreign LUN Import に関するドキュメント</block>
-  <block id="9273826bb0d876c78b121ff252c71f0e" category="sidebar">ONTAP FLI のドキュメント</block>
-  <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概要</block>
-  <block id="8d98bee06f527b9e9c395ead1ae98be3" category="sidebar">Foreign LUN Import の 1 つです</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="sidebar">作業を開始する前に</block>
   <block id="8c3b55fef9c0e25a2fe01d90beac075c" category="list-text">[*Assigned Logical Units*] ウィンドウからテスト LUN を選択します。</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">著作権に関する声明、商標、特許などにアクセスできます。</block>
@@ -450,7 +430,6 @@
   <block id="2f60f93c0bb2f87f067f123be1aa8949" category="list-text">FCアダプタポートをターゲットモードからイニシエータモードに変換します：</block>
   <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">*例*</block>
   <block id="4020824310d3e82e0619ba8f6c0ff418" category="list-text">アダプタがオンラインに戻り、イニシエータ モードになっていることを確認します。</block>
-  <block id="222d7e5febe8f4e6f73f6044620d0122" category="doc">ONTAP外部LUNインポート（FLI）接続と配線</block>
   <block id="d2c21174503152dd8670ca67b8d64d0b" category="paragraph">FC を介した外部 LUN インポートは、デュアルファブリック SAN 設計に依存しているため、宛先 ONTAP コントローラは、検出およびインポート中に外部アレイ LUN に確実にアクセスできます。サポートされているデプロイメントの場合、使用されている各ストレージ コントローラは、両方のファブリックにプライマリ アクティブ パスを持っている必要があります。これは実質的に、ソース アレイ ターゲット ポートと、インポートを実行するノードの ONTAP イニシエータ ポートは、ファブリック A とファブリック B の共通ゾーンにある必要があります。ONTAP クラスター内のすべてのノードを含める必要はありません。実際に LUN をインポートおよび移行するノードのみです。間接的なパスでも機能することはありますが、ベスト プラクティスは、ソースとデスティネーションの間でアクティブで最適化されたパスを使用することです。</block>
   <block id="1a10e21b90026ba7da0260204fc9970c" category="section-title">ONTAP FLI推奨FCケーブル接続およびゾーニングのプラクティス</block>
   <block id="ddbf253cffbc1b35811df4915daa4ef9" category="list-text">冗長性を確保するため、デュアル ファブリック（AとB）を使用してください。</block>
@@ -474,7 +453,6 @@
   <block id="b3a3f4589f48a2d30102b5eb0df42fba" category="list-text">FLIワークフローで必要とされるゾーニングモデルに適した物理ポートのWWPNを使用してください。移行ゾーニングガイダンスで明示的に禁止されている場合は、NPIV WWPNを使用しないでください。</block>
   <block id="69974507777b94693b1e9b10550b6733" category="image-alt">ONTAP FLI用のFCゾーニングモデルの例</block>
   <block id="939904c079e5426d15e2ddb0d0402edd" category="admonition">ソース ターゲットを宛先イニシエータにゾーニングした後、ソース ストレージはONTAPから検出コマンドを介して認識されるようになります。アレイが最初に表示されない場合は、環境によってはONTAPイニシエータに接続されているスイッチ ポートをリセットする必要があります。</block>
-  <block id="d62c4d88e818e20e884188368abe0a19" category="doc">ONTAP Foreign LUNインポート（FLI）推奨のFC配線およびゾーニング方法</block>
   <block id="5c1fca0fc7986dddf497f2fe19cbfc2d" category="paragraph">ONTAP iSCSI FLIは、FLIスタックと統合されたONTAPソフトウェアiSCSIイニシエータを使用し、アウトバウンドiSCSIセッションをインタークラスタLIFにバインドします。バックエンド接続は、ホストデータLIFではなく、インタークラスタLIFネットワークによって駆動されます。</block>
   <block id="b262c31fdeaba5bf2ea87682b7d98750" category="paragraph">セッションはクラスタ間LIFに基づいているため、クラスタ間LIFの配置、到達可能性、および冗長性を計画する必要があります。これらは通常、LUNを所有するノードとそのHAパートナー上にあり、単一障害点を回避するためにポート全体に耐障害性のある配置を行います。セッションを作成する前に、クラスタ間LIF IPと外部アレイターゲットポータルIP間のVLAN到達可能性によるエンドツーエンドルーティングを検証してください。これにはTCPポート3260の許可も含まれます。ネットワークが正常に機能することは、LUN検出の前提条件となるためです。</block>
   <block id="dfe583d1386b5fe1068349b7c8085216" category="paragraph">セッションは、ターゲット ポータルIPとターゲットIQNの両方を使用して明示的に作成する必要があります。iSCSI検出セッションは使用されません。想定される回復力モデルは、各参加ONTAPノードが各外部ターゲット ポータルとのセッションを確立する完全なメッシュ接続性を持つものです。これにより、インポートを開始する前に、利用可能なすべてのパスを通じて外部LUNが見えるようにします。</block>
@@ -503,7 +481,6 @@
   <block id="1f7e2afdd5005873644bb37a3ac9f046" category="list-text">外部アレイの接続を確認します。</block>
   <block id="45a909869405fe8ef132d26fc306a055" category="paragraph">この段階では、外部ストレージアレイiSCSIターゲットは、NetApp iSCSIイニシエータからのアクティブなログインとセッションを検出および確認できる必要があります。外部アレイ上でベンダー推奨のコマンドを使用して、イニシエータが接続され、セッションが正常であることを確認してください。</block>
   <block id="6e8e6a4392d50fc320af33541d5b911a" category="paragraph">*検出チェックポイント*：セッションが確立されると、ONTAPはストレージパスを追加し、ストレージ スタック内の外部LUNを検出する必要があります。これは、ディスクを外部ディスクとしてマークし、インポートワークフローを進めるための前提条件です。</block>
-  <block id="165bfafafc6e957d5e0754f65dda7b0f" category="summary">ONTAPのFLIの主な機能とメリットについて説明します。オンラインおよびオフラインの移行オプション、SAN環境向けのブロックレベルのLUN移行などが含まれます。</block>
   <block id="7f57df50c07d397c153ac86c88babe24" category="paragraph">ONTAP外部LUNインポート（FLI）は、外部（サードパーティ）アレイLUNからネイティブONTAP LUNにデータをコピーする組み込みのブロック移行機能で、オフラインとオンラインの両方の移行方式をサポートしています。FLIは、さまざまなサードパーティ製アレイからONTAPへSAN LUNを移行するように設計されており、さまざまなホストやアレイ間で計画、実行、検証を標準化するのに役立つ、一貫性のある移行方法論を提供します。</block>
   <block id="be01a357ae2c9752875b5385c732b017" category="section-title">主な機能</block>
   <block id="6f85cdaea1ce05195fb644beb9b6e016" category="list-text">ビジネスのダウンタイム要件に合わせたオンラインおよびオフライン移行。</block>
@@ -576,7 +553,6 @@
   <block id="5e0a6f26caee0cc99e62c1641030b645" category="paragraph">オフラインワークフローでは、インポート処理の全期間、ホストは切断された状態になります。</block>
   <block id="6fd02e7a6282ae060788d11e7f924787" category="paragraph-title">オンラインFLIワークフロー</block>
   <block id="9672edc62c90b2277bb4c1b036da5b00" category="paragraph">オンラインワークフローでは、インポート処理がコピーから完了に移行する際の短い切り替え期間のみ、ホストが切断されます。</block>
-  <block id="369facb7b2f9e0e9004f0f614cfa7bfd" category="summary">Foreign LUN ImportやONTAPのSANデータ移行オプション、および移行期間の計画と構成の適格性を確認するための推奨ツールについて説明します。</block>
   <block id="a925a3b763aaaa6fe447ade6f390d7e9" category="doc">ONTAPへのSANデータ移行について学ぶ</block>
   <block id="21f811674d967c4b45da23ea8ca6d6d5" category="paragraph">SANデータの移行は、多くの場合、限られたダウンタイム期間、本番環境におけるリスク、および専門リソースの不足といった制約を受けます。ONTAP Foreign LUN Import（FLI）は、外部（サードパーティ）アレイLUNからネイティブONTAP LUNへデータをコピーする組み込みのブロック移行機能であり、オフラインとオンラインの両方の移行方式をサポートしています。ONTAPでは専門サービス主導の移行は必須ではありませんが、特に複雑な環境においては、範囲設定、計画策定、およびトレーニングに関してNetAppまたは資格のあるパートナーを活用することを強くお勧めします。</block>
   <block id="425cf7f284241ed618d076f456939be1" category="section-title">適切な移行方法の選択（概要）</block>
@@ -587,7 +563,6 @@
   <block id="7699a77797b0ab6ea1ac16233a43ac2c" category="list-text">Data Transfer Appliance（DTA）</block>
   <block id="d03c0be8ae3e195bb3ea4e4be9fa05d8" category="list-text">SANに接続されたアプライアンスモデルで、移行したデータ量（TB単位）に応じてライセンスが付与され、オフラインおよびオンライン移行をサポートします。</block>
   <block id="7d8daad43771792ab26009fb21686ca8" category="list-text">ホストOSまたはアプリケーションベースの移行</block>
-  <block id="bfc71c0d817c858ea99158fc51f399c6" category="list-text">プラットフォームがネイティブなモビリティ機能を提供する場合、またはホストやアプリケーションの制御が優先される場合に役立ちます（例：VMware のストレージモビリティやホストベースのコピー方式）。</block>
   <block id="12a61ce147f37cdef06ca60fca2126c1" category="section-title">移行期間の計画</block>
   <block id="ab5e38c0165fd6b9849993e469688bb5" category="paragraph">初期計画段階に限っては、一般的に引用されるベンチマークの想定として、合計約2TBの8つのLUNを持つホストの場合、ホスト1台あたり約5時間、つまり約400GB/時間というものがあります。これは意図的に大まかな計画値として算出されたものであり、あらゆる環境に当てはまるとは限りません。正確な見積もりを得るための推奨方法は、さまざまな規模のテスト移行を複数回実行し、自社のストレージ、ネットワーク、ホスト環境における実際のスループットを測定することです。</block>
   <block id="a4cefc4155fec80ce802dbe85fdfbb17" category="section-title">推奨ツール（データ収集、互換性、自動化、評価）</block>
@@ -600,7 +575,6 @@
   <block id="bb3114ffbc1b8e593b0955364cf66fff" category="list-text">ブロックレベルの移行後、システムが更新された照会情報を反映するように、移行後にVTOCディスクラベルを更新します。</block>
   <block id="64ea75caa71920ec87ff578169f0075a" category="list-text">SAN LUN Migrate（FLIプロジェクト用のsanlunmigrate）</block>
   <block id="ff76beca36064e56282d13cd22862ba8" category="list-text">本番環境への移行に着手する前に、顧客環境における外部アレイ／LUNの動作を検証するための認定アプローチを使用してください。これは、トランスポートやベンダーの動作が異なる場合に特に重要です。</block>
-  <block id="233991137dfdbb7ef01b6ac53fd5eb26" category="summary">バックエンド接続、LUN検出、インポート関係要件を含む、ONTAP Foreign LUN Importの前提条件を確認してください。</block>
   <block id="6d1cae9dd026a35e9f3c2b33e8998dc6" category="paragraph">ONTAP Foreign LUN Import（FLI）を開始する前に、移行を成功させるために満たす必要がある前提条件がいくつかあります。これらの前提条件は、FLIプロセスが正しく機能するために不可欠な互換性、接続性、および構成要件を網羅しています。</block>
   <block id="0621ec7ccdf71517b26fc85ecec39c14" category="list-text">選択したトランスポートに対して、バックエンド接続が利用可能である必要があります。</block>
   <block id="17f9cbbbf5f6b5f84d47d7ce5be8481b" category="list-text">FC FLIでは、コントローラごとに少なくとも1つのFCポートがイニシエータモードで動作する必要があります（冗長性を確保するため、ファブリックごとに1つずつ、合計2つのポートが推奨されます）。</block>
@@ -613,11 +587,8 @@
   <block id="875df9dde0081e2e8eb6dfd4f5af293d" category="list-text">デスティネーションONTAP LUNは、フロントエンドプロトコル計画に基づいて少なくとも1つのigroupにマッピングする必要があります。これにより、ワークフローの適切な段階でホストを接続できます。</block>
   <block id="cf282bc9d5e2cafd322cc0eab6aca317" category="list-text">外部LUNとデスティネーションONTAP LUNは、インポートコピーを開始する前に、インポート関係を介してペアリングする必要があります。</block>
   <block id="882b8625fb0676274db3decc8486f6d7" category="paragraph">インポート関係を作成する前に、デスティネーションONTAP LUNをオフラインにしておきます。関係が作成された後は、オンラインFLIを実行する場合にのみLUNをオンラインにすることができます。これにより、コピーが継続している間もホストはI/Oを再開できます。</block>
-  <block id="6cc95584903beea076e0f01f0960ebbc" category="summary">ONTAP FLIでサポートされているプラットフォームと構成（FCおよびiSCSIバックエンドオプション、移行計画における主要な制約事項を含む）を確認してください。</block>
   <block id="114e9c31f071edc22a1ebd2d95e7ac56" category="paragraph">ONTAP FLIは、予測可能な動作と完全なサポートを保証するために、サポートされている構成で展開する必要があります。</block>
   <block id="a8a512b2fe98c374c8ce645e66e96c79" category="list-text">すべてのFLI移行はLUN（ブロック）レベルで実行されます。ファイルおよびプロトコルレベルの移行は、ONTAP FLIの範囲外です。</block>
-  <block id="0223ac1546a1a57bee09547782d1dec3" category="list-text">ノードごとに最大8件の同時インポートを想定してください。実際に安全に実行できる同時実行数は、観測されるホストの遅延時間とインポートの遅延時間に依存します。</block>
-  <block id="2011c83e3fce0d0c44dcd6bab161dbb8" category="list-text">インポート可能な外部LUNの最大サイズは、LUNあたり4TBです。</block>
   <block id="c7da8e3638b3d8bec6619fec0f6397a5" category="list-text">iSCSIセッションのスケーリング制限（バックエンドiSCSI）：</block>
   <block id="142bbe83dcdddad04981129f50ea07ad" category="list-text">IC LIFあたり1つのイニシエーター</block>
   <block id="96425a0cf48bbfac682bc2597c729858" category="list-text">LIFあたり最大16セッション</block>
@@ -635,7 +606,6 @@
   <block id="6d952fae28b2f6e37252cedc5f46cf30" category="list-text">ホストのレイテンシを保護するために、インポートを一時停止および再開できます</block>
   <block id="1a50fc38537ab121331841b20b2676ca" category="list-text">可能であれば、移行はピーク時以外の時間帯にスケジュールする必要があります</block>
   <block id="16a0fcd0634e9d98b9de61b579ea5b9d" category="section-title">サポートされている構成とプラットフォーム</block>
-  <block id="e71a324035dfc6c7aaae52a91474d1db" category="paragraph">ONTAP FLIは、予測可能な動作と完全なサポートを保証するために、サポートされている構成で展開する必要があります。時間の経過とともに新しい構成が認定されるにつれて、サポートされる組み合わせが変わる可能性があります。各移行について、エンドツーエンドのスタック（ソースアレイ+ホスト+ファブリック/ネットワーク+ONTAPターゲット）を現在の相互運用性に関するガイドラインに照らして検証してください。</block>
   <block id="60275e850515ec6445d453446471e302" category="list-title">サポートされている移行先（移行可能な場所）</block>
   <block id="31b1e937ec753ba0844224ec51b406af" category="list-text">ONTAPは、FLI移行においてサポートされている唯一の移行先です。FLIは、データをONTAP LUNにインポートするように設計されています。サードパーティの移行先ストレージへの移行はサポートされていません。</block>
   <block id="b5421379fb9801395072f840c80c4b13" category="list-text">iSCSI FLIの場合、iSCSIソフトウェアイニシエータはFLIスタックに統合されており、iSCSI/TCPバックエンド接続を使用して外部LUNの検出とインポートを可能にすることを目的としています。</block>
@@ -730,7 +700,6 @@
   <block id="5d3f76a7a08e389eab72bac918401022" category="list-text">検証を停止します（LUNをオンラインにする前に必要です）：</block>
   <block id="8e9e5ec1440c677b8737da612be3f2ad" category="list-text">LUNをオンラインにします（中断時間はここで終了します）：</block>
   <block id="ac5ca742cf0c971c951be489b99b0a87" category="summary">ホストとSANスタック構成をNetApp相互運用性マトリックスと比較して必要な変更を特定する分析フェーズについて説明します。</block>
-  <block id="a0cf9d93b0627bff5a27ee9afc20088e" category="doc">ONTAP Foreign LUN Import（FLI）分析フェーズ</block>
   <block id="1c875fa63302c8275b957732af8f5c6e" category="paragraph">分析フェーズでは、詳細な移行計画と実行に進む前に修正すべき事項を特定します。このフェーズの主な成果は、すべてのホストと、それに依存する完全な SAN スタック（OS、ボリューム マネージャ、HBA、マルチパス、スイッチファームウェア、ターゲット ONTAP リリース）を、サポートされている移行後構成に取り込めるようにすることです。これは、各ホストの現在の状態を NetApp Interoperability Matrix（IMT）でサポートされている組み合わせと比較し、ホストごとに明確なターゲット構成（OS レベル、MPIO/ALUA 動作、HBA ドライバ/ファームウェア、および必要なホスト ツール）を定義し、その目標を達成するために必要な具体的な変更点を一覧にしたギャップ分析を作成することによって行われます。</block>
   <block id="fad187fdae563300b8b6ebe777c2b046" category="paragraph">アプリケーションの互換性や停止計画に影響を与える可能性のある修正変更を避けるため、ギャップ分析をスケジュールしてレビューします。多くの環境では、OSのパッチ適用やHBAのアップデートなど、一部の変更は移行期間前に完了させておく方が安全です。しかし、マルチパススタックの変更は、MPIOの動作を変更すると、現在のアレイとのサポート性に影響を与え、ロールバックを複雑にする可能性があるため、多くの場合、切り替え時または移行後に延期されます。</block>
   <block id="3b539ba231a3912d3b8ec45beaba5268" category="paragraph">iSCSI FLIの場合、分析フェーズではiSCSI固有の準備状況も把握する必要があります。</block>
@@ -788,7 +757,6 @@
   <block id="d834ecd82f50589b3a142b7eb46d0781" category="list-text">該当する場合、お使いの環境に関連するホストユーティリティおよびツールの要件</block>
   <block id="41cb02d9e78bdaf5550268e87618ee26" category="paragraph">ギャップ分析は、修復措置にダウンタイム ウィンドウが必要になる可能性があり、アプリケーション サポートの要件と相互作用する可能性があるため、速やかに確認する必要があります。</block>
   <block id="05b150074b327a7baccec3e557859a8f" category="summary">移行計画の基礎を築くために、ソース環境と接続性に関する情報を収集する検出フェーズについて学びます。</block>
-  <block id="55af0622ab213baaf3057522b24d27e0" category="doc">ONTAP Foreign LUN Import（FLI）検出フェーズ</block>
   <block id="fc79032502cbbccfa9568227b7ea9bcf" category="paragraph">ONTAP FLI検出フェーズは、移行プロセスの最初のステップです。ソース環境、接続性、ターゲットONTAPシステムに関する必要な情報をすべて収集することが、スムーズな移行を実現するために極めて重要です。検出フェーズは、移行の計画、準備、実行、および検証の基礎を築きます。</block>
   <block id="0d85720e731a7f5d198d0d8360fc0ef6" category="section-title">ONTAP FLIを使用したiSCSI移行の準備</block>
   <block id="d96fd2346a4850898ade5cd6ad803229" category="paragraph">ONTAP FLI検出フェーズでは、移行を完了するために必要な技術的な詳細情報を収集します。</block>
@@ -832,7 +800,6 @@
   <block id="8625e1de7be14c39b1d14dc03d822497" category="inline-link-macro">Tools</block>
   <block id="0a66f896342ea7f47d260394b6ad1b4b" category="paragraph"><block ref="0a66f896342ea7f47d260394b6ad1b4b" category="inline-link-macro-rx"></block></block>
   <block id="e8f511eaa2512ab9e62d0fba0e4609c4" category="summary">実行フェーズについて学びます。このフェーズでは、オフラインまたはオンラインのFLI移行を実行し、ホストアクセスをONTAPに移行するために必要なエンドツーエンドのタスクについて説明します。</block>
-  <block id="95f7abfb0a974b90a472f20b5b729ea1" category="doc">ONTAP Foreign LUN Import（FLI）実行フェーズ</block>
   <block id="d36f458b43304ed2a97d64e7a9a11390" category="paragraph">実行フェーズは、移行が実行されるフェーズです。オフラインまたはオンラインのForeign LUN Importを実行し、ホストアクセスを外部アレイからONTAPアレイに移行するために必要なエンドツーエンドのタスクをカバーします。</block>
   <block id="2c6249e25c55f7b0c94b984bd80d76b5" category="section-title">ONTAP FLI実行フェーズのタスク</block>
   <block id="d69a01a57b5c3741168e311b2b16ac9b" category="paragraph">以下は、各コンポーネントに対するONTAP FLI実行タスクです。</block>
@@ -861,7 +828,6 @@
   <block id="318b34580548f8e2dcdc895e0c8d4666" category="paragraph">このセクションでは、構造化された段階的なアプローチを使用して、Foreign LUN Import（FLI）移行（特にiSCSIバックエンドFLIに重点を置く）を実行するためのエンドツーエンドの方法論について説明します。検出、分析、計画と準備、実行、検証の各フェーズ全体にわたる目的、入力、検証チェックポイント、成果物を概説し、外部ストレージアレイからONTAPへの予測可能でサポート可能な低リスクの移行を確実にします。</block>
   <block id="616f44f9cac42c23c1acc19f0622813e" category="paragraph">このワークフローでは、事前のデータ収集と相互運用性の検証、ホストとファブリックの準備状況、明示的なiSCSIバックエンド設計の制約（IC LIFの使用、明示的なターゲットポータル/IQN、フルメッシュ接続、スケール制限）、およびアプリケーションの可用性とロールバックオプションを保護するための規律ある変更管理を重視しています。IMT主導のサポート検証、的を絞った修復計画、テスト移行、および厳格な移行後のクリーンアップを組み合わせることで、このアプローチは、FCベースおよびiSCSIベースのFLIシナリオの両方において、移行が正常に完了し、完全にサポートされ、十分に文書化され、運用上クリーンな移行後の状態を実現することを保証します。</block>
   <block id="fd8608bbb22ccea340655cd143a089cd" category="summary">発見と分析の結果を実行可能な移行計画に変換し、環境の準備状況を検証する計画および準備フェーズについて学びましょう。</block>
-  <block id="313e596acc382dfaa062620985696574" category="doc">ONTAP Foreign LUN Import（FLI）の計画と準備フェーズ</block>
   <block id="1c2df568210409fb8aa79cb19258fc22" category="paragraph">計画および準備フェーズでは、発見および分析の結果を実行可能な移行計画に変換し、移行期間に向けて環境が準備できていることを確認します。プロジェクトの作業の大部分は通常この段階に集中します。なぜなら、ここでオンラインまたはオフラインでの切り替え方法を最終決定し、エンドツーエンドの接続性を検証し、本番環境に移行する前に1つ以上のテスト移行を通じてワークフローを証明するからです。</block>
   <block id="77beacef8a48deffcb4df223b65d0dba" category="paragraph">iSCSI FLIの場合、このフェーズではiSCSIバックエンドの設計上の制約も検証する必要があります。ONTAPのiSCSIソフトウェアイニシエータはIC LIFを使用し、明示的なターゲットポータルIPとターゲットIQNを必要とし、検出セッションは不要で、定義されたスケール制限（ノードあたりのインポート数、LIF/ノードあたりのセッション数、LIFあたりのイニシエータ数、最大インポートサイズ）内で動作するように設計されています。</block>
   <block id="bd6961906e0f900da571a6829afc4387" category="section-title">ONTAP FLI計画および準備フェーズの結果</block>
@@ -1279,7 +1245,6 @@
   <block id="5ce73a5588f444f9a6774815e4fafde0" category="list-text">仮想マシンの電源をオンにしてみてください。仮想マシンは問題なくオンラインになるはずです。</block>
   <block id="f54f8723cdd855de6b42f8c6088ea7cf" category="paragraph">Start-VM -Name &lt;VM_Name&gt;</block>
   <block id="3530aa78abbe00fb441a6a913266c4f5" category="summary">移行が計画通りに完了したことを確認し、移行期間中に使用された一時的な設定を削除する検証フェーズについて説明します。</block>
-  <block id="c7b5ec48b58689a14b9ca8360ae61c36" category="doc">ONTAP外部LUNインポート（FLI）検証フェーズ</block>
   <block id="312705c3917e0ecf74999294476290b4" category="paragraph">クリーンアップの一環として、不要になったソース側のイニシエータレコードとゾーニングを削除し、運用チームが明確な「構築済み」状態を把握できるよう、最終的な構成を文書化します。</block>
   <block id="f67442f7dd9efc703506d4e505684839" category="paragraph">iSCSI FLIの場合、検証フェーズには、インタークラスタLIF上に作成されたソフトウェアiSCSIイニシエータセッションおよびイニシエータの削除も含まれるべきです。インタークラスタLIFが外部LUNのインポートのためだけに作成された場合、それらのLIFも削除する必要があります。</block>
   <block id="c8253ba169277559e143f0f27d32ba7a" category="section-title">ONTAP FLI検証フェーズのタスク</block>
@@ -1475,19 +1440,11 @@
   <block id="ee001a59316150af276e4c324261dd99" category="list-text">マッピングされたすべてのホストでドライブが使用可能で、かつONLINE状態であることを確認してください。</block>
   <block id="59a30fddf92f777406c9eff6f1781bb2" category="list-text">ディスク管理を再スキャンすると、すべてのディスクが接続されます。</block>
   <block id="bf6e2cf7dd3238c30a78f920f9b6db33" category="list-text">ディスクを選択してオンラインにすると、すべてがオンラインになり、元の名前とディスク文字が付与されます。</block>
-  <block id="39abfbcb8f794e6556653a316243e4a0" category="summary">ONTAPでSANデータ移行に利用可能な新機能について学びましょう。</block>
-  <block id="d6c68509cd1238fb729ae14d92123e83" category="doc">ONTAP for SAN データ移行の新機能</block>
   <block id="ea7f38fbe84ac28be0f7c90cca730a69" category="section-title">ONTAP 9.19.1</block>
   <block id="c03b12479929cc0eaa58c5ab80e27fd1" category="list-text">ONTAP 9.19.1以降、ONTAP FLIはバックエンド接続用のiSCSIプロトコルをサポートしています。</block>
   <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="section-title">ONTAP 9.17.1</block>
   <block id="c48f6bb5f2a6b62c3d142a871035bd10" category="list-text">ONTAP 9.17.1以降、ASA R2システムはFLI移行に対応しています。</block>
-  <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">リリース ノート</block>
   <block id="6ac40cb1ad8111f5c96838a8b9237e22" category="sidebar">ONTAP for SAN データ移行の新機能</block>
-  <block id="e0c4332e8c13be976552a059f106354f" category="sidebar">作業の開始</block>
-  <block id="417ff747c3d49e0a649bfd727e936822" category="sidebar">FLI フェーズ</block>
-  <block id="f90f37e42713bfc0dc52131faef7107c" category="sidebar">FLI構成</block>
-  <block id="cc3f33b68a9c6ce80c40e4f3f6c8e1c4" category="sidebar">FLIの移行</block>
-  <block id="abb0bd5d7f81ab393f640d362f21c99b" category="sidebar">FLI移行後</block>
   <block id="2fc41ad59b94c124216aa8e6633771aa" category="sidebar">移行後のクリーンアップを実行する</block>
   <block id="e823fdf739fb5edf6da9a877f91b05af" category="sidebar">ESXi VMFSS ATS/CAWの修復を実行する</block>
   <block id="258b2584dfd26cd7e5ecfdd8544956db" category="sidebar">FLI のパフォーマンス</block>
@@ -1495,11 +1452,7 @@
   <block id="2508d28e156f66cd4ca6a2b4abeb95a3" category="sidebar">FC接続と配線</block>
   <block id="d87d23378ba30e257e3b48bce358eb71" category="sidebar">FCゾーニングのベストプラクティス</block>
   <block id="e7b9a0f54244458403194a0fb34d0912" category="sidebar">iSCSIバックエンドの設定</block>
-  <block id="4d2b886016c0696388cb5a9bbde7fdd2" category="sidebar">ONTAPへのSANデータ移行</block>
   <block id="500091d9d4c213e75086f1fd00b56409" category="sidebar">7-mode から ONTAP への FLI 移行</block>
-  <block id="0e4395f2de244a3e68e98f9b5a3746bb" category="sidebar">主な特長とメリット</block>
-  <block id="3b96ee9dd133f64afb5632a8bafaef5d" category="sidebar">FLIの前提条件</block>
-  <block id="fd7c3742abee8ab17925ff747b729fae" category="sidebar">サポートされている構成とプラットフォーム</block>
   <block id="9f0671d0cf8775d206b8c08b4985cfa9" category="sidebar">FLIの移行</block>
   <block id="da2ebaaeec9841b4a44d8b0a368877dd" category="sidebar">外部LUNを検出する</block>
   <block id="d318f1f81c06c0ed2a327f578fc3ac40" category="sidebar">インポート関係を作成</block>
@@ -1521,8 +1474,6 @@
   <block id="40cd014b7b6251e3a22e6a45a73a64e1" category="sidebar">Execute</block>
   <block id="5a750f86ef41f22f852c43351e3ff383" category="sidebar">検証</block>
   <block id="144e3bff2769f72c63f6e00004097fcc" category="sidebar">FLI移行後</block>
-  <block id="259c870f8a8594516755af0729eb847a" category="sidebar">移行後の概要</block>
-  <block id="5d793778d9d63a7b0602b47ee814bd26" category="sidebar">SANデータ移行の最新情報</block>
   <block id="d6fe85b2a7716d9377c34dd3d6ea37c4" category="paragraph">検証フェーズでは、移行が計画通りに完了したことを確認し、移行後のクリーンアップ作業に重点を置きます。これには、アプリケーションの動作の検証、ONTAP LUNへの正しいホストアクセスとパスの確認、監査およびトラブルシューティングのための移行ログの収集、移行のためだけに使用された一時的な接続および構成の削除が含まれます。</block>
   <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
   <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
@@ -1536,11 +1487,7 @@
   <block id="4dbb6aad45c8e3f8971fa73b8fb1cb65" category="doc">ONTAP FLI FC接続と配線のベストプラクティス</block>
   <block id="f4c33d13d9f0daaebef59efa47d35887" category="doc">ONTAP FLI FCゾーニングモデルとベストプラクティス</block>
   <block id="e5433016407dc6d5f7f37c33415d8dd8" category="doc">ONTAP FLI の iSCSI バックエンド接続のセットアップ</block>
-  <block id="076672f300ffdefd8a4b41ffe8bdb05c" category="doc">ONTAP Foreign LUN Import の主な機能とメリット</block>
   <block id="e5a84d75421369af41a6022dabb96e58" category="doc">Foreign LUN Import 7-Mode から ONTAP への移行について学ぶ</block>
-  <block id="edcf274d613b1fd3721fb03b9159a221" category="doc">ONTAP Foreign LUN Import の前提条件</block>
-  <block id="035581abad561e88980523560196a593" category="doc">ONTAP Foreign LUN Import でサポートされている構成</block>
-  <block id="afe9db30e9034e965c6e02e6756b98f0" category="doc">ONTAP FLI の法的通知</block>
   <block id="754301ce7ba113a08fa49d266a9b75d8" category="doc">ONTAP FLI 移行のための外部 LUN の検出</block>
   <block id="32cbbba88160bd8d4144465f439f9bf4" category="doc">ONTAP FLI LUN インポートの実行と監視</block>
   <block id="b59970b095c3d11135d476b0588c57e4" category="doc">ONTAP FLI LUN インポート関係の確認と削除</block>
@@ -1575,4 +1522,44 @@
   <block id="66a3fec0a9750426f0214cd67c946497" category="doc">ONTAP FLI サイト調査および計画ワークシートのソースストレージデバイスタブ</block>
   <block id="c0ebf75273b086525a388999bf478927" category="doc">ONTAP FLI サイト調査および計画ワークシート ストレージグループタブ</block>
   <block id="c9ab231f3a6a537a1fdc8be5ba0eaa5c" category="doc">ONTAP FLI サイト調査および計画ワークシートのスイッチタブ</block>
+  <block id="516f70ec805d7bb8aa14c794e96a1a44" category="list-text">プラットフォームがネイティブなモビリティ機能を提供する場合、またはホストやアプリケーションの制御が優先される場合に役立ちます（たとえば、VMware のストレージモビリティやホストベースのコピー方式など）。</block>
+  <block id="267dcc9397ed4992a5f6de3164460880" category="section-title">ONTAPのForeign LUN Importの主な機能とメリットについて学ぶ</block>
+  <block id="043d06edeed4fa95f43af01f2f2f6113" category="section-title">ONTAP Foreign LUN Importの前提条件について学ぶ</block>
+  <block id="f07bea32571fee7ebcbee5f0dd81797f" category="section-title">ONTAP Foreign LUN Importでサポートされている構成とプラットフォームについて学ぶ</block>
+  <block id="072fe6a12766df05754602a47c7b750f" category="list-text">推奨される開始点として、ノードあたり最大8件の同時インポートを想定して計画を立ててください。最良の条件下では、ノードあたりの同時移行数を16を超えないようにしてください。また、ホストの遅延やインポートの遅延が増加した場合は、同時移行数を減らしてください。</block>
+  <block id="16b59d73b18e2c1a984d60963400b789" category="inline-link-macro">FLIを使用して16TBを超えるアレイLUNを移行できません</block>
+  <block id="f49b99693fc191d8f86767cdc759d1a2" category="list-text">ONTAP 9.12.1 以降、インポート可能な外部 LUN の最大サイズは LUN あたり 125 TB です。詳細については、ナレッジベースの記事 <block ref="d8105941975edebf152ce49ff43f8a15" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="4c3ff86f9932f5d15b87eb3fe5bef469" category="paragraph">時間の経過とともに新しい構成が認定されるにつれて、サポートされる組み合わせが変わる可能性があります。各移行について、エンドツーエンドのスタック（ソースアレイ+ホスト+ファブリック/ネットワーク+ONTAPターゲット）を現在の相互運用性に関するガイドラインに照らして検証してください。</block>
+  <block id="b4de17ead867a3cf0b9d11e57e562672" category="section-title">機械翻訳に関する情報</block>
+  <block id="dd3918c571093dff2b94f7cef5066d01" category="inline-link-macro">netapp.com</block>
+  <block id="178761dc5a14b2537b196d4faff0398b" category="paragraph">ローカライズされたコンテンツに関する重要な情報は、<block ref="3838f9aa83384410da26ac78c9080b24" category="inline-link-macro-rx"></block>をご覧ください。</block>
+  <block id="c910b0c602f4d79f37bcc17e3b225da2" category="summary">Foreign LUN Import （FLI） のために ONTAP で利用可能な新機能について説明します。</block>
+  <block id="4299cbe7da51d6fe5d6c531027e23fb9" category="doc">ONTAP Foreign LUN Import （FLI） の新機能</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
+  <block id="9b4859f81391751aa861e207472c37ed" category="sidebar">FLIの構成</block>
+  <block id="997000c257e78ce562e5bbb3c47655c3" category="sidebar">ONTAP FLI 接続と配線</block>
+  <block id="3994c035de26cf9743b3789acec26fc2" category="sidebar">サンプルサイト調査と計画</block>
+  <block id="9a079bf50d1382cff875dfe6e33c7255" category="sidebar">サンプルサイト調査および計画ワークシート</block>
+  <block id="f19e56a975c9247e8e98b2a618a07fdb" category="sidebar">ONTAP Foreign LUN Import ドキュメント</block>
+  <block id="9eec4014779de909ac7f85f3c58e0ebb" category="sidebar">ONTAPデータ移行について学ぶ</block>
+  <block id="8a2553b01e76e6d371e08a17dae387bd" category="sidebar">Foreign LUN Import について</block>
+  <block id="e8d1a7b302822b03b874bd729b1f3e16" category="sidebar">計画と準備について学ぶ</block>
+  <block id="185422fe75783a697193f0fa7d197559" category="sidebar">移行後について学ぶ</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="8dfe62d694d9a9d551edff2e399a526d" category="sidebar">サンプルサイト調査と計画について学ぶ</block>
+  <block id="e23785140a406495a9e6575cc2fc2ec7" category="sidebar">敷地調査および計画ワークシート連絡先タブ</block>
+  <block id="cfccc87352e11bc536f7c377e87d5861" category="sidebar">敷地調査および計画ワークシートの質問票タブ</block>
+  <block id="ad7a1e73bfb2d7b8d833ca98830d060a" category="sidebar">サイト調査および計画ワークシートのスイッチタブ</block>
+  <block id="b89483c4b2d08bbbbcc33e0c77112600" category="sidebar">サイト調査および計画ワークシートソースストレージデバイスタブ</block>
+  <block id="7b09aa21e88886ffe9f52800535f25c2" category="sidebar">サイト調査および計画ワークシートの宛先ストレージデバイスタブ</block>
+  <block id="25f70209fb08d78b79730237f0174638" category="sidebar">敷地調査および計画ワークシートのホストタブ</block>
+  <block id="13d5bd0792c9b606b6882bd1dd3873f5" category="sidebar">敷地調査および計画ワークシート HBAおよびゾーン情報タブ</block>
+  <block id="8f9c82fe9a9a42fe4aa0be6215fb30a6" category="sidebar">サイト調査および計画ワークシートソース LUN タブ</block>
+  <block id="6b9dded1d988328f873a38cca5f7e668" category="sidebar">サイト調査および計画ワークシートのストレージグループタブ</block>
+  <block id="03f2f43ca4799283b2c368bc33a2806b" category="sidebar">サイト調査および計画ワークシート LUN詳細タブ</block>
+  <block id="293e3deed1e3cfa806e4447c4e96079d" category="sidebar">サイト調査および計画ワークシート NetApp LUN レイアウトタブ</block>
+  <block id="17aef2bb4412a672071aae2a16c1738e" category="sidebar">サイト調査および計画ワークシート移行スケジュールタブ</block>
+  <block id="b2d71f70e33627ee08a0e2d4adf8658d" category="sidebar">サイト調査および計画ワークシートのアグリゲートステータスタブ</block>
+  <block id="ac595b309538d10512c32f6682e101bc" category="sidebar">敷地調査および計画ワークシート FAS 設定タブ</block>
+  <block id="89d6f5401c85b11327fdc2aaf07a23f3" category="sidebar">サイト調査および計画ワークシート SDS CLIスクリプトタブ</block>
 </blocks>
